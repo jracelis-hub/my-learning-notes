@@ -79,7 +79,7 @@ WORK_DIRECTORY="/jracelis/bash-learnings/READMD.md"
 > Variable spaces used underscores _  
 > Variable "contents" enclosed with quotation
 
-To call the variables within the script use the dollar sign `$` + the variable name enclosed in brackets `{VARIABLE_NAME}`
+To call the variables within the script use the dollar sign `$` +  `{VARIABLE_NAME}` the variable name 
 
 ```
 #Variables
