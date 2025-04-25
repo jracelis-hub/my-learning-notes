@@ -16,4 +16,44 @@ Bash `scripting` is a great way to automate tasks within linux to make navigatin
 
 _Scripting Basics_
 
-`The shebang` 
+The _shebang_ or `#!/bin/bash` is the first shell script that has to be included to be able to intreprete the specific programing that is being utilized.
+
+> [!CAUTION]
+> Without the _shebang_ the code will not run properly
+
+
+```bash
+#Examples
+
+#!/bin/bash
+#!/usr/bin/env bash
+#!/usr/bin/env python
+#!/usr/bin/env c
+#!/usr/bin/env c++
+
+# Notation
+#!/usr/bin/env [programing language]
+
+or
+
+#!/bin/bash [generally the case]
+```
+
+<details>
+
+<summary>Commands Cheat Sheet</summary>
+
+| Commands | Description           |
+|----------|-----------
+| echo     | to display output                             
+| cd       | to change directories
+| ls       | to list contents in directory
+| chmod    |
+| grep     |
+| awk      |
+| sort     |
+| find     |
+| 
+
+</details>
+
