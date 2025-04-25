@@ -1,4 +1,4 @@
-# my-learning-notes
+# My Learning Journey
 
 ## Topics Covered
 ```
