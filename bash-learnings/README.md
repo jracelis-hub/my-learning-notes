@@ -43,17 +43,30 @@ or
 
 <summary>Commands Cheat Sheet</summary>
 
-| Commands | Description           |
-|----------|-----------
-| echo     | to display output                             
-| cd       | to change directories
-| ls       | to list contents in directory
-| chmod    |
-| grep     |
-| awk      |
-| sort     |
-| find     |
-| 
+| Commands   | Description                          |
+|------------|-------------------------------
+| `echo`     | to display output                             
+| `cd`       | to change directories
+| `ls`       | to list contents in directory
+| `pwd`      | print working directory
+| `rm`       | remove file
+| `rmdir`    | remove directory
+| `mkdir`    | make directory
+| `touch`    | 
+| `whereis`  |
+| `locate`   |
+| `whatis`   |
+| `chmod`    | change file mode
+| `grep`     | get regular expression
+| `awk`      | 
+| `sort`     | 
+| `find`     |
+| `sed`      |
+| `paste`    |
+| `cut`      |
+| `pv`       |
+
+
 
 </details>
 
@@ -61,7 +74,10 @@ or
 
 _Variables_
 
-Variables could be initiated with the variable name equal to the contents. 
+* Variables could be initiated with the variable name equal to the contents. 
+* Must begin with a letter or an underscore
+* Any character excepter the first can be a number
+* No spaces between the variable the = sign
 
 ```
 # EXAMPLE
@@ -74,12 +90,12 @@ WORK_DIRECTORY="/jracelis/bash-learnings/READMD.md"
 ```
 
 > [!NOTE]
-> **Best practice**   
+> _Best practice_   
 > Variable names in all CAPS  
 > Variable spaces used underscores _  
 > Variable "contents" enclosed with quotation
 
-To call the variables within the script use the dollar sign `$` +  `{VARIABLE_NAME}` the variable name 
+* To call the variables within the script use the dollar sign `$` +  `{VARIABLE_NAME}` the variable name 
 
 ```
 # Variables
@@ -93,5 +109,5 @@ cd ${WORK_DIRECTORY}
 
 ```
 > [!NOTE]
-> **Best Practice**  
+> _Best Practice_  
 > Enclose contents in `${BRACKETS}` 
