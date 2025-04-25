@@ -70,10 +70,28 @@ VARIABLE_NAME="contents"
 FIRST_NAME="Jarron"
 LAST_NAME="RACELIS"
 COLOR="BLUE"
+WORK_DIRECTORY="/jracelis/bash-learnings/READMD.md"
 ```
 
 > [!NOTE]
-> Best practice 
-> Variable names in all CAPS
-> Variable spaces used underscores _
+> Best practice   
+> Variable names in all CAPS  
+> Variable spaces used underscores _  
 > Variable "contents" enclosed with quotation
+
+To call the variables within the script use the dollar sign `$` + the variable name enclosed in brackets `{VARIABLE_NAME}`
+
+```
+#Variables
+
+FAV_COLOR="blue"
+WORK_DIRECTORY="/jracelis/bash-learnings/READMD.md"
+
+# Command Line
+echo "My favorite color is ${FAV_COLOR}"
+cd ${WORK_DIRECTORY}
+
+```
+> [!NOTE]
+> Best Practice  
+> Enclose contents in `${BRACKETS}` 
