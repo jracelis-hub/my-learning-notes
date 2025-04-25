@@ -25,7 +25,7 @@ This is a page where I will documents and track all my learnings from several di
 
 **Background**
 
-I am graduated from **California State University, Fullerton** with a _Bachelors_ in _Mechanical Engineer_ where my first engineering job was in the pcb _(print circuit board)_ manufacturing industry. From there I moved to Rivian where I began go to experience the mix of hardware + software.
+I graduated from California State University, Fullerton with a Bachelors in Mechanical Engineer where my first engineering job was in the pcb (print circuit board) manufacturing industry. From there, I moved to Rivian where I began to learning more integration of hardware + software. I was intrugied by the software side of things, which made me pursue a deeper learning outside of work. Here I centralized area where I can keep all my notes in once spot while challenging myself with new topics.
 
 ## Repository Topics
 
