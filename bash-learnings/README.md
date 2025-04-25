@@ -72,7 +72,7 @@ LAST_NAME="RACELIS"
 COLOR="BLUE"
 ```
 
-> [!NOTES]
+> [!NOTE]
 > Best practice 
 > Variable names in all CAPS
 > Variable spaces used underscores _
