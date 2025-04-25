@@ -89,12 +89,6 @@ COLOR="BLUE"
 WORK_DIRECTORY="/jracelis/bash-learnings/READMD.md"
 ```
 
-> [!NOTE]
-> _Best practice_   
-> Variable names in all CAPS  
-> Variable spaces used underscores _  
-> Variable "contents" enclosed with quotation
-
 * To call the variables within the script use the dollar sign `$` +  `{VARIABLE_NAME}` the variable name 
 
 ```
@@ -108,6 +102,10 @@ echo "My favorite color is ${FAV_COLOR}"
 cd ${WORK_DIRECTORY}
 
 ```
+
 > [!NOTE]
-> _Best Practice_  
-> Enclose contents in `${BRACKETS}` 
+> _Best practice_   
+> * Variable names in all CAPS  
+> * Variable spaces used underscores _  
+> * Variable "contents" enclosed with quotation
+> * Enclose contents in `${BRACKETS}` 
