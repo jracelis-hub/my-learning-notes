@@ -7,9 +7,13 @@
 ## Table of Contents
 
 * [Introduction](#introduction)
-* [Topics Covered](#topics-covered)
-    * [Bash Scripting](#bash-scripting)
-* [Contributors](#contributors)   
+* [Repository Topics](#repository-topics)
+    * _Bash Scripting_
+    * _C Programing_
+    * _Virtual Machine_
+    * _Docker_
+    * _Networking_
+* [Contact](#contact)   
 
 ## Introduction
 
@@ -23,15 +27,17 @@ This is a page where I will documents and track all my learnings from several di
 
 I am graduated from **California State University, Fullerton** with a _Bachelors_ in _Mechanical Engineer_ where my first engineering job was in the pcb _(print circuit board)_ manufacturing industry. From there I moved to Rivian where I began go to experience the mix of hardware + software.
 
-### Repo Topics
+## Repository Topics
 
-* _Bash Scripting_
+* _Linux_
 * _C Programing_
 * _Virtual Machine_
 * _Docker_
 * _Networking_
 
-### Contacts
+:file_folder: [linux]
+
+### Contact
 >  Name: _Jarron Racelis_ \
 >  Email: _jarron.racelis@gmail.com_
 
