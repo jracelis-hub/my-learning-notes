@@ -8,7 +8,7 @@
 
 * [Introduction](#introduction)
 * [Repository Topics](#repository-topics)
-    * _Bash Scripting_
+    * _Linux_
     * _C Programing_
     * _Virtual Machine_
     * _Docker_
@@ -29,13 +29,13 @@ I am graduated from **California State University, Fullerton** with a _Bachelors
 
 ## Repository Topics
 
-* _Linux_
+* [_Linux_](https://github.com/jracelis-hub/my-learning-notes/tree/main/linux) :file_folder: 
 * _C Programing_
 * _Virtual Machine_
 * _Docker_
 * _Networking_
 
-:file_folder: [linux]
+
 
 ### Contact
 >  Name: _Jarron Racelis_ \
