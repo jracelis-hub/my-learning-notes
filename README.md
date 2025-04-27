@@ -29,13 +29,11 @@ I graduated from **California State University, Fullerton** with a _Bachelors_ i
 
 ## Repository Topics
 
-* [_Linux_](https://github.com/jracelis-hub/my-learning-notes/tree/main/linux) :file_folder: 
-* _C Programing_
+* [_Linux_](https://github.com/jracelis-hub/my-learning-notes/tree/main/linux) :open_file_folder: 
+* [_C Programing_](https://github.com/jracelis-hub/my-learning-notes/tree/main/c_programming) :open_file_folder: 
 * _Virtual Machine_
 * _Docker_
 * _Networking_
-
-
 
 ### Contact
 >  Name: _Jarron Racelis_ \
