@@ -8,11 +8,14 @@
 
 * [Introduction](#introduction)
 * [Repository Topics](#repository-topics)
-    * _Linux_
+
     * _C Programing_
-    * _Virtual Machine_
-    * _Docker_
+    * _Container_
+    * _Linux_
     * _Networking_
+    * _Virtual Machine_
+    * _Images_
+    
 * [Contact](#contact)   
 
 ## Introduction
@@ -29,11 +32,12 @@ I graduated from **California State University, Fullerton** with a _Bachelors_ i
 
 ## Repository Topics
 
+* [_C Programing_](https://github.com/jracelis-hub/my-learning-notes/tree/main/c_programming) :open_file_folder:
+* [_Container_](https://github.com/jracelis-hub/my-learning-notes/tree/main/container) :open_file_folder:
 * [_Linux_](https://github.com/jracelis-hub/my-learning-notes/tree/main/linux) :open_file_folder: 
-* [_C Programing_](https://github.com/jracelis-hub/my-learning-notes/tree/main/c_programming) :open_file_folder: 
-* _Virtual Machine_
-* _Docker_
-* _Networking_
+* [_Networking_](https://github.com/jracelis-hub/my-learning-notes/tree/main/networking) :open_file_folder:
+* [_Virtual Machine_](https://github.com/jracelis-hub/my-learning-notes/tree/main/virtual_machine) :open_file_folder:
+* [_Images_](https://github.com/jracelis-hub/my-learning-notes/tree/main/images) 📷:
 
 ### Contact
 >  Name: _Jarron Racelis_ \
