@@ -37,7 +37,7 @@ I graduated from **California State University, Fullerton** with a _Bachelors_ i
 * [_Linux_](https://github.com/jracelis-hub/my-learning-notes/tree/main/linux) :open_file_folder: 
 * [_Networking_](https://github.com/jracelis-hub/my-learning-notes/tree/main/networking) :open_file_folder:
 * [_Virtual Machine_](https://github.com/jracelis-hub/my-learning-notes/tree/main/virtual_machine) :open_file_folder:
-* [_Images_](https://github.com/jracelis-hub/my-learning-notes/tree/main/images) 📷:
+* [_Images_](https://github.com/jracelis-hub/my-learning-notes/tree/main/images) 📷
 
 ### Contact
 >  Name: _Jarron Racelis_ \
