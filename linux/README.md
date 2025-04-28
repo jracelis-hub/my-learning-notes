@@ -37,8 +37,9 @@ The _shebang_ or `#!/bin/bash` is the first shell script that has to be included
 
 or
 
+#!/usr/bin/env bash [more portable]
 #!/bin/bash [generally the case]
-```
+``` 
 
 <details>
 
@@ -85,7 +86,7 @@ _Variables_
 
 VARIABLE_NAME="contents"
 FIRST_NAME="Jarron"
-LAST_NAME="RACELIS"
+LAST_NAME="Racelis"
 COLOR="BLUE"
 WORK_DIRECTORY="/jracelis/bash-learnings/READMD.md"
 ```
@@ -125,7 +126,7 @@ NOTATION
 
 FAV_COLOR="blue"
 
-if [ ${FAV_COLOR = "blue" ]; then
+if [ ${FAV_COLOR} = "blue" ]; then
   echo "BLUE IS MY FAVORITE COLOR"
 fi
 ```
@@ -137,7 +138,7 @@ Adding the `else` statement to the if statement if the following statement is no
 
 FAV_COLOR="blue"
 
-if [ ${FAV_COLOR = "blue" ]; then
+if [ ${FAV_COLOR} = "blue" ]; then
   echo "BLUE IS MY FAVORITE COLOR"
 else
   echo "THIS ISN'T MY FAVORITE COLOR"

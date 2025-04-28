@@ -33,7 +33,7 @@ This document is a step by step guide on how to set a virtual machine on your co
 _Instructions_
 
 1.) Go to [Orcale Virtual Box](https://www.virtualbox.org/wiki/Downloads) download page and click `Windows Hosts` onto the computer. After open up the downloaded package and following the installation instructions.  
-2.) Go to [Ubuntu Software](https://ubuntu.com/download/desktop#system-requirements-NobleNumbat) download page to download the lastest ubuntu software. Here I will be using the _Ubuntu 24.04.2 LTS_  
+2.) Go to [Ubuntu Software](https://ubuntu.com/download/desktop#system-requirements-NobleNumbat) download page to download the lastest ubuntu software. Here I will be using the `Ubuntu 24.04.2 LTS`  
 3.) Once step one installation is complete you should have Orcale VirtualBox Manager installed onto your computer. From there you have to set up your Virtual Machine.
 > [!TIP]
 > Refer to the drop down _In Depth Installtion Steps_ to go through a step by step process on how to set up the software onto your computer.
@@ -41,9 +41,18 @@ _Instructions_
 <details>
 <summary>In Depth Installation Steps</summary>
 
+1.) Download [Orcale Virtual Box](https://www.virtualbox.org/wiki/Downloads) and click `Windows Host`. Once downloaded, navigate to your downloads folder and begin installation.  
+![Alt Text](https://github.com/jracelis-hub/my-learning-notes/tree/images/orcale_vm_download)  
+2.) After downloading the _Orcale VirtualBox Manager_ navigate to ubuntu website and download the [Ubuntu Software](https://ubuntu.com/download/desktop#system-requirements-NobleNumbat). Make sure you are downloading `Ubuntu 24.04.2 LTS`.  
+> [!NOTE]
+> This should take sometime to download  
+> After step 2 is complete, we will now begin creating our Virtual Machine on the _Orcale VirtualBox Manager_!  
+
+3.) Open up _Orcale VirtualBox Manager_ and
+
 </details>
 
-
+---
 
 _Resources_
 
