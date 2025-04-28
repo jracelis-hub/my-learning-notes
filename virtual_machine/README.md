@@ -23,7 +23,7 @@ This document is a step by step guide on how to set a virtual machine on your co
     * [Orcale Virtual Box](#orcale-virtual-box) (Virtual Machine)
     * [AWS EC2](#aws-ec2) (Virtual Machine)
 
-> [!NOTES]
+> [!NOTE]
 > The following software is the only ones that I am covering in this document. It is not limited to only these resources.
 
 ## Installation
