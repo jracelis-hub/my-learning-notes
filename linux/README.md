@@ -323,10 +323,10 @@ OUTPUT
 | **[[-n string]]**                | **string** is _non-empty_                      
 | **[[-z string]]**                | **string** is _empty_
 | **[[ string1 == string2 ]]**     | **string1** and **string2** are _same_
-| **[[string1 != string2 ]]**      | **string1** and **string2** are _not the same_
-| **[[string =~ regex ]]**         | **string** _matches_ **regular expression**
+| **[[ string1 != string2 ]]**      | **string1** and **string2** are _not the same_
+| **[[ string =~ regex ]]**         | **string** _matches_ **regular expression**
 | **[[ -e file ]]**                | **file** _exists_
-| **[[-f file]]**                  | **file** is a _regular file_
+| **[[ -f file] ]**                  | **file** is a _regular file_
 | **[[ -d file ]]**                | **file** is a _directory_
 | **[[ -t fd ]]**                  | **fd** is _open_ and refers to a _terminal_
 
@@ -348,28 +348,28 @@ Execute **list** of commands only if certain conditions are met.
 
 `if` **list1**; `then` **list2**; `fi`
 
-> Evaluate **list1**, then evaluate **list2** only if **list1** returns a status of **0**
+* Evaluate **list1**, then evaluate **list2** only if **list1** returns a status of **0**
 
 `if` **list1**; `then` **list2**; `else` **list3**; `fi`
 
-> Evalue **list1**, then evaluate **list2** only if **list1** returns a status of **0**. Otherwise, evaluate **list3**.
+* Evalue **list1**, then evaluate **list2** only if **list1** returns a status of **0**. Otherwise, evaluate **list3**.
 
 `if` **list1**; `then` **list2**; `elif` **list3**; `then` **list4**; `else` **list5**; `fi`
 
-> Evaluate **list1**, then evaluate **list2** only if **list1** returns a status of **0**. Otherwise, evaluate **list3**, then evaluate **list4** only if **list3** return a status of **0**. Otherwise, evaluate **list5**.
+* Evaluate **list1**, then evaluate **list2** only if **list1** returns a status of **0**. Otherwise, evaluate **list3**, then evaluate **list4** only if **list3** return a status of **0**. Otherwise, evaluate **list5**.
 
 ---
 
 Pattern Matching
 _Pattern matching is used in Bash for the **[[** and `case` keywords, **pathname expansion** and some types of **parameter expansion**_
 
-> **\*** : Maches any string, including null.  
-> **?** : Matches any single character.  
-> **[character class]** : Matches any one of the characterse enclosed between **[** and **]**.
+* **\*** : Maches any string, including null.  
+* **?** : Matches any single character.  
+* **[character class]** : Matches any one of the characterse enclosed between **[** and **]**.
 
-> **[^...]** : Matches the complement (any character not in the class)  
-> **[x-z]** : Matches the range of characters from **x** to **z**  
-> **[[:class:]]** : Matches according to these POSIX classes:  
+* **[^...]** : Matches the complement (any character not in the class)  
+* **[x-z]** : Matches the range of characters from **x** to **z**  
+* **[[:class:]]** : Matches according to these POSIX classes:  
 **alnum alpha assii blank cntrl digit graph lower print punct space**
 
 ---
@@ -381,9 +381,9 @@ _Pattern matching is used in Bash for the **[[** and `case` keywords, **pathname
 **list2**;;  
 `esac`
 
-> Match **word** against each **pattern** sequentially. When the first match is found, evaluate the **list** corresponding to that match and stop matching.
+* Match **word** against each **pattern** sequentially. When the first match is found, evaluate the **list** corresponding to that match and stop matching.
 
-> The **|** (pipe) character between two patterns entails a match if either pattern matches **(OR)**.
+* The **|** (pipe) character between two patterns entails a match if either pattern matches **(OR)**.
 
 
 </details>
@@ -396,6 +396,41 @@ Grouped **list** of commands, sharing any external redirections and whose return
 #Example
                       (list)  {list;}
 ```
+
+<details>
+<summary>Command Groups</summary>
+
+**Subshell**:
+
+* Evaluate **list** of commands in a ***subshell***, meaning that its environment is distinct from the current shell and its parameters are contained.  
+```bash
+                       (list)
+```
+**Group Command**: 
+
+* Evaluate **list** of commands in the ***current shell***, sharing the current shell's environment.
+```bash
+                       {list;}
+```
+
+</details>
+
+---
+
+_Redirection_
+
+_Controlling the input, output, error, and other streams_
+
+| Operation          |     Description               |
+|--------------------|-------------------------------|
+| `list > file`| overwrite/create **file** with ***output*** from **list**
+| `list >> file` | append/create **file** with ***output*** from **list**
+| `list < file`  | feed **file* to **list** as ***input***
+| `list1 \| list2` | use ***output*** from **list1** as ***input*** to **list2**
+
+* If not specified, `fd 1` **(STDOUT)** is assumed when redirecting output  
+* Alternative file descriptors may be specified by **prepending** `fd number`, e.g `2>file` to redirect `fd 2` **(STDERR)**
+* To redirect to a file descriptor, append ***&*** and the fd number, e.g `2>&1` to redirect ***STDERR*** to the current target ***STDOUT***.
 
 _Help Commands_
 
