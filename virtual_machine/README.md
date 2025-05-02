@@ -41,11 +41,16 @@ _Instructions_
 <details>
 <summary>In Depth Installation Steps</summary>
 
-1.) Download [Orcale Virtual Box](https://www.virtualbox.org/wiki/Downloads) and click `Windows Host`. Once downloaded, navigate to your downloads folder and begin installation.   
+1.) Download [Orcale Virtual Box](https://www.virtualbox.org/wiki/Downloads) and click `Windows Host`. Once downloaded, navigate to your downloads folder and begin installation. _Refer to **Image 1**_  
 
-![Alt Text](https://github.com/jracelis-hub/my-learning-notes/blob/main/images/orcale_vm_download.png)[^1]    
+![Alt Text](https://github.com/jracelis-hub/my-learning-notes/blob/main/images/orcale_vm_download.png)  
+_Image 1_
 
-2.) After downloading the _Orcale VirtualBox Manager_ navigate to ubuntu website and download the [Ubuntu Software](https://ubuntu.com/download/desktop#system-requirements-NobleNumbat). Make sure you are downloading `Ubuntu 24.04.2 LTS`. 
+2.) After downloading the _Orcale VirtualBox Manager_ navigate to ubuntu website and download the [Ubuntu Software](https://ubuntu.com/download/desktop#system-requirements-NobleNumbat). _Refer to **Image 2**_. Make sure you are downloading `Ubuntu 24.04.2 LTS`.  
+
+![Alt Text](https://github.com/jracelis-hub/my-learning-notes/blob/main/images/ubuntu_download.png)  
+_Image 2_
+
 3.) Open up _Orcale VirtualBox Manager_ and click new
 
 </details>
