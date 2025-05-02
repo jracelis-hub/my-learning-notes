@@ -425,7 +425,7 @@ _Controlling the input, output, error, and other streams_
 |--------------------|-------------------------------|
 | `list > file`| overwrite/create **file** with ***output*** from **list**
 | `list >> file` | append/create **file** with ***output*** from **list**
-| `list < file`  | feed **file* to **list** as ***input***
+| `list < file`  | feed **file** to **list** as ***input***
 | `list1 \| list2` | use ***output*** from **list1** as ***input*** to **list2**
 
 * If not specified, `fd 1` **(STDOUT)** is assumed when redirecting output  
