@@ -73,7 +73,7 @@ or
 | Logical Operators | Description |
 |-------------------|-------------|
 | `&&`    | logical AND
-| `||`    | logical OR
+| `\|\|`    | logical OR
 | `!`     | logical NOT
 
 | File Test Operators | Description |
