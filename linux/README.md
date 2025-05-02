@@ -44,7 +44,49 @@ or
 ``` 
 
 <details>
+<summary>Bash Operators</summary>
 
+| Comparison Operators  | Description |
+|-------|---------------------------------|
+| `-eq` | equal to
+| `-ne` | not equal to
+| `-lt` | less than
+| `-le` | less than or equal to
+| `-gt` | greater than
+| `-ge` | greater than or equal to 
+
+| String Comparison     | Description   |
+|---------|-----------------------------|
+| `=`     | equal to
+| `!=`    | not equal to
+| `<`     | less than, in ASCII alphabetical order
+| `>`     | greater than, in ASCII alphabeteric order
+
+| Arithmetic Operators | Description    |
+|---------|-----------------------------|
+| `+`     | addition
+| `-`     | subtraction
+| `*`     | multiplication
+| `/`     | division
+| `%`     | modulus (remainer of divison)
+
+| Logical Operators | Description |
+|-------------------|-------------|
+| `&&`    | logical AND
+| `||`    | logical OR
+| `!`     | logical NOT
+
+| File Test Operators | Description |
+|---------------------|-------------|
+| `-e` | checks if a file exists
+| `-d` | checks if a directory exists
+| `-f` | check if a file is regular file
+| `-s` | checks ifa file is not empty
+
+</details>
+
+
+<details>
 <summary>Commands Cheat Sheet</summary>
 
 | Commands    | Description                          |
@@ -56,25 +98,30 @@ or
 | `rm`        | remove file
 | `rmdir`     | remove directory
 | `mkdir`     | make directory
-| `touch`     | 
-| `whereis`   |
+| `touch`     | to change file timestamps or create an empty file if ti doesn't exist
+| `whereis`   | 
 | `locate`    |
 | `whatis`    |
 | `chmod`     | change file mode
-| `grep`      | get regular expression
-| `awk`       | 
-| `sort`      | 
+| `grep`      | to search for text patterns within files
+| `awk`       | used for pattern scanning and processing language
+| `sort`      | to sort lines of text files
 | `find`      | to find a specific name/file/folder
-| `sed`       |
-| `paste`     |
-| `cut`       | 
+| `sed`       | a stream editor used to preform basic text ransformations on an input stream (a file or input from a pipeline).
+| `paste`     | 
+| `cut`       | to remove sections from each line of files
 | `pv`        | pipe viewier
 | `diff`      |
 | `tar`       | to archive or unarchive a file/folder (can also zip with the -z flag)
 | `zstd`      | to unzip a .zst file
 | `ssh-keygen`| 
-| `ssh`       |
-| `for`       |
+| `ssh`       | to connect to a remote machine securely
+| `scp`       | to securely copy files between hosts on a network
+| `tail`      | to display the last parts if files
+| `head`      | to display first part of files
+| `curl`      | to transfer data from or to a server using various protocols like HTTP, HTTPS, FTP and more.
+| `wget`      | to download files from the web
+
 
 
 </details>
@@ -177,7 +224,7 @@ _Compound Commands_
 
 Iteration:
 
-Continuously loop iver **list** of commands delineated by the keywords of `do` and `done`.
+Continuously loop over **list** of commands delineated by the keywords of `do` and `done`.
 
 ```bash
 #Example
@@ -193,15 +240,15 @@ _(Typically) iterate based on an external resource_
 
 `while` **list1**; `do` **list2**; `done`
 
-execute **list1**l if **success**, execute **list2** and repeat.  
-continue unit **list1** returns a **non-zero** status _(fails)_.
+> execute **list1**l if **success**, execute **list2** and repeat.  
+> continue unit **list1** returns a **non-zero** status _(fails)_.
 
 ---
 
 `unitil` **list1**; `do` **lists2**; `done`
 
-execute **list1**; if **failure**, execute **lists2** and repeat.  
-continue unit **list1** returns a status of **0** _(succeeds)_.
+> execute **list1**; if **failure**, execute **lists2** and repeat.  
+> continue unit **list1** returns a status of **0** _(succeeds)_.
 
 ---
 
@@ -210,19 +257,19 @@ _Iterate baed on commad line arguements_
 
 `for` **name** `in` **words**; do **list**; `done`
 
-During each iteration, assign **name** the value of the next **word**, then execute **list**. Repeat until all **words** have been exhausted.
+> During each iteration, assign **name** the value of the next **word**, then execute **list**. Repeat until all **words** have been exhausted.
 
 ***C programming notation***
       
 `for` (( **initialization** ; **condition**; **afterthought** )); `do` **list**; `done`
 
-Evaluate **initialization**, then loop of **list** of commands untill **condition** returns non-zero status _(fails)_. After each iteration, evaluate **afterthought**. The expressions are evaluated as _arithmetic expressions_.
+> Evaluate **initialization**, then loop of **list** of commands untill **condition** returns non-zero status _(fails)_. After each iteration, evaluate **afterthought**. The expressions are evaluated as _arithmetic expressions_.
 
 ---
 
 `select` **name** `in` **words**; `do` **lists**; `done`
 
-Create a menu item for each **word**. Each time the user makes a selection from the manu, **name** is assigned the value of the selected **word** and **REPLY** is assigned the **index** number of the selection.
+> Create a menu item for each **word**. Each time the user makes a selection from the manu, **name** is assigned the value of the selected **word** and **REPLY** is assigned the **index** number of the selection.
 
 <details>
 
@@ -257,7 +304,6 @@ OUTPUT
 
 ```
 
-
 </details>
 
 ---
@@ -266,11 +312,11 @@ OUTPUT
 
 **[expression]** or `test` **expression**
 
-Evaluate _conditional expression_ with the `test` builtin.
+> Evaluate _conditional expression_ with the `test` builtin.
 
 **[[expression]]**
 
-Evaluate _conditional expression_ with the **[[** keyword; word splitting <ins>not</ins> preformed. The righthand side of a string comparison ( **==** , **!=** ) is treated as a **pattern when not quoted**, and as a **string when quoted**.
+> Evaluate _conditional expression_ with the **[[** keyword; word splitting <ins>not</ins> preformed. The righthand side of a string comparison ( **==** , **!=** ) is treated as a **pattern when not quoted**, and as a **string when quoted**.
 
 | `test`                           | Definition                                     |
 |----------------------------------|------------------------------------------------|
@@ -295,6 +341,52 @@ Execute **list** of commands only if certain conditions are met.
 #Example
                           if  case
 ```
+
+<details>
+
+<summary> if and Case Statements</summary>
+
+`if` **list1**; `then` **list2**; `fi`
+
+> Evaluate **list1**, then evaluate **list2** only if **list1** returns a status of **0**
+
+`if` **list1**; `then` **list2**; `else` **list3**; `fi`
+
+> Evalue **list1**, then evaluate **list2** only if **list1** returns a status of **0**. Otherwise, evaluate **list3**.
+
+`if` **list1**; `then` **list2**; `elif` **list3**; `then` **list4**; `else` **list5**; `fi`
+
+> Evaluate **list1**, then evaluate **list2** only if **list1** returns a status of **0**. Otherwise, evaluate **list3**, then evaluate **list4** only if **list3** return a status of **0**. Otherwise, evaluate **list5**.
+
+---
+
+Pattern Matching
+_Pattern matching is used in Bash for the **[[** and `case` keywords, **pathname expansion** and some types of **parameter expansion**_
+
+> **\*** : Maches any string, including null.  
+> **?** : Matches any single character.  
+> **[character class]** : Matches any one of the characterse enclosed between **[** and **]**.
+
+> **[^...]** : Matches the complement (any character not in the class)  
+> **[x-z]** : Matches the range of characters from **x** to **z**  
+> **[[:class:]]** : Matches according to these POSIX classes:  
+**alnum alpha assii blank cntrl digit graph lower print punct space**
+
+---
+
+`case` **word** `in`  
+`pattern1`  
+**list1** ;;  
+`pattern2` | `pattern3`)  
+**list2**;;  
+`esac`
+
+> Match **word** against each **pattern** sequentially. When the first match is found, evaluate the **list** corresponding to that match and stop matching.
+
+> The **|** (pipe) character between two patterns entails a match if either pattern matches **(OR)**.
+
+
+</details>
 
 Command groups:
 
