@@ -3,11 +3,12 @@
 ## Table of Contents
 
 * [Purpose](#purpose)
-* [Chapter 1](#chapter-1)
+* [Section 1](#Section-1)
   * _Scripting Basics_
   * _Variables_
   * _ifstatements_
-
+* [Section 2](#section-2)
+* [References](#references)
 ## Purpose
 Bash `scripting` is a great way to automate tasks within ***linux*** to make navigating through information easy. It is fully customizable to satisfy the specific needs of the ***user***. This project is a great way to utilize the command line and get use to many linux commands.
 
@@ -15,7 +16,7 @@ Bash `scripting` is a great way to automate tasks within ***linux*** to make nav
 
 * Command line [downloand linux here](https://ubuntu.com/desktop/wsl)
 
-### Chapter 1 
+### Section 1 
 
 ---
 _Scripting Basics_
@@ -440,6 +441,56 @@ _Help Commands_
 - `man` : system manual
 - `info` : advanced manual system primarily used for GNU programs.
 
+## Section 2
+
+_Manipulating Output_
+
+There are two commands that I will touch on when it comes to manipulating output on the terminal. 
+
+| Command   | Description  |
+|-----------|--------------|
+| `echo`    | display a line of text|
+| `printf`  | format and print data |
+
+_Colored Text_
+
+***ANSI***
+
+| Color    | Foreground(Text Color) | Background (Text Highlight) |
+| :---:|          :---:                              | :---: |
+| Black    |    30                  |   40  
+| Red      |    31                  |   41                         |
+| Green    |    32                  |   42
+| Yellow   |    33                  |   43
+| Blue     |    34                  |   44
+| Magenta  |    35                  |   45
+| Cyan     |    36                  |   46
+| White    |    37                  |   47
+
+_Syled text (ANSI)_
+
+| Style | Value |
+| :---: | :---: |
+| No Style | 0 |
+| Bold     | 1 |
+| Low Intensity | 2 |
+| Underline | 4 |
+| Blinking  | 5 |
+| Reverse   | 7 | 
+| Invisible | 8 |
+
+```bash
+#!/usr/bin/bash
+
+
+
+echo -e "\033[34;42mText\033[0m"
+
+```
+
+
+## References
+
 ***Links***
 - [ ] [Advanced Bash Usage](https://youtube.com/watch?v=uqHjc7hlqd0) by [James Pannacciullia](https://youtube.com/@jamespannacciulli3029)
-- [ ]
+- [ ] [Advanced Bash Scripting Tutorial](https://youtube.com/watch?v=embhouufDnB4&t=2675s) by [Cybersecurity Shandy](https://youtube.com/@cybersecurityshandy9181)
