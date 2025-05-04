@@ -452,9 +452,9 @@ There are two commands that I will touch on when it comes to manipulating output
 | `echo`    | display a line of text|
 | `printf`  | format and print data |
 
-_Colored Text_
-
 ***ANSI***
+
+_Colored Text_
 
 | Color    | Foreground(Text Color) | Background (Text Highlight) |
 | :---:|          :---:                              | :---: |
@@ -482,10 +482,19 @@ _Syled text (ANSI)_
 ```bash
 #!/usr/bin/bash
 
+# \033 is a escape character (ASCII 27)
+# -e allows escape characters
+# [1 = Bold Text
+# [34 = Font Color Green 
+# [40 = Highlight Text Black
+# [0m = Resets color and attributes
+# Refer to the ANSI table above to adjust for you liking
 
+echo -e "\033[1;34;42mText\033[0m"
 
-echo -e "\033[34;42mText\033[0m"
+OR
 
+printf "\033[1;34mText\033[0m"
 ```
 
 
