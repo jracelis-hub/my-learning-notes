@@ -2,6 +2,9 @@
 
 ## Table of Contents
 
+* [***Terminology***](#terminology)
+  * [_What is Bash?_](#what-is-bash)
+  * [_Definitions_](#definitions)
 * [***Purpose***](#purpose)
 * [***Prerequisites***](#prerequisites)
 * [***Section 1: Introduction***](#section-1-introduction)
@@ -9,7 +12,6 @@
   * [_Variables_](#variables)
   * [_Help Commands_](#-help-commands)
 * [***Section 2: Advanced Bash Concepts***](#section-2-advanced-bash-concepts)
-  * [_Definition_](#definitions)
   * [_Return Status_](#return-status)
   * [Compund Commands](#compound-commands)
     * [_Looping Contructs_ ***(While, Until, For, Select)***](#looping-constructs)
@@ -25,10 +27,22 @@
 * [***References***](#references)
   * [_Links_](#links)
 
-## Purpose
-Bash `scripting` is a great way to automate tasks within ***linux*** to make navigating through information easy. It is fully customizable to satisfy the specific needs of the ***user***. This project is a great way to utilize the command line and get use to many linux commands.
+## ***Terminology***
 
-## Prerequisites
+### ***What is BASH?***
+Bash is the shell, or command language interpreter, for the GNU ***(GNU's Not Unix)***. While Bash stands for ***Bourne-Again Shell***
+
+### ***Definitions***
+
+- **word** : sequence of ***characters*** considered to be a single unit.
+- **list** : sequence of ***commands*** or ***pipelines***
+- **name** : a ***word*** consisting only a alphanumberic characters and underscores. can <ins>not</ins> begin with a numeric character.
+- **parameter** : an ***entity*** that stores ***values***. a variable is a parameter denoted by a **name**; there are also _positional_ and _special_ parameters.
+
+## ***Purpose***
+Bash `scripting` is a great way to automate tasks within a ***GNU*** operating system to make navigating through information easy. It is fully customizable to satisfy the specific needs of the ***user***. This project is a great way to utilize the command line and get use to many linux commands.
+
+## ***Prerequisites***
 
 * Command line [downloand linux here](https://ubuntu.com/desktop/wsl)
 
@@ -110,13 +124,6 @@ cd ${WORK_DIRECTORY}
 
 
 ## ***Section 2: Advanced Bash Concepts***
-
-### ***Definitions***
-
-- **word** : sequence of ***characters*** considered to be a single unit.
-- **list** : sequence of ***commands*** or ***pipelines***
-- **name** : a ***word*** consisting only a alphanumberic characters and underscores. can <ins>not</ins> begin with a numeric character.
-- **parameter** : an ***entity*** that stores ***values***. a variable is a parameter denoted by a **name**; there are also _positional_ and _special_ parameters.
 
 ### ***Return Status***
 
