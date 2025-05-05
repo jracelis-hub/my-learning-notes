@@ -161,7 +161,7 @@ _(Typically) iterate based on an external resource_
 
 ---
 
-**For and Select Loops**
+**For and Select Loops**  
 _Iterate based on command line arguments_
 
 `for` **name** `in` **words**; do **list**; `done`
