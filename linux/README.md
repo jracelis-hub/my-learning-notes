@@ -285,8 +285,8 @@ _Pattern matching is used in Bash for the **[[** and `case` keywords, **pathname
 
 > Evaluate _conditional expression_ with the **[[** keyword; word splitting <ins>not</ins> preformed. The righthand side of a string comparison ( **==** , **!=** ) is treated as a **pattern when not quoted**, and as a **string when quoted**.
 
-| `test`                           | Definition                                     |
-|----------------------------------|------------------------------------------------|
+| `test`     |       Definition        |
+|---------|------------------------------------------------|
 | **[[ -n string ]]**                | **string** is _non-empty_                      
 | **[[ -z string ]]**                | **string** is _empty_
 | **[[ string1 == string2 ]]**     | **string1** and **string2** are _same_
@@ -309,7 +309,7 @@ Grouped **list** of commands, sharing any external redirections and whose return
 <details>
 <summary>Command Groups</summary>
 
-**Subshell**:
+***Subshell***:
 
 * Evaluate **list** of commands in a ***subshell***, meaning that its environment is distinct from the current shell and its parameters are contained.  
 ```bash
@@ -354,7 +354,7 @@ There are two commands that I will touch on when it comes to manipulating output
 
 ***ANSI***
 
-_Colored Text_
+_Colored Text (ANSI)_
 
 | Color    | Foreground(Text Color) | Background (Text Highlight) |
 | :---:|          :---:                              | :---: |
@@ -366,6 +366,8 @@ _Colored Text_
 | Magenta  |    35                  |   45
 | Cyan     |    36                  |   46
 | White    |    37                  |   47
+
+---
 
 _Syled text (ANSI)_
 
@@ -401,6 +403,40 @@ printf "\033[1;34mText\033[0m"
 ```
 
 </details>
+
+---
+
+***Tput***
+
+_Colored Text (tput)_
+
+| Color | setaf(text color) | setab(text highlight) |
+| :---: | :---: | :---: |
+| Black | 0 | 0 |
+| Red | 1 | 1 |
+| Green | 2 | 2 |
+| Yellow | 3 | 3 |
+| Blue | 4 | 4 |
+| Magenta | 5 | 5 |
+| Cyan | 6 | 6 |
+| White | 7 | 7 |
+
+---
+
+_Styled Text (tput)_
+
+| Style | Command |
+| :--: | :---: |
+| Foreground | tput setaf [0-7]
+| Background | tput setab [0-7]
+| No Style | tput sgv0
+| Bold | tput bold
+| Low Intensity | tput dim
+| Underline | tput smul
+| Blinking | tput blink
+| Reverse | tput rev
+
+
 
 ## ***Appendix***
 
