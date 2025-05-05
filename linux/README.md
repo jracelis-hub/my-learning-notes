@@ -184,6 +184,7 @@ _Iterate based on command line arguments_
 <summary>Select Example</summary>
 
 ```bash
+INPUT
 #!/usr/bin/env bash
 
 #Variable Array
@@ -201,7 +202,9 @@ select choice in "${myName[@]}"; do
     echo "$REPLY": You choose ${choice}  
 done
 }
+```
 
+```
 OUTPUT
 
 1) Jarron
