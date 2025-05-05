@@ -7,6 +7,7 @@
 * [***Section 1: Introduction***](#section-1-introduction)
   * [_Scripting Basics_](#scripting-basics)
   * [_Variables_](#variables)
+  * [_Help Commands_](#-help-commands)
 * [***Section 2: Advanced Bash Concepts***](#section-2-advanced-bash-concepts)
   * [_Definition_](#definitions)
   * [_Return Status_](#return-status)
@@ -96,7 +97,14 @@ cd ${WORK_DIRECTORY}
 > * Variable "contents" enclosed with quotation
 > * Enclose contents in `${BRACKETS}` 
 
----
+### ***Help Commands***  
+
+- `type`: determined type of command, list contets of aliases and functions.
+- `help` : display usagage information about bash bultins and keywords
+- `apropos` : search man pages
+- `man` : system manual
+- `info` : advanced manual system primarily used for GNU programs.
+
 
 ## ***Section 2: Advanced Bash Concepts***
 
@@ -151,7 +159,7 @@ _(Typically) iterate based on an external resource_
 ---
 
 **For and Select Loops**
-_Iterate baed on commad line arguements_
+_Iterate based on command line arguments_
 
 `for` **name** `in` **words**; do **list**; `done`
 
@@ -177,7 +185,7 @@ _Iterate baed on commad line arguements_
 
 #Variable Array
 
-myName=( "Jarron" "Racelis" "Hayeon" )
+myName=( "Jarron" "Racelis" "Joe Bob" )
 
 function choose_name {
 
@@ -195,7 +203,7 @@ OUTPUT
 
 1) Jarron
 2) Racelis
-3) Hayeon
+3) Joe Bob
 #? 1 <---- Enter Input and Below is the Output
 1 : You choose Jarron
 ```
@@ -219,7 +227,7 @@ Execute **list** of commands only if certain conditions are met.
 
 `if` **list1**; `then` **list2**; `fi`
 
-* Evaluate **list1**, then evaluate **list2** only if **list1** returns a status of **0**
+* Evaluate **list1**, then evaluate **list2** only if **list1** returns a status of **0**.
 
 `if` **list1**; `then` **list2**; `else` **list3**; `fi`
 
@@ -231,10 +239,11 @@ Execute **list** of commands only if certain conditions are met.
 
 ---
 
-Pattern Matching
-_Pattern matching is used in Bash for the **[[** and `case` keywords, **pathname expansion** and some types of **parameter expansion**_
+***Pattern Matching***  
 
-* **\*** : Maches any string, including null.  
+_Pattern matching is used in Bash for the **[[** and `case` keywords, **pathname expansion** and some types of **parameter expansion**_.
+
+* **\*** : Matches any string, including null.  
 * **?** : Matches any single character.  
 * **[character class]** : Matches any one of the characterse enclosed between **[** and **]**.
 
@@ -272,8 +281,8 @@ _Pattern matching is used in Bash for the **[[** and `case` keywords, **pathname
 
 | `test`                           | Definition                                     |
 |----------------------------------|------------------------------------------------|
-| **[[-n string]]**                | **string** is _non-empty_                      
-| **[[-z string]]**                | **string** is _empty_
+| **[[ -n string ]]**                | **string** is _non-empty_                      
+| **[[ -z string ]]**                | **string** is _empty_
 | **[[ string1 == string2 ]]**     | **string1** and **string2** are _same_
 | **[[ string1 != string2 ]]**      | **string1** and **string2** are _not the same_
 | **[[ string =~ regex ]]**         | **string** _matches_ **regular expression**
@@ -288,7 +297,7 @@ Grouped **list** of commands, sharing any external redirections and whose return
 
 ```bash
 #Example
-                      (list)  {list;}
+                      (list) {list;}
 ```
 
 <details>
@@ -298,13 +307,13 @@ Grouped **list** of commands, sharing any external redirections and whose return
 
 * Evaluate **list** of commands in a ***subshell***, meaning that its environment is distinct from the current shell and its parameters are contained.  
 ```bash
-                       (list)
+                         (list)
 ```
 **Group Command**: 
 
 * Evaluate **list** of commands in the ***current shell***, sharing the current shell's environment.
 ```bash
-                       {list;}
+                         {list;}
 ```
 
 </details>
@@ -313,7 +322,7 @@ Grouped **list** of commands, sharing any external redirections and whose return
 
 ## ***Section 3: STDIN, STDOUT, STDERROR***
 
-#### ***Redirection***
+### ***Redirection***
 
 _Controlling the input, output, error, and other streams_
 
@@ -328,7 +337,7 @@ _Controlling the input, output, error, and other streams_
 * Alternative file descriptors may be specified by **prepending** `fd number`, e.g `2>file` to redirect `fd 2` **(STDERR)**
 * To redirect to a file descriptor, append ***&*** and the fd number, e.g `2>&1` to redirect ***STDERR*** to the current target ***STDOUT***.
 
-#### ***Manipulating Output***
+### ***Manipulating Output***
 
 There are two commands that I will touch on when it comes to manipulating output on the terminal. 
 
@@ -364,6 +373,9 @@ _Syled text (ANSI)_
 | Reverse   | 7 | 
 | Invisible | 8 |
 
+<details>
+<summary>ANSI Example</summary>
+
 ```bash
 #!/usr/bin/bash
 
@@ -382,13 +394,7 @@ OR
 printf "\033[1;34mText\033[0m"
 ```
 
-_Help Commands_
-
-- `type`: determined type of command, list contets of aliases and functions.
-- `help` : display usagage information about bash bultins and keywords
-- `apropos` : search man pages
-- `man` : system manual
-- `info` : advanced manual system primarily used for GNU programs.
+</details>
 
 ## ***Appendix***
 
