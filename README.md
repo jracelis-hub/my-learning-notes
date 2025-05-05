@@ -1,45 +1,62 @@
-# My Learning Journey
+# TCM_Gen_1_Work_Station_Setup
 
-> [!IMPORTANT]
-> This document is a working progress
+## :bookmark_tabs: ***Table of Contents***
+* [:books: ***Introduction***](#books-introduction)
+    * [:blue_book: _Description_](#blue_book-description)
+    * [:green_book: _Purpose_](#green_book-purpose)
+    * [:notebook: _Terminology_](#terminology)
+* [:arrows_counterclockwise: ***Work Flow***](#arrows_counterclockwise-work-flow)
+    * [:notebook: _Scripts_](#notebook-scripts)
+* [:bust_in_silhouette: ***Contribution***](#contribution)
 
 
-## Table of Contents
+## :books: ***Introduction***
 
-* [Introduction](#introduction)
-* [Repository Topics](#repository-topics)
+### :blue_book: ***Description*** 
 
-    * _C Programing_
-    * _Container_
-    * _Linux_
-    * _Networking_
-    * _Virtual Machine_
-    * _Images_
-    
-* [Contact](#contact)   
+---
 
-## Introduction
+The following repositiory **TCM_Gen_1_Work_Station_Setup** is the centrialized location to grab the latest versions of the TCM work bench scripts.
 
-**Description**
+### :green_book: ***Purpose***
 
-This is a page where I will documents and track all my learnings from several different fields of study.
+---
 
-## About Me
+The purpose of creating scripts is to have an automated process when preforming the tasks needed to _"remanufacture"_ ***software*** failed TCMs. Upon creating our own scripts, the reman team can **maintain, update, add,** and **remove** specific `commands` as needed.
 
-**Background**
+***Why Not Use RIDE-CLI?***  
+The idea behind why our team does not want to **rely** on ***RIDE-CLI*** is due to the nature of abundant `commands` the technician can preform without knowing what it does. Since, _remanufacturing_ suits specific requirements, we want to create `commands` based on ***OUR*** requirements.
 
-I graduated from **California State University, Fullerton** with a _Bachelors_ in _Mechanical Engineer_ where my first engineering job was in the pcb _(print circuit board)_ manufacturing industry. From there, I moved to Rivian where I began to learning more integration of hardware + software. I was intrugied by the software side of things, which made me pursue a deeper learning outside of work. Here I centralized area where I can keep all my notes in once spot while challenging myself with new topics.
+> ![NOTE]
+> This does not mean we won't utilize **RIDE-CLI**. We will utilize the resource when necessary.
 
-## Repository Topics
+### :notebook: Terminology
 
-* [_C Programing_](https://github.com/jracelis-hub/my-learning-notes/tree/main/c_programming) :open_file_folder:
-* [_Container_](https://github.com/jracelis-hub/my-learning-notes/tree/main/container) :open_file_folder:
-* [_Linux_](https://github.com/jracelis-hub/my-learning-notes/tree/main/linux) :open_file_folder: 
-* [_Networking_](https://github.com/jracelis-hub/my-learning-notes/tree/main/networking) :open_file_folder:
-* [_Virtual Machine_](https://github.com/jracelis-hub/my-learning-notes/tree/main/virtual_machine) :open_file_folder:
-* [_Images_](https://github.com/jracelis-hub/my-learning-notes/tree/main/images) 📷
+---
 
-### Contact
->  Name: _Jarron Racelis_ \
->  Email: _jarron.racelis@gmail.com_
+|       _Commands_                  |       _Description_              |
+----------------------------------|--------------------------------|
+|       read      | to read information from TCM                     
+|       log       | to log information from TCM 
+|       scp       | to secure copy script into TCM                                       
+|       wipe      | to wipe files/paritions/scripts/directories/logs from the TCM
+
+## :arrows_counterclockwise: ***Work Flow***
+
+---
+
+
+### :notebook: ***Scripts***
+
+---
+
+- [tcm_work_bench_scripts](https://gitlab.com/jarronracelis/tcm_gen_1_work_station_setup/-/tree/main/tcm_work_bench_scripts) :open_file_folder:
+    - [partition_wipe](https://gitlab.com/jarronracelis/tcm_gen_1_work_station_setup/-/tree/main/tcm_work_bench_scripts/partition_wipe) :open_file_folder:
+    - [wipe_hsm](https://gitlab.com/jarronracelis/tcm_gen_1_work_station_setup/-/tree/main/tcm_work_bench_scripts/wipe_hsm) :open_file_folder:
+    - [get_scripts](https://gitlab.com/jarronracelis/tcm_gen_1_work_station_setup/-/tree/main/tcm_work_bench_scripts/get_scripts) :open_file_folder:
+
+
+### :bust_in_silhouette: Contribution
+>  Information is updated and maintained by Jarron Racelis \
+>  Contact: jarronracelis@rivian.com
 
