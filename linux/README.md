@@ -169,7 +169,6 @@ _Iterate baed on commad line arguements_
 > Create a menu item for each **word**. Each time the user makes a selection from the manu, **name** is assigned the value of the selected **word** and **REPLY** is assigned the **index** number of the selection.
 
 <details>
-
 <summary>Select Example</summary>
 
 ```bash
@@ -198,13 +197,11 @@ OUTPUT
 3) Hayeon
 #? 1 <---- Enter Input and Below is the Output
 1 : You choose Jarron
-
 ```
 
+</details>
 
-
-
----
+</details>
 
 #### ***Conditionals:***
 
