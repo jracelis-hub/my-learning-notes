@@ -370,8 +370,6 @@ _Colored Text (ANSI)_
 | Cyan     |    36                  |   46
 | White    |    37                  |   47
 
----
-
 _Syled text (ANSI)_
 
 | Style | Value |
@@ -413,7 +411,7 @@ printf "\033[1;34mText\033[0m"
 
 _Colored Text (tput)_
 
-| Color | setaf(text color) | setab(text highlight) |
+| Color | setaf(Text Color) | setab(Text Highlight) |
 | :---: | :---: | :---: |
 | Black | 0 | 0 |
 | Red | 1 | 1 |
@@ -425,8 +423,6 @@ _Colored Text (tput)_
 | White | 7 | 7 |
 | Not Used | 8 | 8 |
 | Reset to default | 9 | 9 |
-
----
 
 _Styled Text (tput)_
 
@@ -451,14 +447,15 @@ function color_change_tput {
 
   echo "$(tput setaf 1; tput bold)ERROR: $(tput setaf 7; tput sgr0) INVALID INPUT"
 
+  # ERROR text is red and bolded
+  # INVALID INPUT text is white and reset to default
+
   or
 
   printf "$(tput setaf 1; tput bold)ERROR:\t $(tput setaf 9; tput sgr0) INVADLID INPUT"
 
 }
-
 ```
-
 
 </details>
 
