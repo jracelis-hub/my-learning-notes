@@ -27,7 +27,7 @@ The purpose of creating scripts is to have an automated process when preforming 
 ***Why Not Use RIDE-CLI?***  
 The idea behind why our team does not want to **rely** on ***RIDE-CLI*** is due to the nature of abundant `commands` the technician can preform without knowing what it does. Since, _remanufacturing_ suits specific requirements, we want to create `commands` based on ***OUR*** requirements.
 
-> ![NOTE]
+> [!NOTE]
 > This does not mean we won't utilize **RIDE-CLI**. We will utilize the resource when necessary.
 
 ### :notebook: Terminology
