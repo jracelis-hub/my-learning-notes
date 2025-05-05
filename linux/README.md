@@ -66,6 +66,13 @@ or
 * Any character excepter the first can be a number
 * No spaces between the variable the = sign
 
+> [!TIP]
+> _Best practice_   
+> * Variable names in all CAPS  
+> * Variable spaces used underscores _  
+> * Variable "contents" enclosed with quotation
+> * Enclose contents in `${BRACKETS}`
+
 ```bash
 # EXAMPLE
 
@@ -90,14 +97,10 @@ cd ${WORK_DIRECTORY}
 
 ```
 
-> [!TIP]
-> _Best practice_   
-> * Variable names in all CAPS  
-> * Variable spaces used underscores _  
-> * Variable "contents" enclosed with quotation
-> * Enclose contents in `${BRACKETS}` 
-
 ### ***Help Commands***  
+
+> [!Note]
+> For more information use the following commands to go more indepth into the concepts
 
 - `type`: determined type of command, list contets of aliases and functions.
 - `help` : display usagage information about bash bultins and keywords
