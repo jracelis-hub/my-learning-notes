@@ -420,31 +420,42 @@ _Colored Text (tput)_
 | Magenta | 5 | 5 |
 | Cyan | 6 | 6 |
 | White | 7 | 7 |
+| Not Used | 8 | 8 |
+| Reset to default | 9 | 9 |
 
 ---
 
 _Styled Text (tput)_
 
 | Style | Command |
-| :--: | :---: |
-| Foreground | tput setaf [0-7]
-| Background | tput setab [0-7]
-| No Style | tput sgv0
+| :---: | :---: |
+| Foreground | tput setaf [0-9]
+| Background | tput setab [0-9]
+| No Style | tput sgr0
 | Bold | tput bold
 | Low Intensity | tput dim
 | Underline | tput smul
 | Blinking | tput blink
 | Reverse | tput rev
 
-<detail>
+<details>
 <summary>Tput Exmaple</summary>
 
 ```bash
 #!/usr/bin/env bash
 
+function color_change_tput {
 
+  echo "$(tput setaf 1; tput bold)ERROR: $(tput setaf 7; tput sgr0) INVALID INPUT"
+
+  or
+
+  printf "$(tput setaf 1; tput bold)ERROR:\t $(tput setaf 9; tput sgr0) INVADLID INPUT"
+
+}
 
 ```
+
 
 </details>
 
