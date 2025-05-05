@@ -436,7 +436,17 @@ _Styled Text (tput)_
 | Blinking | tput blink
 | Reverse | tput rev
 
+<detail>
+<summary>Tput Exmaple</summary>
 
+```bash
+#!/usr/bin/env bash
+
+
+
+```
+
+</details>
 
 ## ***Appendix***
 
