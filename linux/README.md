@@ -20,6 +20,12 @@
 * [***Section 3: STDIN, STDOUT, STDERROR***](#section-3-stdin-stdout-stderror)
   * [_Redirection_](#redirection)
   * [_Manipulating Output_](#manipulating-output)
+* [***Section 4 Parameter Manipulation***](#section-4-parameter-manipulation)
+  * [_Parameters_](#parameters)
+    * [_Parameter Expansion: Conditionals_](#parameter-expansion-conditionals)
+    * [_Parameter Expansion: Substring_](#parameter-expansion-substring)
+    * [_Parameter Expansion: Indirection Listing and Length_](#parameter-expansion-indirection-listing-and-length)
+    * [_Parameter Expansion: Pattern Substitution_](#-parameter-expansion-pattern-substitution)
 * [***Appendix***](#appendix)
   * [_Table References_](#table-references)
     * [_Bash Operators_](#bash-operators)
@@ -38,6 +44,7 @@ Bash is the shell, or command language interpreter, for the GNU ***(GNU's Not Un
 - **list** : sequence of ***commands*** or ***pipelines***
 - **name** : a ***word*** consisting only a alphanumberic characters and underscores. can <ins>not</ins> begin with a numeric character.
 - **parameter** : an ***entity*** that stores ***values***. a variable is a parameter denoted by a **name**; there are also _positional_ and _special_ parameters.
+- **POSIX**: _portable operating system interface_ a family of open system standards based on Unix.
 
 ## ***Purpose***
 Bash `scripting` is a great way to automate tasks within a ***GNU*** operating system to make navigating through information easy. It is fully customizable to satisfy the specific needs of the ***user***. This project is a great way to utilize the command line and get use to many linux commands.
@@ -465,6 +472,98 @@ function color_change_tput {
 ```
 
 </details>
+
+## ***Section 4: Parameter Manipulation***
+
+### ***Parameters***
+
+**Postional Parameters:** `$1 $2 $3 $4 $5 $6 $7 $8 $9 ${10}`  
+
+* Parmeters passed to command, encapsulating ***words*** on the command line as ***arguments***.
+
+**Special Parameters:** `$* $@ $# $- $0 $! $? $_`
+
+* Parameters providing ***information*** about positional parameters, the current shell, and the previous command.
+
+---
+
+#### ***Parameter Expansion: Conditionals***
+
+***"param" = parameter***
+
+|          | **unset** param | param="" | param="**gnu**" |
+|----------| :---: | :---: | :---: |
+| `${param-default}` | default | - | gnu |
+| `${param=default}` | name=default | - | gnu |
+| `${param+alternate}` | - | alternate | alternate |
+| `${param?error}` | error | - | gnu |
+
+**Treat empty as unset:**
+
+|          | **unset** param | param="" | param="**gnu**" |
+| ---------| :---: | :---: | :---: |
+| `${param:-default}` | default | default | gnu |
+| `${param:=default}` | name=default | name=default | gnu
+| `${param:+alternate}` | - | - | alternate |
+| `${param:?error}` | error | error | gnu
+
+---
+
+#### ***Parameter Expansion: Substring***
+
+|       |     Output      |
+|-------|:---:|
+| **Extraction:** | offset of **3**,length of **2** |
+| `${param:offset}` | ecar |
+| `${param:offset:length}` | ce |
+| **Removal from left edge:** | pattern is '***c**' |
+| `${param#pattern}` | ecar |
+| `${param##pattern}` | ar |
+| **Removal from right edge:** | pattern is '**c*** |
+| `${param%pattern}` | race |
+| `${param%%pattern}` | ra |
+
+> Can use ${param:} for output maniuplation
+```bash
+PARAM="thought"
+
+${PARAM:3} = "ught" it "offsets" 3 letters from left to right
+${PARAM:3:2} = "ug" "ofsets" 3 with a length of 2 characters
+
+# Noticed the * is on the left of the pattern therefore removing everything starting from the pattern and leftwards
+${PARAM#*u} = "ght" it removes everything from the first u untill the left
+
+# Noticed the * is on the right of the pattern therefore removing everything starting from the pattern and rightwards
+${PARAM%u*} = "tho" it removes everything from the first u untill the right
+
+```
+
+---
+
+#### ***Parameter Expansion: Indirection, Listing, and Length***
+
+|   | param="**parade**";parade="**long**";name=(**gnu not unix**) 
+|---|:---:|
+| **Indirect expansion:** |
+| `${!param}` | long |
+| **List names mataching prefix "**pa**": |
+| `${!pa*}` or `${!pa@}` | parade param |
+| **List keys in array:** |
+| `${!name[*]}` or `${!name[@]}` | 0 1 2 |
+| **Expand to length:** | |
+| `${#param}` | 6 | 
+
+#### *** Parameter Expansion: Pattern Substitution***
+
+| | `param="**racecar**"
+|---|---|
+|**Substitution:** | `pattern is '**c?**', string is '**T**'` |
+| `${param/pattern/string}` | ra**T**car |
+| `${param//pattern/string}` | ra**TT**r |
+| **Substitute at left edge:** | `pattern is '**r**', string is '**T**`
+| `${param/#pattern/string}` | **T**acecar |
+| **Substitute at right edge:**| |
+| `${param/%pattern/strig}` | raceca**T** |
 
 ## ***Appendix***
 
