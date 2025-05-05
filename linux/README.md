@@ -2,13 +2,27 @@
 
 ## Table of Contents
 
-* [Purpose](#purpose)
-* [Section 1](#Section-1)
-  * _Scripting Basics_
-  * _Variables_
+* [***Purpose***](#purpose)
+* [***Prerequisites***](#prerequisites)
+* [***Section 1: Introduction***](#section-1-introduction)
+  * [_Scripting Basics_](#scripting-basics)
+  * [_Variables_](#variables)
   * _ifstatements_
-* [Section 2](#section-2)
-* [References](#references)
+* [***Section 2: Advanced Bash Concepts***](#section-2-advanced-bash-concepts)
+  * [_Return Status_](#return-status)
+  * [_Definition_](#definitions)
+  * [_Looping Contructs_ ***(While, Until, For, Select)***](#looping-constructs)
+  * [Conditional Constructs ***(If, Case, Test)***](#condition-constructs)
+* [***Section 3: STDIN, STDOUT, STDERROR***](#section-3-stdin-stdout-stderror)
+  * [_Redirection_](#redirection)
+  * [_Manipulating Output_](#manipulating-output)
+* [***Appendix***](#appendix)
+  * [_Table References_](#table-references)
+    * [_Bash Operators_](#bash-operators)
+    * [_Commands_](#commands)
+* [***References***](#references)
+  * [_Links_](#links)
+
 ## Purpose
 Bash `scripting` is a great way to automate tasks within ***linux*** to make navigating through information easy. It is fully customizable to satisfy the specific needs of the ***user***. This project is a great way to utilize the command line and get use to many linux commands.
 
@@ -16,10 +30,9 @@ Bash `scripting` is a great way to automate tasks within ***linux*** to make nav
 
 * Command line [downloand linux here](https://ubuntu.com/desktop/wsl)
 
-### Section 1 
+## ***Section 1: Introduction***
 
----
-_Scripting Basics_
+### ***Scripting Basics***
 
 The _shebang_ or `#!/bin/bash or #!/usr/bin/env bash` is the first shell script that has to be included to be able to intreprete the specific programing that is being utilized.
 
@@ -42,94 +55,9 @@ or
 
 #!/usr/bin/env bash [more portable]
 #!/bin/bash [also seen]
-``` 
+```
 
-<details>
-<summary>Bash Operators</summary>
-
-| Comparison Operators  | Description |
-|-------|---------------------------------|
-| `-eq` | equal to
-| `-ne` | not equal to
-| `-lt` | less than
-| `-le` | less than or equal to
-| `-gt` | greater than
-| `-ge` | greater than or equal to 
-
-| String Comparison     | Description   |
-|---------|-----------------------------|
-| `=`     | equal to
-| `!=`    | not equal to
-| `<`     | less than, in ASCII alphabetical order
-| `>`     | greater than, in ASCII alphabeteric order
-
-| Arithmetic Operators | Description    |
-|---------|-----------------------------|
-| `+`     | addition
-| `-`     | subtraction
-| `*`     | multiplication
-| `/`     | division
-| `%`     | modulus (remainer of divison)
-
-| Logical Operators | Description |
-|-------------------|-------------|
-| `&&`    | logical AND
-| `\|\|`    | logical OR
-| `!`     | logical NOT
-
-| File Test Operators | Description |
-|---------------------|-------------|
-| `-e` | checks if a file exists
-| `-d` | checks if a directory exists
-| `-f` | check if a file is regular file
-| `-s` | checks ifa file is not empty
-
-</details>
-
-
-<details>
-<summary>Commands Cheat Sheet</summary>
-
-| Commands    | Description                          |
-|-------------|-------------------------------
-| `echo`      | to display output                             
-| `cd`        | to change directories
-| `ls`        | to list contents in directory
-| `pwd`       | print working directory
-| `rm`        | remove file
-| `rmdir`     | remove directory
-| `mkdir`     | make directory
-| `touch`     | to change file timestamps or create an empty file if ti doesn't exist
-| `whereis`   | 
-| `locate`    |
-| `whatis`    |
-| `chmod`     | change file mode
-| `grep`      | to search for text patterns within files
-| `awk`       | used for pattern scanning and processing language
-| `sort`      | to sort lines of text files
-| `find`      | to find a specific name/file/folder
-| `sed`       | a stream editor used to preform basic text ransformations on an input stream (a file or input from a pipeline).
-| `paste`     | 
-| `cut`       | to remove sections from each line of files
-| `pv`        | pipe viewier
-| `diff`      |
-| `tar`       | to archive or unarchive a file/folder (can also zip with the -z flag)
-| `zstd`      | to unzip a .zst file
-| `ssh-keygen`| 
-| `ssh`       | to connect to a remote machine securely
-| `scp`       | to securely copy files between hosts on a network
-| `tail`      | to display the last parts if files
-| `head`      | to display first part of files
-| `curl`      | to transfer data from or to a server using various protocols like HTTP, HTTPS, FTP and more.
-| `wget`      | to download files from the web
-
-
-
-</details>
-
----
-
-_Variables_
+#### ***Variables***
 
 * Variables could be initiated with the variable name equal to the contents. 
 * Must begin with a letter or an underscore
@@ -200,10 +128,9 @@ else
 fi
 ```
 
-### Advanced Bash Concepts
----
+## ***Section 2: Advanced Bash Concepts***
 
-_Return Status_
+### ***Return Status***
 
 ```bash
 Success: Command should return a status of 0.
@@ -214,16 +141,16 @@ Failure: Command should return a non-zero status.
 > The return value of the last command to have executed is captured in the speical parameter $?
 ```
 
-_Definitions_
+### ***Definitions***
 
 - **word** : sequence of ***characters*** considered to be a single unit.
 - **list** : sequence of ***commands*** or ***pipelines***
 - **name** : a ***word*** consisting only a alphanumberic characters and underscores. can <ins>not</ins> begin with a numeric character.
 - **parameter** : an ***entity*** that stores ***values***. a variable is a parameter denoted by a **name**; there are also _positional_ and _special_ parameters.
 
-_Compound Commands_
+### ***Compound Commands***
 
-Iteration:
+#### ***Iteration:***
 
 Continuously loop over **list** of commands delineated by the keywords of `do` and `done`.
 
@@ -246,7 +173,7 @@ _(Typically) iterate based on an external resource_
 
 ---
 
-`unitil` **list1**; `do` **lists2**; `done`
+`until` **list1**; `do` **lists2**; `done`
 
 > execute **list1**; if **failure**, execute **lists2** and repeat.  
 > continue unit **list1** returns a status of **0** _(succeeds)_.
@@ -305,36 +232,12 @@ OUTPUT
 
 ```
 
-</details>
+
+
 
 ---
 
-`test`
-
-**[expression]** or `test` **expression**
-
-> Evaluate _conditional expression_ with the `test` builtin.
-
-**[[expression]]**
-
-> Evaluate _conditional expression_ with the **[[** keyword; word splitting <ins>not</ins> preformed. The righthand side of a string comparison ( **==** , **!=** ) is treated as a **pattern when not quoted**, and as a **string when quoted**.
-
-| `test`                           | Definition                                     |
-|----------------------------------|------------------------------------------------|
-| **[[-n string]]**                | **string** is _non-empty_                      
-| **[[-z string]]**                | **string** is _empty_
-| **[[ string1 == string2 ]]**     | **string1** and **string2** are _same_
-| **[[ string1 != string2 ]]**      | **string1** and **string2** are _not the same_
-| **[[ string =~ regex ]]**         | **string** _matches_ **regular expression**
-| **[[ -e file ]]**                | **file** _exists_
-| **[[ -f file] ]**                  | **file** is a _regular file_
-| **[[ -d file ]]**                | **file** is a _directory_
-| **[[ -t fd ]]**                  | **fd** is _open_ and refers to a _terminal_
-
-</details>
-
----
-Conditionals:
+#### ***Conditionals:***
 
 Execute **list** of commands only if certain conditions are met.
 
@@ -389,7 +292,31 @@ _Pattern matching is used in Bash for the **[[** and `case` keywords, **pathname
 
 </details>
 
-Command groups:
+#### ***Conditional Tests***
+
+`test`
+
+**[expression]** or `test` **expression**
+
+> Evaluate _conditional expression_ with the `test` builtin.
+
+**[[expression]]**
+
+> Evaluate _conditional expression_ with the **[[** keyword; word splitting <ins>not</ins> preformed. The righthand side of a string comparison ( **==** , **!=** ) is treated as a **pattern when not quoted**, and as a **string when quoted**.
+
+| `test`                           | Definition                                     |
+|----------------------------------|------------------------------------------------|
+| **[[-n string]]**                | **string** is _non-empty_                      
+| **[[-z string]]**                | **string** is _empty_
+| **[[ string1 == string2 ]]**     | **string1** and **string2** are _same_
+| **[[ string1 != string2 ]]**      | **string1** and **string2** are _not the same_
+| **[[ string =~ regex ]]**         | **string** _matches_ **regular expression**
+| **[[ -e file ]]**                | **file** _exists_
+| **[[ -f file] ]**                  | **file** is a _regular file_
+| **[[ -d file ]]**                | **file** is a _directory_
+| **[[ -t fd ]]**                  | **fd** is _open_ and refers to a _terminal_
+
+#### ***Command groups:***
 
 Grouped **list** of commands, sharing any external redirections and whose return value is that of the **list**
 
@@ -418,7 +345,9 @@ Grouped **list** of commands, sharing any external redirections and whose return
 
 ---
 
-_Redirection_
+## ***Section 3: STDIN, STDOUT, STDERROR***
+
+#### ***Redirection***
 
 _Controlling the input, output, error, and other streams_
 
@@ -433,17 +362,7 @@ _Controlling the input, output, error, and other streams_
 * Alternative file descriptors may be specified by **prepending** `fd number`, e.g `2>file` to redirect `fd 2` **(STDERR)**
 * To redirect to a file descriptor, append ***&*** and the fd number, e.g `2>&1` to redirect ***STDERR*** to the current target ***STDOUT***.
 
-_Help Commands_
-
-- `type`: determined type of command, list contets of aliases and functions.
-- `help` : display usagage information about bash bultins and keywords
-- `apropos` : search man pages
-- `man` : system manual
-- `info` : advanced manual system primarily used for GNU programs.
-
-## Section 2
-
-_Manipulating Output_
+#### ***Manipulating Output***
 
 There are two commands that I will touch on when it comes to manipulating output on the terminal. 
 
@@ -497,9 +416,94 @@ OR
 printf "\033[1;34mText\033[0m"
 ```
 
+_Help Commands_
+
+- `type`: determined type of command, list contets of aliases and functions.
+- `help` : display usagage information about bash bultins and keywords
+- `apropos` : search man pages
+- `man` : system manual
+- `info` : advanced manual system primarily used for GNU programs.
+
+## ***Appendix***
+
+### ***Table References***
+
+#### ***Bash Operators***
+
+| Comparison Operators  | Description |
+|-------|---------------------------------|
+| `-eq` | equal to
+| `-ne` | not equal to
+| `-lt` | less than
+| `-le` | less than or equal to
+| `-gt` | greater than
+| `-ge` | greater than or equal to 
+
+| String Comparison     | Description   |
+|---------|-----------------------------|
+| `=`     | equal to
+| `!=`    | not equal to
+| `<`     | less than, in ASCII alphabetical order
+| `>`     | greater than, in ASCII alphabeteric order
+
+| Arithmetic Operators | Description    |
+|---------|-----------------------------|
+| `+`     | addition
+| `-`     | subtraction
+| `*`     | multiplication
+| `/`     | division
+| `%`     | modulus (remainer of divison)
+
+| Logical Operators | Description |
+|-------------------|-------------|
+| `&&`    | logical AND
+| `\|\|`    | logical OR
+| `!`     | logical NOT
+
+| File Test Operators | Description |
+|---------------------|-------------|
+| `-e` | checks if a file exists
+| `-d` | checks if a directory exists
+| `-f` | check if a file is regular file
+| `-s` | checks ifa file is not empty
+
+#### ***Commands***
+
+| Commands    | Description                          |
+|-------------|-------------------------------
+| `echo`      | to display output                             
+| `cd`        | to change directories
+| `ls`        | to list contents in directory
+| `pwd`       | print working directory
+| `rm`        | remove file
+| `rmdir`     | remove directory
+| `mkdir`     | make directory
+| `touch`     | to change file timestamps or create an empty file if ti doesn't exist
+| `whereis`   | 
+| `locate`    |
+| `whatis`    |
+| `chmod`     | change file mode
+| `grep`      | to search for text patterns within files
+| `awk`       | used for pattern scanning and processing language
+| `sort`      | to sort lines of text files
+| `find`      | to find a specific name/file/folder
+| `sed`       | a stream editor used to preform basic text ransformations on an input stream (a file or input from a pipeline).
+| `paste`     | 
+| `cut`       | to remove sections from each line of files
+| `pv`        | pipe viewier
+| `diff`      |
+| `tar`       | to archive or unarchive a file/folder (can also zip with the -z flag)
+| `zstd`      | to unzip a .zst file
+| `ssh-keygen`| 
+| `ssh`       | to connect to a remote machine securely
+| `scp`       | to securely copy files between hosts on a network
+| `tail`      | to display the last parts if files
+| `head`      | to display first part of files
+| `curl`      | to transfer data from or to a server using various protocols like HTTP, HTTPS, FTP and more.
+| `wget`      | to download files from the web
 
 ## References
 
-***Links***
+### ***Links***
 - [ ] [Advanced Bash Usage](https://youtube.com/watch?v=uqHjc7hlqd0) by [James Pannacciullia](https://youtube.com/@jamespannacciulli3029)
 - [ ] [Advanced Bash Scripting Tutorial](https://youtube.com/watch?v=embhouufDnB4&t=2675s) by [Cybersecurity Shandy](https://youtube.com/@cybersecurityshandy9181)
