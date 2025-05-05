@@ -13,6 +13,7 @@
   * [Compund Commands](#compound-commands)
     * [_Looping Contructs_ ***(While, Until, For, Select)***](#looping-constructs)
     * [Conditional Constructs ***(If, Case, Test)***](#condition-constructs)
+    * [_Command Groups_](#command-groups)
 * [***Section 3: STDIN, STDOUT, STDERROR***](#section-3-stdin-stdout-stderror)
   * [_Redirection_](#redirection)
   * [_Manipulating Output_](#manipulating-output)
@@ -114,7 +115,7 @@ Success: Command should return a status of 0.
 Failure: Command should return a non-zero status.
 
 > Return values can range from 0 to 255
-> The return value of the last command to have executed is captured in the speical parameter $?
+> The return value of the last command to have executed is captured in the special parameter $?
 ```
 
 ### ***Compound Commands***
@@ -132,7 +133,7 @@ Continuously loop over **list** of commands delineated by the keywords of `do` a
 <summary>While and Until Loops</summary>
 
 ---
-While and Unit Loops  
+**While and Until Loops**  
 _(Typically) iterate based on an external resource_ 
 
 `while` **list1**; `do` **list2**; `done`
@@ -149,7 +150,7 @@ _(Typically) iterate based on an external resource_
 
 ---
 
-For and Select Loops
+**For and Select Loops**
 _Iterate baed on commad line arguements_
 
 `for` **name** `in` **words**; do **list**; `done`
@@ -254,7 +255,6 @@ _Pattern matching is used in Bash for the **[[** and `case` keywords, **pathname
 * Match **word** against each **pattern** sequentially. When the first match is found, evaluate the **list** corresponding to that match and stop matching.
 
 * The **|** (pipe) character between two patterns entails a match if either pattern matches **(OR)**.
-
 
 </details>
 
