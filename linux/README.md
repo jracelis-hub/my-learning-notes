@@ -159,7 +159,10 @@ _(Typically) iterate based on an external resource_
 > execute **list1**; if **failure**, execute **lists2** and repeat.  
 > continue unit **list1** returns a status of **0** _(succeeds)_.
 
----
+</details>
+
+<details>
+<summary>For and Select Loops</summary>
 
 **For and Select Loops**  
 _Iterate based on command line arguments_
