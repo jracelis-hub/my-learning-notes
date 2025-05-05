@@ -7,12 +7,12 @@
 * [***Section 1: Introduction***](#section-1-introduction)
   * [_Scripting Basics_](#scripting-basics)
   * [_Variables_](#variables)
-  * _ifstatements_
 * [***Section 2: Advanced Bash Concepts***](#section-2-advanced-bash-concepts)
-  * [_Return Status_](#return-status)
   * [_Definition_](#definitions)
-  * [_Looping Contructs_ ***(While, Until, For, Select)***](#looping-constructs)
-  * [Conditional Constructs ***(If, Case, Test)***](#condition-constructs)
+  * [_Return Status_](#return-status)
+  * [Compund Commands](#compound-commands)
+    * [_Looping Contructs_ ***(While, Until, For, Select)***](#looping-constructs)
+    * [Conditional Constructs ***(If, Case, Test)***](#condition-constructs)
 * [***Section 3: STDIN, STDOUT, STDERROR***](#section-3-stdin-stdout-stderror)
   * [_Redirection_](#redirection)
   * [_Manipulating Output_](#manipulating-output)
@@ -57,7 +57,7 @@ or
 #!/bin/bash [also seen]
 ```
 
-#### ***Variables***
+### ***Variables***
 
 * Variables could be initiated with the variable name equal to the contents. 
 * Must begin with a letter or an underscore
@@ -97,38 +97,14 @@ cd ${WORK_DIRECTORY}
 
 ---
 
-_if statements_
-
-* if the following statement passes the given statement then it will preform the script within the if statement
-* To close if statement is requires `fi`
-
-NOTATION
-
-```bash
-#!/bin/bash
-
-FAV_COLOR="blue"
-
-if [ ${FAV_COLOR} = "blue" ]; then
-  echo "BLUE IS MY FAVORITE COLOR"
-fi
-```
-
-Adding the `else` statement to the if statement if the following statement is not true then preform what is in the else statement.
-
-```bash
-#!/bin/bash
-
-FAV_COLOR="blue"
-
-if [ ${FAV_COLOR} = "blue" ]; then
-  echo "BLUE IS MY FAVORITE COLOR"
-else
-  echo "THIS ISN'T MY FAVORITE COLOR"
-fi
-```
-
 ## ***Section 2: Advanced Bash Concepts***
+
+### ***Definitions***
+
+- **word** : sequence of ***characters*** considered to be a single unit.
+- **list** : sequence of ***commands*** or ***pipelines***
+- **name** : a ***word*** consisting only a alphanumberic characters and underscores. can <ins>not</ins> begin with a numeric character.
+- **parameter** : an ***entity*** that stores ***values***. a variable is a parameter denoted by a **name**; there are also _positional_ and _special_ parameters.
 
 ### ***Return Status***
 
@@ -140,13 +116,6 @@ Failure: Command should return a non-zero status.
 > Return values can range from 0 to 255
 > The return value of the last command to have executed is captured in the speical parameter $?
 ```
-
-### ***Definitions***
-
-- **word** : sequence of ***characters*** considered to be a single unit.
-- **list** : sequence of ***commands*** or ***pipelines***
-- **name** : a ***word*** consisting only a alphanumberic characters and underscores. can <ins>not</ins> begin with a numeric character.
-- **parameter** : an ***entity*** that stores ***values***. a variable is a parameter denoted by a **name**; there are also _positional_ and _special_ parameters.
 
 ### ***Compound Commands***
 
