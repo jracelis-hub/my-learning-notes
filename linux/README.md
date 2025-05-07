@@ -483,6 +483,16 @@ function color_change_tput {
 
 **Special Parameters:** `$* $@ $# $- $0 $! $? $_`
 
+|***Special Parameters*** | Description   |
+|:---: |---------------|
+| `$@` | returns all values of argument |
+| `$#` | returns total number of arguements |
+| `$0` | returns file name of the script |
+| `$?` | returns the exit status of last command |
+| `$$` | returns the PID (process ID) of the script |
+| `shift` | number of arguements are reduced each time as the shift command executes |
+
+
 * Parameters providing ***information*** about positional parameters, the current shell, and the previous command.
 
 ---
@@ -586,6 +596,8 @@ ${PARAM%u*} = "tho" it removes everything from the first u untill the right
 | `!=`    | not equal to
 | `<`     | less than, in ASCII alphabetical order
 | `>`     | greater than, in ASCII alphabeteric order
+| `-z`    | checks if the given string operand size is zero
+| `-n`    | checks if the given string operand size is non-zero
 
 | Arithmetic Operators | Description    |
 |---------|-----------------------------|
