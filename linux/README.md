@@ -618,7 +618,10 @@ ${PARAM%u*} = "tho" it removes everything from the first u untill the right
 | `-e` | checks if a file exists
 | `-d` | checks if a directory exists
 | `-f` | check if a file is regular file
-| `-s` | checks ifa file is not empty
+| `-s` | checks if a file is not empty (non-zero)
+| `-r` | checks if a file has read access (owner)
+| `-w` | checks if a file has write permission (owner)
+| `-x` | checks if a file has execute permission (owner)
 
 #### ***Commands***
 
