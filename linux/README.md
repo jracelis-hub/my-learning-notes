@@ -100,10 +100,17 @@ Also you can add your own path in the $PATH file by doing:
 # This will append your /home/username/usr/local/bin in front of your $PATH meaning it will search here first and if it can't find it here it will move to the next $PATH directory to execute
 
 PATH=~/usr/local/bin:$PATH
+# To remove this path from $PATH
+PATH=${PATH#*:}
+# This removes contents from the first : starting from the left side
 
 # This will append it to the end of the $PATH rather than the front
 
 PATH=$PATH:~/usr/local/bin
+# to remove this from $PATH
+PATH=${PATH%:*}
+
+# This removes contents from the first : starting from the right side
 ```
 
 The `.sh` on a bash script is technically not needed but the reason it is added is to to get a clear visualization that it is indeed a bash script. As long as the file has a shebang `#!/bin/usr` or `#!/usr/bin/env bash` it will know it is a bash script.
