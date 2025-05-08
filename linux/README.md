@@ -11,8 +11,9 @@
   * [_Scripting Basics_](#scripting-basics)
   * [_Where Are Commands_](#where-are-commands)
   * [_Variables_](#variables)
-  * [_Help Commands_](#help-commands)
   * [_Syntax_](#syntax)
+  * [_Help Commands_](#help-commands)
+  
 * [***Section 2: Advanced Bash Concepts***](#section-2-advanced-bash-concepts)
   * [_Return Status_](#return-status)
   * [Compund Commands](#compound-commands)
