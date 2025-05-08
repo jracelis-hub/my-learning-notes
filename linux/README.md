@@ -118,6 +118,68 @@ cd ${WORK_DIRECTORY}
 
 ```
 
+### ***Notation***
+
+To understand how shell scripts work it is important to know syntax of how `commands` operate.\
+Take the following example in the shell
+
+```bash
+# Lets say you ls in your ~ directory
+ls ~ 
+
+# Output 
+DOCUMENTS DOWNLOADS .ssh .git
+```
+
+You can preform multiple `commands` in one line from left to right by adding a `;` between each `command`
+
+Example
+```bash
+cd DOWNLOADS; touch text.txt; mv text.txt ~
+
+# Now lets break down what we just did and what it does
+
+# Changes directories into DOWNLOADS 
+~$cd DOWNLOADS 
+# OUTPUT
+~/DOWNLOADS$
+# touch text.txt creates text.txt in current working directory which is DOWNLOADS
+~/DOWNLOADS$ touch text.txt
+# OUTPUT
+~/DOWNLOADS$ touch text.txt
+# mv text.txt to home directory ~
+~/DOWNLOADS$ mv text.txt ~
+# OUTPUT
+~$ text.txt
+cd DOWNLOADS -> touch text.txt -> mv text.txt ~
+
+# You can preform the same output by typing each command line by line like this
+
+cd DOWNLOADS
+touch text.txt
+mv text.txt ~
+
+# By doing this you get the same results except you type each command and use the return key 3 times rather than once
+```
+Now use these principles on bash scripting
+```bash
+#!/usr/bin/env bash
+
+# Using the knowledge we know from the previous example technically we can write the same task in script form...calling it practice.sh
+
+cd DOWNLOADS; touch text.txt; mv text.txt ~
+
+# This will give us the same output as the first example but this notation does not look as clean. With the shell script it treats the script name as one long list of commands to be preformed on a shell.
+
+# Example this can be rewritten as:
+
+cd DOWNLOADS
+touch text.txt
+mv text.txt ~
+
+# Notice this is like typing each command and returning it in a shell terminal to get the same output. Each newline represents a new command.
+```
+
 ### ***Help Commands***  
 
 > [!Note]
