@@ -9,8 +9,10 @@
 * [***Prerequisites***](#prerequisites)
 * [***Section 1: Introduction***](#section-1-introduction)
   * [_Scripting Basics_](#scripting-basics)
+  * [_Where Are Commands_](#where-are-commands)
   * [_Variables_](#variables)
-  * [_Help Commands_](#-help-commands)
+  * [_Help Commands_](#help-commands)
+  * [_Syntax_](#syntax)
 * [***Section 2: Advanced Bash Concepts***](#section-2-advanced-bash-concepts)
   * [_Return Status_](#return-status)
   * [Compund Commands](#compound-commands)
@@ -78,6 +80,72 @@ or
 
 #!/usr/bin/env bash [more portable]
 #!/bin/bash [also seen]
+```
+
+### ***Where Are Commands***
+
+To find out which command path that it is preforming from do `which command`
+
+```bash
+$which ls
+/usr/bin/ls
+```
+You can find the path of these specific commands by typing `$PATH`. This is where all the executeables are and when calling the command it will look in the `$PATH` directories to execute it.
+> [!TIP]
+> You can make a `bash.sh` script and `mv` it into one of the `$PATH` directories and you won't need to be in the same directory of the `bash.sh` script. You'll be able to run it any where within the shell.
+
+Also you can add your own path in the $PATH file by doing:
+
+```bash
+# This will append your /home/username/usr/local/bin in front of your $PATH meaning it will search here first and if it can't find it here it will move to the next $PATH directory to execute
+
+PATH=~/usr/local/bin:$PATH
+
+# This will append it to the end of the $PATH rather than the front
+
+PATH=$PATH:~/usr/local/bin
+```
+
+The `.sh` on a bash script is technically not needed but the reason it is added is to to get a clear visualization that it is indeed a bash script. As long as the file has a shebang `#!/bin/usr` or `#!/usr/bin/env bash` it will know it is a bash script.
+
+> [!NOTE]
+> To check what type of file a file is you can use the `file` command along with the file you want to check.
+
+Example
+```bash
+file script.sh
+
+# Output
+script.sh: Bourne-Again shell script, ASCII text executable
+```
+
+> [!WARNING]
+> Just because it has a `.sh` does not mean that it is a bash script. It has to have the shebang in the file!
+
+Example
+```bash
+cat script.sh
+
+# Output
+hello
+
+file script.sh
+# Output
+script.sh: ASCII text
+
+#####################
+#### Compared to ####
+#####################
+
+cat script
+# Output
+
+#!/usr/bin/env bash
+echo "HELLO WORLD"
+
+file script
+# Output
+script: Bourne-Again shell script, ASCII text executable
 ```
 
 ### ***Variables***
