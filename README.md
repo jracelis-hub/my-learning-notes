@@ -6,6 +6,7 @@
 * [Repository Topics](#repository-topics)
     * _C Programing_
     * _Container_
+    * _Git Notes_
     * _Linux_
     * _Networking_
     * _Virtual Machine_
