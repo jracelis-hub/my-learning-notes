@@ -118,7 +118,7 @@ cd ${WORK_DIRECTORY}
 
 ```
 
-### ***Notation***
+### ***Syntax***
 
 To understand how shell scripts work it is important to know syntax of how `commands` operate.\
 Take the following example in the shell
