@@ -114,16 +114,15 @@ PATH=${PATH%:*}
 # This removes contents from the first : starting from the right side
 ```
 
-> [!NOTE]
+> [!CAUTION]
 > This will only set your $PATH during that current shell session. Once you leave the session it will reset back to original state.
  
 To configure your $PATH configuration make a `$HOME/.bashrc`\ and type:
-`export PATH=$HOME/usr/bin:$PATH\
+`export PATH=$HOME/usr/bin:$PATH`\
 
-The `.sh` on a bash script is technically not needed but the reason it is added is to to get a clear visualization that it is indeed a bash script. As long as the file has a shebang `#!/bin/usr` or `#!/usr/bin/env bash` it will know it is a bash script.
+The `.sh` on a bash script is technically not needed but the reason it is added is to to get a clear visualization that it is indeed a bash script. As long as the file has a shebang `#!/bin/usr` or `#!/usr/bin/env bash` it will know it is abash script.\
 
-> [!NOTE]
-> To check what type of file a file is you can use the `file` command along with the file you want to check.
+To check what type of file a file is you can use the `file` command along with the file you want to check.
 
 Example
 ```bash
