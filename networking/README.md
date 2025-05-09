@@ -129,7 +129,20 @@ int fd = socket(AF_INET, SOCKET_STREAM, 0)
 * Use `man socket` to get a better understanding of the topic.
 * Also `man ip` tells you how to create TCP/UDP sockets and the requirements.
 
+_Step 2: Set socket options_
 
+There are many options that change the behavior of a socket, such as TCP no delay, IP QoS, etc. These options are set via the `socksockopt()` API. Like the `bind()` API, this just passes a parameter to the OS as te actual socket has not been created yet.
+
+```
+int val=1;
+setsockopt(fd, SOL_SOCKET, SO_REUSEADDR, &val, sizeof(val));
+```
+
+* The combination of the 2nd & 3rd arguments specifies which option to set.
+* The 4th argument is the option value.
+* Different options use different types, so the size of the option value is also needed.
+
+In this case, we set the `SO_REUSEADDR` option to an `int` value of `1`, this option accepts a boolean value of `0` or `1`. 
 
 
 
