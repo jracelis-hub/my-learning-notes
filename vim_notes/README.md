@@ -9,11 +9,11 @@ Vim or (Vi IMproved) is a power text editor which is an improved version of Vi (
 Good to know hotkeys for Vim
 
 | insert mode | description |
-|:---:|----------------|
+|:---:|:---------------|
 | `i` | to go into insert mode at the location of your cursor |
 | `I` | insert at the begginng of the line |
 | `a` | insert (append) after the cursor |
-| `A` | ineert (append) at the end of the line |
+| `A` | insert (append) at the end of the line |
 | `o` | append (open) a new line below the current line |
 | `O` | append (open) a new line above the current line |
 | `crtl` + `h` | delete character before the cursor during insert mode |
@@ -24,7 +24,7 @@ Good to know hotkeys for Vim
 | `esc` or `crtl` + `c` | exit insert mode |
 
 | cursor movement | description |
-| :---: |---------------------|
+| :---: |:---------------------|
 | `h` | move cursor left |
 | `j` | move cursor down |
 | `k` | move cursor up |
