@@ -6,6 +6,8 @@
 
 Vim or (Vi IMproved) is a power text editor which is an improved version of Vi (Visual Editor).
 
+***Tables***
+
 Good to know hotkeys for Vim
 
 | Insert Mode | Description |
