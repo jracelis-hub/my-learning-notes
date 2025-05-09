@@ -60,7 +60,7 @@ Bash `scripting` is a great way to automate tasks within a ***GNU*** operating s
 
 ### ***Scripting Basics***
 
-The _shebang_ or `#!/bin/bash or #!/usr/bin/env bash` is the first shell script that has to be included to be able to intreprete the specific programing that is being utilized.
+The _shebang_ or `#!/bin/bash` or `#!/usr/bin/env bash` is the first shell script that has to be included to be able to intreprete the specific programing that is being utilized.
 
 > [!CAUTION]
 > Without the _shebang_ the code will not be able to interpret the script
@@ -98,9 +98,9 @@ You can find the path of these specific commands by typing `$PATH`. This is wher
 Also you can add your own path in the $PATH file by doing:
 
 ```bash
-# This will append your /home/username/usr/local/bin in front of your $PATH meaning it will search here first and if it can't find it here it will move to the next $PATH directory to execute
+# This will append your $HOME/usr//bin in front of your $PATH meaning it will search here first and if it can't find it here it will move to the next $PATH directory to execute
 
-PATH=~/usr/local/bin:$PATH
+PATH=$HOME/usr/local/bin:$PATH
 # To remove this path from $PATH
 PATH=${PATH#*:}
 # This removes contents from the first : starting from the left side
@@ -113,6 +113,12 @@ PATH=${PATH%:*}
 
 # This removes contents from the first : starting from the right side
 ```
+
+> [!NOTE]
+> This will only set your $PATH during that current shell session. Once you leave the session it will reset back to original state.
+ 
+To configure your $PATH configuration make a `$HOME/.bashrc`\ and type:
+`export PATH=$HOME/usr/bin:$PATH\
 
 The `.sh` on a bash script is technically not needed but the reason it is added is to to get a clear visualization that it is indeed a bash script. As long as the file has a shebang `#!/bin/usr` or `#!/usr/bin/env bash` it will know it is a bash script.
 
