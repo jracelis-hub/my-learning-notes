@@ -103,6 +103,34 @@ On Linux, `send/recv` are just a variant of the more generic `read/write` syscal
 	* `close()`
 * Create a TCP connection: `connect()`
 
+### ***Create a TCP Server***
+
+_Step 1: Obtain a socket handle_
+
+The `socket()` syscall takes 3 integer arguments.
+```
+int fd = socket(AF_INET, SOCKET_STREAM, 0)
+```
+> [!NOTE]
+> Also can be written as `socket( int domain , int type , int protocol )`
+3 Integer Args:
+
+1.) `AF_INET` is for IPv4. Use `AF_INET6` for IPv^ or dual-stack sockets.
+2.) `SOCKET_STREAM` is for TCP. USE `SOCK_DGRAM` for UDP
+3.) The 3rd agrument is 0 but is also known for different protocalls.
+
+| Protocol | Arguments |
+|:---:|:---|
+| IPv4+TCP | `socket(AF_INET, SOCK_STREAM, 0)` |
+| IPv6+TCP | `socket(AF_INET6, SOCK_STREAM, 0)` |
+| IPv4+UDP | `socket(AF_INET, SOCK_DGRAM, 0)` |
+| IPv6+UDP | `socket(AF_INET6, SOCK_DRRAM, 0)` |
+
+* Use `man socket` to get a better understanding of the topic.
+* Also `man ip` tells you how to create TCP/UDP sockets and the requirements.
+
+
+
 
 
 
