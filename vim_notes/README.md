@@ -2,7 +2,7 @@
 
 ## ***Introduction***
 
-***What is VIM***?\
+***What is VIM***
 
 Vim or (Vi IMproved) is a power text editor which is an improved version of Vi (Visual Editor).
 
