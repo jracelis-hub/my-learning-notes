@@ -41,3 +41,22 @@ Good to know hotkeys for Vim
 | `e` | jumps forwards to the end of a word |
 | `E` | jumps fowards to the end of a word (words can contain punctuation |
 
+### ***How to Setup Config***
+
+In your `$HOME` or `~` directory make a file called `vimrc`
+
+```bash
+cd ~
+vim vimrc
+```
+
+Specific Configuration Table
+
+|Purpose| Description|
+|:---:|:------|
+| `set number` | to add line numbers on your vim console |
+| `set shiftwidt=number` | indent size of shift width |
+| `set tabstop=number` | tab size |
+
+> [!NOTE]
+> To add comments use `"` before the newline 
