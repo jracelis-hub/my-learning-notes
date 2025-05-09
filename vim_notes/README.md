@@ -8,7 +8,7 @@ Vim or (Vi IMproved) is a power text editor which is an improved version of Vi (
 
 Good to know hotkeys for Vim
 
-| insert mode | description |
+| Insert Mode | Description |
 |:---:|:---------------|
 | `i` | to go into insert mode at the location of your cursor |
 | `I` | insert at the begginng of the line |
@@ -23,7 +23,7 @@ Good to know hotkeys for Vim
 | `crtl` + `d` | de-indent (move left) line one shiftwidth during insert mode |
 | `esc` or `crtl` + `c` | exit insert mode |
 
-| cursor movement | description |
+| Cursor Movement | Description |
 | :---: |:---------------------|
 | `h` | move cursor left |
 | `j` | move cursor down |
