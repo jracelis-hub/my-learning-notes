@@ -77,3 +77,36 @@ close(fd)
 `socket()` creates a typeless socket; the socket tpye (listening or connection) is determined after the `listen()` or `connect()` call. The `bind()` between `socket()` and `listen()` sets parameters.\
 The `setsockopt()` API can set other socket parameters as needed.
 
+_Read and Write_
+
+TCP and UDP provide different types of services but share the same socket API. Which include:
+* `send()`
+* `rece()`
+
+TCP (Segments)\
+For byte-stream-based sockets, each `send/recv` appends to/consumes from the byte stream.
+
+UDP (Datagrams)\
+For message-based sockets, each `send/recv` coressponds to a single packet.
+
+On Linux, `send/recv` are just a variant of the more generic `read/write` syscall used for both sockets, disk files, pipes, and etc. Different types of handle sharing the same read/write API is merely a coincidence, it's unlikely to have a piece of code that works for both TCP and UDP, as they are different.
+
+***TCP socket requirements***
+
+* Listening TCP socket:
+	* `bind()` & `listen()`
+	* `accept()`
+	* `close()`
+* Using a TCP socket:
+	* `read()`
+	* `write()`
+	* `close()`
+* Create a TCP connection: `connect()`
+
+
+
+
+
+
+
+
