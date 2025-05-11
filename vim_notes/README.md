@@ -83,4 +83,4 @@ Specific Configuration Table
 | `set tabstop=number` | tab size |
 
 > [!NOTE]
-> To add comments use `"` before the newline 
+> To add comments use `"` before the new line 
