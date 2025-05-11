@@ -4,6 +4,7 @@
 * [***Introduction***](#introduction)
 	* [***Setup Environment***](#setup-environment)
 		* [***Initilizing Local Environment***](#initilizing-local-environment)
+
 ## ***Introduction***
 
 | `git commands`          |   description           |
@@ -66,6 +67,7 @@ to skip staging from `working file` -> `commit`\
 #### ***Creating Branches*** 
 
 ---
+
 Two Methods of Creating Branches: `git branch **name**` or `git checkout -b **name**`\
 
 * To see the branch created use `git branch` this will list all the branches.\
@@ -105,23 +107,35 @@ git push -u origin main
 
 _Creating SSH Keys for Github_
 
-To create local ssh keys do the following:
+Step 1: Create local ssh keys 
 
+Example
 ```
+# This will be stored locally probably in $HOME/.ssh/id_ed25519
 ssh-keygen -t ed25519 -C [use your email]
 
-# This will be stored locally probably in ~/.ssh/id_ed25519
 # After set up the PID
-
 eval "$(ssh-agent -s)" 
+
 # then add your key
 ssh-add $HOME/.ssh/id_ed25519 # This is the location of where you keys are
-# run ps youll see a new process ID
+
+# you can verify if process is happening by running
+ps 
 ```
 
-From here you navigate to your github account and the repo you want ssh access to -> settings -> deploy keys -> add deploy key \
-File the title with a descripton example "jarron home desktop virtual machine"\
-then in the keys section add the id_ed25519.pub key\
+Step 2: Place SSH Keys on Github
+
+* From here you navigate to your github account and the repo you want ssh access to -> settings -> deploy keys -> add deploy key.
+* Fill title which is description of where this key sits.
+* Copy the **id_ed25519.pub** key from step 1 into the spot that says add keys.
+
+To clone github repo with ssh keys do.
+
+```
+# Note you can just copy and paste it from the git hub repo by clicking Code -> SSH
+git clone git@github.com:username/repository_name.git
+```
 
 To update git local repository to git remote repository use:
 
