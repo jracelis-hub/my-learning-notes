@@ -64,7 +64,6 @@ Bash is the shell, or command language interpreter, for the GNU ***(GNU's Not Un
 - **list** : sequence of ***commands*** or ***pipelines***
 - **name** : a ***word*** consisting only a alphanumberic characters and underscores. can <ins>not</ins> begin with a numeric character.
 - **parameter** : an ***entity*** that stores ***values***. a variable is a parameter denoted by a **name**; there are also _positional_ and _special_ parameters.
-- **POSIX**: _portable operating system interface_ a family of open system standards based on Unix.
 
 ## ***Purpose***
 Bash `scripting` is a great way to automate tasks within a ***GNU*** operating system to make navigating through information easy. It is fully customizable to satisfy the specific needs of the ***user***. This project is a great way to utilize the command line and get use to many linux commands.
