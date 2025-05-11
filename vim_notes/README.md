@@ -3,7 +3,7 @@
 ## ***Table of Contents***
 
 * [_Introduction_](#introduction)
-* [_How To_](#how-to)
+* [_How To: Normal Mode_](#how-to:-normal-mode)
 	* [_Navigate Through Vim_](#how-to-navigate-through-vim)
 	* [_Setup Config_](#how-to-setup-config)
 * [_Cheatsheets_](#cheatsheets)
@@ -25,7 +25,7 @@ vim file.txt
 # This will list the files within current directory as if you did it on the command line
 ```
 
-## ***HOW To***
+## ***HOW To: Normal Mode***
 
 ### ***How to Navigate Through VIM***
 
