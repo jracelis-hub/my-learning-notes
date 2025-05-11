@@ -3,7 +3,7 @@
 ## ***Table of Contents***
 
 * [_Introduction_](#introduction)
-* [_How to Navigate in VIM_](#how-to-navigate-in-vim)
+* [_How To_](#how-to)
 * [_Cheatsheets_](#cheatsheets)
 
 
@@ -23,11 +23,40 @@ vim file.txt
 # This will list the files within current directory as if you did it on the command line
 ```
 
-## ***How to Navigate in VIM***
+## ***HOW To***
+
+### ***How to Navigate Through VIM***
 
 * To jump to a specific line use `:n` where n is the line number shown on the left.
 * To jump to the end of the page `G`
 * To jump to the beginning of the page `gg`
+* To jump to beginning of the line `0`
+* To jump to end of the line `$`
+* To jump to beginning of word going right `w`
+* To jump to beginning of word going back `b`
+
+> [!TIP] 
+> You can use the navigation keys `w` `b` `e` with other commands like `d` (deletion) `c` copying
+
+### *** How to Setup Config***
+
+In your `$HOME` or `~` directory make a file called `vimrc`
+
+```bash
+cd $HOME
+vim vimrc
+```
+
+Specific Configuration Table
+
+|Purpose| Description|
+|:---:|:------|
+| `set number` | to add line numbers on your vim console |
+| `set shiftwidt=number` | indent size of shift width |
+| `set tabstop=number` | tab size |
+
+> [!NOTE]
+> To add comments use `"` before the new line 
 
 ## ***Cheatsheets***
 
@@ -72,22 +101,4 @@ Good to know hotkeys for Vim
 | 
 
 
-### ***How to Setup Config***
 
-In your `$HOME` or `~` directory make a file called `vimrc`
-
-```bash
-cd $HOME
-vim vimrc
-```
-
-Specific Configuration Table
-
-|Purpose| Description|
-|:---:|:------|
-| `set number` | to add line numbers on your vim console |
-| `set shiftwidt=number` | indent size of shift width |
-| `set tabstop=number` | tab size |
-
-> [!NOTE]
-> To add comments use `"` before the new line 
