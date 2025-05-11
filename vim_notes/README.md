@@ -4,6 +4,8 @@
 
 * [_Introduction_](#introduction)
 * [_How To_](#how-to)
+	* [_Navigate Through Vim_](#how-to-navigate-through-vim)
+	* [_Setup Config_](#how-to-setup-config)
 * [_Cheatsheets_](#cheatsheets)
 
 
@@ -38,7 +40,7 @@ vim file.txt
 > [!TIP] 
 > You can use the navigation keys `w` `b` `e` with other commands like `d` (deletion) `c` copying
 
-### *** How to Setup Config***
+### ***How to Setup Config***
 
 In your `$HOME` or `~` directory make a file called `vimrc`
 
