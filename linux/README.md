@@ -3,8 +3,6 @@
 ## Table of Contents
 
 * [***Terminology***](#terminology)
-	* [_What is Unix_](#whati-is-unix)
-	* [_What is Bash?_](#what-is-bash)
 	* [_Definitions_](#definitions)
 * [***Purpose***](#purpose)
 * [***Prerequisites***](#prerequisites)
@@ -38,18 +36,29 @@
 
 ## ***Terminology***
 
-### ***What is Unix***
+_What is Unix_
 
-To understand a set of tools that is utilized, it is important to know the origin of those set of tools.\
-***Unix*** is a multi-user _OS_ (Operating System) that originated in the 1970s at AT&T's **Bell Labs**. Developed by Ken Thompson, Dennis Ritchie, and many others, Unix introduced keys concepts like hierarchical file systems, process control, and modular design. 
+To understand a set of tools that is utilized, it is important to know the origin of those set of tools. ***Unix*** is a multi-user _OS_ (Operating System) that originated in the 1970s at AT&T's **Bell Labs**. Developed by Ken Thompson, Dennis Ritchie, and many others, Unix introduced keys concepts like hierarchical file systems, process control, and modular design. 
 
-### ***What is POSIX***
+_What is POSIX_
 
 **POSIX** or Portable Operating System Interface) is set of IEEE standards designed to main compatibility between operating systems. It defines **APIs** (application programming inferfaces), command-line shells, and utility interfaces to ensure software portability across **Unix**-like systems
 
+_What is Linux Kernel_
+
+**Linux** kernel is the program in the system that allocates the machine's resources to ther other programs that you can run. It is an essential part of an operating system, but it is useless without. It facilitates the communication between the **hardware** and software.
+
+_What is GNU_
+
+**GNU** or GNU's Not Unix is an operating system whose purpose was to develop a _complete free Unix-like system_. The project was initiated by Richard Stallman the emphasise was for its free software philosophy. The project produced many essential components, such as compliers, editors and shell utilities.
+
+From here GNU/Linux was formed, combining the Linux kernel to be able to communicate to the hardware and the software to utilize the kernel.
+
+_What is Bash_
 
 ### ***What is BASH?***
-Bash is the shell, or command language interpreter, for the GNU ***(GNU's Not Unix)***. While Bash stands for ***Bourne-Again Shell***
+
+Bash is the shell, or command language interpreter, for the GNU ***(GNU's Not Unix)***. While Bash stands for ***Bourne-Again Shell***.
 
 ### ***Definitions***
 
