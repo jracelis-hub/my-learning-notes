@@ -101,7 +101,7 @@ or
 
 ### ***Where Are Commands***
 
-To find out which command path that it is preforming from do `which command`
+To find out which command path that it is preforming from do `which command`.
 
 ```bash
 $which ls
@@ -114,7 +114,7 @@ You can find the path of these specific commands by typing `$PATH`. This is wher
 Also you can add your own path in the $PATH file by doing:
 
 ```bash
-# This will append your $HOME/usr//bin in front of your $PATH meaning it will search here first and if it can't find it here it will move to the next $PATH directory to execute
+# This will append your $HOME/usr/bin in front of your $PATH meaning it will search here first and if it can't find it here it will move to the next $PATH directory to execute
 
 PATH=$HOME/usr/local/bin:$PATH
 # To remove this path from $PATH
@@ -136,7 +136,7 @@ PATH=${PATH%:*}
 To configure your $PATH configuration make a `$HOME/.bashrc`\ and type:
 `export PATH=$HOME/usr/bin:$PATH`\
 
-The `.sh` on a bash script is technically not needed but the reason it is added is to to get a clear visualization that it is indeed a bash script. As long as the file has a shebang `#!/bin/usr` or `#!/usr/bin/env bash` it will know it is abash script.\
+The `.sh` on a bash script is technically not needed but the reason it is added is to to get a clear visualization that it is indeed a bash script. As long as the file has a shebang `#!/bin/usr` or `#!/usr/bin/env bash` it will know it is a bash script.
 
 To check what type of file a file is you can use the `file` command along with the file you want to check.
 
