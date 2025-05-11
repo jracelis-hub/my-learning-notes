@@ -1,8 +1,7 @@
-# VIM Notes
-
 ## ***Table of Contents***
 
 * [_Introduction_](#introduction)
+* [_How to Navigate in VIM_](#how-to-navigate-in-vim)
 * [_Tables_](#tables)
 
 
@@ -21,6 +20,12 @@ vim file.txt
 :!ls
 # This will list the files within current directory as if you did it on the command line
 ```
+
+## ***How to Navigate in VIM***
+
+* To jump to a specific line use `:n` where n is the line number shown on the left.
+* To jump to the end of the page `G`
+* To jump to the beginning of the page `gg`
 
 ## ***Tables***
 
