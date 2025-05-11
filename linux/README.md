@@ -56,8 +56,6 @@ From here GNU/Linux was formed, combining the Linux kernel to be able to communi
 
 _What is Bash_
 
-### ***What is BASH?***
-
 Bash is the shell, or command language interpreter, for the GNU ***(GNU's Not Unix)***. While Bash stands for ***Bourne-Again Shell***.
 
 ### ***Definitions***
