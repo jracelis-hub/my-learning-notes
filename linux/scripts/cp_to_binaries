@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+
+# Source my color library
+
+source my_color_lib
+
+# Home variables
+
+MY_EXE="$HOME/git_repos/bin"
+
+function cp_to_exe {
+	
+	echo -en "${BLUE}Enter binary to transfer to ${MY_EXE}:${RESET} "
+	read -r script
+	if [ -z "${script}" ]; then
+		echo -e "${RED}Invalid input... Please enter script.${RESET}"
+		exit 1
+	else
+		cp ${script} ${MY_EXE}
+			if [ $? -eq 0 ]; then
+				echo -e "${GREEN}Copying ${script} to ${MY_EXE}${RESET}"
+			fi
+	fi
+}
+
+cp_to_exe

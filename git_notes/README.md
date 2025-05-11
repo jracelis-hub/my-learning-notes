@@ -1,14 +1,15 @@
 # Git Notes
 
-> [!IMPORTANT]
-> This is working progress
-
-## Introduction
+## ***Table of Contents***
+* [***Introduction***](#introduction)
+	* [***Setup Environment***](#setup-environment)
+		* [***Initilizing Local Environment***](#initilizing-local-environment)
+## ***Introduction***
 
 | `git commands`          |   description           |
 |:-----------------------:|-------------------------|
-| `git --global`          | create a global config file |
-| `git add **FILE**`      | add file to ***staging*** |
+| `git config --global`          | create a global config file |
+| `git add **FILE**`      | add **file** to ***staging*** |
 | `git commit -m "Description"` | to commit ***ALL*** files from ***staging*** to "main" |
 | `git status` | to see status of current git working directory |
 | `git log` | to see all commit changes |
@@ -22,27 +23,31 @@
 | `git branch **NAME**` | to create a new branch |
 | `git branch` | to show current working branch |
 | `git switch **branch NAME**` | to switch to working branch directory |
-| `git merge` |
-| `git pull` |
-| `git fetch` |
+| `git merge` | to merge a branch to main or branch to branch |
+| `git pull` | fetch from and integrate with another erpository or a local branch |
+| `git fetch` | to download objects and refs from another repository |
+| `git push` | to push a local repository to content to a remote repository |
 
+### ***Setup Environment***
 
-### Setup Environment
-
-* `git --global user.name "Jarron Racelis"`
-* `git --global user.email jarron.racelis@gmail.com`
-* `git --global init.defaultbranch <name>`
+* `git --global user.name [github username]`
+* `git --global user.email [github email]`
+* `git --global init.defaultbranch [main]`
 
 > [!NOTE]
-> This will be stored in $CURRENT_DIR/.gitconfig
+> This will be stored in $current_directory/.gitconfig
 
-#### ***Initilizing***
+#### ***Initilizing Local Environment***
 
 To begin controlling your working directory with git.  
 
-`cd $working_directory` to your working directory and initialize all the contents in the file by using:  
+* `mkdir $working_directory` to make a git directory to work in.
+* `mv .gitconfig $working_directory` to have .gitconfig in same location.
+* `cd $working_directory` to begin initialzing.
+	* if you have working documents already made `mv $files $work_directory`.
+* `git init` to initialize your working directory.
+	* `git status` to see the current status of local git repository. 
 
-`git init` from here you can check the status of your git by using `git status`\
 
 > [!IMPORTANT]
 > Contents are not in your git control yet. Must use `git add **file**` to add to _staging_.
@@ -77,6 +82,8 @@ Two Methods of Creating Branches: `git branch **name**` or `git checkout -b **na
 * To delete a branch `git branch -d **name**`
 * To merge a branch `git merge -m "**Description**" branch_name`
 
+Must be on main branch to preform the merging.
+
 #### ***Hosting Git to Github***
 
 to create a new repository on the command line
@@ -101,18 +108,19 @@ _Creating SSH Keys for Github_
 To create local ssh keys do the following:
 
 ```
-ssh-keygen -t ed25519 -C jarron.racelis@gmail.com
+ssh-keygen -t ed25519 -C [use your email]
 
 # This will be stored locally probably in ~/.ssh/id_ed25519
 # After set up the PID
 
-eval "$(ssh-agent -s)"
-
+eval "$(ssh-agent -s)" 
+# then add your key
+ssh-add $HOME/.ssh/id_ed25519 # This is the location of where you keys are
 # run ps youll see a new process ID
 ```
 
 From here you navigate to your github account and the repo you want ssh access to -> settings -> deploy keys -> add deploy key \
-Fille the title with a descripton example "jarron home desktop virtual machine"\
+File the title with a descripton example "jarron home desktop virtual machine"\
 then in the keys section add the id_ed25519.pub key\
 
 To update git local repository to git remote repository use:
