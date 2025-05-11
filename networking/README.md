@@ -149,7 +149,7 @@ SSH
 _SSH Config Setup_
 
 * Create ssh key by doing `ssh-keygen -t ed25519 -C email`
-* To copy ssh keys do `ssh-copy-id` username@domain_name or username@IP
+* To copy ssh keys do `ssh-copy-id -i $HOME/.ssh/id_ed25515_domain_name.pub` username@domain_name or username@IP
 * Create ssh config in `$HOME/.ssh/config`
 
 > [!TIP]
