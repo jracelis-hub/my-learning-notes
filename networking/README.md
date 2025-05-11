@@ -144,7 +144,22 @@ setsockopt(fd, SOL_SOCKET, SO_REUSEADDR, &val, sizeof(val));
 
 In this case, we set the `SO_REUSEADDR` option to an `int` value of `1`, this option accepts a boolean value of `0` or `1`. 
 
+SSH
 
+_SSH Config Setup_
+
+* Create ssh config in `$HOME/.ssh/config`
+
+Example of config file format
+```
+# Just thing of a normal host as username@domain_name or host@IP
+Host nickname
+	Hostname IP or domain_name
+	User username
+	Port port_number
+
+
+```
 
 
 
