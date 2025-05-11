@@ -152,6 +152,9 @@ _SSH Config Setup_
 * To copy ssh keys do `ssh-copy-id` username@domain_name or username@IP
 * Create ssh config in `$HOME/.ssh/config`
 
+> [!TIP]
+> Make sure you `chmod 600 $HOME/.ssh/config` to file restrict
+
 Example of config file format
 ```
 # Just thing of a normal host as username@domain_name or host@IP
