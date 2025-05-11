@@ -6,6 +6,16 @@
 
 Vim or (Vi IMproved) is a power text editor which is an improved version of Vi (Visual Editor).
 
+* When you use `:` that is calling a command within ***vim***.
+* When you used `:!` then you are calling a command within the terminal.
+
+Example
+```
+vim file.txt
+:!ls
+# This will list the files within current directory as if you did it on the command line
+```
+
 ***Tables***
 
 Good to know hotkeys for Vim
@@ -46,7 +56,7 @@ Good to know hotkeys for Vim
 In your `$HOME` or `~` directory make a file called `vimrc`
 
 ```bash
-cd ~
+cd $HOME
 vim vimrc
 ```
 
