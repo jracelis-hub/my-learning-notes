@@ -159,6 +159,9 @@ Host nickname
 	Hostname IP or domain_name
 	User username
 	Port port_number
+	IdentityFile $HOME/.ssh/id_ed25519 # The Identityfile points to the 
+	StrictHostKeyChecking
+	PasswordAuthentication
 
 
 ```
