@@ -1,5 +1,11 @@
 # VIM Notes
 
+## ***Table of Contents***
+
+* [_Introduction_](#introduction)
+* [_Tables_](#tables)
+
+
 ## ***Introduction***
 
 ***What is VIM***
@@ -16,7 +22,7 @@ vim file.txt
 # This will list the files within current directory as if you did it on the command line
 ```
 
-***Tables***
+## ***Tables***
 
 Good to know hotkeys for Vim
 
@@ -46,10 +52,18 @@ Good to know hotkeys for Vim
 | `H` | move to top of screen |
 | `M` | move to middle of screen |
 | `L` | move to bottom screen |
+| `gg` | go to the first line of the document |
+| `G` | go to the last line of the document |
 | `w` | jump forwards to the start of a word |
 | `W` | jumps forwards to the start of a word (words can contain punctuation) |
 | `e` | jumps forwards to the end of a word |
 | `E` | jumps fowards to the end of a word (words can contain punctuation |
+| `b` | jumps backwards to the start of a word |
+| `B` | jump backwards to the start of a word (words can contain punctuation) |
+| `0` | jump to the start of the line |
+| `$` | jump to end of the line |
+| 
+
 
 ### ***How to Setup Config***
 
