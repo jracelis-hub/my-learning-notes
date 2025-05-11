@@ -4,7 +4,7 @@
 
 * [_Introduction_](#introduction)
 * [_How to Navigate in VIM_](#how-to-navigate-in-vim)
-* [_Tables_](#tables)
+* [_Cheatsheets_](#cheatsheets)
 
 
 ## ***Introduction***
@@ -29,7 +29,7 @@ vim file.txt
 * To jump to the end of the page `G`
 * To jump to the beginning of the page `gg`
 
-## ***Tables***
+## ***Cheatsheets***
 
 Good to know hotkeys for Vim
 
