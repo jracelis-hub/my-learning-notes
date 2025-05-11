@@ -100,7 +100,3 @@ Good to know hotkeys for Vim
 | `B` | jump backwards to the start of a word (words can contain punctuation) |
 | `0` | jump to the start of the line |
 | `$` | jump to end of the line |
-| 
-
-
-
