@@ -76,6 +76,7 @@ Specific Configuration Table
 | `set number` | to add line numbers on your vim console |
 | `set shiftwidt=number` | indent size of shift width |
 | `set tabstop=number` | tab size |
+| `set mouse=a` | allows mouse movements |
 
 > [!NOTE]
 > To add comments use `"` before the new line 
