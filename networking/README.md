@@ -148,6 +148,8 @@ SSH
 
 _SSH Config Setup_
 
+* Create ssh key by doing `ssh-keygen -t ed25519 -C email`
+* To copy ssh keys do `ssh-copy-id` username@domain_name or username@IP
 * Create ssh config in `$HOME/.ssh/config`
 
 Example of config file format
