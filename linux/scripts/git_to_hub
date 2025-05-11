@@ -18,7 +18,7 @@ function git_push_main {
 	
 	git commit -a -m "${input}" > /dev/null
 	if [ $? -eq 0 ]; then
-		echo "${BLUE}Pushing main local repo${RESET} -> ${GREEN}github.com/jracelis-my_learning_notes${RESET}"
+		echo -e "${BLUE}Pushing main local repo${RESET} -> ${GREEN}github.com/jracelis-my_learning_notes${RESET}"
 		git push origin main > /dev/null
 	fi
 }
