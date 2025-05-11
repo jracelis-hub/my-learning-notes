@@ -40,6 +40,26 @@ vim file.txt
 > [!TIP] 
 > You can use the navigation keys `w` `b` `e` with other commands like `d` (deletion) `c` copying
 
+### ***How to Delete, Copy, and Paste***
+
+_Delete_
+
+* To delete a line `dd` 
+	* Add n before `dd` to delete n of lines below `ndd`
+* To delete a word at cursor `dw`
+
+_Copy_
+
+* To copy a line `yy`
+	* Add n before `yy` to copy n of lines below `nyy`
+* To copy a word at cursor `yw`
+
+_Paste_
+
+* To paste a line below cursor `p`
+* To paste a line above cursor `P`
+	* To paste copied info n times `np`
+
 ### ***How to Setup Config***
 
 In your `$HOME` or `~` directory make a file called `vimrc`
