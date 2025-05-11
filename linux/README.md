@@ -38,6 +38,16 @@
 
 ## ***Terminology***
 
+### ***What is Unix***
+
+To understand a set of tools that is utilized, it is important to know the origin of those set of tools.\
+***Unix*** is a multi-user _OS_ (Operating System) that originated in the 1970s at AT&T's **Bell Labs**. Developed by Ken Thompson, Dennis Ritchie, and many others, Unix introduced keys concepts like hierarchical file systems, process control, and modular design. 
+
+### ***What is POSIX***
+
+**POSIX** or Portable Operating System Interface) is set of IEEE standards designed to main compatibility between operating systems. It defines **APIs** (application programming inferfaces), command-line shells, and utility interfaces to ensure software portability across **Unix**-like systems
+
+
 ### ***What is BASH?***
 Bash is the shell, or command language interpreter, for the GNU ***(GNU's Not Unix)***. While Bash stands for ***Bourne-Again Shell***
 
