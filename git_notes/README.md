@@ -112,13 +112,18 @@ Step 1: Create local ssh keys
 Example
 ```
 # This will be stored locally probably in $HOME/.ssh/id_ed25519
-ssh-keygen -t ed25519 -C [use your email]
+ssh-keygen -t ed25519 -C [description of what this is for]
 
-# After set up the PID
+# After set up the PID, if you rerun this process it will restart another ssh-agent
 eval "$(ssh-agent -s)" 
 
 # then add your key
+# if you have multiple keys make sure to add all the keys
 ssh-add $HOME/.ssh/id_ed25519 # This is the location of where you keys are
+
+# To see all the keys in your ssh-agent run ssh-add -l
+SHA256 ...... [comment]
+SHA256 ...... [comment]
 
 # you can verify if process is happening by running
 ps 
