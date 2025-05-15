@@ -14,9 +14,9 @@
 	* [_Help Commands_](#help-commands)
 * [***Section 2: Advanced Bash Concepts***](#section-2-advanced-bash-concepts)
 	* [_Return Status_](#return-status)
-	* [Compund Commands](#compound-commands)
-		* [_Looping Contructs_ ***(While, Until, For, Select)***](#looping-constructs)
-		* [Conditional Constructs ***(If, Case, Test)***](#condition-constructs)
+	* [_Compund Commands_](#compound-commands)
+		* [_Looping Contructs_***(While, Until, For, Select)***](#looping-constructs)
+		* [_Conditional Constructs_***(If, Case, Test)***](#condition-constructs)
 		* [_Command Groups_](#command-groups)
 * [***Section 3: STDIN, STDOUT, STDERROR***](#section-3-stdin-stdout-stderror)
 	* [_Redirection_](#redirection)
@@ -133,7 +133,7 @@ PATH=${PATH%:*}
 > [!CAUTION]
 > This will only set your $PATH during that current shell session. Once you leave the session it will reset back to original state.
  
-To configure your $PATH configuration make a `$HOME/.bashrc`\ and type:
+To configure your $PATH configuration make a `$HOME/.bashrc` and type:
 `export PATH=$HOME/usr/bin:$PATH`\
 
 The `.sh` on a bash script is technically not needed but the reason it is added is to to get a clear visualization that it is indeed a bash script. As long as the file has a shebang `#!/bin/usr` or `#!/usr/bin/env bash` it will know it is a bash script.
@@ -218,11 +218,11 @@ cd ${WORK_DIRECTORY}
 ### ***Syntax***
 
 To understand how shell scripts work it is important to know syntax of how `commands` operate.\
-Take the following example in the shell
 
+Take the following example in the shell
 ```bash
 # Lets say you ls in your ~ directory
-ls ~ 
+ls -a ~ 
 
 # Output 
 DOCUMENTS DOWNLOADS .ssh .git
@@ -300,6 +300,31 @@ Failure: Command should return a non-zero status.
 
 > Return values can range from 0 to 255
 > The return value of the last command to have executed is captured in the special parameter $?
+```
+
+### ***Arrays***
+
+Arrays is a data structure that stores a collection of elements of the same data type, like numbers and strings, using a single variable name. To declare a variable the notation is as follows.
+
+```bash
+myArray=(hi joe jim)
+```
+
+For arrays they are seperated by a space in between in string/number. To add a string with spaces they will be contained in `""` quotation marks.\
+Example:\
+`myARRAY=("joe" "him" "foo joe")`
+
+Like many programming languages the array uses zero-based numbering meaning the array `myARRAY[0]=joe` and `myARRAY[1]=him` and so on.
+
+Tricks and Tips:
+```
+# To get the size of an array use
+$#myArray[@]
+# To go through the list of all the arrays use
+$myArray[@]
+# To skip or start at a specific location on the array
+${myArray[@]:1}
+# The following mean starts at myArray[1]=him
 ```
 
 ### ***Compound Commands***
@@ -787,6 +812,7 @@ ${PARAM%u*} = "tho" it removes everything from the first u untill the right
 | Commands    | Description                          |
 |-------------|-------------------------------
 | `echo`      | to display output                             
+| `printf`    | to print and format output
 | `cd`        | to change directories
 | `ls`        | to list contents in directory
 | `pwd`       | print working directory
