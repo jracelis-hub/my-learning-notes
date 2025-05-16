@@ -58,6 +58,8 @@ From here GNU/Linux was formed, combining the Linux kernel to be able to communi
 
 Bash is the shell, or command language interpreter, for the GNU ***(GNU's Not Unix)***. While Bash stands for ***Bourne-Again Shell***.
 
+Bash scripting is just a text file that contains a series of commands
+
 ### ***Definitions***
 
 - **word** : sequence of ***characters*** considered to be a single unit.
@@ -81,6 +83,17 @@ The _shebang_ or `#!/bin/bash` or `#!/usr/bin/env bash` is the first shell scrip
 > [!CAUTION]
 > Without the _shebang_ the code will not be able to interpret the script
 
+* Bash scripts run inside of a noninteractive shell
+* You can change options for the subshell with `set` or `shopt` in the script
+* Scripts help avoid typos and allow easier sharing Bash code
+
+To ways to display output
+* `printf`
+* `echo`
+There are 3 ways of quotations usage:
+1.) no quotes
+2.) `\" \"`
+3.) `\` \``
 
 ```bash
 #Examples of defining the right language
@@ -809,6 +822,8 @@ function color_change_tput {
 	* Older representation: ``...``
 * `$((...))` Arithmetic expansion does calculations.
 	* Older representation: `$[...]`
+> [!NOTE]
+> Bash can only do calculations with integers.
 
 ```
 # Brace Expansion
