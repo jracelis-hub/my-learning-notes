@@ -723,7 +723,7 @@ _Colored Text (tput)_
 | Black | 0 | 0 |
 | Red | 1 | 1 |
 | Green | 2 | 2 |
-| Yellow | 3 | 3 |
+| Yellow | 3 | 3 |user@ubuntu
 | Blue | 4 | 4 |
 | Magenta | 5 | 5 |
 | Cyan | 6 | 6 |
@@ -803,6 +803,12 @@ function color_change_tput {
 * `~` Current users $HOME directory
 	* `~-` old pwd 
 * `{a,b,c} Brace expansion creates sets or ranges
+	* `touch file{a..d}{1..4}.txt`
+* `${...} Parameter expansion retrieves and transforms stored values.
+* `$(...)` Command substitution puts the output of one command inside another.
+	* Older representation: ``...``
+* `$((...))` Arithmetic expansion does calculations.
+	* Older representation: `$[...]`
 
 ```
 # Brace Expansion
