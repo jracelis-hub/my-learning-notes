@@ -93,7 +93,7 @@ To ways to display output
 There are 3 ways of quotations usage:
 1.) no quotes\
 2.) `""`\
-3.) ````\
+3.) `''`\
 
 Example
 ```bash
