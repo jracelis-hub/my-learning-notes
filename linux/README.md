@@ -93,7 +93,7 @@ To ways to display output
 There are 3 ways of quotations usage:
 1.) no quotes\
 2.) `""`\
-3.) `''`\
+3.) `''`
 
 Example
 ```bash
@@ -236,7 +236,40 @@ WORK_DIRECTORY="/jracelis/bash-learnings/READMD.md"
 # Command Line
 echo "My favorite color is ${FAV_COLOR}"
 cd ${WORK_DIRECTORY}
+```
 
+* You can also declare variables with specific attributes with using the `declare` command.
+```bash
+# Some examples of the cases
+declare -r myName="Jarron"
+# The -r switch makes the variable myName to be read only 
+
+# Using the -l and -u changes text from lowercase or uppercase
+declare -l myName="JARRON"
+# Output of $myNAME=jarron
+```
+
+> [!TIP]
+> You can use declare -p to see all the variables declared
+
+_Number Variables_
+
+Working with number variables usage isn't as useful compared to other programming languages. But I will touch on it a bit to get a general gist of what can be done. It is best to assign a variable number by using `declare -i number=10` so the variable recognizes that the it is indeed a number.
+
+Example
+```bash
+# Not using declared
+b=10
+b=$b+10
+# Output
+b=10+10
+# Notice that it is not adding the number rather outputing the character values
+
+# Using declare
+declare -i b=10
+b=$b+10
+# Output
+20
 ```
 
 ### ***Syntax***
@@ -598,7 +631,7 @@ _Pattern matching is used in Bash for the **[[** and `case` keywords, **pathname
 
 `test`
 
-**[expression]** or `test` **expression**
+**[ expression] ** or `test` **expression**
 
 > Evaluate _conditional expression_ with the `test` builtin.
 
