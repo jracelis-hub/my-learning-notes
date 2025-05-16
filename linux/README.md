@@ -91,9 +91,20 @@ To ways to display output
 * `printf`
 * `echo`
 There are 3 ways of quotations usage:
-1.) no quotes
-2.) `""`
-3.) ````
+1.) no quotes\
+2.) `""`\
+3.) ````\
+
+Example
+```bash
+echo hello there
+hello there
+$
+# Compared to print
+printf hello there
+hello there$
+# Noticed that the $ sign is added with hello there because it did not include and new line
+```
 
 ```bash
 #Examples of defining the right language
@@ -389,19 +400,6 @@ echo is /usr/bin/echo
 
 ## ***Section 2: Advanced Bash Concepts***
 
-* `echo` is used to display text and end with a new line character `\n`
-* `printf` is used to format and print data and does not include `\n`
-
-Example
-```bash
-echo hello there
-hello there
-$
-# Compared to print
-printf hello there
-hello there$
-# Noticed that the $ sign is added with hello there because it did not include and new line
-```
 ### ***Return Status***
 
 ```bash
