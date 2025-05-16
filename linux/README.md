@@ -92,8 +92,8 @@ To ways to display output
 * `echo`
 There are 3 ways of quotations usage:
 1.) no quotes
-2.) `\" \"`
-3.) `\` \``
+2.) `""`
+3.) ````
 
 ```bash
 #Examples of defining the right language
