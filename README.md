@@ -10,6 +10,7 @@
     * _Linux_
     * _Networking_
     * _Virtual Machine_
+	* _Vim Notes_
     * _Images_
 * [***Contact***](#contact)   
 
@@ -34,6 +35,7 @@ This repository is a one stop shop to all the topics that I have learn so I can 
 * [_Git Notes_](https://github.com/jracelis-hub/my-learning-notes/tree/main/git_notes) :open_file_folder:
 * [_Linux_](https://github.com/jracelis-hub/my-learning-notes/tree/main/linux) :open_file_folder: 
 * [_Networking_](https://github.com/jracelis-hub/my-learning-notes/tree/main/networking) :open_file_folder:
+* [_Vim Notes_](https://github.com/jracelis-hub/my-learning-notes/tree/main/vim_notes)
 * [_Virtual Machine_](https://github.com/jracelis-hub/my-learning-notes/tree/main/virtual_machine) :open_file_folder:
 * [_Images_](https://github.com/jracelis-hub/my-learning-notes/tree/main/images) 📷
 
