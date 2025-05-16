@@ -2,8 +2,8 @@
 
 ## Table of Contents
 
-* [Introduction](#introduction)
-* [Repository Topics](#repository-topics)
+* [***Introduction***](#introduction)
+* [***Repository Topics***](#repository-topics)
     * _C Programing_
     * _Container_
     * _Git Notes_
@@ -11,7 +11,7 @@
     * _Networking_
     * _Virtual Machine_
     * _Images_
-* [Contact](#contact)   
+* [***Contact***](#contact)   
 
 ## Introduction
 
@@ -23,7 +23,9 @@ This is a page where I will documents and track all my learnings from several di
 
 ***Background***
 
-I graduated from ***California State University, Fullerton*** with a ***Bachelors*** in ***Mechanical Engineer*** where my first engineering job was in the pcb _(print circuit board)_ manufacturing industry. From there, I moved to Rivian where I began to learning more integration of hardware + software. I was intrugied by the software side of things, which made me pursue a deeper learning outside of work. Here is a centralized area where I can keep all my notes in one spot, while challenging myself with new topics.
+I graduated from ***California State University, Fullerton*** with a ***Bachelors*** in ***Mechanical Engineer*** where my first engineering job was in the pcb _(print circuit board)_ manufacturing industry. From there, I moved to Rivian where I was introduced to ECUs _(Electronic Control Modules)_ and how the functionality between hardware, software and connectivity. I primarily worked on the ECU that was in charged of connectivity and data storage based on a 64-bit ARM Cortex processor. Since the system required the knowledge of how to navigating via linux and network protocols. I began to learn start the journal of understanding these concepts in a deeper level . The way I grasp concepts is by learning from the ground up starting with theory and going into practical.
+
+This repository is a one stop shop to all the topics that I have learn so I can refer back to the information as needed. I enjoy learning new concepts and building upon the foundation. I hope to further increase my knowledge and soon get a role within embedded software, software systems, or and software related role.
 
 ## Repository Topics
 
