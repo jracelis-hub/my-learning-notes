@@ -629,15 +629,28 @@ _Pattern matching is used in Bash for the **[[** and `case` keywords, **pathname
 
 #### ***Conditional Tests***
 
-`test`
+* `test`
+* **[ expression ] ** or `test` **expression**
+* `[[ extended test ]]` 
 
-**[ expression] ** or `test` **expression**
-
-> Evaluate _conditional expression_ with the `test` builtin.
-
-**[[expression]]**
-
+> Evaluate _conditional expression_ with the `test` builtin.\
 > Evaluate _conditional expression_ with the **[[** keyword; word splitting <ins>not</ins> preformed. The righthand side of a string comparison ( **==** , **!=** ) is treated as a **pattern when not quoted**, and as a **string when quoted**.
+
+* Extended test or `[[ expression ]]` lets us test more than 1 `test` in the brackets.
+
+Example
+```bash
+[[ -d ~ && -a /bin/bash ]]; echo $?
+# The -d checks if ~ is a directory
+# The -a checks if /bin/bash exists
+# and the && makes us evaluate it all in one bracket compared to this example below
+[ -d ~ ] && [ -a /bin/bash ]; echo $?
+# To use a comparison for regular expression
+[[ "cat" =~ c.* ]]; echo $? ]]
+```
+
+* To see more details use `help test`.
+
 
 | `test`     |       Definition        |
 |---------|------------------------------------------------|
@@ -720,6 +733,14 @@ _Colored Text (ANSI)_
 | Magenta  |    35                  |   45
 | Cyan     |    36                  |   46
 | White    |    37                  |   47
+| Bright Black | 90 | 100
+| Bright Red | 91 | 101
+| Bright Green | 92 | 102
+| Bright Yellow | 93 | 103
+| Bright Blue | 94 | 104
+| Bright Magenta | 95 | 105
+| Bright Cyan | 96 | 106
+| Bright White | 97 | 107
 
 _Syled text (ANSI)_
 
