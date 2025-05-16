@@ -130,6 +130,23 @@ B Label: 00456
 # The 0 just means the digit is denotes with leading zeros rather than spaces
 ```
 
+For dates you can use `date` or `printf`
+
+Example
+```bash
+# For printf the %T is denoted for time
+printf "%(%Y-%m-%d %H:%M:%S)T\n" $(date +%s)
+# or
+date +%Y-%m-%d\ %H:%M:%S
+# Y is the year 
+# m is the month
+# d is the day
+# H is hour of the day
+# N is minute of the day
+# S is second of the day
+```
+
+
 ```bash
 #Examples of defining the right language
 
@@ -482,10 +499,30 @@ echo $?
 ### ***Arrays***
 
 Arrays is a data structure that stores a collection of elements of the same data type, like numbers and strings, using a single variable name. To declare a variable the notation is as follows.
+* Arrays let us store multiple values
+* Bash supports to types of arrays
+1.) index\
+2.) associative
 
+Example
 ```bash
+declare -a snacks=(apple banana)
+# or
 myArray=(hi joe jim)
+# Can also add onto array by doing
+snacks[n]="grapes"
+# where the n is the number of the array you want to add it on
+# Can also add something to the end of the array by doing
+snacks+=("mango")
+
+# You can also do associative arrays which allows you to use a key and value in the array only allow in BASH 4.0
+declare -A office
+office[city]="San Francisco"
+office["building name"]="HQ WEST"
 ```
+
+> [!NOTE]
+> Even though there is only showing two in the original array `apple banna` if you go check each value it will appear as `apple banana blank blank grape mango`
 
 For arrays they are seperated by a space in between in string/number. To add a string with spaces they will be contained in `""` quotation marks.\
 Example:\
