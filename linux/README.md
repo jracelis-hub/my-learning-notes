@@ -790,6 +790,35 @@ function color_change_tput {
 
 ---
 
+#### ***Bash Expansions and Substitutions***
+
+| Representation | Name |
+|:---|:---|
+| `~` | Tilde expansion |
+| `{...}` | Brace expansion |
+| `${...}` | Parameter expansion |
+| `$(...)` | Command substitution |
+| `$((...))` | Arithmetic expansion |
+
+* `~` Current users $HOME directory
+	* `~-` old pwd 
+* `{a,b,c} Brace expansion creates sets or ranges
+
+```
+# Brace Expansion
+echo /tmp{one,two,three}/file.txt
+# /tmp/one/file.txt /tmp/two/file.txt /tmp/three/filt.txt
+
+echo c{a,o,u}t
+# cat cot cut
+
+echo {00..5}
+# 00 01 02 03 04 05
+```
+
+> [!TIP]
+> You can also add intervals to brace expansion `{1..30..2}` `{begin..end..interval}`
+
 #### ***Parameter Expansion: Conditionals***
 
 ***"param" = parameter***
