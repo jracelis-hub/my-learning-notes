@@ -104,6 +104,30 @@ $
 printf hello there
 hello there$
 # Noticed that the $ sign is added with hello there because it did not include and new line
+
+# For echo you can add escape sequences with using -e switch
+echo -e "\tHello"
+	Hello
+
+# printf notation
+
+# This "Right aligned text and digits"
+printf "%10s: %5d" "A Label" 123 "B Label" 456
+# Output
+	A Label:	123
+	B Label:	456
+
+# This "Left aligned text and digits"
+print "%-10s: %-5d" "A Label" 123 "B Label" 456
+A Label: 123
+B Label: 456
+
+# The numbers infront of the format specifier is the length of the string/digit in this instance 
+# 10 is 10 strings long and 5 is 5 digits long
+printf "%-10s: %05d" "A Label" 123 "B Label" 456
+A Label: 00123
+B Label: 00456
+# The 0 just means the digit is denotes with leading zeros rather than spaces
 ```
 
 ```bash
