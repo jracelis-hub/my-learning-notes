@@ -134,9 +134,9 @@ PATH=${PATH%:*}
 > This will only set your $PATH during that current shell session. Once you leave the session it will reset back to original state.
  
 To configure your $PATH configuration make a `$HOME/.bashrc` and type:
-`export PATH=$HOME/usr/bin:$PATH`\
+`export PATH=$HOME/usr/bin:$PATH`
 
-The `.sh` on a bash script is technically not needed but the reason it is added is to to get a clear visualization that it is indeed a bash script. As long as the file has a shebang `#!/bin/usr` or `#!/usr/bin/env bash` it will know it is a bash script.
+The `.sh` on a bash script is technically not needed but the reason it is added is to to get a clear visualization that it is indeed a bash script. As long as the file has a shebang `#!/bin/bash` or `#!/usr/bin/env bash` it will know it is a bash script.
 
 To check what type of file a file is you can use the `file` command along with the file you want to check.
 
@@ -217,7 +217,7 @@ cd ${WORK_DIRECTORY}
 
 ### ***Syntax***
 
-To understand how shell scripts work it is important to know syntax of how `commands` operate.\
+To understand how shell scripts work it is important to know syntax of how `commands` operate.
 
 Take the following example in the shell
 ```bash
@@ -239,15 +239,15 @@ cd DOWNLOADS; touch text.txt; mv text.txt ~
 # Changes directories into DOWNLOADS 
 ~$cd DOWNLOADS 
 # OUTPUT
-~/DOWNLOADS$
+user@ubuntu~/DOWNLOADS$
 # touch text.txt creates text.txt in current working directory which is DOWNLOADS
-~/DOWNLOADS$ touch text.txt
+user@ubuntu~/DOWNLOADS$ touch text.txt
 # OUTPUT
-~/DOWNLOADS$ touch text.txt
+user@ubuntu~/DOWNLOADS$ touch text.txt
 # mv text.txt to home directory ~
-~/DOWNLOADS$ mv text.txt ~
+user@ubuntu~/DOWNLOADS$ mv text.txt ~
 # OUTPUT
-~$ text.txt
+user@ubuntu~$ text.txt
 cd DOWNLOADS -> touch text.txt -> mv text.txt ~
 
 # You can preform the same output by typing each command line by line like this
@@ -277,7 +277,92 @@ mv text.txt ~
 # Notice this is like typing each command and returning it in a shell terminal to get the same output. Each newline represents a new command.
 ```
 
+***Pipes and Redirection***
+
+* The pipe symbol `\|` sends the output of one process to anoter
+	* `ls | wc -l`
+* Redirections end streams of (stdin, stdout and stderr) to or from files
+	* `ls > list.txt`
+
+Redirection
+
+| Stream | Name | Content |
+|:---:|:---|:---|
+| 0 | Standard input (stdin) | Keyboard or other input
+| 1 | Standard output (stdout) | Regular output
+| 2 | Standard error (stderr) | Output marked as `error`
+
+| Symbol | Function |
+|:---:|:---|
+| > | Output redirection (truncate)
+| >> | Output redirection (append)
+| < | Input redirection
+| << | Here document
+
+Example
+```bash
+# Redirection
+ls > list.txt
+cat list.txt
+Downloads
+Documents
+myFiles
+# This lists the out of the contents into the file list.txt
+
+# To redirection stderr 2
+# To redirection stdin 1
+ls /random 1>output.txt 2>error.txt
+
+# To use input redirection
+cat < README.md
+# This lists all the contents in the README.md without having to type cat README.md using the input of README.md to cat the information
+
+# To use Here document <<
+cat << EndOfText
+> This is a 
+> multiline
+> test string
+> EndOfText
+This is a
+multiline
+text string
+# Notice when I use can on << EndOfText it stop at the specific word
+```
+
+> [!NOTE]
+> Standard output (stdout) `1` is assumed in redirection
+
+Key Differences
+* Piping is used to send streams from one command to another.
+* Redirection is used to send streams to and from files.
+
 ### ***Help Commands***  
+
+***bash*** consists of two types:
+* builtin
+* command
+To see if a command is a built do the following:
+```bash
+command -V df
+df is /usr/bin/df
+command -V echo
+echo is a shell builtin
+
+# To run the command or built in just add the following keyword to the beginning
+command echo hello
+builtin echo
+```
+The main difference is that builtins takes precedents over commands.
+
+To disable specific builts just used `enable -n [builtin]`.
+```bash
+enable -n echo
+command -V echo
+echo is /usr/bin/echo
+# Note they are using different command version 
+```
+* Use `enable -n` to see the disable built ins.
+* Built ins use a different documentation than `man` just use `help [bulitins]` or `help`
 
 > [!Note]
 > For more information use the following commands to go more indepth into the concepts
@@ -291,6 +376,19 @@ mv text.txt ~
 
 ## ***Section 2: Advanced Bash Concepts***
 
+* `echo` is used to display text and end with a new line character `\n`
+* `printf` is used to format and print data and does not include `\n`
+
+Example
+```bash
+echo hello there
+hello there
+$
+# Compared to print
+printf hello there
+hello there$
+# Noticed that the $ sign is added with hello there because it did not include and new line
+```
 ### ***Return Status***
 
 ```bash
@@ -300,6 +398,17 @@ Failure: Command should return a non-zero status.
 
 > Return values can range from 0 to 255
 > The return value of the last command to have executed is captured in the special parameter $?
+```
+
+Example
+```bash
+mkdir file
+echo $?
+0
+cd random  
+bash: cd: random: No such file or directory
+echo $?
+1
 ```
 
 ### ***Arrays***
