@@ -686,6 +686,37 @@ _Pattern matching is used in Bash for the **[[** and `case` keywords, **pathname
 
 * The **|** (pipe) character between two patterns entails a match if either pattern matches **(OR)**.
 
+***Getopts***
+
+Get options or `getopts` is a way to do specific `commands` by utilizing flags like `-f` `-u` `-ab`. It is a good way to add control over your bash script.
+
+Example
+```bash
+while getopts u:p:ab option; do
+	case $option in
+		u)
+			user=$OPTARG
+			;;
+		p) 
+			pass=$OPTARG
+			;;
+		a) 
+			echo "got the 'a' flag"
+			;;
+		b)
+			echo "got the 'b' flag"
+			;;
+	esac
+done
+```
+To use `getopts` you need to call it using `getopts` plus the flags `a:b:c` and a **word** associated with it.\
+`getopts u:a: option`
+
+* The `:` in `getopts` means it has an arugment
+* If it does not have `:` it does not have any arugments
+* To call out the argument for the specific flag, you assign it with a `variable=$OPTARG`
+* Can use `?` to capture any other flag that is not specified.
+
 </details>
 
 #### ***Conditional Tests***
