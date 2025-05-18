@@ -2,25 +2,17 @@
 
 # Source my color library
 
-source my_color_lib
+source ru_var_func
 
 # Home variables
 
 MY_EXE="$HOME/git_repos/bin"
 
-function cp_to_exe {
-	
-	echo -en "${BLUE}Enter binary to transfer to ${MY_EXE}:${RESET} "
-	read -r script
-	if [ -z "${script}" ]; then
-		echo -e "${RED}Invalid input... Please enter script.${RESET}"
-		exit 1
+for script in "$@"; do
+	cp $script $MY_EXE 2>> $ERROR_LOG 
+	if [ $? -eq 0 ]; then
+		log_pass "${GREEN}SUCCESS${RESET}: Moved $script to $MY_EXE"
 	else
-		cp ${script} ${MY_EXE}
-			if [ $? -eq 0 ]; then
-				echo -e "${GREEN}Copying ${script} to ${MY_EXE}${RESET}"
-			fi
+		log_error "${RED}ERROR${RESET}: Could not locate $script in $(pwd)"
 	fi
-}
-
-cp_to_exe
+done

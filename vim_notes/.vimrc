@@ -1,6 +1,14 @@
 " Vim Configurations
 " To use the follow settings remove the " from the set [option]
 
+" Disable compatibility with vi which can cuase unexpected issues
+set nocompatible
+
+" Enable type fille detection. Vim will be able to try to detect the type of file in use.
+filetype on
+filetype plugin on
+filetype indent on
+
 " To set colorscheme
 colorscheme desert
 syntax on colorscheme desert

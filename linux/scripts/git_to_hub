@@ -2,7 +2,7 @@
 
 # Sourcing color library
 
-source my_color_lib
+source ru_var_func 
 
 function git_commit {
 

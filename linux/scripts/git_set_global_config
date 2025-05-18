@@ -4,7 +4,7 @@ set +x
 
 # Source color library
 
-source my_color_lib
+source ru_var_func
 
 function set_git_username {
 	echo -en "${BLUE}Enter git user.name:${RESET} "

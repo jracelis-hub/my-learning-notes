@@ -47,18 +47,24 @@ _Delete_
 * To delete a line `dd` 
 	* Add n before `dd` to delete n of lines below `ndd`
 * To delete a word at cursor `dw`
+* To delete everything after the cursor `d$`
+* To delete everything before the cursor `d0`
 
 _Copy_
 
 * To copy a line `yy`
 	* Add n before `yy` to copy n of lines below `nyy`
 * To copy a word at cursor `yw`
+* To copy everything after the cursor `c$`
+* To copy everything before the cursor `c0`
 
 _Paste_
 
 * To paste a line below cursor `p`
 * To paste a line above cursor `P`
 	* To paste copied info n times `np`
+* To paste everything after the cursor `p$`
+* To paste everything at the end of the line `P`
 
 ### ***How to Setup Config***
 
@@ -74,9 +80,24 @@ Specific Configuration Table
 |Purpose| Description|
 |:---:|:------|
 | `set number` | to add line numbers on your vim console |
+| `set relativenumber` | to show relative line numbers |
+| `set autoindent` | to place the same indentations on the new line, as is present on the previous line |
 | `set shiftwidt=number` | indent size of shift width |
 | `set tabstop=number` | tab size |
 | `set mouse=a` | allows mouse movements |
+
+| Cursor Change | Description |
+|:---:|:---| 
+| Ps = 0 | blinking block |
+| Ps = 1 | blinking block |
+| Ps = 2 | steady block |
+| Ps = 3 | blinking underline |
+| Ps = 4 | steady underline |
+| Ps = 5 | blinking bar |
+| Ps = 6 | steady bar |
+| `let &t_EI` | "\e[2 q" " Set all settings to blinking block |
+| `let &t_SI` | "\e[5 q" " Set insert mode to have steady bar |
+| `let &t_SR` | "\e[3 q" " Set replace mode to have steady underline |
 
 > [!NOTE]
 > To add comments use `"` before the new line 
@@ -106,8 +127,8 @@ Good to know hotkeys for Vim
 | `j` | move cursor down |
 | `k` | move cursor up |
 | `l` | move cursor right |
-| `gj` | moves cursor down (multi-line text)
-| `gk` | moves cursor up (multi-line text)
+| `nj` | moves cursor down (multi-line text)
+| `nk` | moves cursor up (multi-line text)
 | `H` | move to top of screen |
 | `M` | move to middle of screen |
 | `L` | move to bottom screen |

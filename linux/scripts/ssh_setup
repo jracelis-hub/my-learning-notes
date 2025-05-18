@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-source my_color_lib
+source ru_var_func
 
 ####################################
 
