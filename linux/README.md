@@ -10,13 +10,15 @@
 	* [_Scripting Basics_](#scripting-basics)
 	* [_Where Are Commands_](#where-are-commands)
 	* [_Variables_](#variables)
+	* [_Arrays_](#arrays)
 	* [_Syntax_](#syntax)
+	* [_Return Status_](#return-status)
 	* [_Help Commands_](#help-commands)
 * [***Section 2: Advanced Bash Concepts***](#section-2-advanced-bash-concepts)
-	* [_Return Status_](#return-status)
-	* [_Compund Commands_](#compound-commands)
-		* [_Looping Contructs_***(While, Until, For, Select)***](#looping-constructs)
-		* [_Conditional Constructs_***(If, Case, Test)***](#condition-constructs)
+	* [_Compound Commands_](#compound-commands)
+		* [_Iteration_***(While, Until, For, Select)***](#iteration)
+		* [_Conditional_***(If, Case, Test)***](#condition)
+		* [_Conditional Test_](#condition-tests)
 		* [_Command Groups_](#command-groups)
 * [***Section 3: STDIN, STDOUT, STDERROR***](#section-3-stdin-stdout-stderror)
 	* [_Redirection_](#redirection)
@@ -313,6 +315,51 @@ b=$b+10
 20
 ```
 
+### ***Arrays***
+
+Arrays is a data structure that stores a collection of elements of the same data type, like numbers and strings, using a single variable name. To declare a variable the notation is as follows.
+* Arrays let us store multiple values
+* Bash supports to types of arrays
+1.) index\
+2.) associative
+
+Example
+```bash
+declare -a snacks=(apple banana)
+# or
+myArray=(hi joe jim)
+# Can also add onto array by doing
+snacks[n]="grapes"
+# where the n is the number of the array you want to add it on
+# Can also add something to the end of the array by doing
+snacks+=("mango")
+
+# You can also do associative arrays which allows you to use a key and value in the array only allow in BASH 4.0
+declare -A office
+office[city]="San Francisco"
+office["building name"]="HQ WEST"
+```
+
+> [!NOTE]
+> Even though there is only showing two in the original array `apple banna` if you go check each value it will appear as `apple banana blank blank grape mango`
+
+For arrays they are seperated by a space in between in string/number. To add a string with spaces they will be contained in `""` quotation marks.\
+Example:\
+`myARRAY=("joe" "him" "foo joe")`
+
+Like many programming languages the array uses zero-based numbering meaning the array `myARRAY[0]=joe` and `myARRAY[1]=him` and so on.
+
+Tricks and Tips:
+```
+# To get the size of an array use
+$#myArray[@]
+# To go through the list of all the arrays use
+$myArray[@]
+# To skip or start at a specific location on the array
+${myArray[@]:1}
+# The following mean starts at myArray[1]=him
+```
+
 ### ***Syntax***
 
 To understand how shell scripts work it is important to know syntax of how `commands` operate.
@@ -434,6 +481,28 @@ Key Differences
 * Piping is used to send streams from one command to another.
 * Redirection is used to send streams to and from files.
 
+### ***Return Status***
+
+```bash
+Success: Command should return a status of 0.
+
+Failure: Command should return a non-zero status.
+
+> Return values can range from 0 to 255
+> The return value of the last command to have executed is captured in the special parameter $?
+```
+
+Example
+```bash
+mkdir file
+echo $?
+0
+cd random  
+bash: cd: random: No such file or directory
+echo $?
+1
+```
+
 ### ***Help Commands***  
 
 ***bash*** consists of two types:
@@ -474,76 +543,9 @@ echo is /usr/bin/echo
 
 ## ***Section 2: Advanced Bash Concepts***
 
-### ***Return Status***
-
-```bash
-Success: Command should return a status of 0.
-
-Failure: Command should return a non-zero status.
-
-> Return values can range from 0 to 255
-> The return value of the last command to have executed is captured in the special parameter $?
-```
-
-Example
-```bash
-mkdir file
-echo $?
-0
-cd random  
-bash: cd: random: No such file or directory
-echo $?
-1
-```
-
-### ***Arrays***
-
-Arrays is a data structure that stores a collection of elements of the same data type, like numbers and strings, using a single variable name. To declare a variable the notation is as follows.
-* Arrays let us store multiple values
-* Bash supports to types of arrays
-1.) index\
-2.) associative
-
-Example
-```bash
-declare -a snacks=(apple banana)
-# or
-myArray=(hi joe jim)
-# Can also add onto array by doing
-snacks[n]="grapes"
-# where the n is the number of the array you want to add it on
-# Can also add something to the end of the array by doing
-snacks+=("mango")
-
-# You can also do associative arrays which allows you to use a key and value in the array only allow in BASH 4.0
-declare -A office
-office[city]="San Francisco"
-office["building name"]="HQ WEST"
-```
-
-> [!NOTE]
-> Even though there is only showing two in the original array `apple banna` if you go check each value it will appear as `apple banana blank blank grape mango`
-
-For arrays they are seperated by a space in between in string/number. To add a string with spaces they will be contained in `""` quotation marks.\
-Example:\
-`myARRAY=("joe" "him" "foo joe")`
-
-Like many programming languages the array uses zero-based numbering meaning the array `myARRAY[0]=joe` and `myARRAY[1]=him` and so on.
-
-Tricks and Tips:
-```
-# To get the size of an array use
-$#myArray[@]
-# To go through the list of all the arrays use
-$myArray[@]
-# To skip or start at a specific location on the array
-${myArray[@]:1}
-# The following mean starts at myArray[1]=him
-```
-
 ### ***Compound Commands***
 
-#### ***Iteration:***
+#### ***Iteration***
 
 Continuously loop over **list** of commands delineated by the keywords of `do` and `done`.
 
@@ -633,7 +635,7 @@ OUTPUT
 
 </details>
 
-#### ***Conditionals:***
+#### ***Conditionals***
 
 Execute **list** of commands only if certain conditions are met.
 
