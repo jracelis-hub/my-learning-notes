@@ -94,7 +94,7 @@ The _shebang_ or `#!/bin/bash` or `#!/usr/bin/env bash` is the first shell scrip
 To ways to display output
 * `printf`
 * `echo`
-There are 3 ways of quotations usage:
+There are 3 ways of quotations usage:\
 1.) no quotes\
 2.) `""`\
 3.) `''`
