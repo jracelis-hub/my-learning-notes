@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+# To add debugger
+# set -x
+
 # Source my color library
 
 source ru_var_func

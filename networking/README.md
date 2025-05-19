@@ -13,6 +13,75 @@
 
 Networking the most important process when it comes to communication. It is the process of connecting two or more computers to share resources, information, and communication.
 
+### ***Definitions***
+
+* Transmission Media - The medium through which devices communicate, it can be a wired media like optical fiber and ethernet. It can also be a wireless media like WiFi, Bluetooth and infrared
+
+* Protocol - A set of rules and standards that define how devices on a network communicate with each other
+* Node - Any device connected to a network, such as a computer, printer, or router
+* Network - A collection of interconnected devices, such as a computer, printers, and servers, that can communicate with each other
+
+* ***TCP/IP*** - A set of protocols used to communicate over the internet and other networks
+* ***VNC*** - Virtual Network Computering
+* ***VPN*** - Virtual Private Network: allows for information to be securely sent across a public or unsecured netowrk, such as the internet
+* ***SSL*** - Secure Socket Layer
+* ***TSL*** - Transport Layer Security
+* ***CA*** - Certificate of Authority
+
+Protocols
+* ***SSH*** - Secure Shell
+* ***ARP*** - Address Resolution Protocol
+* ***HTTPS*** - Secure Hypertext Transfer Protocol 
+* ***HTTP*** - Hypertext Transfer Protocol
+* ***FTP*** - File Transfer Protocol
+* ***ICMP*** - Internet Control Message Protocol
+* ***SNMP*** - Simple Network Management Protocol
+* ***NFS*** - Network File System
+* ***SIP*** - Session Initiation Protocol
+* ***POP*** - Post Office Protocol
+* ***IP*** - Internet Protocol: A unique numerical identifier assigned to each device on a network, used to identify and communicate with other devices
+* ***TCP*** - Transmission Control Protocol
+* ***UDP*** - User Datagram Protocol
+* ***RPC*** - Remote Procedure Call
+* ***RDP*** - Remote Desktop Protocol
+8 ***VoIP*** - Voice over Internet Protocol
+
+Ports
+* 443 - HTTPS
+* 80 - HTTP
+* 20 - FTP
+* 22 - SSH
+* 23 - Telnet
+* 25 - SMTP
+* 53 - DNS
+
+Wifi
+* ***WPA*** - Wi-Fi proectect access
+* ***ISP*** - Internet Service Provider
+* ***NAT*** - Network Address Translation
+* ***DNS*** - Domain Name System: A system that translates domain names (such as www.google.com) into IP addresses, allowing devices to locate and connect to websites and otehr network resources
+* ***LAN*** - Local Area Network: A network that connects devices within a limited geographical area, such as a home, office, or building
+* ***WAN*** - Wide Area Network: A network that connects devices over a large geograpical area, such as a multiple offices in different cities or countries
+* ***PAN*** - Personal Area Network
+* ***WLAN*** - Wireless Local Area Network
+* ***MAC*** - Medica Access Control
+* ***DHCP*** - Dynamic Host Configuration Protocol: A protocol that automatically assigns IP addresses and network configuration settings to a device on a network
+* ***IPv4*** - Internet Protocol Version 4 (32-bit)
+	* 8 bit octets
+	* 255.255.255.255
+* ***IPv6*** - Internet Protocol Version 6 (128-bit) hexadecimal format
+	* 16:16:16:16:16:16:16:16
+* ***2.4Ghz & 5Ghz***
+* ***LTE*** - Long Term Evolution 
+* ***4G*** - Fourth Generation
+* ***5G*** - Fifth Generation
+
+* Routers - A networking device that connects multiple networks together and forwards data packets between them
+* Firewalls - A security device or software that monitors and controls incoming and outgoing networt traffic, based on a set of predefined security rules
+* Switches - A networking device that connects devices on a network and forwards data packets between them
+* Server -
+* Client -
+* Subnet - 
 
 ## Sockets
 
