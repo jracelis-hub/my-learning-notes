@@ -2,16 +2,18 @@
 
 ## Table of Contents
 
-* [***Terminology***](#terminology)
+* [***Introduction***](#introduction)
+	* [_Purpose_](#purpose)
+	* [_Prerequisites_](#prerequisites)
 	* [_Definitions_](#definitions)
-* [***Purpose***](#purpose)
-* [***Prerequisites***](#prerequisites)
-* [***Section 1: Introduction***](#section-1-introduction)
+		* [_Terminology_](#terminology)
+* [***Section 1: Beginner Bash Concepts***](#section-1-beginner-bash-concepts)
 	* [_Scripting Basics_](#scripting-basics)
 	* [_Where Are Commands_](#where-are-commands)
 	* [_Variables_](#variables)
 	* [_Arrays_](#arrays)
 	* [_Syntax_](#syntax)
+	* [_Pipes and Redirection_](#pipes-and-redirection)
 	* [_Return Status_](#return-status)
 	* [_Help Commands_](#help-commands)
 * [***Section 2: Advanced Bash Concepts***](#section-2-advanced-bash-concepts)
@@ -76,7 +78,7 @@ Bash `scripting` is a great way to automate tasks within a ***GNU*** operating s
 
 * Command line [downloand linux here](https://ubuntu.com/desktop/wsl)
 
-## ***Section 1: Introduction***
+## ***Section 1: Beginner Bash Concepts***
 
 ### ***Scripting Basics***
 
@@ -422,7 +424,7 @@ mv text.txt ~
 # Notice this is like typing each command and returning it in a shell terminal to get the same output. Each newline represents a new command.
 ```
 
-***Pipes and Redirection***
+### ***Pipes and Redirection***
 
 * The pipe symbol `\|` sends the output of one process to anoter
 	* `ls | wc -l`
