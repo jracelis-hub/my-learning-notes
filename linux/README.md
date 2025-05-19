@@ -13,7 +13,6 @@
 	* [_Variables_](#variables)
 	* [_Arrays_](#arrays)
 	* [_Syntax_](#syntax)
-	* [_Pipes and Redirection_](#pipes-and-redirection)
 	* [_Return Status_](#return-status)
 	* [_Help Commands_](#help-commands)
 * [***Section 2: Advanced Bash Concepts***](#section-2-advanced-bash-concepts)
@@ -23,8 +22,9 @@
 		* [_Conditional Tests_](#conditional-tests)
 		* [_Command Groups_](#command-groups)
 * [***Section 3: STDIN, STDOUT, STDERROR***](#section-3-stdin-stdout-stderror)
-	* [_Redirection_](#redirection)
+	* [_Pipes & Redirection_](#pipes-&-redirection)
 	* [_Manipulating Output_](#manipulating-output)
+	* [_Color Code Text_](#color-code-text)
 * [***Section 4 Parameter Manipulation***](#section-4-parameter-manipulation)
 	* [_Parameters_](#parameters)
 		* [_Parameter Expansion: Conditionals_](#parameter-expansion-conditionals)
@@ -84,73 +84,6 @@ Bash `scripting` is a great way to automate tasks within a ***GNU*** operating s
 
 The _shebang_ or `#!/bin/bash` or `#!/usr/bin/env bash` is the first shell script that has to be included to be able to intreprete the specific programing that is being utilized.
 
-> [!CAUTION]
-> Without the _shebang_ the code will not be able to interpret the script
-
-* Bash scripts run inside of a noninteractive shell
-* You can change options for the subshell with `set` or `shopt` in the script
-* Scripts help avoid typos and allow easier sharing Bash code
-
-To ways to display output
-* `printf`
-* `echo`
-There are 3 ways of quotations usage:\
-1.) no quotes\
-2.) `""`\
-3.) `''`
-
-Example
-```bash
-echo hello there
-hello there
-$
-# Compared to print
-printf hello there
-hello there$
-# Noticed that the $ sign is added with hello there because it did not include and new line
-
-# For echo you can add escape sequences with using -e switch
-echo -e "\tHello"
-	Hello
-
-# printf notation
-
-# This "Right aligned text and digits"
-printf "%10s: %5d" "A Label" 123 "B Label" 456
-# Output
-	A Label:	123
-	B Label:	456
-
-# This "Left aligned text and digits"
-print "%-10s: %-5d" "A Label" 123 "B Label" 456
-A Label: 123
-B Label: 456
-
-# The numbers infront of the format specifier is the length of the string/digit in this instance 
-# 10 is 10 strings long and 5 is 5 digits long
-printf "%-10s: %05d" "A Label" 123 "B Label" 456
-A Label: 00123
-B Label: 00456
-# The 0 just means the digit is denotes with leading zeros rather than spaces
-```
-
-For dates you can use `date` or `printf`
-
-Example
-```bash
-# For printf the %T is denoted for time
-printf "%(%Y-%m-%d %H:%M:%S)T\n" $(date +%s)
-# or
-date +%Y-%m-%d\ %H:%M:%S
-# Y is the year 
-# m is the month
-# d is the day
-# H is hour of the day
-# N is minute of the day
-# S is second of the day
-```
-
-
 ```bash
 #Examples of defining the right language
 
@@ -167,6 +100,13 @@ or
 #!/usr/bin/env bash [more portable]
 #!/bin/bash [also seen]
 ```
+
+> [!CAUTION]
+> Without the _shebang_ the code will not be able to interpret the script
+
+* Bash scripts run inside of a noninteractive shell
+* You can change options for the subshell with `set` or `shopt` in the script
+* Scripts help avoid typos and allow easier sharing Bash code
 
 ### ***Where Are Commands***
 
@@ -424,65 +364,6 @@ mv text.txt ~
 # Notice this is like typing each command and returning it in a shell terminal to get the same output. Each newline represents a new command.
 ```
 
-### ***Pipes and Redirection***
-
-* The pipe symbol `\|` sends the output of one process to anoter
-	* `ls | wc -l`
-* Redirections end streams of (stdin, stdout and stderr) to or from files
-	* `ls > list.txt`
-
-Redirection
-
-| Stream | Name | Content |
-|:---:|:---|:---|
-| 0 | Standard input (stdin) | Keyboard or other input
-| 1 | Standard output (stdout) | Regular output
-| 2 | Standard error (stderr) | Output marked as `error`
-
-| Symbol | Function |
-|:---:|:---|
-| > | Output redirection (truncate)
-| >> | Output redirection (append)
-| < | Input redirection
-| << | Here document
-
-Example
-```bash
-# Redirection
-ls > list.txt
-cat list.txt
-Downloads
-Documents
-myFiles
-# This lists the out of the contents into the file list.txt
-
-# To redirection stderr 2
-# To redirection stdin 1
-ls /random 1>output.txt 2>error.txt
-
-# To use input redirection
-cat < README.md
-# This lists all the contents in the README.md without having to type cat README.md using the input of README.md to cat the information
-
-# To use Here document <<
-cat << EndOfText
-> This is a 
-> multiline
-> test string
-> EndOfText
-This is a
-multiline
-text string
-# Notice when I use can on << EndOfText it stop at the specific word
-```
-
-> [!NOTE]
-> Standard output (stdout) `1` is assumed in redirection
-
-Key Differences
-* Piping is used to send streams from one command to another.
-* Redirection is used to send streams to and from files.
-
 ### ***Return Status***
 
 ```bash
@@ -537,7 +418,7 @@ echo is /usr/bin/echo
 > For more information use the following commands to go more indepth into the concepts
 
 - `type`: determined type of command, list contets of aliases and functions.
-- `help` : display usagage information about bash bultins and keywords
+- `help` : display usagage information about bash builtins and keywords
 - `apropos` : search man pages
 - `man` : system manual
 - `info` : advanced manual system primarily used for GNU programs.
@@ -556,8 +437,10 @@ Continuously loop over **list** of commands delineated by the keywords of `do` a
                     while until for select
 ```
 
+***USE DROP DOWN BELOW FOR MORE INFORMATION***
 <details>
 <summary>While and Until Loops</summary>
+
 
 ---
 **While and Until Loops**  
@@ -576,6 +459,8 @@ _(Typically) iterate based on an external resource_
 > continue unit **list1** returns a status of **0** _(succeeds)_.
 
 </details>
+
+***USE DROP DOWN BELOW FOR MORE INFORMATION***
 
 <details>
 <summary>For and Select Loops</summary>
@@ -598,6 +483,9 @@ _Iterate based on command line arguments_
 `select` **name** `in` **words**; `do` **lists**; `done`
 
 > Create a menu item for each **word**. Each time the user makes a selection from the manu, **name** is assigned the value of the selected **word** and **REPLY** is assigned the **index** number of the selection.
+
+
+***USE DROP DOWN BELOW FOR MORE INFORMATION***
 
 <details>
 <summary>Select Example</summary>
@@ -646,8 +534,9 @@ Execute **list** of commands only if certain conditions are met.
                           if  case
 ```
 
-<details>
+***USE DROP DOWN BELOW FOR MORE INFORMATION***
 
+<details>
 <summary> if and Case Statements</summary>
 
 `if` **list1**; `then` **list2**; `fi`
@@ -760,7 +649,7 @@ Example
 | **[[ -d file ]]**                | **file** is a _directory_
 | **[[ -t fd ]]**                  | **fd** is _open_ and refers to a _terminal_
 
-#### ***Command groups:***
+#### ***Command Groups***
 
 Grouped **list** of commands, sharing any external redirections and whose return value is that of the **list**
 
@@ -791,7 +680,7 @@ Grouped **list** of commands, sharing any external redirections and whose return
 
 ## ***Section 3: STDIN, STDOUT, STDERROR***
 
-### ***Redirection***
+### ***Pipes & Redirection***
 
 _Controlling the input, output, error, and other streams_
 
@@ -806,14 +695,131 @@ _Controlling the input, output, error, and other streams_
 * Alternative file descriptors may be specified by **prepending** `fd number`, e.g `2>file` to redirect `fd 2` **(STDERR)**
 * To redirect to a file descriptor, append ***&*** and the fd number, e.g `2>&1` to redirect ***STDERR*** to the current target ***STDOUT***.
 
+* The pipe symbol `|` sends the output of one process to anoter
+	* `ls | wc -l`
+* Redirections end streams of (stdin, stdout and stderr) to or from files
+	* `ls > list.txt`
+
+Redirection
+
+| Stream | Name | Content |
+|:---:|:---|:---|
+| 0 | Standard input (stdin) | Keyboard or other input
+| 1 | Standard output (stdout) | Regular output
+| 2 | Standard error (stderr) | Output marked as `error`
+
+| Symbol | Function |
+|:---:|:---|
+| > | Output redirection (truncate)
+| >> | Output redirection (append)
+| < | Input redirection
+| << | Here document
+
+Example
+```bash
+# Redirection
+ls > list.txt
+cat list.txt
+Downloads
+Documents
+myFiles
+# This lists the out of the contents into the file list.txt
+
+# To redirection stderr 2
+# To redirection stdin 1
+ls /random 1>output.txt 2>error.txt
+
+# To use input redirection
+cat < README.md
+# This lists all the contents in the README.md without having to type cat README.md using the input of README.md to cat the information
+
+# To use Here document <<
+cat << EndOfText
+> This is a 
+> multiline
+> test string
+> EndOfText
+This is a
+multiline
+text string
+# Notice when I use can on << EndOfText it stop at the specific word
+```
+
+> [!NOTE]
+> Standard output (stdout) `1` is assumed in redirection
+
+Key Differences
+* Piping is used to send streams from one command to another.
+* Redirection is used to send streams to and from files.
+
 ### ***Manipulating Output***
 
 There are two commands that I will touch on when it comes to manipulating output on the terminal. 
+Two ways to display output
+* `printf`
+* `echo`
+There are 3 ways of quotations usage:\
+1.) no quotes\
+2.) `""`\
+3.) `''`
+
+Example
+```bash
+echo hello there
+hello there
+$
+# Compared to print
+printf hello there
+hello there$
+# Noticed that the $ sign is added with hello there because it did not include and new line
+
+# For echo you can add escape sequences with using -e switch
+echo -e "\tHello"
+	Hello
+
+# printf notation
+
+# This "Right aligned text and digits"
+printf "%10s: %5d" "A Label" 123 "B Label" 456
+# Output
+	A Label:	123
+	B Label:	456
+
+# This "Left aligned text and digits"
+print "%-10s: %-5d" "A Label" 123 "B Label" 456
+A Label: 123
+B Label: 456
+
+# The numbers infront of the format specifier is the length of the string/digit in this instance 
+# 10 is 10 strings long and 5 is 5 digits long
+printf "%-10s: %05d" "A Label" 123 "B Label" 456
+A Label: 00123
+B Label: 00456
+# The 0 just means the digit is denotes with leading zeros rather than spaces
+```
+
+For dates you can use `date` or `printf`
+
+Example
+```bash
+# For printf the %T is denoted for time
+printf "%(%Y-%m-%d %H:%M:%S)T\n" $(date +%s)
+# or
+date +%Y-%m-%d\ %H:%M:%S
+# Y is the year 
+# m is the month
+# d is the day
+# H is hour of the day
+# N is minute of the day
+# S is second of the day
+```
 
 | Command   | Description  |
 |-----------|--------------|
 | `echo`    | display a line of text|
 | `printf`  | format and print data |
+
+### ***Color Code Text***
 
 ***ANSI***
 
