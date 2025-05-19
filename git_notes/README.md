@@ -19,7 +19,7 @@
 | `git restore --staged **FILE**`  | to remove from ***staging*** |
 | `git restore **FILE**` | to restore a delete file |
 | `git rm **FILE**` | to remove a file from working directory |
-| `git mv "**OLD_FILE**" "**NEW_FILE**" | to rename a file |
+| `git mv "**OLD_FILE**" "**NEW_FILE**"` | to rename a file |
 | `git reset **commit hash** ` | to reset to that commit |
 | `git branch **NAME**` | to create a new branch |
 | `git branch` | to show current working branch |
