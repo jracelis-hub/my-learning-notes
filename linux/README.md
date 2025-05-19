@@ -426,6 +426,15 @@ echo is /usr/bin/echo
 
 ## ***Section 2: Advanced Bash Concepts***
 
+### ***Arithmetic Operators***
+
+* Two ways to use Arithemetic Operators:
+	* `(())`
+	* `let`
+* `n=2**3` means 2 to the power of 3
+	* `((n=2**3))
+
+
 ### ***Compound Commands***
 
 #### ***Iteration***
@@ -707,6 +716,18 @@ _Controlling the input, output, error, and other streams_
 	* `ls | wc -l`
 * Redirections end streams of (stdin, stdout and stderr) to or from files
 	* `ls > list.txt`
+
+> [!IMPORTANT]
+> The `&` in `&> out&err.txt` redirects both stdout **1** and stderr **2** to the same file.
+
+* Using `exec` to open and close File Descriptors\
+Open:
+	* `exec n< myfile` opens a file descriptor n(number) for reading from file myfile
+	* `exec n> myfile` opens a file descriptor n(number) for writing to myfile
+	* `exec n<> myfile` opens a file descriptor n(number) for both reading and writing myfile
+Close:
+	* `exec n>&-` or `exec n<&-` closes file descriptor n
+
 
 Redirection
 
