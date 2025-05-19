@@ -1,0 +1,31 @@
+#!/usr/bin/env bash
+
+source ru_var_func
+
+	echo -e "${RED}If environment is not setup be sure to run:${RESET} eval \$(ssh-agent -s)"
+
+function add_ssh_keys {
+
+		echo -e "${BLUE}Keys below in "$HOME"/.ssh/:${RESET}"
+		ls "$HOME"/.ssh	
+		echo -en "${YELLOW}How many keys would you like to add?${RESET} "
+		read -r number
+
+			if [[ ! "${number}" =~ ^[0-9]+$ ]] ; then
+				log_error "${RED}Invalid input... Must be a number.${RESET}"
+			elif [ -z "${number}" ]; then
+				log_error "${RED}Invalid input... Must enter a number.${RESET}"
+			else	
+					for index in $(seq 1 ${number}); do 
+						echo -en "${BLUE}Enter ssh-key [~/.ssh/]:${RESET} "
+						read -r key
+						ssh-add "$HOME"/.ssh/${key}
+						echo -en "${GREEN}"
+						ssh-add -l
+						echo -en "${RESET}"
+					done
+					echo "SSH-agent environment setup!"
+			fi
+}
+
+add_ssh_keys
