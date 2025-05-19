@@ -38,7 +38,7 @@
 * [***References***](#references)
 	* [_Links_](#links)
 
-## ***Terminology***
+## ***Definitions***
 
 ***What is Unix?***
 
@@ -64,7 +64,7 @@ Bash is the shell, or command language interpreter, for the GNU ***(GNU's Not Un
 
 Bash scripting is just a text file that contains a series of commands
 
-### ***Definitions***
+### ***Terminology***
 
 - **word** : sequence of ***characters*** considered to be a single unit.
 - **list** : sequence of ***commands*** or ***pipelines***
