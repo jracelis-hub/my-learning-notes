@@ -8,7 +8,6 @@
 	* [_Setup Config_](#how-to-setup-config)
 * [_Cheatsheets_](#cheatsheets)
 
-
 ## ***Introduction***
 
 ***What is VIM***
@@ -24,6 +23,17 @@ vim file.txt
 :!ls
 # This will list the files within current directory as if you did it on the command line
 ```
+
+### ***Terminal Manipulation
+
+* To open up a terminal while in vim do
+	* `:term` This will open up a terminal in a screen above.
+* To split screen up vertically
+	* `vsplit`
+	* shortcut `vsp`
+* To split screen up horizontally
+	* `split`
+	* shortcut `sp`
 
 ## ***HOW To: Normal Mode***
 
