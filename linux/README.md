@@ -438,6 +438,8 @@ Continuously loop over **list** of commands delineated by the keywords of `do` a
 ```
 
 ***USE DROP DOWN BELOW FOR MORE INFORMATION***
+---
+
 <details>
 <summary>While and Until Loops</summary>
 
@@ -461,6 +463,7 @@ _(Typically) iterate based on an external resource_
 </details>
 
 ***USE DROP DOWN BELOW FOR MORE INFORMATION***
+---
 
 <details>
 <summary>For and Select Loops</summary>
@@ -486,6 +489,7 @@ _Iterate based on command line arguments_
 
 
 ***USE DROP DOWN BELOW FOR MORE INFORMATION***
+---
 
 <details>
 <summary>Select Example</summary>
@@ -535,6 +539,7 @@ Execute **list** of commands only if certain conditions are met.
 ```
 
 ***USE DROP DOWN BELOW FOR MORE INFORMATION***
+---
 
 <details>
 <summary> if and Case Statements</summary>
@@ -657,6 +662,9 @@ Grouped **list** of commands, sharing any external redirections and whose return
 #Example
                       (list) {list;}
 ```
+
+***USE DROP DOWN BELOW FOR MORE INFORMATION***
+---
 
 <details>
 <summary>Command Groups</summary>
@@ -856,6 +864,10 @@ _Syled text (ANSI)_
 | Reverse   | 7 | 
 | Invisible | 8 |
 
+
+***USE DROP DOWN BELOW FOR MORE INFORMATION***
+---
+
 <details>
 <summary>ANSI Example</summary>
 
@@ -910,6 +922,9 @@ _Styled Text (tput)_
 | Underline | tput smul
 | Blinking | tput blink
 | Reverse | tput rev
+
+***USE DROP DOWN BELOW FOR MORE INFORMATION***
+---
 
 <details>
 <summary>Tput Exmaple</summary>
