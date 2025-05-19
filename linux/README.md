@@ -22,7 +22,7 @@
 		* [_Conditional Tests_](#conditional-tests)
 		* [_Command Groups_](#command-groups)
 * [***Section 3: STDIN, STDOUT, STDERROR***](#section-3-stdin-stdout-stderror)
-	* [_Pipes & Redirection_](#pipes-&-redirection)
+	* [_Pipes and Redirection_](#pipes-and-redirection)
 	* [_Manipulating Output_](#manipulating-output)
 	* [_Color Code Text_](#color-code-text)
 * [***Section 4 Parameter Manipulation***](#section-4-parameter-manipulation)
@@ -680,7 +680,7 @@ Grouped **list** of commands, sharing any external redirections and whose return
 
 ## ***Section 3: STDIN, STDOUT, STDERROR***
 
-### ***Pipes & Redirection***
+### ***Pipes and Redirection***
 
 _Controlling the input, output, error, and other streams_
 
