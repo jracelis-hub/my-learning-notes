@@ -2,11 +2,12 @@
 
 ## ***Table of Contents***
 
-* [_Introduction_](#introduction)
-* [_How To: Normal Mode_](#how-to:-normal-mode)
+* [***Introduction***](#introduction)
+	* [_Terminal Manipulation_](#terminal-manipulation)
+* [***How To: Normal Mode***](#how-to:-normal-mode)
 	* [_Navigate Through Vim_](#how-to-navigate-through-vim)
 	* [_Setup Config_](#how-to-setup-config)
-* [_Cheatsheets_](#cheatsheets)
+* [***Cheatsheets***](#cheatsheets)
 
 ## ***Introduction***
 
@@ -34,6 +35,7 @@ vim file.txt
 * To split screen up horizontally
 	* `split`
 	* shortcut `sp`
+
 
 ## ***HOW To: Normal Mode***
 
