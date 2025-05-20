@@ -7,6 +7,7 @@
 	* [_Prerequisites_](#prerequisites)
 	* [_Definitions_](#definitions)
 		* [_Terminology_](#terminology)
+	* [_File System Hierarchy_](#file-system-hierarchy)
 * [***Section 1: Beginner Bash Concepts***](#section-1-beginner-bash-concepts)
 	* [_Scripting Basics_](#scripting-basics)
 	* [_Where Are Commands_](#where-are-commands)
@@ -37,6 +38,13 @@
 		* [_Commands_](#commands)
 * [***References***](#references)
 	* [_Links_](#links)
+
+## ***Purpose***
+Bash `scripting` is a great way to automate tasks within a ***GNU*** operating system to make navigating through information easy. It is fully customizable to satisfy the specific needs of the ***user***. This project is a great way to utilize the command line and get use to many linux commands.
+
+## ***Prerequisites***
+
+* Command line [downloand linux here](https://ubuntu.com/desktop/wsl)
 
 ## ***Definitions***
 
@@ -71,12 +79,63 @@ Bash scripting is just a text file that contains a series of commands
 - **name** : a ***word*** consisting only a alphanumberic characters and underscores. can <ins>not</ins> begin with a numeric character.
 - **parameter** : an ***entity*** that stores ***values***. a variable is a parameter denoted by a **name**; there are also _positional_ and _special_ parameters.
 
-## ***Purpose***
-Bash `scripting` is a great way to automate tasks within a ***GNU*** operating system to make navigating through information easy. It is fully customizable to satisfy the specific needs of the ***user***. This project is a great way to utilize the command line and get use to many linux commands.
+### ***File System Hierarchy***
 
-## ***Prerequisites***
+Key Directories:
+	* / _Root Directory_
+	* /bin, /sbin
+	* /etc
+	* /home
+	* /var
+	* /usr
+	* /opt
+	* /dev
+	* /tmp
+	* /sys
 
-* Command line [downloand linux here](https://ubuntu.com/desktop/wsl)
+_/ Root Directory_
+
+* Top-level directory for the entire filesystem
+* All of the other directories in FHS are in the root directory
+	* Subdirectories branch out, and more under them
+* Root directory owned by root user
+* SysAdmins often work directly with the root direcroty to configure and maintain the system
+
+_/bin (binaries)_
+* Contains essential binary executables that are needed during the boot process or in single-user mode.
+* Gernally accessible to all users.
+* `ls`: list files and directories
+* `cat`: concatenates and displays files
+* `cp`: copies files and directories
+* `mv`: moves or renames files and directories
+* `rm`: removes files and directories
+
+_/sbin (system binaries)_
+* Contains binar executables primarily used for system administration
+* Usually require root privileges to execute, since they involve system-level changes.
+* `fdisk`: partitions hard disks
+* `fsck`: checks and repairs file systems
+* `init`: initalizes the system
+* `reboot`: reboots the system
+* `shutdown`: shuts down the system
+
+_/etc (configuration)_
+* houses configuration files for many system services and apps.
+* "Control Center"
+* The contents of /etc can vary depending on the Linux distro and installed software
+* `/etc/passwd`: user account information
+* `/etc/shadow`: user password hashes
+* `/etc/group`: group information
+* `/etc/hosts`: system hostname
+* `/etc/resolv.conf`: DNS resolver configuration
+* `/etc/network/interfaces`: network interface configuration
+* `/etc/sysctl.conf`: system kernel parameters
+
+_/home (Your Personal Space)_
+* Where user accounts are stored.
+* Primary location for user's files, documents, settings, and configs.
+* Each user has their own subdirectory within `/home`.
+	* user1= `/home/user1`
 
 ## ***Section 1: Beginner Bash Concepts***
 
