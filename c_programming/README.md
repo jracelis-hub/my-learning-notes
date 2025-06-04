@@ -1,84 +1,118 @@
-# Network Programming in C
+# C Programming
 
-Network programming used two different IP addresses:
-	* IPv4
-		* Original Domain
-		* 32-bit addresses
-		* 0.0.0.0 - 255.255.255.255
-		* Dotted quad
-	* IPv6
-		* 128-bit addresses
-		* Eight groups of 4 hex values, seperated by colons
-		* Handles plenty of devices
-> IPv6 addresses can be shortened
-> 0001:0002:0003:0004:0005:0006:0007:0008 can be rewritten as 1:2:3:4:5:6:7:8
-		* loop back address for IPv6 is ::1 or 0000:0000:0000:0000:0000:0000:0000:0001
+# Section 1 C Program Fundamentals
+### Keywords in C Language
+Variables
+-----------------------------------------------------------------------------------------------
+|  int    |    short    |    long   |    double    |     float    |     char     |    void   |
+-----------------------------------------------------------------------------------------------
+Conditional
+-----------------------------------------------------------------------------------------------
+|  if     |    ifelse   |   switch  |     case     |      do      |     while    |  default   |
+|  break  |   continue  |    for    |     else     |      goto    |
+-----------------------------------------------------------------------------------------------
+Other
+------------------------------------------------------------------------------------------------
+|  auto   |    enum     |   struct  |    typedef   |    const     |    static    |  volatile  |
+| register|   unsigned  |
+------------------------------------------------------------------------------------------------
 
-If you programm for both IPv4 and IPv6 it is called a dual-stack configuration.
+### Flow Chart On C Programming
+.c ----> .o -----> .l ------> executlable
 
-***IP Protocol Suites***
+## Preprocessor 
+- Directives that are carried out before source code is carried out before object code
+  - Helps compiling
+--------------------------------------------------------------------
+|      #define        |        #error         |       #include     |
+|      #elif          |        #if            |       #line        |
+|      #else          |        #ifdef         |       #pragma      |
+|      #endif         |        #ifndef        |       #undef       |
+--------------------------------------------------------------------
+- These files are found in linux under the file systems /usr/include or /usr/local/include
+  - If used in <> they are searched in default directory if used in "" they are obtained in local directory
+- the main headers files that are used are
+---------------------------
+|  stdio.h   |  stdlib.h  |
+---------------------------
 
-_TCP_
-	* Transmission Control Protocol
-	* Streaming
-	* Data is sent in sequence
-	* Reliable
-_UDP_
-	* User Datagram Protocol
-	* Connectionless
-	* Bad packets are not retransmitted, nor ad packets guaranteed to arrive in sequence
+### Header Files Versus Libraries
+- Header Files are used in source code source.c
+  -Located in /usr/include
+- Libraries are used for the linkers.l
+  -Located in /usr/lib
+- man pages for more info
+  - telling you which linker needed
+- if linker error use man page to explain which library to use
 
----
-* Set TCP or UDP when you write netwroking code
-* Setup works differently between the two
-* TCP/IP is often used to describe all network programming
-* TCP and UDP are different protocols with different approaches
+## Comments
+- To use comments in C either use /* */ and anything in the those are commented
+- To use comments in C either use // and anything on that line is commented
 
-***IP Addresses Reserved for Local Networks***
+### The Main C Data Types are
+### The Main C Data Types are
+|-----------------------------------------------------------------|
+|    int    |    float    |   char    |    double    |    void    |   
+|----------------------------------------------------|------------|
+int - integer or whole-number values | 1 Bytes
+float - real numbers, single precision | 4 or 8 Bytes
+char - single character bytes | 1 Bytes
+double - real numbers, double precision | 4 or 8 Bytes
+void - no data type (used for allocating memory or used for function definitions)
+*C has no string data type*
 
-|	  |     |
-|:---:|:---:|
-| 10.0.0.0 | 10.255.255.255 |
-| 172.16.0.0 | 172.31.255.255 |
-| 192.168.0.0 | 192.168.255.255 |
+## Data Type Qualifiers
+signed - assign both positive and negative values
+unsigned - assign only positive values
 
-Local Router Assigns IP Addresses
-	* Each device is asssigned an address in one of thse ranges
-	* The address is known as the public address
-	* Now two devices are gien the same address
-	* IPv6 addresses may also be assigned
 
-Subnet Mask
-	* Value is expressed as the address:
-> 192.168.0.0/16
-> fe80::8cc1%9
-	* Is not a part of network programming
-	* Directs local and network packets
+### Character and Strings
+FUNCTIONS USED FOR STRINGS
+-----------------------------------
+| putchar() - put a character 't'
+| puts()
+| fgets(variable_name, BUFFER SIZE, stdin) better than scanf ----> example  char name[10]; fgets(name,10,stdin);
+| printf()
+| getchar()
+| scanf()  - not really good for string input does not catch spaces or tabs and can cause buff overflow ---> char[11] but someone input 15 characters instead (buff overflow)
+------------------------------------
+C Library String Functions
+------------------------------------
+string.h
+|  strlen() - to find a string's length
+|  strstr() - to earch a string
+|  strcpy() - to copy a string
+|  strcat(string,text)
+- Operators are not used for manipulate a string in C
 
-Looback Address
-	* Used for testing
-	* Consistent on all network devices
-	* The IPv4: 127.0.0.1
-	* The IPv6: ::1
-	* Represents the local computer
+# The Null Character
+- String arrays end with the '\0' NULL character
+- ASCII character code 0: \0
+- Storage must be allocated for the null character
 
-Address Have Ports
-	* A communication endpoint
-	* Tied with service or resource
-	* To communicate wover a network, you must know both the address and the port
+Creating String Storage
+- Set aside buffer size for all the text plus the null charcter
+EXAMPLE ----> char string[32];
+- 31 Characters + Last Character for Null
+*  Putting more charaters into a string buffer is overflow  *
+*  Ensure that strings never overflow  *
+EXMAPLE
+char hello[] = "Hello" -> hello[0] = 'H' hello[1] = 'e' hello[2] = 'l' hello[3] = 'l' hello[4] = 'o' hello[5] = '\0'
 
-Port Numbers
-	* 16 bits wide
-	* 65,536 possible ports
+- EOF (End of File) is a integer
+  - To end texting use control + d in linux
+  - To end texting use control + z in windows
 
-Reserved Ports
-	* Ports 1 - 1023 are system ports
-	* 1024 - 49151 are registered ports
-	* Ports 49152 - 65535 are gynamic, private, or ephemeral (on the fly ports)
-
-To see the list of service ports
-	* `cd /etc; less services`
-	* `cat /etc/host`
-
-Use terminal command:
-	* `ip addr show`
+## C-type functions
+- ctype.h 
+- functions that test characters are called is functions
+- functions that multiple characters start with TO
+-----------------------------------------------------
+|  isalpha() - character is a letter of the alphabet
+|  isdigit() - character is a number (0 to 9)
+|  isupper() - character is uppercase
+|  islower() - characer is lowercase
+------------------------------------------------------
+|  tolower() - converts uppercase to lowercase
+|  toupper() - converts lowercase to uppercase
+------------------------------------------------------
