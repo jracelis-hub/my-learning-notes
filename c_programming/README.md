@@ -11,10 +11,6 @@
 
 ### Data Types
 
--------------------------------------------------------------------\
-|    int    |    float    |   char    |    double    |    void    |\   
--------------------------------------------------------------------\
-
 |   data type    |   description     |   size (bytes)    |
 |:--------------:|:-----------------:|:-----------------:|
 | char | single character bytes | 1 |
@@ -36,24 +32,24 @@
 
 ---
 
-FUNCTIONS USED FOR STRINGS\
------------------------------------\
-| putchar() - put a character 't'\
-| puts()\
-| fgets(variable_name, BUFFER SIZE, stdin) better than scanf ----> example  char name[10]; fgets(name,10,stdin);\
-| printf()\
-| getchar()\
-| scanf()  - not really good for string input does not catch spaces or tabs and can cause buff overflow ---> char[11] but someone input 15 characters instead (buff overflow)\
-------------------------------------\
-C Library String Functions\
-------------------------------------\
-string.h
------------------------------------------------------\
-|  strlen() - to find a string's length\
-|  strstr() - to earch a string\
-|  strcpy() - to copy a string\
-|  strcat(string,text)\
------------------------------------------------------\
+| FUNCTIONS USED FOR STRINGS |
+|:---|
+| putchar() - prints out a character 't' **does NOT end with \n** |
+| puts(const char *str) - prints out a string of chars followed by a \n |
+| fgets(variable_name, BUFFER SIZE, stdin) better than scanf ----> example  char name[10]; fgets(name,10,stdin); |
+| printf(const char *format,...) - prints formatted output, such as strings, integers, floats, characters |
+| getchar() - \
+| scanf()  - not really good for string input does not catch spaces or tabs and can cause buff overflow ---> char[11] but someone input 15 characters instead (buff overflow) |
+
+C Library String Functions
+
+| string.h |
+|:---------|
+|  strlen() - to find a string's length |
+|  strstr() - to earch a string |
+|  strcpy() - to copy a string |
+|  strcat(string,text) |
+
 - Operators are not used for manipulate a string in C
 
 ***Null Character***
@@ -77,19 +73,24 @@ char hello[] = "Hello" -> hello[0] = 'H' hello[1] = 'e' hello[2] = 'l' hello[3] 
 ### Preprocessor 
 - Directives that are carried out before source code is carried out before object code
   - Helps compiling
---------------------------------------------------------------------\
-|      #define        |        #error         |       #include     |\
-|      #elif          |        #if            |       #line        |\
-|      #else          |        #ifdef         |       #pragma      |\
-|      #endif         |        #ifndef        |       #undef       |\
---------------------------------------------------------------------\
+
+```
+--------------------------------------------------------------------
+|      #define        |        #error         |       #include     |
+|      #elif          |        #if            |       #line        |
+|      #else          |        #ifdef         |       #pragma      |
+|      #endif         |        #ifndef        |       #undef       |
+--------------------------------------------------------------------
+```
+
 - These files are found in linux under the file systems /usr/include or /usr/local/include
   - If used in <> they are searched in default directory if used in "" they are obtained in local directory
 - the main headers files that are used are
----------------------------\
-|  stdio.h   |  stdlib.h  |\
----------------------------\
-
+```
+---------------------------
+|  stdio.h   |  stdlib.h  |
+---------------------------
+```
 ### Header Files Versus Libraries
 
 - Header Files are used in source code source.c
@@ -110,18 +111,21 @@ char hello[] = "Hello" -> hello[0] = 'H' hello[1] = 'e' hello[2] = 'l' hello[3] 
 - ctype.h 
 - functions that test characters are called is functions
 - functions that multiple characters start with TO
------------------------------------------------------\
-|  isalpha() - character is a letter of the alphabet\
-|  isdigit() - character is a number (0 to 9)\
-|  isupper() - character is uppercase\
-|  islower() - characer is lowercase\
-------------------------------------------------------\
-|  tolower() - converts uppercase to lowercase\
-|  toupper() - converts lowercase to uppercase\
-------------------------------------------------------\
+```
+-----------------------------------------------------
+|  isalpha() - character is a letter of the alphabet
+|  isdigit() - character is a number (0 to 9)
+|  isupper() - character is uppercase
+|  islower() - characer is lowercase
+------------------------------------------------------
+|  tolower() - converts uppercase to lowercase
+|  toupper() - converts lowercase to uppercase
+------------------------------------------------------
+```
 
 ## Appendix
 
+```
 Variables
 -----------------------------------------------------------------------------------------------
 |  int    |    short    |    long   |    double    |     float    |     char     |    void   |
@@ -136,3 +140,4 @@ Other
 |  auto   |    enum     |   struct  |    typedef   |    const     |    static    |  volatile  |
 | register|   unsigned  |
 ------------------------------------------------------------------------------------------------
+```
