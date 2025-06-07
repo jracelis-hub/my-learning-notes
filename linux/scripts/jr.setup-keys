@@ -12,9 +12,9 @@ function add_ssh_keys {
 		read -r number
 
 			if [[ ! "${number}" =~ ^[0-9]+$ ]] ; then
-				log_error "${RED}Invalid input... Must be a number.${RESET}"
+				echo -e "${RED}Invalid input... Must be a number.${RESET}"
 			elif [ -z "${number}" ]; then
-				log_error "${RED}Invalid input... Must enter a number.${RESET}"
+				echo -e "${RED}Invalid input... Must enter a number.${RESET}"
 			else	
 					for index in $(seq 1 ${number}); do 
 						echo -en "${BLUE}Enter ssh-key [~/.ssh/]:${RESET} "

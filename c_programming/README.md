@@ -1,7 +1,7 @@
 # C Programming
 
 ## Table of Contents
-    * [_Program Fundamentals_](#Program Fundamentals)
+    * [_Program Fundamentals_](#program-fundamentals)
         * [_Data Types_](#variables)
             * [_Characters and Strings_](#characters-and-strings)
         * [_Comments_](#comments)

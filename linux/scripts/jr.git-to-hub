@@ -10,7 +10,7 @@ echo -e "${YELLOW}Pushing from local repo to github${RESET}"
 echo -en "${BLUE}Enter Description${RESET}: "
 read -r input
 if [ -z "${input}" ]; then
-	log_error "${RED}Input proper description${RESET}"
+	echo -e "${RED}Input proper description${RESET}"
 	exit 1
 fi
 }

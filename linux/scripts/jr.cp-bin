@@ -14,8 +14,8 @@ MY_EXE="$HOME/git_repos/bin"
 for script in "$@"; do
 	cp $script $MY_EXE 2>> $ERROR_LOG 
 	if [ $? -eq 0 ]; then
-		log_pass "${GREEN}SUCCESS${RESET}: Moved $script to $MY_EXE"
+		echo -e "${GREEN}SUCCESS${RESET}: Moved $script to $MY_EXE"
 	else
-		log_error "${RED}ERROR${RESET}: Could not locate $script in $(pwd)"
+		echo -e "${RED}ERROR${RESET}: Could not locate $script in $(pwd)"
 	fi
 done

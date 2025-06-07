@@ -7,10 +7,10 @@
 
 ## ***Introduction***
 
-| `git commands`          |   description           |
+|      `git commands`     |      description        |
 |:-----------------------:|-------------------------|
-| `git config --global`          | create a global config file |
-| `git add **FILE**`      | add **file** to ***staging*** |
+|       `git config       |   create a config file  |
+|     `git add FILE`      | add **file** to ***staging*** |
 | `git commit -m "Description"` | to commit ***ALL*** files from ***staging*** to "main" |
 | `git status` | to see status of current git working directory |
 | `git log` | to see all commit changes |

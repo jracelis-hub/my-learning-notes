@@ -13,12 +13,12 @@ function set_git_username {
 	read -r username
 	
 	if [ -z "$username" ]; then
-		log_error "${RED}Invalid input... Please enter user.name${RESET}"
+		echo -e "${RED}Invalid input... Please enter user.name${RESET}"
 		exit 1
 	else
 		git config --global user.name "${username}"
 		if [ $? -eq 0 ]; then
-			log_pass "${GREEN}git user.name:${RESET} "${username}""
+			echo -e "${GREEN}git user.name:${RESET} "${username}""
 		fi
 	fi
 }
@@ -29,12 +29,12 @@ function set_git_useremail {
 	read -r useremail
 
 	if [ -z "$useremail" ]; then
-		log_error "${RED}Invalid input... Please enter user.name${RESET}"
+		echo -e "${RED}Invalid input... Please enter user.name${RESET}"
 		exit 1
 	else
 		git config --global user.email "${useremail}"
 		if [ $? -eq 0 ]; then
-			log_pass "${GREEN}git user.name:${RESET} "${useremail}""
+			echo -e "${GREEN}git user.name:${RESET} "${useremail}""
 		fi
 	fi
 }
@@ -45,12 +45,12 @@ function set_git_branch {
 	read -r branch
 
 	if [ -z "$branch" ]; then
-		log_error "${RED}Invalid input... Please enter branch name${RESET}${BLUE}main${RESET}"
+		echo -e "${RED}Invalid input... Please enter branch name${RESET}${BLUE}main${RESET}"
 		exit 1
 	else
 		git config --global init.defaultBranch "${branch}"
 		if [ $? -eq 0 ]; then
-			log_pass "${GREEN}git defaultBranch:${RESET} "${branch}""
+			echo -e "${GREEN}git defaultBranch:${RESET} "${branch}""
 		fi
 	fi
 }
