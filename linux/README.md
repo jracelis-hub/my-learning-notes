@@ -39,14 +39,14 @@
 * [***References***](#references)
 	* [_Links_](#links)
 
-## ***Purpose***
+## Purpose
 Bash `scripting` is a great way to automate tasks within a ***GNU*** operating system to make navigating through information easy. It is fully customizable to satisfy the specific needs of the ***user***. This project is a great way to utilize the command line and get use to many linux commands.
 
-## ***Prerequisites***
+## Prerequisites
 
 * Command line [downloand linux here](https://ubuntu.com/desktop/wsl)
 
-## ***Definitions***
+## Definitions
 
 ***What is Unix?***
 
@@ -72,16 +72,17 @@ Bash is the shell, or command language interpreter, for the GNU ***(GNU's Not Un
 
 Bash scripting is just a text file that contains a series of commands
 
-### ***Terminology***
+### Terminology
 
 - **word** : sequence of ***characters*** considered to be a single unit.
 - **list** : sequence of ***commands*** or ***pipelines***
 - **name** : a ***word*** consisting only a alphanumberic characters and underscores. can <ins>not</ins> begin with a numeric character.
 - **parameter** : an ***entity*** that stores ***values***. a variable is a parameter denoted by a **name**; there are also _positional_ and _special_ parameters.
 
-### ***File System Hierarchy***
+### File System Hierarchy
 
 Key Directories:
+
 	* / _Root Directory_
 	* /bin, /sbin
 	* /etc
@@ -137,9 +138,9 @@ _/home (Your Personal Space)_
 * Each user has their own subdirectory within `/home`.
 	* user1= `/home/user1`
 
-## ***Section 1: Beginner Bash Concepts***
+## Section 1: Beginner Bash Concepts
 
-### ***Scripting Basics***
+### Scripting Basics
 
 The _shebang_ or `#!/bin/bash` or `#!/usr/bin/env bash` is the first shell script that has to be included to be able to intreprete the specific programing that is being utilized.
 
@@ -245,7 +246,7 @@ file script
 script: Bourne-Again shell script, ASCII text executable
 ```
 
-### ***Variables***
+### Variables
 
 * Variables could be initiated with the variable name equal to the contents. 
 * Must begin with a letter or an underscore
@@ -316,7 +317,7 @@ b=$b+10
 20
 ```
 
-### ***Arrays***
+### Arrays
 
 Arrays is a data structure that stores a collection of elements of the same data type, like numbers and strings, using a single variable name. To declare a variable the notation is as follows.
 * Arrays let us store multiple values
@@ -361,7 +362,7 @@ ${myArray[@]:1}
 # The following mean starts at myArray[1]=him
 ```
 
-### ***Syntax***
+### Syntax
 
 To understand how shell scripts work it is important to know syntax of how `commands` operate.
 
@@ -423,7 +424,7 @@ mv text.txt ~
 # Notice this is like typing each command and returning it in a shell terminal to get the same output. Each newline represents a new command.
 ```
 
-### ***Return Status***
+### Return Status
 
 ```bash
 Success: Command should return a status of 0.
@@ -445,7 +446,7 @@ echo $?
 1
 ```
 
-### ***Help Commands***  
+### Help Commands  
 
 ***bash*** consists of two types:
 * builtin
@@ -483,9 +484,9 @@ echo is /usr/bin/echo
 - `info` : advanced manual system primarily used for GNU programs.
 
 
-## ***Section 2: Advanced Bash Concepts***
+## Section 2: Advanced Bash Concepts
 
-### ***Arithmetic Operators***
+### Arithmetic Operators
 
 * Two ways to use Arithemetic Operators:
 	* `(())`
@@ -494,9 +495,9 @@ echo is /usr/bin/echo
 	* `((n=2**3))
 
 
-### ***Compound Commands***
+### Compound Commands
 
-#### ***Iteration***
+#### Iteration
 
 Continuously loop over **list** of commands delineated by the keywords of `do` and `done`.
 
@@ -685,7 +686,7 @@ To use `getopts` you need to call it using `getopts` plus the flags `a:b:c` and 
 
 </details>
 
-#### ***Conditional Tests***
+#### Conditional Tests
 
 * `test`
 * **[ expression ] ** or `test` **expression**
@@ -711,18 +712,18 @@ Example
 
 
 | `test`     |       Definition        |
-|---------|------------------------------------------------|
-| **[[ -n string ]]**                | **string** is _non-empty_                      
-| **[[ -z string ]]**                | **string** is _empty_
-| **[[ string1 == string2 ]]**     | **string1** and **string2** are _same_
-| **[[ string1 != string2 ]]**      | **string1** and **string2** are _not the same_
-| **[[ string =~ regex ]]**         | **string** _matches_ **regular expression**
-| **[[ -e file ]]**                | **file** _exists_
-| **[[ -f file] ]**                  | **file** is a _regular file_
-| **[[ -d file ]]**                | **file** is a _directory_
-| **[[ -t fd ]]**                  | **fd** is _open_ and refers to a _terminal_
+|------------|------------------------------------------------|
+|  `[[ -n string ]]`                | **string** is _non-empty_                      
+|  `[[ -z string ]]`                 | **string** is _empty_
+|  `[[ string1 == string2 ]]`      | **string1** and **string2** are _same_
+|  `[[ string1 != string2 ]]`       | **string1** and **string2** are _not the same_
+|  `[[ string =~ regex ]]`          | **string** _matches_ **regular expression**
+|  `[[ -e file ]]`                 | **file** _exists_
+|  `[[ -f file] ]`                   | **file** is a _regular file_
+|  `[[ -d file ]]`                 | **file** is a _directory_
+|  `[[ -t fd ]]`                   | **fd** is _open_ and refers to a _terminal_
 
-#### ***Command Groups***
+#### Command Groups
 
 Grouped **list** of commands, sharing any external redirections and whose return value is that of the **list**
 
@@ -754,9 +755,9 @@ Grouped **list** of commands, sharing any external redirections and whose return
 
 ---
 
-## ***Section 3: STDIN, STDOUT, STDERROR***
+## Section 3: STDIN, STDOUT, STDERROR
 
-### ***Pipes and Redirection***
+### Pipes and Redirection
 
 _Controlling the input, output, error, and other streams_
 
@@ -840,7 +841,7 @@ Key Differences
 * Piping is used to send streams from one command to another.
 * Redirection is used to send streams to and from files.
 
-### ***Manipulating Output***
+### Manipulating Output
 
 There are two commands that I will touch on when it comes to manipulating output on the terminal. 
 Two ways to display output
@@ -902,12 +903,12 @@ date +%Y-%m-%d\ %H:%M:%S
 # S is second of the day
 ```
 
-| Command   | Description  |
-|-----------|--------------|
+| Command   |      Description      |
+|-----------|-----------------------|
 | `echo`    | display a line of text|
 | `printf`  | format and print data |
 
-### ***Color Code Text***
+### Color Code Text
 
 ***ANSI***
 
@@ -1028,9 +1029,9 @@ function color_change_tput {
 
 </details>
 
-## ***Section 4: Parameter Manipulation***
+## Section 4: Parameter Manipulation
 
-### ***Parameters***
+### Parameters
 
 **Postional Parameters:** `$1 $2 $3 $4 $5 $6 $7 $8 $9 ${10}`  
 
@@ -1052,7 +1053,7 @@ function color_change_tput {
 
 ---
 
-#### ***Bash Expansions and Substitutions***
+#### Bash Expansions and Substitutions
 
 | Representation | Name |
 |:---|:---|
@@ -1089,7 +1090,7 @@ echo {00..5}
 > [!TIP]
 > You can also add intervals to brace expansion `{1..30..2}` `{begin..end..interval}`
 
-#### ***Parameter Expansion: Conditionals***
+#### Parameter Expansion: Conditionals
 
 ***"param" = parameter***
 
@@ -1111,7 +1112,7 @@ echo {00..5}
 
 ---
 
-#### ***Parameter Expansion: Substring***
+#### Parameter Expansion: Substring
 
 |       |     Output      |
 |-------|:---:|
@@ -1142,7 +1143,7 @@ ${PARAM%u*} = "tho" it removes everything from the first u untill the right
 
 ---
 
-#### ***Parameter Expansion: Indirection, Listing, and Length***
+#### Parameter Expansion: Indirection, Listing, and Length
 
 |   | param="**parade**";parade="**long**";name=(**gnu not unix**) 
 |---|:---:|
@@ -1155,7 +1156,7 @@ ${PARAM%u*} = "tho" it removes everything from the first u untill the right
 | **Expand to length:** | |
 | `${#param}` | 6 | 
 
-#### *** Parameter Expansion: Pattern Substitution***
+#### Parameter Expansion: Pattern Substitution
 
 | | `param="**racecar**"
 |---|---|
@@ -1167,11 +1168,11 @@ ${PARAM%u*} = "tho" it removes everything from the first u untill the right
 | **Substitute at right edge:**| |
 | `${param/%pattern/strig}` | raceca**T** |
 
-## ***Appendix***
+## Appendix
 
-### ***Table References***
+### Table References
 
-#### ***Bash Operators***
+#### Bash Operators
 
 | Comparison Operators  | Description |
 |-------|---------------------------------|
@@ -1184,26 +1185,26 @@ ${PARAM%u*} = "tho" it removes everything from the first u untill the right
 
 | String Comparison     | Description   |
 |---------|-----------------------------|
-| `=`     | equal to
-| `!=`    | not equal to
-| `<`     | less than, in ASCII alphabetical order
-| `>`     | greater than, in ASCII alphabeteric order
-| `-z`    | checks if the given string operand size is zero
-| `-n`    | checks if the given string operand size is non-zero
+|  `=`    | equal to
+|  `!=`   | not equal to
+|  `<`    | less than, in ASCII alphabetical order
+|  `>`    | greater than, in ASCII alphabeteric order
+|  `-z`   | checks if the given string operand size is zero
+|  `-n`   | checks if the given string operand size is non-zero
 
 | Arithmetic Operators | Description    |
 |---------|-----------------------------|
-| `+`     | addition
-| `-`     | subtraction
-| `*`     | multiplication
-| `/`     | division
-| `%`     | modulus (remainer of divison)
+|  `+`    | addition
+|  `-`    | subtraction
+|  `*`    | multiplication
+|  `/`    | division
+|  `%`    | modulus (remainer of divison)
 
 | Logical Operators | Description |
 |-------------------|-------------|
-| `&&`    | logical AND
-| `\|\|`    | logical OR
-| `!`     | logical NOT
+|  `&&`    | logical AND
+|  `\|\|`  | logical OR
+|  `!`     | logical NOT
 
 | File Test Operators | Description |
 |---------------------|-------------|
@@ -1215,10 +1216,10 @@ ${PARAM%u*} = "tho" it removes everything from the first u untill the right
 | `-w` | checks if a file has write permission (owner)
 | `-x` | checks if a file has execute permission (owner)
 
-#### ***Commands***
+#### Commands
 
-| Commands    | Description                          |
-|-------------|-------------------------------
+|  Commands   | Description                          |
+|:-----------:|--------------------------------------|
 | `echo`      | to display output                             
 | `printf`    | to print and format output
 | `cd`        | to change directories
@@ -1228,10 +1229,10 @@ ${PARAM%u*} = "tho" it removes everything from the first u untill the right
 | `rmdir`     | remove directory
 | `mkdir`     | make directory
 | `touch`     | to change file timestamps or create an empty file if ti doesn't exist
-| `whereis`   | 
-| `locate`    |
+| `whereis`   | to locate where a specific `command` is
+| `locate`    | to locate where a specific `command` is
 | `whatis`    |
-| `chmod`     | change file mode
+| `chmod`     | change file permissions of a file
 | `grep`      | to search for text patterns within files
 | `awk`       | used for pattern scanning and processing language
 | `sort`      | to sort lines of text files
@@ -1240,10 +1241,10 @@ ${PARAM%u*} = "tho" it removes everything from the first u untill the right
 | `paste`     | 
 | `cut`       | to remove sections from each line of files
 | `pv`        | pipe viewier
-| `diff`      |
+| `diff`      | to compare the differences between two different files
 | `tar`       | to archive or unarchive a file/folder (can also zip with the -z flag)
 | `zstd`      | to unzip a .zst file
-| `ssh-keygen`| 
+| `ssh-keygen`| to creating ssh keys usually stored in `~/.ssh` 
 | `ssh`       | to connect to a remote machine securely
 | `scp`       | to securely copy files between hosts on a network
 | `tail`      | to display the last parts if files
@@ -1253,6 +1254,6 @@ ${PARAM%u*} = "tho" it removes everything from the first u untill the right
 
 ## References
 
-### ***Links***
+### Links
 - [ ] [Advanced Bash Usage](https://youtube.com/watch?v=uqHjc7hlqd0) by [James Pannacciullia](https://youtube.com/@jamespannacciulli3029)
 - [ ] [Advanced Bash Scripting Tutorial](https://youtube.com/watch?v=embhouufDnB4&t=2675s) by [Cybersecurity Shandy](https://youtube.com/@cybersecurityshandy9181)
