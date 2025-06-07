@@ -83,16 +83,16 @@ Bash scripting is just a text file that contains a series of commands
 
 Key Directories:
 ```
-	* / _Root Directory_
-	* /bin, /sbin
-	* /etc
-	* /home
-	* /var
-	* /usr
-	* /opt
-	* /dev
-	* /tmp
-	* /sys
+* / _Root Directory_
+* /bin, /sbin
+* /etc
+* /home
+* /var
+* /usr
+* /opt
+* /dev
+* /tmp
+* /sys
 ```
 
 _/ Root Directory_
