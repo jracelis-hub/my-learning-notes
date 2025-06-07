@@ -26,18 +26,19 @@
 To begin controlling your working directory with git.  
 
 - `mkdir $working_directory` to make a git directory to work in.
-- `mv .gitconfig $working_directory` to have .gitconfig in same location.
 - `cd $working_directory` to begin initialzing.
 	- if you have working documents already made `mv $files $work_directory`.
 - `git init` to initialize your working directory.
 	- `git status` to see the current status of local git repository. 
+    - `git add FILE(s)` to _staging_.
+    - `git commit -m "Message"` to start commits for local git.
 
 > [!IMPORTANT]
 > Contents are not in your git control yet. Must use `git add FILE(s)` to add to _staging_.
 
 Example:
 
-`git add README.md` -> this is now in staging\
+`git add README.md` -> this is now in staging
 
 WORK FLOW
 ```
