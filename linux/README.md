@@ -81,7 +81,8 @@ Bash scripting is just a text file that contains a series of commands
 
 ### File System Hierarchy
 
-Key Directories:\
+Key Directories:
+```
 	* / _Root Directory_
 	* /bin, /sbin
 	* /etc
@@ -92,6 +93,7 @@ Key Directories:\
 	* /dev
 	* /tmp
 	* /sys
+```
 
 _/ Root Directory_
 
