@@ -151,7 +151,6 @@ The _shebang_ or `#!/bin/bash` or `#!/usr/bin/env bash` is the first shell scrip
 #!/bin/bash
 #!/usr/bin/env bash
 #!/usr/bin/env python
-#!/usr/bin/env c
 
 # Notation
 #!/usr/bin/env [programing language]
@@ -323,7 +322,9 @@ b=$b+10
 Arrays is a data structure that stores a collection of elements of the same data type, like numbers and strings, using a single variable name. To declare a variable the notation is as follows.
 * Arrays let us store multiple values
 * Bash supports to types of arrays
-1.) index\
+
+1.) index
+
 2.) associative
 
 Example
@@ -449,9 +450,10 @@ echo $?
 
 ### Help Commands  
 
-***bash*** consists of two types:
-* builtin
-* command
+`bash` consists of two types:
+* `builtin`
+* `command`
+
 To see if a command is a built do the following:
 ```bash
 command -V df
@@ -493,8 +495,7 @@ echo is /usr/bin/echo
 	* `(())`
 	* `let`
 * `n=2**3` means 2 to the power of 3
-	* `((n=2**3))
-
+	* `((n=2**3))`
 
 ### Compound Commands
 
@@ -632,13 +633,12 @@ Execute **list** of commands only if certain conditions are met.
 
 _Pattern matching is used in Bash for the **[[** and `case` keywords, **pathname expansion** and some types of **parameter expansion**_.
 
-* **\*** : Matches any string, including null.  
-* **?** : Matches any single character.  
-* **[character class]** : Matches any one of the characterse enclosed between **[** and **]**.
-
-* **[^...]** : Matches the complement (any character not in the class)  
-* **[x-z]** : Matches the range of characters from **x** to **z**  
-* **[[:class:]]** : Matches according to these POSIX classes:  
+* `*` : Matches any string, including null.  
+* `?` : Matches any single character.  
+* `[character class]` : Matches any one of the characterse enclosed between **[** and **]**.
+* `[^...]` : Matches the complement (any character not in the class)  
+* `[x-z]` : Matches the range of characters from **x** to **z**  
+* `[[:class:]]` : Matches according to these POSIX classes:  
 **alnum alpha assii blank cntrl digit graph lower print punct space**
 
 ---
@@ -652,7 +652,7 @@ _Pattern matching is used in Bash for the **[[** and `case` keywords, **pathname
 
 * Match **word** against each **pattern** sequentially. When the first match is found, evaluate the **list** corresponding to that match and stop matching.
 
-* The **|** (pipe) character between two patterns entails a match if either pattern matches **(OR)**.
+* The `|` (pipe) character between two patterns entails a match if either pattern matches **(OR)**.
 
 ***Getopts***
 
@@ -678,6 +678,7 @@ while getopts u:p:ab option; do
 done
 ```
 To use `getopts` you need to call it using `getopts` plus the flags `a:b:c` and a **word** associated with it.\
+
 `getopts u:a: option`
 
 * The `:` in `getopts` means it has an arugment
@@ -690,21 +691,22 @@ To use `getopts` you need to call it using `getopts` plus the flags `a:b:c` and 
 #### Conditional Tests
 
 * `test`
-* **[ expression ] ** or `test` **expression**
+* `[ expression ]` or `test` `expression`
 * `[[ extended test ]]` 
 
-> Evaluate _conditional expression_ with the `test` builtin.\
+> Evaluate _conditional expression_ with the `test` builtin.
+
 > Evaluate _conditional expression_ with the **[[** keyword; word splitting <ins>not</ins> preformed. The righthand side of a string comparison ( **==** , **!=** ) is treated as a **pattern when not quoted**, and as a **string when quoted**.
 
 * Extended test or `[[ expression ]]` lets us test more than 1 `test` in the brackets.
 
 Example
 ```bash
-[[ -d ~ && -a /bin/bash ]]; echo $?
+[[ -d ~ && -e /bin/bash ]]; echo $?
 # The -d checks if ~ is a directory
-# The -a checks if /bin/bash exists
+# The -e checks if /bin/bash exists
 # and the && makes us evaluate it all in one bracket compared to this example below
-[ -d ~ ] && [ -a /bin/bash ]; echo $?
+[ -d ~ ] && [ -e /bin/bash ]; echo $?
 # To use a comparison for regular expression
 [[ "cat" =~ c.* ]]; echo $? ]]
 ```
@@ -712,10 +714,10 @@ Example
 * To see more details use `help test`.
 
 
-| `test`     |       Definition        |
-|------------|------------------------------------------------|
-|  `[[ -n string ]]`                | **string** is _non-empty_                      
-|  `[[ -z string ]]`                 | **string** is _empty_
+|           `test`           |       Definition        |
+|----------------------------|------------------------------------------------|
+|  `[[ -n string ]]`         | **string** is _non-empty_                      
+|  `[[ -z string ]]`         | **string** is _empty_
 |  `[[ string1 == string2 ]]`      | **string1** and **string2** are _same_
 |  `[[ string1 != string2 ]]`       | **string1** and **string2** are _not the same_
 |  `[[ string =~ regex ]]`          | **string** _matches_ **regular expression**
@@ -773,7 +775,7 @@ _Controlling the input, output, error, and other streams_
 * Alternative file descriptors may be specified by **prepending** `fd number`, e.g `2>file` to redirect `fd 2` **(STDERR)**
 * To redirect to a file descriptor, append ***&*** and the fd number, e.g `2>&1` to redirect ***STDERR*** to the current target ***STDOUT***.
 
-* The pipe symbol `|` sends the output of one process to anoter
+* The pipe symbol `|` sends the output of one process to another
 	* `ls | wc -l`
 * Redirections end streams of (stdin, stdout and stderr) to or from files
 	* `ls > list.txt`
@@ -1043,7 +1045,7 @@ function color_change_tput {
 |***Special Parameters*** | Description   |
 |:---: |---------------|
 | `$@` | returns all values of argument |
-| `$#` | returns total number of arguements |
+| `$#` | returns total number of arguments |
 | `$0` | returns file name of the script |
 | `$?` | returns the exit status of last command |
 | `$$` | returns the PID (process ID) of the script |
@@ -1066,13 +1068,14 @@ function color_change_tput {
 
 * `~` Current users $HOME directory
 	* `~-` old pwd 
-* `{a,b,c} Brace expansion creates sets or ranges
+* `{a,b,c}` Brace expansion creates sets or ranges
 	* `touch file{a..d}{1..4}.txt`
-* `${...} Parameter expansion retrieves and transforms stored values.
+* `${...}` Parameter expansion retrieves and transforms stored values.
 * `$(...)` Command substitution puts the output of one command inside another.
 	* Older representation: ``...``
 * `$((...))` Arithmetic expansion does calculations.
 	* Older representation: `$[...]`
+
 > [!NOTE]
 > Bash can only do calculations with integers.
 
@@ -1150,7 +1153,7 @@ ${PARAM%u*} = "tho" it removes everything from the first u untill the right
 |---|:---:|
 | **Indirect expansion:** |
 | `${!param}` | long |
-| **List names mataching prefix "**pa**": |
+| List names mataching prefix "**pa**": |
 | `${!pa*}` or `${!pa@}` | parade param |
 | **List keys in array:** |
 | `${!name[*]}` or `${!name[@]}` | 0 1 2 |
