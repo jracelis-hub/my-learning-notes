@@ -1404,6 +1404,52 @@ Writing Registers
 * All computer systems and microcontrollers use this standard to store real numbers in memory.
 * If working with numbers that have a fractional part or in case you are using integers that don't fit into a long data type, then we can use floating-point representation.
 
+### IEDD-754 Floating-point Standard
+
+Exaample:
+```
+    +7.432 x 10^48
+```
+
+* Stores the sign `+`
+* Significand `7.432`
+* Exponent `48`
+
+Single precision --> 32 bit representation
+```
+     1         8                    23
+  ---|---------|--------------------|--------------
+  |     |            |                            |
+ +------+------------+----------------------------+
+ | sign |  Exponent  |         Significand        |
+ +------+------------+----------------------------+
+ 31     30           22                           0
+```
+
+Double precision --> 64 bit representation
+```
+     1         11                   52
+  ---|---------|--------------------|--------------
+  |     |            |                            |
+ +------+------------+----------------------------+
+ | sign |  Exponent  |         Significand        |
+ +------+------------+----------------------------+
+ 63     62           51                           0
+```
+
+Format Specifier:
+                                    
+|  Format Specifier  |  Data Type            |
+|:------------------:|:----------------------|
+|       %f           |    float              |
+|       %lf          |    double             |
+|       %e %le       |  scientific notation  |
+
+Range of Float
+
+- Storage size: 4 bytes
+- Precision: Up to 6 decimal places
+- Value range: 1.2x10<sub>-38</sub> to 3.4x10<sub>38</sub>
 
 ## Appendix
 
