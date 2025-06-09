@@ -511,6 +511,9 @@ stdint.h alias data types
 | int64_t | exactly 64 bits signed | -9,223,372,036,854,755,808 to 9,223,372,036,854,755,807 |
 | uint64_t | exactly 64 bits unsigned | 0 to 18,446,744,073,709,551,615 |
 
+> [!CAUTION]
+> Each `stdint.h` is different per compiler.
+
 #### Conversions
 
 * **Binary base-2**
