@@ -1451,6 +1451,12 @@ Range of Float
 - Precision: Up to 6 decimal places
 - Value range: 1.2x10<sup>-38</sup> to 3.4x10<sup>38</sup>
 
+Range of Double
+
+- Storage size: 8 bytes
+- Precision: Up to 15 decimal places
+- Value range: 2.3x10<sup>-308</sup> to 1.7x10<sup>308</sup>
+
 ## Appendix
 
 ```
