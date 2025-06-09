@@ -9,5 +9,7 @@ export PATH="$HOME/.bin":PATH
 mv <my.name-of-script> "$HOME/.bin"
 ```
 
+Scripts are `jr.<script_name>`
+
 After be sure to restart the terminal to refresh the changes made in the `.bashrc`.
 
