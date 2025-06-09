@@ -27,7 +27,8 @@
 	* [_Functions_](#functions)
         * [_Conditional Statements_](#conditional-statements)
         * [_User Input_](#user-input)
-* [_Advance C_](#advance-c)
+* [_Advanced C_](#advanced-c)
+    [_Pointers_](#pointers)
 * [_Embedded Systems_](#embedded-systems)
     * [_Debuggers_](#debuggers)
     * [_Complication_](#complication)
@@ -1318,7 +1319,42 @@ Usage:
                                         getchar() fetches \n
 ```
 
-## Advance C
+## Advanced C
+
+### Pointers
+
+Pointers are one of the essential programming features which are available in C. Pointers make C programming more powerful
+
+Pointers are heavily used in embedded `C programming` to:
+
+- Configure the peripheral register address
+- Read/Write into peripheral data registers
+- Read/Write into SRAM/Flash locations and for many other things.
+
+Diagram Of What Pointers
+```
+                   +---------------+
+0x00007FFF8E3C3828 |0|1|1|0|0|1|1|1| <-----------
+                   -----------------            |
+0x00007FFF8E3C3827 |0|1|1|0|0|1|1|1|            |
+                   -----------------            |
+0x00007FFF8E3C3826 |0|1|1|0|0|1|1|1|            |
+                   -----------------            |
+0x00007FFF8E3C3825 |0|1|1|0|0|1|1|1|            |        Different 
+                   -----------------            |------> memory
+0x00007FFF8E3C3824 |0|1|1|0|0|1|1|1|            |        locations of
+                   -----------------            |        the computer
+0x00007FFF8E3C3823 |0|1|1|0|0|1|1|1|            |        memory
+                   -----------------            |
+0x00007FFF8E3C3822 |0|1|1|0|0|1|1|1|--------    |
+                   -----------------       |    |
+0x00007FFF8E3C3821 |0|1|1|0|0|1|1|1| <-----|----|
+                   +---------------+       |
+    Pointers                              \|/
+                                     Value Stored in a memory location
+                                     0x000007FFF8E3C3822
+On 64 bit machine, the pointer size (memory location address size) is 8 bytes (64 bits)
+```
 
 ## Embedded Systems
 
