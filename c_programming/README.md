@@ -1449,7 +1449,7 @@ Range of Float
 
 - Storage size: 4 bytes
 - Precision: Up to 6 decimal places
-- Value range: 1.2x10<sub>-38</sub> to 3.4x10<sub>38</sub>
+- Value range: 1.2x10<sup>-38</sup> to 3.4x10<sup>38</sup>
 
 ## Appendix
 
