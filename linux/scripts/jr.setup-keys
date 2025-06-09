@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-source ru_var_func
+source jr.ru_var_func
 
 	echo -e "${RED}If environment is not setup be sure to run:${RESET} eval \$(ssh-agent -s)"
 

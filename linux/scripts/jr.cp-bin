@@ -5,11 +5,11 @@
 
 # Source my color library
 
-source ru_var_func
+source jr.ru_var_func
 
 # Home variables
 
-MY_EXE="$HOME/git_repos/bin"
+MY_EXE="$HOME/.bin"
 
 for script in "$@"; do
 	cp $script $MY_EXE 2>> $ERROR_LOG 
