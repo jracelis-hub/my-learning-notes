@@ -14,6 +14,7 @@
         * [_Header Files_](#header-files)
 * [_C Basics_](#c-basics)
 	* [_Data Types_](#data-types)
+        * [_Portability Issues Data Types_](#portability-issues-data-types)
         * [_Conversions_](#conversions)
     * [_Variables_](#variables)
         * [_Signed Vs Unsigned Data_](#signed-vs-unsigned-data)
@@ -28,7 +29,7 @@
         * [_Conditional Statements_](#conditional-statements)
         * [_User Input_](#user-input)
 * [_Advanced C_](#advanced-c)
-    [_Pointers_](#pointers)
+    * [_Pointers_](#pointers)
 * [_Embedded Systems_](#embedded-systems)
     * [_Debuggers_](#debuggers)
     * [_Complication_](#complication)
@@ -446,6 +447,7 @@ Examples:
 |  stdio.h   |  string.h  |
 |  stdlib.h  |  ctype.h   |
 |  math.h    |  time.h    |
+|  stdint.h  |            |
 +-------------------------+
 ```
 
@@ -487,6 +489,27 @@ Data Types:
 |  char   |   float   |   double   |  long double |
 +-------------------------------------------------+
 ```
+
+#### Portability Issues Data Types
+
+In C programming language the most commonly used data types `int` and `long` cause portability issues. The reason is that the storage size for `int`, `long` type variable is not defined within the C standard ( C90 or C99 ).
+
+The compiler vendors have the choice to define the storage size for the variable depending solely on hardware capabilties of the target platform, with respect to the minimum widths defined by the standard
+
+Use the standard library header file `stdint.h` defines fixed-width integers using alias data types for the standard data type aviable in C
+
+stdint.h alias data types
+
+| Exact Alias | Descriptiton | Range    |
+|:-----------:|:-------------|:---------|
+| int8_t | exactly 8 bits signed | -128 to 127 |
+| uint8_t | exactly 8 bits unsigned | 0 to 255 |
+| int16_t | exactly 16 bits signed | -32,768 to 32,767 |
+| uint16_t | exactly 16 bits unsigned | 0 to 65,535 |
+| int32_t | exactly 32 bits signed | -2,147,483,648 to 2,147,483,647 |
+| uint32_t | exactly 32 bits unsigned | 0 to 4,294,967,295 |
+| int64_t | exactly 64 bits signed | -9,223,372,036,854,755,808 to 9,223,372,036,854,755,807 |
+| uint64_t | exactly 64 bits unsigned | 0 to 18,446,744,073,709,551,615 |
 
 #### Conversions
 
@@ -1355,6 +1378,105 @@ Diagram Of What Pointers
                                      0x000007FFF8E3C3822
 On 64 bit machine, the pointer size (memory location address size) is 8 bytes (64 bits)
 ```
+
+**Pointer Variable Definition**
+
+`pointer data type` `variable name`;
+
+| Point Data Types|
+|:---------------:|
+| char* |
+| int* |
+| long long int* |
+| float* |
+| double* |
+
+For the following pointer data types above.
+
+- The compiler will always reserve **8 Bytes** for the pointer variable irrespective of their pointer data type.
+- In other words, the pointer data type doesn't control the memory size of the pointer variable.
+
+Example:
+```c
+#include <stdio.h>
+
+int main(void) {
+
+    char* address1 = 0x000007FFF8E3C3824;       /* This is considered a normal number */
+
+    char* address1 = (char*) 0x000007FFF8E3C3824;       /* This is a pointer by explicitly type casting it */
+
+    return 0;
+}
+```
+
+- `*`: Value of Address Operator
+- `&`: Address of Operator
+
+```c
+char data = *address1;      /* Dereferencing a pointer to read data */
+
+/* Means dereference the address of data
+*/ And grabing the value store at address data
+```
+
+To Write Operation on the pointer
+```c
+*address1 = 0x89;       /* Dereferencing a pointer to write data */
+```
+
+**Pointer Arithmetic**
+
+When preforming pointer arithmetic, based on the `data type` used for the point depends how much the address will increment.
+
+Example
+```c
+#include <stdio.h>
+
+long long int g_data = 0xFFFEABCD11112345;
+
+int main(void) {
+
+	char *pAddress1 = (char*) &g_data;
+	
+	printf("Value at address %p\n",pAddress1);
+	printf("Value at address %p is: %x\n",pAddress1,*pAddress1);
+    
+	pAddress1 = pAddress1 + 1;
+	printf("Value at address %p\n",pAddress1);
+	printf("Value at address %p is: %x\n",pAddress1,*pAddress1);
+
+	int *pAddress2 = (int*) &g_data;
+	
+	printf("Value at address %p\n",pAddress2);
+	printf("Value at address %p is: %x\n",pAddress2,*pAddress2);
+
+	pAddress2 = pAddress2 + 1;
+	printf("Value at address %p\n",pAddress2);
+	printf("Value at address %p is: %x\n",pAddress2,*pAddress2);
+	return 0;
+}
+```
+
+Output
+```
+Value at address 0x556cd80038
+Value at address 0x556cd80038 is: 45        /* Value is 45 which is the first byte of 0xFFFEABCD11112345 */
+Value at address 0x556cd80039       /* Noticed the change in address when you increment up +1 */
+Value at address 0x556cd80039 is: 23        /* Value is 23 which is the next byte of 0xFFFEABCD11112345 */
+Value at address 0x556cd80038
+Value at address 0x556cd80038 is: 11112345
+Value at address 0x556cd8003c
+Value at address 0x556cd8003c is: fffeabcd
+```
+
+How is Pointer Used in Embedded Programming?
+
+- Store data into required SRAM locations
+- For copying data from Peripheral register to SRAM memory and vice versa
+- To configure the peripheral registers. Because peripheral registers are memory-maped and each register will be given unique address in the MCU memory map
+- Pointers to ISRs (Interrupt Service Routine) are sotred in a vector table to handle the interrupts
+- Pointers are also used to configure the memory-mapped processor specific registers like interrupt configuration registers
 
 ## Embedded Systems
 
