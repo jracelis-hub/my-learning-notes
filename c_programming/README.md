@@ -27,6 +27,7 @@
 	* [_Functions_](#functions)
         * [_Conditional Statements_](#conditional-statements)
         * [_User Input_](#user-input)
+* [_Advance C_](#advance-c)
 * [_Embedded Systems_](#embedded-systems)
     * [_Debuggers_](#debuggers)
     * [_Complication_](#complication)
@@ -1316,6 +1317,8 @@ Usage:
                                |------- scanf              |
                                         getchar() fetches \n
 ```
+
+## Advance C
 
 ## Embedded Systems
 
