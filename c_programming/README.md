@@ -18,6 +18,7 @@
     * [_Variables_](#variables)
         * [_Signed Vs Unsigned Data_](#signed-vs-unsigned-data)
         * [_Storage Sizes_](#storage-sizes)
+        * [_IEDD-754 Floating-point Standard_](#iedd-754-floating-point-standard)
         * [_Format Specifiers_](#format-specifiers)
         * [_Type Casting_](#type-casting)
         * [_Escape Sequences_](#escape-sequences)
@@ -25,6 +26,7 @@
     * [_Strings_](#strings)
 	* [_Functions_](#functions)
         * [_Conditional Statements_](#conditional-statements)
+        * [_User Input_](#user-input)
 * [_Embedded Systems_](#embedded-systems)
     * [_Debuggers_](#debuggers)
     * [_Complication_](#complication)
@@ -734,6 +736,89 @@ Range of `char` data type
 * Unsigned char range: 0 to 255
 	* An unsigned char data type will be used to store 1 byte of unsigned data
 
+**Float Data Type**
+
+* A decimal Number contains a Decimal Point.
+	* 125.55 is a decimal number (a real number)
+* In computer memory, the real numbers are stored according to the representation standardized by the **IEEE** standard 754
+* **IEEE754** floating-point representation is an approximate representation of real numbers.
+* All computer systems and microcontrollers use this standard to store real numbers in memory.
+* If working with numbers that have a fractional part or in case you are using integers that don't fit into a long data type, then we can use floating-point representation.
+
+#### IEDD-754 Floating-point Standard
+
+Exaample:
+```
+    +7.432 x 10^48
+```
+
+* Stores the sign `+`
+* Significand `7.432`
+* Exponent `48`
+
+Single precision --> 32 bit representation
+```
+     1         8                    23
+  ---|---------|--------------------|--------------
+  |     |            |                            |
+ +------+------------+----------------------------+
+ | sign |  Exponent  |         Significand        |
+ +------+------------+----------------------------+
+ 31     30           22                           0
+```
+
+Double precision --> 64 bit representation
+```
+     1         11                   52
+  ---|---------|--------------------|--------------
+  |     |            |                            |
+ +------+------------+----------------------------+
+ | sign |  Exponent  |         Significand        |
+ +------+------------+----------------------------+
+ 63     62           51                           0
+```
+
+Format Specifier:
+                                    
+|  Format Specifier  |  Data Type            |
+|:------------------:|:----------------------|
+|       %f           |    float              |
+|       %lf          |    double             |
+|       %e %le       |  scientific notation  |
+
+Range of Float
+
+- Storage size: 4 bytes
+- Precision: Up to 6 decimal places
+- Value range: 1.2x10<sup>-38</sup> to 3.4x10<sup>38</sup>
+
+Range of Double
+
+- Storage size: 8 bytes
+- Precision: Up to 15 decimal places
+- Value range: 2.3x10<sup>-308</sup> to 1.7x10<sup>308</sup>
+
+Example
+```c
+#include <stdio.h>
+
+int main(void) {
+
+    float number = 45.203023095;
+    
+    printf("Number = %f\n",number);     /* This prints out in decimal for up to 6 decimals */
+    printf("Number = %e\n",number);     /* This prints the format in exponent form 4.520302e+001 */
+
+    return 0;
+}
+```
+
+To Represent A Values In Scientific Notation
+```c
+float chareE = -1.60217662 x 10-19;     /* You cant do this to represent it use the following */
+float chareE = -1.60217662e-19;
+```
+
 #### Format Specifier
 
 | Format Specifier |      Description        |
@@ -1039,7 +1124,7 @@ void function_add_numbers(int a, int b, int c) /* int a, int b , int c
 }
 ```
 
-#### Condition Statemnets
+#### Conditional Statemnets
 
 `ternary` statements
 
@@ -1142,6 +1227,94 @@ switch(opp) {
 
     return 0;
 }
+```
+
+#### User Input
+
+`scanf()`
+
+- `scanf` is a standard library function that allows you to read input from standard in
+- Standard in for usually the keyboard
+- By using scanf library function you can read both characters and numbers from the keyboard
+
+```c
+int age;
+printf("Enter your age:");
+scanf("%d",&age);
+
+/* scanf reads and integer %d which the user enters */
+/* scanf puts the read value at the address & of 'age' variable */
+```
+
+`getchar()`
+
+- If you want to read a single character from the keyboard in ASCII format then just use `getchar()`
+- `getchar` function takes no arguments and just returns an int vaue which happens to be a the ASCII value of the key pressed
+
+```c
+int a = getchar();      /* Here the program hangs until you press a key followed by pressing the enter key */
+```
+
+How `scanf` works
+```
+      +------------+
+      |  Keyboard  |------------
+      +------------+           |
+                              \|/
+                        +--------------+
+                        | Input Buffer |
+                        +--------------+
+                               |____________
+                                           |
+                                    +--------------+
+                                    |   Program    |
+                                    +--------------+
+                                        scanf
+                                        getchar()
+```
+Code Under The Hood
+```c
+#include <stdio.h>
+
+int main(void) {
+
+    int age;
+
+    printf("Enter Your Age: ",age);
+    scanf("%d",&d);
+
+    getchar();      /* In this program it automatically exits because it fetches /n as show below */
+
+    /* To fix this do this instead */
+
+    while (getchar() != \n) {
+        printf("Enter any key to exit program");
+        getchar();
+    }
+
+    return 0;
+    
+}
+```
+
+Usage:
+```
+      +------------+
+      |  Keyboard  |------------
+      +------------+           |
+                              \|/
+                        +--------------+        +-------------+
+                        |     10\n     | ------>|     \n      |
+                        +--------------+        +-------------+
+                              /|\                     /|\   
+                               |____________           |____
+                               |           |               |
+                               |          \|/              |
+                               |    +--------------+       |
+                               |    |   Program    |       |
+                               |    +--------------+       |
+                               |------- scanf              |
+                                        getchar() fetches \n
 ```
 
 ## Embedded Systems
@@ -1397,65 +1570,6 @@ Writing Registers
 
 #### Representation of decimals numbers in C
 
-* A decimal Number contains a Decimal Point.
-	* 125.55 is a decimal number (a real number)
-* In computer memory, the real numbers are stored according to the representation standardized by the **IEEE** standard 754
-* **IEEE754** floating-point representation is an approximate representation of real numbers.
-* All computer systems and microcontrollers use this standard to store real numbers in memory.
-* If working with numbers that have a fractional part or in case you are using integers that don't fit into a long data type, then we can use floating-point representation.
-
-### IEDD-754 Floating-point Standard
-
-Exaample:
-```
-    +7.432 x 10^48
-```
-
-* Stores the sign `+`
-* Significand `7.432`
-* Exponent `48`
-
-Single precision --> 32 bit representation
-```
-     1         8                    23
-  ---|---------|--------------------|--------------
-  |     |            |                            |
- +------+------------+----------------------------+
- | sign |  Exponent  |         Significand        |
- +------+------------+----------------------------+
- 31     30           22                           0
-```
-
-Double precision --> 64 bit representation
-```
-     1         11                   52
-  ---|---------|--------------------|--------------
-  |     |            |                            |
- +------+------------+----------------------------+
- | sign |  Exponent  |         Significand        |
- +------+------------+----------------------------+
- 63     62           51                           0
-```
-
-Format Specifier:
-                                    
-|  Format Specifier  |  Data Type            |
-|:------------------:|:----------------------|
-|       %f           |    float              |
-|       %lf          |    double             |
-|       %e %le       |  scientific notation  |
-
-Range of Float
-
-- Storage size: 4 bytes
-- Precision: Up to 6 decimal places
-- Value range: 1.2x10<sup>-38</sup> to 3.4x10<sup>38</sup>
-
-Range of Double
-
-- Storage size: 8 bytes
-- Precision: Up to 15 decimal places
-- Value range: 2.3x10<sup>-308</sup> to 1.7x10<sup>308</sup>
 
 ## Appendix
 
