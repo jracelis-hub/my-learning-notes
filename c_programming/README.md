@@ -98,6 +98,14 @@ The different types of _C Standards_ are:
 x = 10 + 5;     /* Using operators and operands which is evaluated is an expression */
 ```
 
+**Relational Operators**
+
+In C zero is interpreted as false and anything non-zero is interpreted as true.
+
+Expressions using relational operators evaluate to a value of either **TRUE** (`1`) or **FALSE** (`0`)
+
+Relational expression are often used within `if` and `while` statements.
+
 ### Error Types
 
 * Linker Errors
