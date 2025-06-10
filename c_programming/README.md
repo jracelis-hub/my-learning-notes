@@ -16,6 +16,7 @@
 	* [_Data Types_](#data-types)
         * [_Portability Issues Data Types_](#portability-issues-data-types)
         * [_Conversions_](#conversions)
+    * [_Operators_](#operators)
     * [_Variables_](#variables)
         * [_Signed Vs Unsigned Data_](#signed-vs-unsigned-data)
         * [_Storage Sizes_](#storage-sizes)
@@ -30,6 +31,7 @@
         * [_User Input_](#user-input)
 * [_Advanced C_](#advanced-c)
     * [_Pointers_](#pointers)
+    * [_Structures_](#structures)
 * [_Embedded Systems_](#embedded-systems)
     * [_Debuggers_](#debuggers)
     * [_Complication_](#complication)
@@ -541,6 +543,58 @@ stdint.h alias data types
 | 2 | 16 | 4 | 4 |
 | 4 | 32 | 8 | 8 |
 | 8 | 64 | 16 | 16 |
+
+#### Operators
+
+An operator is a symbol that tells the compiler to preform a certain mathematical or logical manipulation on the operands
+
+```
+                +------------------------------------------------------------------+
+                | Operator                     | Type                              | 
+ Unary          |------------------------------|-----------------------------------|
+ Operator ----> |  ++  ,  --                   | Increment and Decrement Operators |
+                |------------------------------------------------------------------|
+           ---> |  + , - , * , / , %           | Arithmetic Operators              |
+ Binary    |    |  < , <= , > , >= , == , !=   | Relational Operators              |
+ Operator -|    |  && , || , !                 | Logical Operators                 |
+           |    |  & , | , << , >> , ~ , ^     | Bitwise Operators                 |
+           ---> |  = , += , -= , *= , /= , %=  | Assignment Operators              |
+ Ternary        |------------------------------------------------------------------|
+ Operator  ---> |  ?:                          | Conditional Operators             |
+                +------------------------------|-----------------------------------+
+```
+
+**Operator Precedence**
+
+_Operator precedence_ rules determine which mathematical operation takes place first, i.e takes precedence over others. Parentheses, `()`, may be used to force an expression to a higher precedence
+
+**Increment and Decrement**
+
+Increment
+```
+uint32_t x,y;
+x = 5;
+y = ++x;
+
+y = 6, x = 6;       
+/* 
+ * First, value of x will be incremented by 1
+ * Then value of x will be assigned to y
+*/
+```
+
+Decrement
+```
+uint32_t x,m;
+x = 5;
+m = x++;
+
+m = 5, x = 6;       
+/* 
+ * First, value of x will be assigned to m
+ * Then value of x will be incremented by 1
+*/
+```
 
 ### Variables
 
@@ -1480,6 +1534,8 @@ How is Pointer Used in Embedded Programming?
 - To configure the peripheral registers. Because peripheral registers are memory-maped and each register will be given unique address in the MCU memory map
 - Pointers to ISRs (Interrupt Service Routine) are sotred in a vector table to handle the interrupts
 - Pointers are also used to configure the memory-mapped processor specific registers like interrupt configuration registers
+
+### Structures
 
 ## Embedded Systems
 

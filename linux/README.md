@@ -92,6 +92,7 @@ Key Directories:
 * /opt
 * /dev
 * /tmp
+* /proc
 * /sys
 
 _/ Root Directory_
