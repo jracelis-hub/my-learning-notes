@@ -16,7 +16,7 @@
 	* [_Data Types_](#data-types)
         * [_Portability Issues Data Types_](#portability-issues-data-types)
         * [_Conversions_](#conversions)
-    * [_Operators_](#operators)
+        * [_Operators_](#operators)
     * [_Variables_](#variables)
         * [_Signed Vs Unsigned Data_](#signed-vs-unsigned-data)
         * [_Storage Sizes_](#storage-sizes)
