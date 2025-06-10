@@ -571,7 +571,7 @@ _Operator precedence_ rules determine which mathematical operation takes place f
 **Increment and Decrement**
 
 Increment
-```
+```c
 uint32_t x,y;
 x = 5;
 y = ++x;
@@ -584,7 +584,7 @@ y = 6, x = 6;
 ```
 
 Decrement
-```
+```c
 uint32_t x,m;
 x = 5;
 m = x++;
@@ -594,6 +594,20 @@ m = 5, x = 6;
  * First, value of x will be assigned to m
  * Then value of x will be incremented by 1
 */
+```
+
+Unary Operators with pointer variables
+```c
+uint32_t *pAddress = (uint32_t*) 0xFFFF0000;
+
+pAddress = pAddress +1;
+/* results = pAddress = 0xFFFF0004 
+ * This is based on the data type
+ * Since it is int (4 Bytes) it added 4 Bytes
+*/
+
+pAddress++;     /* This can be written in the same way */
+/* pAddress = 0xFFFF0004 */
 ```
 
 ### Variables
