@@ -1496,7 +1496,8 @@ int main(void) {
 char data = *address1;      /* Dereferencing a pointer to read data */
 
 /* Means dereference the address of data
-*/ And grabing the value store at address data
+ * And grabing the value store at address data
+*/ 
 ```
 
 To Write Operation on the pointer
@@ -1554,7 +1555,7 @@ How is Pointer Used in Embedded Programming?
 - Store data into required SRAM locations
 - For copying data from Peripheral register to SRAM memory and vice versa
 - To configure the peripheral registers. Because peripheral registers are memory-maped and each register will be given unique address in the MCU memory map
-- Pointers to ISRs (Interrupt Service Routine) are sotred in a vector table to handle the interrupts
+- Pointers to ISRs (Interrupt Service Routine) are stored in a vector table to handle the interrupts
 - Pointers are also used to configure the memory-mapped processor specific registers like interrupt configuration registers
 
 ### Structures
