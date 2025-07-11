@@ -3,11 +3,9 @@
 ## Table Of Contents
 * [_Introduction_](#introduction)
 	* [_Terminology_](#terminology)
-    * [_Error Types_](#error-types)
     * [_Build Process_](#build-process)
-    * [_Files_](#files)
+        * [_Files Types_](#files-types)
 	* [_Memory Types_](#memory-types)
-		* [_Memory Architecture_](#memory-architecture)
 * [_Syntax and Semantics_](#syntax-and-semantics)
     * [_C Source Format_](#c-source-format)
     * [_Preprocessor_](#preprocessor)
@@ -106,7 +104,7 @@ Expressions using relational operators evaluate to a value of either **TRUE** (`
 
 Relational expression are often used within `if` and `while` statements.
 
-### Error Types
+#### Error Types
 
 * Linker Errors
 * Runtime Errors
@@ -157,20 +155,21 @@ There are many ways to compile you text file in the format of `.c` to a executab
 > [!NOTE]
 >  Each compiler is depended on the system and target you're trying to compile on.
 
-### Files
+#### Files Types
 
 **File Types**:
 
-* Assembly Files `.s` - mnemonics instructions generated from all the `.c` statements
-* Static Libraries `.a` -
-* Shared Libraries `.so` -
-* Object Files `.o` or `.obj` - machine code
-* C File `.c` - the source code the programmer writes following the _C Programming_ syntax
-* Header Files `.h` - where the preprocessor directives are
-* Linker Script `.ld` -
-* Executable and Linkable Format `.elf` - used for debugging
-* Binary Files `.bin` - final form of the executable
-* Intel HEX file `.hex` - final form of the executable
+* C Source Code `.c` - the source code the programmer writes following the _C Programming_ syntax.
+* Header Files `.h` - where the preprocessor directives are.
+* Assembly Files `.s` - mnemonics instructions generated from all the `.c` statements.
+* Object Files `.o` `.obj` - machine code that has been compiled from source code.
+* Linker Script `.ld` - controls linking process of object files `.o` , `.obj`.
+* Static Libraries `.a` `.lib` - linked during compiled time. Library's code is part of the executable. The size of the executable is bigger. More portable.
+* Dynamic Libraries `.so` `.dll` - linked during runtime. Executable only file only references the library's functions and data and not the actual code. The library has to be present on system or an not execute.
+* Executable and Linkable Format `.elf` - used for debugging.
+* Binary Files `.bin` - final form of the executable.
+* Intel HEX file `.hex` - final form of the executable.
+* Window Executeable `.exe` - Directly executable programs on _Windows Systems_.
 
 **File Tree**:
 
@@ -183,6 +182,13 @@ There are many ways to compile you text file in the format of `.c` to a executab
 ### Memory Types
 
 Programs store the instructions in memory **(RAM)**
+
+**Memory Architecture**
+
+***Two Types of Memory Architectures:***
+
+1. **32 bit (4 Byte)** architecture
+2. **64 bit (8 Byte)** architecture
 
 ***The many key memory concepts are as followed:***
 
@@ -197,7 +203,7 @@ Programs store the instructions in memory **(RAM)**
 * Static Variables
 
 ```c
-extern int globalVariable = 10;
+int globalVariable = 10;
 ```
 
 **Uninitialized Data Segment (.bss) (Block Started by Symbol)** - Holds global and static variables that are declared but not initialized. These operating system intialize these as zero before program starts.
@@ -206,7 +212,8 @@ extern int globalVariable = 10;
 * Uninitialized Static Variables
 
 ```c
-extern int globalVariable;
+int globalVariable;
+static int staticVariable;
 ```
 
 **Heap Segment** - Used for **dynamic memory** allocation during a program execution. Functions like `malloc()`, `calloc()`, `realloc()` and `free()` manages these memory segements.
@@ -217,7 +224,9 @@ extern int globalVariable;
 * `Free` (frees allocated memory)
 
 ```c
-int *ptr = (int *)malloc(sizeof(int)*5);
+int *pointer;
+pointer = malloc(sizeof(int));
+free(pointer);
 ```
 
 > [!CAUTION] 
@@ -273,7 +282,7 @@ int main(){
 	int number_in_function;		/* This is a local variable because it is declared inside a function. This sits on the (Stack Segment) */
 	add_number();		/* This is a function call, and this sits on the (Stack Segment). */
 
-	malloc(sizeof(int example);		/* This is malloc(memory allocation) and this is dynamic memory and sits on the (Heap Segment) */
+	int *pnumber = malloc(sizeof(int);		/* This is malloc(memory allocation) and this is dynamic memory and sits on the (Heap Segment) MUST BE FREE OR MEMORY LEAK */
 	return 0;
 }
 ```
@@ -281,19 +290,19 @@ int main(){
 **Segment Fault (segfault)** - runtime error that occurs when a program attempts to access a memory location that is not allowed. Like due to improper pointer usage or memory management.
 
 > [!NOTE]
-> When you get a segment fault, that means there is issue will how memory addressing is.
+> When you get a segment fault, that means there is issue with how memory addressing is.
 
 Program Example:
 ```c
 #include <stdio.h>		/* Preprocessor directive */
 
-int global_value;		/* Value does not sit inside a function. Declared global variable. */
-static int static_value_global;		/* Value is a static and global variable. */
+int global_value;		/* Value does not sit inside a function. Declared global variable. (Initialized Data Segment) .data */
+static int static_value_global;		/* Value is a static and global variable. (Unintialized Data Segment) .bss */
 
 int main(){
 
-	static int static_value_local;
-	int local_uninitial_value;
+	static int static_value_local;  /* Value is (Initialized Data Segment) .data */
+	int local_uninitial_value;      /* Value is on the stack uninitialized data = a garbage value */
 	int local_initial_value = 2;
 
 	printf("\nThis is global_value (value should be 0): %d\n",global_value);		/* Value is unitialized global value. Implicitly (compiler) be 0. */
@@ -317,7 +326,6 @@ int main(){
 
 Output:
 ```c
-
 This is global_value (value should be 0): 0
 This is address global_value: 0x6350fd99b014
 
@@ -332,16 +340,7 @@ This is address local_uninitial_value: 0x7fff4f4cb3c0
 
 This is local_initial_value (value should be 2): 2
 This is address local_initial_value: 0x7fff4f4cb3c4
-
 ```
-
-#### Memory Architecture
-
-***Two Types of Memory Architectures:***
-
-**32 bit (4 Byte)** architecture
-
-**64 bit (8 Byte)** architecture
 
 ## Syntax and Semantics
 
@@ -362,6 +361,7 @@ The follow C source code consists of the following items:
 - Body of Function `{}`
 - Statement Terminator `;`
 - Statements
+- Return values
 
 To understand this I will break down the follow example explaining what each item does in the following code.
 ```c
@@ -369,19 +369,19 @@ To understand this I will break down the follow example explaining what each ite
 
 add(int value,int value2);       /* This is called a Function Definition (Prototype) */
 /*
- * Where int value; value2 are parameters for the function add();
- */
+ * Where int value, value2 are parameters for the function add();
+*/
 
 static int name = 10;        /* This is a Variable Definition since the variable is initialized to 10 */
 
 int main() {        /* int is the data type of the function and main() is where the source code executes its instructions */
-    int age;     /* This is a Function Declaration the variable is not yet initialized or memory allocated to it yet */ 
+    int age;     /* This is a Function Declaration the variable is declared and not yet initialized or memory allocated to it yet */ 
     int num,num2;
 
     add(num,num2);       /* This is a function call */
     /*
-     * Where num and num2 are arguments
-     */
+     * Where num and num2 are arguments being passed into the function
+    */
 
     return 0;       /* This is a return type for the data type defined in the function int main() */
 
@@ -396,23 +396,21 @@ The preprocessor can do the following:
 
 * Create are own constants and macros with the `#define` statement
 * Build you own library files with the `#include` statement
-* Make more powerfule programs with the conditional `#ifdef`, `#endif`, `#else`, and `#ifndef` statements
+* Make more powerful programs with the conditional `#ifdef`, `#endif`, `#else`, and `#ifndef` statements
 
-The `#include` statement is a preprocessor directive
+The `#include` statement is a preprocessor directive.
 
 ```c
 #include <stdio.h>
 ```
 
+> [!NOTE] 
+> The symbol `#` indicates this is a preprocessing directive.
+
 * It is not strictly part of the executable program, however, the program won't work without it.
-
-The symbol `#` indicates this is a preprocessing directive.
-
 * Instruction to your compiler to do something before compiling the source code
 * Are usually at the beginning of the program source file, but can be anywhere
-
-It instructs the compiler to `include` in your program the contents of the file.
-
+* It instructs the compiler to `include` in your program the contents of the file.
 * Must have `.h` also known as a header file with an extension of `file.h`
 
 ```
@@ -462,7 +460,7 @@ Examples:
 ```
 
 > [!WARNING]
-> Executable code normally goes into a source code file, not a header file.
+> Executable code normally goes into a source code `.c` file, not a header file.
 
 Example format:
 ```c
@@ -475,18 +473,21 @@ Example format:
 ```
 
 > [!NOTE]
-> Include guards `#ifndef` `#define` `#endif` prevent the inclusion of header files multiple times in the source file. include guards are written using pre-processor directives.
+> Include guards `#ifndef` `#define` `#endif` prevent the inclusion of header files multiple times in the source file. Include guards are written using pre-processor directives.
 
 ## C Basics
 
 ### Data Types
 
-- Data as numbers (integer or real number)
-	- Int data types: 10, 20 (represent whole numbers)
-	- Float data types: 24.5, 60.000001 (represent real numbers)
-- Data as characters: 'A'
+- Data as numbers: (integer or real number)
+	- `int` data types: 10, 20 (represent whole numbers)
+	- `float` data types: 24.5, 60.000001 (represent real numbers)
+    - `double` data types: 60.0000000000000 (more precision thatn float types)
+- Data as characters:
+    - `char` data types: 'A'
     - Can be represented by ASCII values
     - Can be represented Octal values
+    - Can be represented by Hexadecimal values
 
 > [!NOTE]
 > Refer to ASCII Table to get representation of the character you are trying to represent
