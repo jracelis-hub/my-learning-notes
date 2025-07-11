@@ -367,7 +367,7 @@ To understand this I will break down the follow example explaining what each ite
 ```c
 #include <stdio.h>      /* This is a Preprocessor statement */
 
-add(int value,int value2);       /* This is called a Function Definition (Prototype) */
+int add(int value,int value2);       /* This is called a Function Definition (Prototype) */
 /*
  * Where int value, value2 are parameters for the function add();
 */
@@ -509,7 +509,7 @@ The compiler vendors have the choice to define the storage size for the variable
 
 Use the standard library header file `stdint.h` defines fixed-width integers using alias data types for the standard data type aviable in C
 
-stdint.h alias data types
+`stdint.h` alias data types
 
 | Exact Alias | Descriptiton | Range    |
 |:-----------:|:-------------|:---------|
@@ -560,7 +560,7 @@ An operator is a symbol that tells the compiler to preform a certain mathematica
 ```
                 +------------------------------------------------------------------+
                 | Operator                     | Type                              | 
- Unary          |------------------------------|-----------------------------------|
+ Unary          |------------------------------------------------------------------|
  Operator ----> |  ++  ,  --                   | Increment and Decrement Operators |
                 |------------------------------------------------------------------|
            ---> |  + , - , * , / , %           | Arithmetic Operators              |
@@ -570,7 +570,7 @@ An operator is a symbol that tells the compiler to preform a certain mathematica
            ---> |  = , += , -= , *= , /= , %=  | Assignment Operators              |
  Ternary        |------------------------------------------------------------------|
  Operator  ---> |  ?:                          | Conditional Operators             |
-                +------------------------------|-----------------------------------+
+                +------------------------------------------------------------------+
 ```
 
 **Operator Precedence**
