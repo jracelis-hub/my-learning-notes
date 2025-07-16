@@ -8,7 +8,7 @@
 	* [_Definitions_](#definitions)
 		* [_Terminology_](#terminology)
 	* [_File System Hierarchy_](#file-system-hierarchy)
-* [***Section 1: Beginner Bash Concepts***](#section-1-beginner-bash-concepts)
+* [***Section 1: Beginner Scripting Concepts***](#section-1-beginner-scripting-concepts)
 	* [_Scripting Basics_](#scripting-basics)
 	* [_Where Are Commands_](#where-are-commands)
 	* [_Variables_](#variables)
@@ -139,7 +139,7 @@ _/home (Your Personal Space)_
 * Each user has their own subdirectory within `/home`.
 	* user1= `/home/user1`
 
-## Section 1: Beginner Bash Concepts
+## Section 1: Beginner Scripting Concepts
 
 ### Scripting Basics
 
