@@ -129,9 +129,71 @@ Local Router Assigns IP Addresses
 Subnet Mask
 	* Value is expressed as the address:
 
+## Socket Programming 
+
+The use of C APIs, the following are the requirements for network programming
+
+TCP _Client_
+
+1. `getaddrinfo()`
+2. `socket()`
+3. `connect()`
+4. `send()` and `recv()`
+5. `close()`
+
+TCP _Server_
+
+1. `getaddrinfo()`
+2. `socket()`
+3. `bind()`
+4. `listen()`
+5. `accept()`
+6. `send()` and `recv()`
+7. `close()`
+
+UDP _Client_
+
+1. `getaddrinfo()`
+2. `socket()`
+3. `sendto()` and `recvform()`
+4. `close()`
+
+UDP _Server_
+
+1. `getaddrinfo()`
+2. `socket()`
+3. `bind()`
+4. `sendto()` and `recvform()`
+5. `close()`
+
+`getaddrinfo(const char *restrict node, const char *restrict service, const struct addrinfo *restrict hints, struct addrinfo **restrict res)` 
+
+`const char *restrict node`
+- domain name (`google.com`)
+- IPv4 or IPv6 address (`192.168.0.252`)
+- Local system (`zero` or `NULL`)
+
+`const char *restrict service`
+- Port number (`8080`)
+- Service name (`FTP`)
+
+`const struct addrinfo *restrict hints`
+- Address of an `struct addrinfo `
+- Structure needs to be initialized to 0
+
+`struct addrinfo **restrict res`
+- Address of an `struct addrinfo` pointer
+- Structure is filled with information about the connection
+
+`struct addinfo`
 
 
+Example:
+```c
+#include <sys/types.h>
+#include <sys/socket.h>
+#include <netdb.h>
 
-
-
+getaddrinfo("Network Host/IP","Port/Service",&addinfo,results);
+```
 

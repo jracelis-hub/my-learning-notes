@@ -1814,7 +1814,6 @@ Writing Registers
 
 #### Representation of decimals numbers in C
 
-
 ## Appendix
 
 ```
