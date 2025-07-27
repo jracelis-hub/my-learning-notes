@@ -1255,6 +1255,17 @@ ${PARAM%u*} = "tho" it removes everything from the first u untill the right
 | `head`      | to display first part of files
 | `curl`      | to transfer data from or to a server using various protocols like HTTP, HTTPS, FTP and more.
 | `wget`      | to download files from the web
+| `sudo`      | to preform root access commands
+
+#### Tools
+
+Requirements:
+
+run `lsusb` to see plugged-in USB devices 
+
+`sudo apt-get install usbutils`
+
+
 
 ## References
 

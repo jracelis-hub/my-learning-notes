@@ -6,15 +6,27 @@
 
 ### ***Introduction***
 
-Networking the most important process when it comes to communication. It is the process of connecting two or more computers to share resources, information, and communication.
+What is Networking?
+
+Networking is the process of connecting two or more devices to share information by communicating through the same protocols.
+
+### Physical Devices
+
+Servers -
+
+Switch - 
+
+Router - this is used to connect to the internet.
 
 ### ***Definitions***
 
+* Internet Service Provider (`ISP`) - 
 * Transmission Media - The medium through which devices communicate, it can be a wired media like optical fiber and ethernet. It can also be a wireless media like WiFi, Bluetooth and infrared
-
 * Protocol - A set of rules and standards that define how devices on a network communicate with each other
 * Node - Any device connected to a network, such as a computer, printer, or router
 * Network - A collection of interconnected devices, such as a computer, printers, and servers, that can communicate with each other
+* Local Area Network (`LAN`) - connects a network in a local vicinity
+* Wide Area Network (`WAN`) - conects a network that is widely a part
 
 * ***TCP/IP*** - A set of protocols used to communicate over the internet and other networks
 * ***VNC*** - Virtual Network Computering
@@ -188,12 +200,33 @@ UDP _Server_
 `struct addinfo`
 
 
-Example:
+Example Server:
 ```c
-#include <sys/types.h>
-#include <sys/socket.h>
-#include <netdb.h>
 
-getaddrinfo("Network Host/IP","Port/Service",&addinfo,results);
+struct addrinfo hints,*server;  /*Hints specifies the type of socket information */
+hints.ai_family = AF_INET;      /* IPv4 Protocol */
+hints.ai_socktype = SOCK_STREAM;        /* Specifies TCP Protocol */
+hints.ai_flags = 0;
+hints.ai_protocol = 0;      /* Since we already mentioned TCP in sock_type it is redundant to specifiy TCP */
+
+getaddrinfo("Hostname/IP","Port/Service",&hints,&server);
+/* The *server is used for hold the results of the information */
+
+/* Now a socket files descriptor needs to be opened. The information is now stored in the struct addrinfo *server*/
+sock_fd = socket(server->ai_family,server->ai_socktype,server->ai_protocol);
+
+/* Now its time to wrap the socket with the IP address and Port */
+bind(sock_fd,server->ai_addr,server->ai_addrlen);
+
+/* Now its time to listen to any incoming requestions with listen */
+listen(sock_fd,1);  /* The 1 specifies how many connections that we can listen to */
+
+/* Now its time to connect to the listen request by accepting it */
+struct sockaddr client;
+socklen_t client_len;
+client_len = sizeof(client);
+client_fd = accept(sock_fd,&client,&client_len);
+/* Upon making a connect and accepting it. It creates a new socket for the server and client to send information back and forth using the send() and recv() APIs */
+
 ```
 
