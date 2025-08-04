@@ -34,7 +34,7 @@ set background=dark
 
 "  Type              Text            Background      Style
 " ------------------------- Mode Settings --------------------------- "
-hi Normal            ctermfg=108     ctermbg=235     cterm=italic
+hi Normal            ctermfg=108     ctermbg=235     cterm=none
 hi Conceal           ctermfg=none    ctermbg=none    cterm=none 
 hi ColorColumn       ctermfg=none    ctermbg=none    cterm=none 
 hi Question          ctermfg=none    ctermbg=none    cterm=none 
@@ -121,7 +121,7 @@ hi! link             Boolean         Number
 "hi Float            ctermfg=none    ctermbg=none    cterm=none
 "hi Boolean          ctermfg=none    ctermbg=none    cterm=none
 
-hi Comment           ctermfg=66      ctermbg=none    cterm=none
+hi Comment           ctermfg=66      ctermbg=none    cterm=italic
 
 hi Function          ctermfg=215     ctermbg=none    cterm=none
 hi! link             Identifier      Function        
