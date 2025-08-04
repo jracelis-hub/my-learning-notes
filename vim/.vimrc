@@ -3,9 +3,6 @@
 
 " Disable compatibility with vi which can cuase unexpected issues
 set nocompatible 
-set noerrorbells
-set novisualbell
-set t_vb=
 
 " Enable type file detection. Vim will be able to try to detect the type of file in use.
 filetype on
