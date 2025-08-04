@@ -1,3 +1,16 @@
 # Powershell
 
+## Set Up SSH On Windows
 
+```powershell
+Add-WindowsCapability -Online -Name OpenSSH.Server~~~~0.0.1.0
+Start-Service sshd
+Set-Service -Name sshd -StartupType `Automatic`
+```
+
+To check if the service is running
+
+```powershell
+Get-Service sshd
+netstat -a | findstr :22
+```
