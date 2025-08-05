@@ -57,7 +57,7 @@ hi CursorColumn      ctermfg=none    ctermbg=none    cterm=none
 hi CursorLineNr      ctermfg=none    ctermbg=none    cterm=none
 
 hi VertSplit         ctermfg=0       ctermbg=150     cterm=none
-hi EndOfBuffer       ctermfg=0       ctermbg=none    cterm=none
+hi EndOfBuffer       ctermfg=65      ctermbg=65      cterm=none
 "hi StatusLine       ctermfg=none    ctermbg=none    cterm=none
 hi StatusLineNC      ctermfg=0       ctermbg=0       cterm=none  
 hi! link             StatusLine      VertSplit             

@@ -40,6 +40,7 @@ nnoremap <space> za " Change
 vnoremap <space> zf " Change 
 nnoremap <space>d zd " Change folder maping for delete
 nnoremap <space>e zE " Change folder maping for deleting all
+nnoremap <tab>v <c-v> " Change Visual Block Mode
 
 " ------------ Status Bar Settings ------------ "
 let &laststatus=2
