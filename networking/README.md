@@ -12,9 +12,20 @@ Networking is the process of connecting two or more devices to share information
 
 ### Physical Devices
 
-Servers -
+Ethernet -
+
+1. Straight through cable
+2. Cross over cable
+
+Medium Dependent Interface (`MDI`) -
+
+Media Dependent Interface Crossover (`MDI-X`) -
+
+Auto-MDIX - The cable connection detects if its a cross over cable or straight through cable.
 
 Switch - 
+
+Hub -
 
 Router - this is used to connect to the internet.
 
@@ -26,7 +37,7 @@ Router - this is used to connect to the internet.
 * Node - Any device connected to a network, such as a computer, printer, or router
 * Network - A collection of interconnected devices, such as a computer, printers, and servers, that can communicate with each other
 * Local Area Network (`LAN`) - connects a network in a local vicinity
-* Wide Area Network (`WAN`) - conects a network that is widely a part
+* Wide Area Network (`WAN`) - connects a network that is widely a part
 
 * ***TCP/IP*** - A set of protocols used to communicate over the internet and other networks
 * ***VNC*** - Virtual Network Computering
@@ -102,7 +113,8 @@ Network programming used two different IP addresses:
 		* Handles plenty of devices
 > IPv6 addresses can be shortened
 > 0001:0002:0003:0004:0005:0006:0007:0008 can be rewritten as 1:2:3:4:5:6:7:8
-		* loop back address for IPv6 is ::1 or 0000:0000:0000:0000:0000:0000:0000:0001
+
+* loop back address for IPv6 is ::1 or 0000:0000:0000:0000:0000:0000:0000:0001
 
 If you programm for both IPv4 and IPv6 it is called a dual-stack configuration.
 
@@ -126,10 +138,10 @@ _UDP_
 
 ***IP Addresses Reserved for Local Networks***
 
-|	  |     |
-|:---:|:---:|
-| 10.0.0.0 | 10.255.255.255 |
-| 172.16.0.0 | 172.31.255.255 |
+|	          |                 |
+|:-----------:|:---------------:|
+| 10.0.0.0    | 10.255.255.255  |
+| 172.16.0.0  | 172.31.255.255  |
 | 192.168.0.0 | 192.168.255.255 |
 
 Local Router Assigns IP Addresses
