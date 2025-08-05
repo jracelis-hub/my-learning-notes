@@ -3,6 +3,7 @@
 ## Table of Contents
 
 * [***Introduction***](#introduction)
+	* [_Boot Flow_](#boot-flow)
 	* [_Purpose_](#purpose)
 	* [_Prerequisites_](#prerequisites)
 	* [_Definitions_](#definitions)
@@ -38,6 +39,14 @@
 		* [_Commands_](#commands)
 * [***References***](#references)
 	* [_Links_](#links)
+
+## Boot Flow
+
+```
+                    ROM              RAM(Disk)
+Power on   --->   Firmware   --->   Bootloader   --->   Kernel   --->   Init/OS
+                 0x0000 0000
+```
 
 ## Purpose
 Bash `scripting` is a great way to automate tasks within a ***GNU*** operating system to make navigating through information easy. It is fully customizable to satisfy the specific needs of the ***user***. This project is a great way to utilize the command line and get use to many linux commands.
