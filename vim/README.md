@@ -70,12 +70,6 @@ vim file.txt
 		<td>Description</td>
 		<td>Command</td>
 		<td>Description</td>
-		<td>Command</td>
-		<td>Description</td>
-		<td>Command</td>
-		<td>Description</td>
-		<td>Command</td>
-		<td>Description</td>
 	</tr>
 	<tr>
 		<td>`dd`</td>
