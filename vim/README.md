@@ -54,6 +54,51 @@ vim file.txt
 
 ### ***How to Delete, Copy, Paste and Cut***
 
+<table>
+	<tr>
+		<th colspan="2">Delete</th>	
+		<th colspan="2">Copy (Yank)</th>	
+		<th colspan="2">Paste</th>	
+		<th colspan="2">Cut</th>
+	</tr>
+	<tr>
+		<td>Command</td>
+		<td>Description</td>
+		<td>Command</td>
+		<td>Description</td>
+		<td>Command</td>
+		<td>Description</td>
+		<td>Command</td>
+		<td>Description</td>
+		<td>Command</td>
+		<td>Description</td>
+		<td>Command</td>
+		<td>Description</td>
+		<td>Command</td>
+		<td>Description</td>
+	</tr>
+	<tr>
+		<td>`dd`</td>
+		<td>to delete a line</td>
+		<td>`yy`</td>
+		<td>to copy a line</td>
+		<td>`p`</td>
+		<td>to paste below a line or after the cursor</td>
+		<td>`cc`</td>
+		<td>to delete a line and go into insert mode</td>
+	</tr>
+	<tr>
+		<td>`ndd`</td>
+		<td>to delete n lines</td>
+		<td>`nyy`</td>
+		<td>to copy n lines</td>
+		<td>`np`</td>
+		<td>to paste the same item n times</td>
+		<td>`cc`</td>
+		<td>to delete n lines and go into insert mode</td>
+	</tr>
+</table>
+
 _Delete_
 
 `dd` to delete a line
