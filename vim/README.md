@@ -56,13 +56,13 @@ vim file.txt
 
 <table style>
 	<tr>
+		<th colspan="4"><How To Delete, Copy, Paste and Cut>
 		<th colspan="2">Delete</th>	
 		<th colspan="2">Copy (Yank)</th>	
 		<th colspan="2">Paste</th>	
 		<th colspan="2">Cut</th>
 	</tr>
 	<tr>
-		<th rowspan="3">Hello</th>
 		<td>Command</td>
 		<td>Description</td>
 		<td>Command</td>
