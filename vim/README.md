@@ -75,23 +75,23 @@ vim file.txt
 		<td align="center" >Description</td>
 	</tr>
 	<tr>
-		<td>`dd`</td>
+		<td align="center" >`dd`</td>
 		<td>to delete a line</td>
-		<td>`yy`</td>
+		<td align="center" >`yy`</td>
 		<td>to copy a line</td>
-		<td>`p`</td>
+		<td align="center" >`p`</td>
 		<td>to paste below a line or after the cursor</td>
-		<td>`cc`</td>
+		<td align="center" >`cc`</td>
 		<td>to delete a line and go into insert mode</td>
 	</tr>
 	<tr>
-		<td>`ndd`</td>
+		<td align="center" >`ndd`</td>
 		<td>to delete n lines</td>
-		<td>`nyy`</td>
+		<td align="center" >`nyy`</td>
 		<td>to copy n lines</td>
-		<td>`np`</td>
+		<td align="center" >`np`</td>
 		<td>to paste the same item n times</td>
-		<td>`cc`</td>
+		<td align="center" >`cc`</td>
 		<td>to delete n lines and go into insert mode</td>
 	</tr>
 </table>
