@@ -91,6 +91,16 @@ vim file.txt
 			<td>to copy n lines</td>
 			<td align="center" >`np`</td>
 			<td>to paste the same item n times</td>
+			<td align="center" >`ncc`</td>
+			<td>to delete n lines and go into insert mode</td>
+		</tr>
+		<tr>
+			<td align="center" >`ndd`</td>
+			<td>to delete n lines</td>
+			<td align="center" >`nyy`</td>
+			<td>to copy n lines</td>
+			<td align="center" >`np`</td>
+			<td>to paste the same item n times</td>
 			<td align="center" >`cc`</td>
 			<td>to delete n lines and go into insert mode</td>
 		</tr>
