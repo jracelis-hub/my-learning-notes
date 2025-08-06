@@ -59,20 +59,20 @@ vim file.txt
 		<th colspan="8">How To Delete, Copy, Paste and Cut</th>
 	</tr>
 	<tr>
-		<th colspan="2">Delete</th>	
-		<th colspan="2">Copy (Yank)</th>	
-		<th colspan="2">Paste</th>	
-		<th colspan="2">Cut</th>
+		<th align="center" colspan="2">Delete</th>	
+		<th align="center" colspan="2">Copy (Yank)</th>	
+		<th align="center" colspan="2">Paste</th>	
+		<th align="center" colspan="2">Cut</th>
 	</tr>
 	<tr>
-		<td>Command</td>
-		<td>Description</td>
-		<td>Command</td>
-		<td>Description</td>
-		<td>Command</td>
-		<td>Description</td>
-		<td>Command</td>
-		<td>Description</td>
+		<td align="center" >Command</td>
+		<td align="center" >Description</td>
+		<td align="center" >Command</td>
+		<td align="center" >Description</td>
+		<td align="center" >Command</td>
+		<td align="center" >Description</td>
+		<td align="center" >Command</td>
+		<td align="center" >Description</td>
 	</tr>
 	<tr>
 		<td>`dd`</td>
