@@ -55,45 +55,46 @@ vim file.txt
 ### ***How to Delete, Copy, Paste and Cut***
 
 <table style>
-	<tr>
-		<th colspan="8">How To Delete, Copy, Paste and Cut</th>
-	</tr>
-	<tr>
-		<th align="center" colspan="2">Delete</th>	
-		<th align="center" colspan="2">Copy (Yank)</th>	
-		<th align="center" colspan="2">Paste</th>	
-		<th align="center" colspan="2">Cut</th>
-	</tr>
-	<tr>
-		<td align="center" >Command</td>
-		<td align="center" >Description</td>
-		<td align="center" >Command</td>
-		<td align="center" >Description</td>
-		<td align="center" >Command</td>
-		<td align="center" >Description</td>
-		<td align="center" >Command</td>
-		<td align="center" >Description</td>
-	</tr>
-	<tr>
-		<td align="center" >`dd`</td>
-		<td>to delete a line</td>
-		<td align="center" >`yy`</td>
-		<td>to copy a line</td>
-		<td align="center" >`p`</td>
-		<td>to paste below a line or after the cursor</td>
-		<td align="center" >`cc`</td>
-		<td>to delete a line and go into insert mode</td>
-	</tr>
-	<tr>
-		<td align="center" >`ndd`</td>
-		<td>to delete n lines</td>
-		<td align="center" >`nyy`</td>
-		<td>to copy n lines</td>
-		<td align="center" >`np`</td>
-		<td>to paste the same item n times</td>
-		<td align="center" >`cc`</td>
-		<td>to delete n lines and go into insert mode</td>
-	</tr>
+	<thead>
+		<tr>
+			<th align="center" colspan="2">Delete</th>	
+			<th align="center" colspan="2">Copy (Yank)</th>	
+			<th align="center" colspan="2">Paste</th>	
+			<th align="center" colspan="2">Cut</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td align="center" >Command</td>
+			<td align="center" >Description</td>
+			<td align="center" >Command</td>
+			<td align="center" >Description</td>
+			<td align="center" >Command</td>
+			<td align="center" >Description</td>
+			<td align="center" >Command</td>
+			<td align="center" >Description</td>
+		</tr>
+		<tr>
+			<td align="center" >`dd`</td>
+			<td>to delete a line</td>
+			<td align="center" >`yy`</td>
+			<td>to copy a line</td>
+			<td align="center" >`p`</td>
+			<td>to paste below a line or after the cursor</td>
+			<td align="center" >`cc`</td>
+			<td>to delete a line and go into insert mode</td>
+		</tr>
+		<tr>
+			<td align="center" >`ndd`</td>
+			<td>to delete n lines</td>
+			<td align="center" >`nyy`</td>
+			<td>to copy n lines</td>
+			<td align="center" >`np`</td>
+			<td>to paste the same item n times</td>
+			<td align="center" >`cc`</td>
+			<td>to delete n lines and go into insert mode</td>
+		</tr>
+	</tbody>
 </table>
 
 _Delete_
