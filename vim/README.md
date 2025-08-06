@@ -54,7 +54,10 @@ vim file.txt
 
 ### ***How to Delete, Copy, Paste and Cut***
 
-<table>
+<table style>
+	<rowgroup>
+		<row span="4" style"background-color: #D6EEEE">
+	</rowgroup>
 	<tr>
 		<th colspan="2">Delete</th>	
 		<th colspan="2">Copy (Yank)</th>	
