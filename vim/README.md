@@ -56,7 +56,7 @@ vim file.txt
 
 <table style>
 	<tr>
-		<th colspan="4">How To Delete, Copy, Paste and Cut</th>
+		<th colspan="8">How To Delete, Copy, Paste and Cut</th>
 	</tr>
 	<tr>
 		<th colspan="2">Delete</th>	
