@@ -28,7 +28,7 @@ vim file.txt
 ### ***Terminal Manipulation
 
 * To open up a terminal while in vim do
-	* `:term` This will open up a terminal in a screen above.
+	* `:ter` This will open up a terminal in a screen above.
 * To split screen up vertically
 	* `vsplit`
 	* shortcut `vsp`
@@ -50,33 +50,62 @@ vim file.txt
 * To jump to beginning of word going back `b`
 
 > [!TIP] 
-> You can use the navigation keys `w` `b` `e` with other commands like `d` (deletion) `c` copying
+> You can use the navigation keys `w` `b` `e` with other commands like `d` (deletion) `c` cutting
 
-### ***How to Delete, Copy, and Paste***
+### ***How to Delete, Copy, Paste and Cut***
 
 _Delete_
 
-* To delete a line `dd` 
-	* Add n before `dd` to delete n of lines below `ndd`
-* To delete a word at cursor `dw`
-* To delete everything after the cursor `d$`
-* To delete everything before the cursor `d0`
+`dd` to delete a line
 
-_Copy_
+`ndd` to delete _n_ below lines
 
-* To copy a line `yy`
-	* Add n before `yy` to copy n of lines below `nyy`
-* To copy a word at cursor `yw`
-* To copy everything after the cursor `c$`
-* To copy everything before the cursor `c0`
+`dw` to delete one word after the cursor
+
+`dnw` to delete n words after the cursor
+
+`di$` to delete in `c`haracter 
+
+> [!WARNING]
+> If the cursor is not at the beginning of the word it will only delete from the letter of the cursor
+
+`d$` to delete from start of the cursor to end of the line
+
+`d0` to delete from one space back from the cursor to the beginning of the line
+
+`d%` to delete to the to the end of the first occurence of `)` `}` or `]`
+
+_Copy (Yank)_
+
+`yy` to copy a line
+
+`nyy` to copy n lines below
+
+`yw` to copy a word from cursor to end of a word
+
+`ynw` to copy n words from cursor
+
+`y$` to copy every after the cursor to end of the line
+
+`y0` to copy from one space back from cursor to the beginning of the line
 
 _Paste_
 
-* To paste a line below cursor `p`
-* To paste a line above cursor `P`
-	* To paste copied info n times `np`
-* To paste everything after the cursor `p$`
-* To paste everything at the end of the line `P`
+`p` to paste after cursor but if you use `dd` then `p` it will paste below the line
+
+`P` to paste before cursor but if you use `dd` then `P` it will paste above the line
+
+`np` to paste the same items n times
+
+_Cut + (into Insert mode)_
+
+`cc` to cut a line and go into `insert` mode
+
+`cw` to cut a word and go into `insert` mode
+
+`cic` to cut `i`n a `c`haracter and go into `insert` mode
+
+`C` to cut a line and go into `insert` mode
 
 ### ***How to Setup Config***
 
