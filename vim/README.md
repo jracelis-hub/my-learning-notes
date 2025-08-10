@@ -7,6 +7,7 @@
 * [***How To: Normal Mode***](#how-to:-normal-mode)
 	* [_Navigate Through Vim_](#how-to-navigate-through-vim)
 	* [_Setup Config_](#how-to-setup-config)
+* [***How To: Functions***](#how-to-functions)
 * [***Cheatsheets***](#cheatsheets)
 
 ## ***Introduction***
@@ -195,6 +196,20 @@ Specific Configuration Table
 
 > [!NOTE]
 > To add comments use `"` before the new line 
+
+## How To Function 
+
+To creating a function in vim it starts with `function` and ends with `endfunction`
+```vim
+function Name()
+	code
+endfunction
+```
+
+To call a function use `call` then the function name.
+```vim
+call Name()
+```
 
 ## ***Cheatsheets***
 
