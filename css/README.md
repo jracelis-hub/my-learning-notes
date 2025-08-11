@@ -8,7 +8,57 @@ There are 3 types of ways to add CSS to a HTML file:
 
 1. Inline - using style inside a HTML element `< h1 style="">`
 2. Internal - adding style in `<head>style="item"</head>` 
-3. External - adding the stylesheet in the HTML file `<head><link rel="stylesheet" href="style.css"></head>`
+3. External - adding the stylesheet in the HTML file `<head><link rel="stylesheet" href="style.css"/></head>`
+
+There are serveral properties in CSS. 
+
+For sizing there is absolute units and relative units:
+
+- Absolute units means it is related to another property. Parent vs Child
+- Relative units means no what type of environment it is in it conforms to that. 
+
+Types of Relative Units:
+
+- `%`
+- `em` - em is relative to the font size of parent element
+- `rem` - root is relative to the root `<html>`
+- `vw`
+- `vh` 
+
+Types of Absolute Units:
+
+- `px`
+- `cm`
+- `pt`
+
+Types of Length Properties
+
+- height
+- width
+- padding
+- margin 
+- border
+
+```
+------------------------------------------------
+|  margin                                      |
+|      ----------------------------------      |
+|      | border                         |      |
+|      |    ------------------------    |      |
+|      |    |  padding             |    |      |
+|      |    |   ----------------   |    |      |
+|      |    |   | content      |   |    |      |
+|      |    |   |              |   |    |      |
+|      |    |   ----------------   |    |      |
+|      |    |                      |    |      |
+|      |    ------------------------    |      |
+|      |                                |      |
+|      ----------------------------------      |
+|                                              |
+------------------------------------------------
+```
+
+## Syntax
 
 The format for external is the following:
 ```css
@@ -16,6 +66,60 @@ The format for external is the following:
 selector {
 	property1: value1;
 	property2: value2;
+}
+
+h1 {
+	color: blue;
+}
+```
+
+There are 3 different types of selectors:
+
+1. Elements = Standard html elements `h1`
+2. Class = Styles in html`.class-name`
+3. ID = ID in html `#id-name`
+
+Selectors can be combined:
+```css
+.selection-1.selector-2 {
+	property: value;
+}
+
+/* Example */
+<h1 id="selector-1" class="selector-2"
+```
+
+Can also have ancestor type selectors. Where every child in the ancestor has the same properties.
+```css
+.ancestor .child {
+	property: value;
+}
+
+<div>
+	<p> Stuff </p>
+	<p> Stuff </p>
+</div>
+
+div p {
+	color: red;
+}
+
+/* Everything p in the div brackets will have text colored red */
+```
+
+There also other manipulation that can be done on selectors
+```
+/* This means everything has these properties */
+* { 
+	font-family: Arial;
+}
+```
+
+Can also combine selectors but using `,` between each selector.
+```
+.selector, .selector-2 {
+	color: white;
+	background-color: grey;
 }
 ```
 
