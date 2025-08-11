@@ -16,17 +16,41 @@
 
 Vim or (Vi IMproved) is a power text editor which is an improved version of Vi (Visual Editor).
 
-* When you use `:` that is calling a command within ***vim***.
-* When you used `:!` then you are calling a command within the terminal.
+### ***Terminal Manipulation***
 
-Example
+When using `vim` and any file, it will open up something called a buffer. With that buffer the visual representation of the buffer is called the window.
+
+There is also something called tabs which opens up another tab, that has its own buffers and windows. To open up a new tab.
+```vim
+:tabnew file_name
 ```
-vim file.txt
+And to switch inbetween tab just:
+- `gT` or `:tabn` - switch to next tab
+- `gt` `:tabp` - switch to previous tab
+
+Multiple buffers can be opened up at once such as:
+```vim
+vim ~/.bashrc ~/.vimrc
+:ls
+  1 %a   ".vimrc"                       line 1
+  2      ".bashrc"                      line 0
+```
+To switch inbetween buffers use `Ctrl + ^`
+
+To open up another window use 
+
+When you use `:` that is calling a command within ***vim***.
+```vim
+:ls
+" This will show what buffers you have open
+```
+
+When you used `:!` then you are calling a command within the terminal.
+```vim
 :!ls
-# This will list the files within current directory as if you did it on the command line
+" This will list current direction in the terminal
 ```
 
-### ***Terminal Manipulation
 
 * To open up a terminal while in vim do
 	* `:ter` This will open up a terminal in a screen above.
@@ -36,7 +60,6 @@ vim file.txt
 * To split screen up horizontally
 	* `split`
 	* shortcut `sp`
-
 
 ## ***HOW To: Normal Mode***
 
@@ -211,6 +234,16 @@ To call a function use `call` then the function name.
 call Name()
 ```
 
+To declare a variable you use `let`
+```vim
+let number = 5
+```
+
+To see a variable from vimrc use `&variable` name
+```
+echo &tabstop
+```
+
 ## ***Cheatsheets***
 
 Good to know hotkeys for Vim
@@ -238,16 +271,18 @@ Good to know hotkeys for Vim
 | `l` | move cursor right |
 | `nj` | moves cursor down (multi-line text)
 | `nk` | moves cursor up (multi-line text)
-| `H` | move to top of screen |
-| `M` | move to middle of screen |
-| `L` | move to bottom screen |
+| `H` | moves cursor to top of screen |
+| `M` | moves cursor to middle of screen |
+| `L` | moves cursor to bottom screen |
 | `gg` | go to the first line of the document |
 | `G` | go to the last line of the document |
 | `w` | jump forwards to the start of a word |
 | `W` | jumps forwards to the start of a word (words can contain punctuation) |
 | `e` | jumps forwards to the end of a word |
-| `E` | jumps fowards to the end of a word (words can contain punctuation |
+| `E` | jumps fowards to the end of a word (words can contain punctuation) |
 | `b` | jumps backwards to the start of a word |
-| `B` | jump backwards to the start of a word (words can contain punctuation) |
-| `0` | jump to the start of the line |
-| `$` | jump to end of the line |
+| `B` | jumps backwards to the start of a word (words can contain punctuation) |
+| `0` | jumps to the start of the line |
+| `^` | jumps to the srat of the line (non blank spaces) |
+| `$` | jumps to end of the line |
+| `%` | jumps between matching `{` , `(` , `[` |
