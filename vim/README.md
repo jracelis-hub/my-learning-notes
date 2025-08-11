@@ -20,6 +20,14 @@ Vim or (Vi IMproved) is a power text editor which is an improved version of Vi (
 
 When using `vim` and any file, it will open up something called a buffer. With that buffer the visual representation of the buffer is called the window.
 
+Multiple buffers can be opened up at once such as:
+```vim
+vim ~/.bashrc ~/.vimrc
+:ls
+  1 %a   ".vimrc"                       line 1
+  2      ".bashrc"                      line 0
+```
+
 There is also something called tabs which opens up another tab, that has its own buffers and windows. To open up a new tab.
 ```vim
 :tabnew file_name
@@ -28,13 +36,6 @@ And to switch inbetween tab just:
 - `gT` or `:tabn` - switch to next tab
 - `gt` `:tabp` - switch to previous tab
 
-Multiple buffers can be opened up at once such as:
-```vim
-vim ~/.bashrc ~/.vimrc
-:ls
-  1 %a   ".vimrc"                       line 1
-  2      ".bashrc"                      line 0
-```
 To switch inbetween buffers use `Ctrl + ^`
 
 To open up another window use 
