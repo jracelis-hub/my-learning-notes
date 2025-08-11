@@ -8,7 +8,7 @@ There are 3 types of ways to add CSS to a HTML file:
 
 1. Inline - using style inside a HTML element `< h1 style="">`
 2. Internal - adding style in `<head>style="item"</head>` 
-3. External `<link rel="stylesheet" href="relative_path">
+3. External - adding the stylesheet in the HTML file `<head><link rel="stylesheet" href="style.css"></head>`
 
 The format for external is the following:
 ```css
@@ -21,9 +21,8 @@ selector {
 
 ## Flexbox
 
-
 ```css
-body {
+selector {
 	
 	display: flex;	
 
