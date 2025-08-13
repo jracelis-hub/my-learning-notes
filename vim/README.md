@@ -1,22 +1,25 @@
 # Vim Knowledge
 
-## ***Table of Contents***
+## Table of Contents
 
-* [***Introduction***](#introduction)
-	* [_Terminal Manipulation_](#terminal-manipulation)
-* [***How To: Normal Mode***](#how-to:-normal-mode)
-	* [_Navigate Through Vim_](#how-to-navigate-through-vim)
-	* [_Setup Config_](#how-to-setup-config)
-* [***How To: Functions***](#how-to-functions)
-* [***Cheatsheets***](#cheatsheets)
+* [Introduction](#introduction)
+	* [Terminal Manipulation](#terminal-manipulation)
+* [Normal Mode](#normal-mode)
+	* [Navigate Through Text](#how-to-navigate-through-vim)
+    * [Window Manipulation](#window-manipulation)
+    * [Delete, Copy, Paste, Cut](#delete-copy-paste-cut)
+* [Insert Mode](#insert-mode)
+* [Setup Configuration](#setup-config)
+* [Functions](#functions)
+* [Cheatsheets](#cheatsheets)
 
-## ***Introduction***
+## Introduction
 
-***What is VIM***
+What is VIM
 
 Vim or (Vi IMproved) is a power text editor which is an improved version of Vi (Visual Editor).
 
-### ***Terminal Manipulation***
+### Terminal Manipulation
 
 When using `vim` and any file, it will open up something called a buffer. With that buffer the visual representation of the buffer is called the window.
 
@@ -62,24 +65,71 @@ When you used `:!` then you are calling a command within the terminal.
 	* `split`
 	* shortcut `sp`
 
-## ***HOW To: Normal Mode***
+## Normal Mode
 
-### ***How to Navigate Through VIM***
+### Navigate Through Text 
 
-* To jump to a specific line use `:n` where n is the line number shown on the left.
-* To jump to the end of the page `G`
-* To jump to the beginning of the page `gg`
-* To jump to beginning of the line `0`
-* To jump to end of the line `$`
-* To jump to beginning of word going right `w`
-* To jump to beginning of word going back `b`
+* `h` - To move cursor left
+* `l` - To move cursor right
+* `j` - To move cursor down
+* `k` - To move cursor up
+* `0` - To jump to beginning of the line
+* `^` - To jump to beginning of the line (non-whitespace)
+* `$` - To jump to end of the line `$`
+* `w` - To jump to beginning of word going right
+* `b` - To jump to beginning of word going left
+* `e` - To jump to end of word going foward
+
+#### Window Manipulation
+
+* `G` - To jump cursor to the end of the window
+* `gg - To jump cursor to the beginning of the window
+* `H` - To move cursor to the top of the window
+* `M` - To move cursor to the middle of the window
+* `L` - To move cursor to the bottom of the window
 
 > [!TIP] 
 > You can use the navigation keys `w` `b` `e` with other commands like `d` (deletion) `c` cutting
 
-### ***How to Delete, Copy, Paste and Cut***
+### Delete, Copy, Paste, Cut
 
-<table style>
+_Delete_
+
+* `dd` to delete a line
+* `ndd` to delete _n_ below lines
+* `dw` to delete one word after the cursor
+* `dnw` to delete n words after the cursor
+* `di$` to delete in `c`haracter 
+* `d$` to delete from start of the cursor to end of the line
+* `d0` to delete from one space back from the cursor to the beginning of the line
+* `d%` to delete to the to the end of the first occurence of `)` `}` or `]`
+
+> [!WARNING]
+> If the cursor is not at the beginning of the word it will only delete from the letter of the cursor
+
+_Copy (Yank)_
+
+* `yy` to copy a line
+* `nyy` to copy n lines below
+* `yw` to copy a word from cursor to end of a word
+* `ynw` to copy n words from cursor
+* `y$` to copy every after the cursor to end of the line
+* `y0` to copy from one space back from cursor to the beginning of the line
+
+_Paste_
+
+* `p` to paste after cursor but if you use `dd` then `p` it will paste below the line
+* `P` to paste before cursor but if you use `dd` then `P` it will paste above the line
+* `np` to paste the same items n times
+
+_Cut + (into Insert mode)_
+
+* `cc` to cut a line and go into `insert` mode
+* `cw` to cut a word and go into `insert` mode
+* `cic` to cut `i`n a `c`haracter and go into `insert` mode
+* `C` to cut a line and go into `insert` mode
+
+<table>
 	<thead>
 		<tr>
 			<th align="center" colspan="2">Delete</th>	
@@ -132,60 +182,26 @@ When you used `:!` then you are calling a command within the terminal.
 	</tbody>
 </table>
 
-_Delete_
+### Other Commands
 
-`dd` to delete a line
+* `x` - To delete characters on the cursor
+* `X` - To delete characters behind the cursor
+* `J` - To join line below the cursor line
+* `~` - To switch case for a character
+* `u` - To undo the last edit
+* `U` - To undo the last changes made on the last line that was edited
+* `ctrl+r` - To reverse the undo
 
-`ndd` to delete _n_ below lines
+## Insert Mode
 
-`dw` to delete one word after the cursor
+* `i` - to enter insert mode placing cursor before the character
+* `I` - to enter insert mode in the beginning of the line
+* `a` - to enter insert mode placing cursor after the character
+* `A` - to enter insert mode in the end of the line
+* `o` - to enter insert mode below the current line
+* `O` - to enter insert mode above the current line
 
-`dnw` to delete n words after the cursor
-
-`di$` to delete in `c`haracter 
-
-> [!WARNING]
-> If the cursor is not at the beginning of the word it will only delete from the letter of the cursor
-
-`d$` to delete from start of the cursor to end of the line
-
-`d0` to delete from one space back from the cursor to the beginning of the line
-
-`d%` to delete to the to the end of the first occurence of `)` `}` or `]`
-
-_Copy (Yank)_
-
-`yy` to copy a line
-
-`nyy` to copy n lines below
-
-`yw` to copy a word from cursor to end of a word
-
-`ynw` to copy n words from cursor
-
-`y$` to copy every after the cursor to end of the line
-
-`y0` to copy from one space back from cursor to the beginning of the line
-
-_Paste_
-
-`p` to paste after cursor but if you use `dd` then `p` it will paste below the line
-
-`P` to paste before cursor but if you use `dd` then `P` it will paste above the line
-
-`np` to paste the same items n times
-
-_Cut + (into Insert mode)_
-
-`cc` to cut a line and go into `insert` mode
-
-`cw` to cut a word and go into `insert` mode
-
-`cic` to cut `i`n a `c`haracter and go into `insert` mode
-
-`C` to cut a line and go into `insert` mode
-
-### ***How to Setup Config***
+## Setup Configuration
 
 In your `$HOME` or `~` directory make a file called `vimrc`
 
@@ -221,7 +237,7 @@ Specific Configuration Table
 > [!NOTE]
 > To add comments use `"` before the new line 
 
-## How To Function 
+## Function 
 
 To creating a function in vim it starts with `function` and ends with `endfunction`
 ```vim
@@ -245,7 +261,7 @@ To see a variable from vimrc use `&variable` name
 echo &tabstop
 ```
 
-## ***Cheatsheets***
+## Cheatsheets
 
 Good to know hotkeys for Vim
 
