@@ -34,7 +34,7 @@ To get help
 * `F1` - to get help for vim
 * `ctrl + ]` - jump to hyper links 
 * `crtl + T` - jump to back orginal tag 
-* `crtl + O' - jumps to older posiion
+* `crtl + O` - jumps to older posiion
 
 * `:help index` - to get complete index of all Vim commands
 * `crtl + G` - shows a help command on the bottom of the screen
@@ -175,6 +175,7 @@ _Cut + (into Insert mode)_
 * `C` to cut a line and go into `insert` mode
 
 <details>
+<summary>Table Cheatsheet</summary>
     <table>
         <thead>
             <tr>
