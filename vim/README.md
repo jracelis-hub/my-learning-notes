@@ -19,6 +19,45 @@ What is VIM
 
 Vim or (Vi IMproved) is a power text editor which is an improved version of Vi (Visual Editor).
 
+To exit out of vim
+
+* `:q` - to quit window with any changes made
+* `:q!` - to force quit window without saving changes
+* `:wq` - to save modifications made to buffer and quit
+* `:w` - to save any modifications made to buffer
+* `ZZ` - to save modifications made to buffer and quit
+
+To get help
+
+* `:help` or `:h` - to get help for vim
+* `:help command` - to get help for a specific command
+* `F1` - to get help for vim
+* `ctrl + ]` - jump to hyper links 
+* `crtl + T` - jump to back orginal tag 
+* `crtl + O' - jumps to older posiion
+
+* `:help index` - to get complete index of all Vim commands
+* `crtl + G` - shows a help command on the bottom of the screen
+
+To search for words:
+
+- `/` - to search for words forwards 
+- `?` - to search for words backwards
+
+Use `n` to jump to next occurance of the searched word
+```vim
+"
+"
+"         ------
+This is a |word|
+          ------
+/word
+" click n
+         ------
+The next |word|
+         ------
+```
+
 ### Terminal Manipulation
 
 When using `vim` and any file, it will open up something called a buffer. With that buffer the visual representation of the buffer is called the window.
@@ -78,15 +117,21 @@ When you used `:!` then you are calling a command within the terminal.
 * `$` - To jump to end of the line `$`
 * `w` - To jump to beginning of word going right
 * `b` - To jump to beginning of word going left
-* `e` - To jump to end of word going foward
+* `e` - To jump to end of word going right
+* `ge` - To jump to end of word going left 
+* `fk` - To move cursor to any specific `k`(character) going right
+* `Fk` - To move cursor to any specific `k`(character) going left
+* `%` - To move cursor to matching `(`, `{`, `[` this will also move find one of these characters on the same line
 
 #### Window Manipulation
 
 * `G` - To jump cursor to the end of the window
-* `gg - To jump cursor to the beginning of the window
-* `H` - To move cursor to the top of the window
+* `gg` - To jump cursor to the beginning of the window
+* `H` - To move cursor to the high of the window
 * `M` - To move cursor to the middle of the window
-* `L` - To move cursor to the bottom of the window
+* `L` - To move cursor to the low of the window
+* `ctrl + e` - To move cursor down one line 
+* `crtl + y` - To move cursor up one line 
 
 > [!TIP] 
 > You can use the navigation keys `w` `b` `e` with other commands like `d` (deletion) `c` cutting
@@ -129,58 +174,60 @@ _Cut + (into Insert mode)_
 * `cic` to cut `i`n a `c`haracter and go into `insert` mode
 * `C` to cut a line and go into `insert` mode
 
-<table>
-	<thead>
-		<tr>
-			<th align="center" colspan="2">Delete</th>	
-			<th align="center" colspan="2">Copy (Yank)</th>	
-			<th align="center" colspan="2">Paste</th>	
-			<th align="center" colspan="2">Cut</th>
-		</tr>
-	</thead>
-	<tbody>
-		<tr>
-			<td align="center" >Command</td>
-			<td align="center" >Description</td>
-			<td align="center" >Command</td>
-			<td align="center" >Description</td>
-			<td align="center" >Command</td>
-			<td align="center" >Description</td>
-			<td align="center" >Command</td>
-			<td align="center" >Description</td>
-		</tr>
-		<tr>
-			<td align="center" >`dd`</td>
-			<td>to delete a line</td>
-			<td align="center" >`yy`</td>
-			<td>to copy a line</td>
-			<td align="center" >`p`</td>
-			<td>to paste below a line or after the cursor</td>
-			<td align="center" >`cc`</td>
-			<td>to delete a line and go into insert mode</td>
-		</tr>
-		<tr>
-			<td align="center" >`ndd`</td>
-			<td>to delete n lines</td>
-			<td align="center" >`nyy`</td>
-			<td>to copy n lines</td>
-			<td align="center" >`np`</td>
-			<td>to paste the same item n times</td>
-			<td align="center" >`ncc`</td>
-			<td>to delete n lines and go into insert mode</td>
-		</tr>
-		<tr>
-			<td align="center" >`ndd`</td>
-			<td>to delete n lines</td>
-			<td align="center" >`nyy`</td>
-			<td>to copy n lines</td>
-			<td align="center" >`np`</td>
-			<td>to paste the same item n times</td>
-			<td align="center" >`cc`</td>
-			<td>to delete n lines and go into insert mode</td>
-		</tr>
-	</tbody>
-</table>
+<details>
+    <table>
+        <thead>
+            <tr>
+                <th align="center" colspan="2">Delete</th>	
+                <th align="center" colspan="2">Copy (Yank)</th>	
+                <th align="center" colspan="2">Paste</th>	
+                <th align="center" colspan="2">Cut</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td align="center" >Command</td>
+                <td align="center" >Description</td>
+                <td align="center" >Command</td>
+                <td align="center" >Description</td>
+                <td align="center" >Command</td>
+                <td align="center" >Description</td>
+                <td align="center" >Command</td>
+                <td align="center" >Description</td>
+            </tr>
+            <tr>
+                <td align="center" >`dd`</td>
+                <td>to delete a line</td>
+                <td align="center" >`yy`</td>
+                <td>to copy a line</td>
+                <td align="center" >`p`</td>
+                <td>to paste below a line or after the cursor</td>
+                <td align="center" >`cc`</td>
+                <td>to delete a line and go into insert mode</td>
+            </tr>
+            <tr>
+                <td align="center" >`ndd`</td>
+                <td>to delete n lines</td>
+                <td align="center" >`nyy`</td>
+                <td>to copy n lines</td>
+                <td align="center" >`np`</td>
+                <td>to paste the same item n times</td>
+                <td align="center" >`ncc`</td>
+                <td>to delete n lines and go into insert mode</td>
+            </tr>
+            <tr>
+                <td align="center" >`ndd`</td>
+                <td>to delete n lines</td>
+                <td align="center" >`nyy`</td>
+                <td>to copy n lines</td>
+                <td align="center" >`np`</td>
+                <td>to paste the same item n times</td>
+                <td align="center" >`cc`</td>
+                <td>to delete n lines and go into insert mode</td>
+            </tr>
+        </tbody>
+    </table>
+</details>
 
 ### Other Commands
 
@@ -259,6 +306,39 @@ let number = 5
 To see a variable from vimrc use `&variable` name
 ```
 echo &tabstop
+```
+
+## Syntax
+
+See `/usr/share/vim/vim91/syntax/` to see specific syntax format.
+
+
+Each syntax file should include `set syntax clear`
+
+> [!NOTE]
+> To see current defined syntax use `:syntax`
+
+Each to avoid case sensitivity use the following: `set syntax case ignore`
+
+Syntax Keywords
+
+---
+
+To define a `syntax keyword` follow the specific format
+```vim
+syntax keyword {group} {keyword}
+" Example
+syntax keyword cType int long char
+"             {group} {keywords}
+```
+
+Syntax Matches
+
+---
+
+To define a `syntax match` follow the specific format
+```vim
+syntax match {group} 
 ```
 
 ## Cheatsheets
