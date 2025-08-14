@@ -2,13 +2,13 @@
 
 ## Table of Content
 
-* [_Introduction_](#introduction)
-	* [_Setup Environment_](#setup-environment)
-        * [_Initilizing Local Environment_](#initilizing-local-environment)
-    * [_Creating Branches_](#creating-branches)
-* [_Hosting Git to Github_](#hosting-git-to-github)
-    * [_Creating SSH Keys for Github_](#creating-ssh-keys-for-github)
-* [_Appendix_](#appendix)
+* [Introduction](#introduction)
+	* [Setup Environment](#setup-environment)
+        * [Initilizing Local Environment](#initilizing-local-environment)
+    * [Creating Branches](#creating-branches)
+* [Hosting Git to Github](#hosting-git-to-github)
+    * [Creating SSH Keys for Github](#creating-ssh-keys-for-github)
+* [Appendix](#appendix)
 
 ## Introduction
 

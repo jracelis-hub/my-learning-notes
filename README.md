@@ -2,17 +2,20 @@
 
 ## Table of Contents
 
-* [***Introduction***](#introduction)
-* [***Repository Topics***](#repository-topics)
-    * _C Programing_
-    * _Container_
-    * _Git Notes_
-    * _Linux_
-    * _Networking_
-    * _Virtual Machine_
-	* _Vim Notes_
-    * _Images_
-* [***Contact***](#contact)   
+* [Introduction](#introduction)
+* [Repository Topics](#repository-topics)
+    * C Programing
+	* Css
+    * Git Notes
+	* Html
+    * Linux
+    * Networking
+	* Powershell
+	* SSH
+    * Virtual Machine
+	* Vim
+    * Images
+* [Contact](#contact)   
 
 ## Introduction
 
@@ -30,16 +33,19 @@ This repository is a one stop shop to all the topics that I have learn so I can 
 
 ## Repository Topics
 
-* [_C Programing_](https://github.com/jracelis-hub/my-learning-notes/tree/main/c_programming) :open_file_folder:
-* [_Container_](https://github.com/jracelis-hub/my-learning-notes/tree/main/container) :open_file_folder:
-* [_Git Notes_](https://github.com/jracelis-hub/my-learning-notes/tree/main/git_notes) :open_file_folder:
-* [_Linux_](https://github.com/jracelis-hub/my-learning-notes/tree/main/linux) :open_file_folder: 
-* [_Networking_](https://github.com/jracelis-hub/my-learning-notes/tree/main/networking) :open_file_folder:
-* [_Vim Notes_](https://github.com/jracelis-hub/my-learning-notes/tree/main/vim_notes)
-* [_Virtual Machine_](https://github.com/jracelis-hub/my-learning-notes/tree/main/virtual_machine) :open_file_folder:
-* [_Images_](https://github.com/jracelis-hub/my-learning-notes/tree/main/images) 📷
+* [C Programing](https://github.com/jracelis-hub/my-learning-notes/tree/main/c_programming) :open_file_folder:
+* [CSS](https://github.com/jracelis-hub/my-learning-notes/tree/main/css) :open_file_folder:
+* [Git Notes](https://github.com/jracelis-hub/my-learning-notes/tree/main/git_notes) :open_file_folder:
+* [Html](https://github.com/jracelis-hub/my-learning-notes/tree/main/html) :open_file_folder:
+* [Linux](https://github.com/jracelis-hub/my-learning-notes/tree/main/linux) :open_file_folder: 
+* [Networking](https://github.com/jracelis-hub/my-learning-notes/tree/main/networking) :open_file_folder:
+* [Powershell](https://github.com/jracelis-hub/my-learning-notes/tree/main/powershell) :open_file_folder:
+* [SSH](https://github.com/jracelis-hub/my-learning-notes/tree/main/ssh) :open_file_folder:
+* [Vim Notes](https://github.com/jracelis-hub/my-learning-notes/tree/main/vim_notes)
+* [Virtual Machine](https://github.com/jracelis-hub/my-learning-notes/tree/main/virtual_machine) :open_file_folder:
+* [Images](https://github.com/jracelis-hub/my-learning-notes/tree/main/images) 📷
 
 ### Contact
->  Name: _Jarron Racelis_ \
+>  Name: _Jarron Racelis_ <br>
 >  Email: _jarron.racelis@gmail.com_
 

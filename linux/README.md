@@ -2,43 +2,43 @@
 
 ## Table of Contents
 
-* [***Introduction***](#introduction)
-	* [_Boot Flow_](#boot-flow)
-	* [_Purpose_](#purpose)
-	* [_Prerequisites_](#prerequisites)
-	* [_Definitions_](#definitions)
-		* [_Terminology_](#terminology)
-	* [_File System Hierarchy_](#file-system-hierarchy)
-* [***Section 1: Beginner Scripting Concepts***](#section-1-beginner-scripting-concepts)
-	* [_Scripting Basics_](#scripting-basics)
-	* [_Where Are Commands_](#where-are-commands)
-	* [_Variables_](#variables)
-	* [_Arrays_](#arrays)
-	* [_Syntax_](#syntax)
-	* [_Return Status_](#return-status)
-	* [_Help Commands_](#help-commands)
-* [***Section 2: Advanced Bash Concepts***](#section-2-advanced-bash-concepts)
-	* [_Compound Commands_](#compound-commands)
-		* [_Iteration_***(While, Until, For, Select)***](#iteration)
-		* [_Conditionals_***(If, Case, Test)***](#conditionals)
-		* [_Conditional Tests_](#conditional-tests)
-		* [_Command Groups_](#command-groups)
-* [***Section 3: STDIN, STDOUT, STDERROR***](#section-3-stdin-stdout-stderror)
-	* [_Pipes and Redirection_](#pipes-and-redirection)
-	* [_Manipulating Output_](#manipulating-output)
-	* [_Color Code Text_](#color-code-text)
-* [***Section 4 Parameter Manipulation***](#section-4-parameter-manipulation)
-	* [_Parameters_](#parameters)
-		* [_Parameter Expansion: Conditionals_](#parameter-expansion-conditionals)
-		* [_Parameter Expansion: Substring_](#parameter-expansion-substring)
-		* [_Parameter Expansion: Indirection Listing and Length_](#parameter-expansion-indirection-listing-and-length)
-		* [_Parameter Expansion: Pattern Substitution_](#-parameter-expansion-pattern-substitution)
-* [***Appendix***](#appendix)
-	* [_Table References_](#table-references)
-		* [_Bash Operators_](#bash-operators)
-		* [_Commands_](#commands)
-* [***References***](#references)
-	* [_Links_](#links)
+* [Introduction](#introduction)
+	* [Boot Flow](#boot-flow)
+	* [Purpose](#purpose)
+	* [Prerequisites](#prerequisites)
+	* [Definitions](#definitions)
+		* [Terminology](#terminology)
+	* [File System Hierarchy](#file-system-hierarchy)
+* [Section 1: Beginner Scripting Concepts](#section-1-beginner-scripting-concepts)
+	* [Scripting Basics](#scripting-basics)
+	* [Where Are Commands](#where-are-commands)
+	* [Variables](#variables)
+	* [Arrays](#arrays)
+	* [Syntax](#syntax)
+	* [Return Status](#return-status)
+	* [Help Commands](#help-commands)
+* [Section 2: Advanced Bash Concepts](#section-2-advanced-bash-concepts)
+	* [Compound Commands](#compound-commands)
+		* [Iteration(While, Until, For, Select)](#iteration)
+		* [Conditionals(If, Case, Test)](#conditionals)
+		* [Conditional Tests](#conditional-tests)
+		* [Command Groups](#command-groups)
+* [Section 3: STDIN, STDOUT, STDERROR](#section-3-stdin-stdout-stderror)
+	* [Pipes and Redirection](#pipes-and-redirection)
+	* [Manipulating Output](#manipulating-output)
+	* [Color Code Text](#color-code-text)
+* [Section 4 Parameter Manipulation](#section-4-parameter-manipulation)
+	* [Parameters](#parameters)
+		* [Parameter Expansion: Conditionals](#parameter-expansion-conditionals)
+		* [Parameter Expansion: Substring](#parameter-expansion-substring)
+		* [Parameter Expansion: Indirection Listing and Length](#parameter-expansion-indirection-listing-and-length)
+		* [Parameter Expansion: Pattern Substitution](#-parameter-expansion-pattern-substitution)
+* [Appendix](#appendix)
+	* [Table References](#table-references)
+		* [Bash Operators](#bash-operators)
+		* [Commands](#commands)
+* [References](#references)
+	* [Links](#links)
 
 ## Boot Flow
 
@@ -107,7 +107,7 @@ Key Directories:
 _/ Root Directory_
 
 * Top-level directory for the entire filesystem
-* All of the other directories in FHS are in the root directory
+* All of the other directories in FHS(File Hierarchy Standard) are in the root directory
 	* Subdirectories branch out, and more under them
 * Root directory owned by root user
 * SysAdmins often work directly with the root direcroty to configure and maintain the system
@@ -147,6 +147,14 @@ _/home (Your Personal Space)_
 * Primary location for user's files, documents, settings, and configs.
 * Each user has their own subdirectory within `/home`.
 	* user1= `/home/user1`
+
+_/proc_
+* Contains all the process IDs (pids)
+
+_/dev_
+* List of all the devices on the system
+* Contains block "files", usually disk or RAM
+* Contains character "files", that is written into
 
 ## Section 1: Beginner Scripting Concepts
 
@@ -1229,7 +1237,35 @@ ${PARAM%u*} = "tho" it removes everything from the first u untill the right
 | `-w` | checks if a file has write permission (owner)
 | `-x` | checks if a file has execute permission (owner)
 
-#### Commands
+#### Bash Builtins
+
+<table>
+	<thead>
+		<tr>
+			<th>Bash Builtins</th>
+		</tr>
+		<tr>
+			<th colspan="2">Command</th>
+			<th colspan="2">Description</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>cd</td>
+			<td>to change directory</td>
+		</tr>
+		<tr>
+			<td>command</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>export</td>
+			<td>to export a variable</td>
+		</tr>
+	</tbody>
+</table>
+
+#### External Commands
 
 |  Commands   | Description                          |
 |:-----------:|--------------------------------------|
@@ -1273,8 +1309,6 @@ Requirements:
 run `lsusb` to see plugged-in USB devices 
 
 `sudo apt-get install usbutils`
-
-
 
 ## References
 
