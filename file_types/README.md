@@ -1,9 +1,71 @@
-# JavaScript Object Notation
+# MD (Markdown) XML (Extensible Markup Language) JSON (JavaScript Object Notation)
 
 ## Introduction
 
-JSON or JavaScript Object Notation it is a light weight human readable format to store data and exchange data. 
-It uses the idea of key value pairs to match a `key` to a `value`. 
+JSON or JavaScript Object Notation it is a light weight human readable format to store data and exchange data. It uses the idea of key value pairs to match a `key` to a `value`. 
+
+The idea of a `key` followed by a `value` so also known as a _dictionary_. To find the information specific information on a key
+
+The extension type for each of these files are:
+
+- MD (Markdown) - `.md`
+- XML (Extensible Markup Language) - `.xml`
+- JSON (JavaScript Object Notation) - `.json`
+
+### Data Types
+
+MD
+---
+
+Notation:
+
+To have a empty line between each paragraph just include a empty line between each paragraph.
+
+Example:
+```md
+This is a paragraph.
+
+There is a space between this line and the paragraph above.
+```
+
+Headings:
+
+- Include a `#` to make a header. There are 6 different heading types where the number of `#` is the heading number, with one `#` is the largest.
+
+Code:
+
+- To make something a block of code just include 2 tick \` \` marks and within it write the block of code
+
+Italics and Bold: 
+
+- To make something italics just add one * and another * between some text
+- To make something bold jsut add two ** and another ** between some text
+
+Links:
+
+- To add links just use `[`text`]`(link) to make a link
+
+Images:
+
+- To add a image just use !`[`alt-test`]`(picture-url) where alt-text is the images alternate text. Where the link could be remote or local
+
+Unordered Lists:
+
+- To make a unorder lists start it with a `-` or a `*`
+
+Ordered Lists:
+
+- To make a order list start it with a number `1` followed by a period `.`
+
+XML 
+---
+
+The key could be any type of data type. Those key data types are:
+
+- Strings
+
+JSON
+---
 
 The key could be any type of data type. Those key data types are:
 
@@ -27,3 +89,4 @@ EXAMPLE:
    "hasBachelors": true
 }
 ```
+
