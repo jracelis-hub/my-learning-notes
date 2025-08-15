@@ -74,7 +74,7 @@ The key could be any type of data type. Those key data types are:
 - Booleans - To define 
 - None - To define 
 - Arrays - To define an array, it is enclosed in `[` brackets `]`.
-- Another object - To define an object, it is enclosed in `{` braces `}`.
+- Object (dictionaries) - To define an object, it is enclosed in `{` braces `}`.
 
 The notation is that all keys are enclosed in `""` like such `"name"`
 

@@ -1,0 +1,46 @@
+{
+	"Monday": {
+		"Description": "Sunny",
+		"MinTemp": 22,
+		"MaxTemp": 66,
+		"CurrTemp": 45,
+		"isDanagerous": false
+	},
+	"Tuesday": {
+		"Description": "Cloudy",
+		"MinTemp": 22,
+		"MaxTemp": 55,
+		"CurrTemp": 45,
+		"isDanagerous": false
+	},
+	"Wednesday": {
+		"Description": "Rainy",
+		"MinTemp": 22,
+		"MaxTemp": 44,
+		"CurrTemp": 24,
+		"isDanagerous": true
+	},
+	"forecast": [
+		"Monday": {
+			"Description": "Sunny",
+			"MinTemp": 22,
+			"MaxTemp": 66,
+			"CurrTemp": 45,
+			"isDanagerous": false
+		},
+		"Tuesday": {
+			"Description": "Cloudy",
+			"MinTemp": 22,
+			"MaxTemp": 55,
+			"CurrTemp": 45,
+			"isDanagerous": false
+		},
+		"Wednesday": {
+			"Description": "Rainy",
+			"MinTemp": 22,
+			"MaxTemp": 44,
+			"CurrTemp": 24,
+			"isDanagerous": true
+		}
+	]
+}
