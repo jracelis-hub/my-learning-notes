@@ -64,6 +64,38 @@ The key could be any type of data type. Those key data types are:
 
 - Strings
 
+Information is represented with tags `<></>`. The opening tag is `<>` and the close tag is `</>`.
+
+The content within the tag is between the opening and closing tag. `<tag>`this is content`</tag>`
+
+The content wihthin the tag is treated as a string
+
+Tags can also have **Attributes**. They are key value pairs. But the keys dont have quotes around it
+
+`<tag key="value"> content</tag>`
+
+XML is used to indicate some property about the data (metadata).
+
+Example:
+```xml
+<fileSize unit="kB">34.6</fileSize>
+
+<cost currency="USD">43.33</cost>
+```
+
+- cost = tag
+- currency = attribute
+- 43.33 = content
+
+If there is no content within a tag they can also be represented by:
+```xml
+`<person name="Jarron" />`
+```
+
+Notice there is no extra tag called `</person>` this is because there is no content within the tag so therefore it is not needed.
+
+You can also include a namespace by doing `<namespace:education>`
+
 JSON
 ---
 
