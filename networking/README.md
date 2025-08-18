@@ -102,15 +102,16 @@ Wifi
 * Subnet - Determines the network port and the number of hosts in a LAN.
 
 Network programming used two different IP addresses:
-	* IPv4
-		* Original Domain
-		* 32-bit addresses
-		* 0.0.0.0 - 255.255.255.255
-		* Dotted quad
-	* IPv6
-		* 128-bit addresses
-		* Eight groups of 4 hex values, seperated by colons
-		* Handles plenty of devices
+* IPv4
+	* Original Domain
+	* 32-bit addresses
+	* 0.0.0.0 - 255.255.255.255
+	* Dotted quad
+* IPv6
+	* 128-bit addresses
+	* Eight groups of 4 hex values, seperated by colons
+	* Handles plenty of devices
+
 > IPv6 addresses can be shortened
 > 0001:0002:0003:0004:0005:0006:0007:0008 can be rewritten as 1:2:3:4:5:6:7:8
 
@@ -118,7 +119,7 @@ Network programming used two different IP addresses:
 
 If you programm for both IPv4 and IPv6 it is called a dual-stack configuration.
 
-***IP Protocol Suites***
+IP Protocol Suites
 
 _TCP_
 	* Transmission Control Protocol
@@ -130,13 +131,12 @@ _UDP_
 	* Connectionless
 	* Bad packets are not retransmitted, nor ad packets guaranteed to arrive in sequence
 
----
 * Set TCP or UDP when you write netwroking code
 * Setup works differently between the two
 * TCP/IP is often used to describe all network programming
 * TCP and UDP are different protocols with different approaches
 
-***IP Addresses Reserved for Local Networks***
+IP Addresses Reserved for Local Networks
 
 |	          |                 |
 |:-----------:|:---------------:|
