@@ -122,14 +122,15 @@ If you programm for both IPv4 and IPv6 it is called a dual-stack configuration.
 IP Protocol Suites
 
 _TCP_
-	* Transmission Control Protocol
-	* Streaming
-	* Data is sent in sequence
-	* Reliable
+* Transmission Control Protocol
+* Streaming
+* Data is sent in sequence
+* Reliable
+
 _UDP_
-	* User Datagram Protocol
-	* Connectionless
-	* Bad packets are not retransmitted, nor ad packets guaranteed to arrive in sequence
+* User Datagram Protocol
+* Connectionless
+* Bad packets are not retransmitted, nor ad packets guaranteed to arrive in sequence
 
 * Set TCP or UDP when you write netwroking code
 * Setup works differently between the two
