@@ -38,6 +38,7 @@ int main(void) {
 int get_filepath(char path[],const int buffer) {
 		
 	int path_len;
+	path_len = 0;
 
 	printf("Enter file path: ");
 	fgets(path,buffer,stdin);
