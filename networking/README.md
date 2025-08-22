@@ -160,21 +160,21 @@ The use of C APIs, the following are the requirements for network programming
 
 TCP _Client_
 
-1. `getaddrinfo()`
-2. `socket()`
-3. `connect()`
-4. `send()` and `recv()`
-5. `close()`
+1. `getaddrinfo()` - network address and server translation
+2. `socket()` - creates a file descriptor
+3. `connect()` - connects to the server using port and IP address
+4. `send()` and `recv()` - to communicate to the server, sending bytes and recieving bytes from server
+5. `close()` - once done communicating with the server the file descriptor has to close
 
 TCP _Server_
 
-1. `getaddrinfo()`
-2. `socket()`
-3. `bind()`
-4. `listen()`
-5. `accept()`
-6. `send()` and `recv()`
-7. `close()`
+1. `getaddrinfo()` - network address and server translation
+2. `socket()` - creates a file descriptor
+3. `bind()` - binds the port and IP address to the socket
+4. `listen()` - listens to connection on the binded port
+5. `accept()` - accepts a connection from the client creating a new file descriptor to communicate to each other
+6. `send()` and `recv()` - to communicate to the client, sending bytes and recieving bytes from server
+7. `close()` - once done communicating with the server the file descriptor has to close
 
 UDP _Client_
 

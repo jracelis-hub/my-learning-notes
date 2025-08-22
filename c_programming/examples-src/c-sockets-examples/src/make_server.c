@@ -8,6 +8,8 @@ int main(int argc, char *argv[]) {
 		struct addrinfo hints, *server;
 		struct sockaddr_in client;
 		socklen_t client_len;
+		char *host;
+		socklen_t host_len;
 
 		int sock_fd, client_fd;
 
@@ -66,6 +68,9 @@ int main(int argc, char *argv[]) {
 			freeaddrinfo(server);
 			return -1;
 		}
+		
+		getnameinfo((struct sockaddr *)&client,client_len,host,host_len,0,0,NI_NUMERICHOST);
+		printf("%s\n",host);
 		
 		/*
 		while (1) {
