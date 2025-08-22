@@ -48,3 +48,32 @@ main.o program.o program main
 ```
 
 But lets just say you just want to make just program, instead of typing `make` do:
+
+```
+$ make program
+$ ls
+program program.o
+```
+
+There can be a `.Phony` target which carries out an action that does not produce a file.
+
+### Special Variables
+
+There are seven core automatic variables:
+
+1. `$@`: THe filename representing the target
+2. `$%`: The filename element of an archive member specifications
+3. `$<`: The file name of the first prerequistite
+4. `$?`: The names of all prerequistites that are newer than the target, separated by spaces
+5. `$^`: The filenames of all the prerequistites, seperated by spaces. This list has duplicated filenames removed
+6. `$+`: The filenames of all the prerequistites, seperated by spaces. This list has duplicates
+7. `$*`: The stem of the target filename. A stem is typically a filename without its suffix.
+
+Example:
+```
+server: main.o server.o net_utility.o
+	gcc -o $@ $^ $<
+```
+- `$@` = server (target)
+- `$^` = main.o server.o net_utility.o (all prerequistites)
+- `$<` = main.o (first prerequistite)
