@@ -152,7 +152,7 @@ There are 7 attributes to a subnet mask
 3. First Host IP - IP address after the Network ID
 4. Last Host IP - IP address before the Broadcast IP
 5. Next Network - IP address after the Broadcast IP
-6. # IP Addresses - Number of IP addresses in Sub-Network
+6. `#` IP Addresses - Number of IP addresses in Sub-Network
 7. CIDR/Subnet - Converting between CIDR/Subnet Mask
 
 <details>
