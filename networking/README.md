@@ -1,7 +1,5 @@
 # Networking
 
-![TCP](/images/osi_tcp_ip.png)
-
 ## Introduction To Networking
 
 ### ***Introduction***
@@ -9,6 +7,68 @@
 What is Networking?
 
 Networking is the process of connecting two or more devices to share information by communicating through the same protocols.
+
+### OSI Model
+
+```
+                    Encapsulation          OSI (Open Systems Interconnect)                    OSI (Open Systems Interconnect)                        
+                       --------           --------------------------------                   --------------------------------            --------   
+                       | Data |           |      Application Layer 7     |                   |      Application Layer 7     |            | Data |   
+                       --------           |                              |                   |                              |            --------   
+                           |              --------------------------------                   --------------------------------               /|\     
+                           |              |     Presentation Layer 6     |                   |     Presentation Layer 6     |                |      
+                           |              |                              |                   |                              |                |      
+                           |              --------------------------------                   --------------------------------                |      
+                           |              |       Session Layer 5        |                   |       Session Layer 5        |                |      
+                          \|/             |                              |                   |                              |                |      
+                     -------------        --------------------------------                   --------------------------------          -------------
+     Segment         | D | D | D |        |      Transport Layer 4       |                   |      Transport Layer 4       |          | D | D | D |
+                     -------------        |                              |                   |                              |          -------------
+                           |              |                              |                   |                              |               /|\     
+                          \|/             --------------------------------                   --------------------------------                |     
+                 ----------------         |       Network Layer 3        |                   |       Network Layer 3        |        ---------------- 
+     Packet      | L3 | Segment |         |                              |                   |                              |        | L3 | Segment | 
+     SRC IP      ----------------         |                              |                   |                              |        ---------------- 
+     DST IP                |              --------------------------------                   --------------------------------               /|\     
+                          \|/             |      Data Link Layer 2       |                   |      Data Link Layer 2       |                |      
+            ---------------------         |                              |                   |                              |      --------------------- 
+    Frame   | L2 | L3 | Segment |         |                              |                   |                              |      | L2 | L3 | Segment | 
+   SRC MAC  ---------------------         --------------------------------                   --------------------------------      --------------------- 
+   DST MAC                 |              |       Physical Layer 1       |                   |       Physical Layer 1       |               /|\     
+                          \|/             |                              | ----------------> |                              |                |             
+            ---------------------         |                              |                   |                              |      --------------------- 
+    Bits    | L2 | L3 | Segment |         --------------------------------                   --------------------------------      | L2 | L3 | Segment |          
+            ---------------------                                                                                                  --------------------- 
+                                                                                                                                        Decapsulation
+```
+     
+## ## Application Layer 7 (L7)
+     
+Ex amples: DNS, FTP
+
+#### Presentation Layer 6 (L6)
+
+Examples: Compression, Encryption
+
+#### Session Layer 5
+
+Examples:
+
+#### Transport Layer 4
+
+Examples: TCP, UDP
+
+#### Network Layer 3
+
+Examples: IP
+
+#### Data Link Layer 2
+
+Examples: MAC, Switches
+
+#### Phyiscal Layer 
+
+Examples: Wifi, Ethernet
 
 ### Physical Devices
 
@@ -28,6 +88,36 @@ Switch - directs incoming data to the indended recipient, based on their MAC (`M
 Hub - broadcasts all incoming data to all connective devices.
 
 Router - this is used to connect to the internet.
+
+```
+             TCP/IP              
+---------------------------------
+|                               |
+|                               |
+|                               |
+|       Application Layer       |
+|                               |
+|                               |
+|                               |
+|                               |
+---------------------------------
+|        Transport Layer        |
+|                               |
+|                               |
+---------------------------------
+|        Internet Layer         |
+|                               |
+|                               |
+---------------------------------
+|                               |
+|                               |
+|                               |
+|      Network Access Layer     |
+|                               |
+|                               |
+|                               |
+---------------------------------
+```
 
 ### ***Definitions***
 
