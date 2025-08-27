@@ -8,6 +8,10 @@ What is Networking?
 
 Networking is the process of connecting two or more devices to share information by communicating through the same protocols.
 
+- ARP Table - mapping of **IP address** to **MAC address**
+- MAC Address Table - mapping of **Switchports** to **MAC addresses**
+- Routing Table - mapping of **IP Networks** to **Interfaces**
+
 ### OSI Model
 
 ```
@@ -56,19 +60,27 @@ Examples:
 
 #### Transport Layer 4
 
+End to end communication
+
 Examples: TCP, UDP
 
 #### Network Layer 3
 
+Host to host
+
 Examples: IP
 
+Routing
+
 #### Data Link Layer 2
+
+Hop to hop
 
 Examples: MAC, Switches
 
 #### Phyiscal Layer 
 
-Examples: Wifi, Ethernet
+Examples: Wifi, Ethernet, Repeaters, Hubs
 
 ### Physical Devices
 
@@ -118,6 +130,62 @@ Router - this is used to connect to the internet.
 |                               |
 ---------------------------------
 ```
+
+### Subnetting
+
+IPv4 is 32 Bytes where its split into 4 Octets
+
+255.255.255.255
+
+CIDR notations 192.168.0.0/24 <--- 24 is the CIDR notation
+
+Subnet mask notation 255.255.255.0
+
+The first 24 values are reserved for the Network Number
+
+The total amount of hosts on the given subnet work is 32 - 24 = 8 or 2<sup>8</sup>=256
+
+There are 7 attributes to a subnet mask
+
+1. Network ID - First IP address in each Sub-Network
+2. Broadcast IP - Last IP address in each Sub-Network
+3. First Host IP - IP address after the Network ID
+4. Last Host IP - IP address before the Broadcast IP
+5. Next Network - IP address after the Broadcast IP
+6. # IP Addresses - Number of IP addresses in Sub-Network
+7. CIDR/Subnet - Converting between CIDR/Subnet Mask
+
+<details>
+<summary>Example</summary>
+
+```
+--------------------------------------------------------------
+| Group Size | 128 | 64  | 32  | 16  |  8  |  4  |  2  |  1  |
+--------------------------------------------------------------
+|   Subnet   | 128 | 192 | 224 | 240 | 248 | 252 | 254 | 255 |
+--------------------------------------------------------------
+|    CIDR    | /25 | /26 | /27 | /28 | /29 | /30 | /31 | /32 |
+--------------------------------------------------------------
+
+10.1.1.37/29
+
+Network ID - 10.1.1.32
+Broadcast IP - 10.1.1.39
+First Host IP - 10.1.1.33
+Last Host IP - 10.1.1.38
+Next Network - 10.1.1.40
+# IP Addresses - 8 (6 Usable)
+CIDR/Subnet - 255.255.255.248
+
+10.1.1.0
+10.1.1.8
+10.1.1.16
+10.1.1.24
+10.1.1.32
+10.1.1.40
+```
+
+</details>
 
 ### ***Definitions***
 
