@@ -42,9 +42,9 @@ DST MAC                 |         |     Physical Layer 1     |          |     Ph
                                                                                                             Decapsulation
 ```
      
-## ## Application Layer 7 (L7)
+#### Application Layer 7 (L7)
      
-Ex amples: DNS, FTP
+Examples: DNS, FTP
 
 #### Presentation Layer 6 (L6)
 
