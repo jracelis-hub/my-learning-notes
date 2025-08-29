@@ -2,14 +2,6 @@
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
 
-### ------------------- Alias -------------------- ###
-# ---------------- Word Relate Alias --------------- #
-alias ct='cd /mnt/c/tcm_reman/'
-alias csv='cat /mnt/c/tcm_reman/TCM_Inventory.csv'
-alias csv2='cat /mnt/c/tcm_reman/ssd_data.csv'
-alias ride="/home/jarronracelis/flashing/ride*"
-alias p-t="ping 172.28.2.64"
-
 # ------------------- Git Alias --------------------- #
 alias commit='git commit -a -m'
 alias origin='git push origin main'
