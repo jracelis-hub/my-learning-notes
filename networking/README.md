@@ -187,12 +187,64 @@ CIDR/Subnet - 255.255.255.248
 
 </details>
 
+<details>
+<summary>Example 2</summary>
+
+```
+10.2.2.88 /27
+Group = 32 - 27 = 5 = 2^5 = 32
+Subnet = 256 - 32 = 224
+
+10.2.2.0
+10.2.2.32
+10.2.2.64
+10.2.2.96
+
+Network ID - 10.2.2.64
+Broadcast IP - 10.2.2.95
+First Host IP - 10.2.2.65
+Last Host IP - 10.2.2.94
+Next Network - 10.2.2.96
+# IP Addresses - 32 ( 30 usable)
+CIDR/Subnet - 255.255.255.224
+
+10.2.2.111 /25
+Group = 32 - 25 = 7 = 2^7 = 128
+Subnet = 256 - 128 = 128
+
+10.2.2.0
+10.2.2.128
+
+NID = 10.2.2.0
+BIP = 10.2.2.127
+First Host IP = 10.2.2.1
+Last Host IP = 10.2.2.126
+Next Network = 10.2.2.128
+IP Address = 128 (126)
+CID = 255.255.255.128
+```
+
+</details>
+
 ### ***Definitions***
 
+* Tunneling - the process of encapsulating another encapsulated data, to deliver it to the secure location then decapsulated to go the main destination.
+```
+------------------
+| encap          |               DST1                           DST2
+|  ------------  |              ----------------               ---------
+|  |encap     |  |              |              |               |
+|  |  Packet  |  |------------> |  Packet      |---------->    | Packet
+|  |   DST2   |  |              |  DST2        |               |
+|  |          |  |              |              |               |
+|  ------------  |              ---------------                ---------
+| DST1           |                           
+------------------              
+```
 * Internet Service Provider (`ISP`) - a paid service that provides a access to the Internet.
 * Transmission Media - The medium through which devices communicate, it can be a wired media like optical fiber and ethernet. It can also be a wireless media like WiFi, Bluetooth and infrared
 * Protocol - A set of rules and standards that define how devices on a network communicate with each other
-* Node - Any device connected to a network, such as a computer, printer, or router
+* Node (host) - Any device connected to a network, such as a computer, printer, or router
 * Network - A collection of interconnected devices, such as a computer, printers, and servers, that can communicate with each other
 * Local Area Network (`LAN`) - connects a network in a local vicinity
 * Wide Area Network (`WAN`) - connects a network that is widely a part

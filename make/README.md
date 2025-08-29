@@ -57,6 +57,36 @@ program program.o
 
 There can be a `.Phony` target which carries out an action that does not produce a file.
 
+### Assignment Operators
+
+- `=` - Verbatim assignment - only expands when invoked using `$(variable)`
+- `:=` - Simple expansion - expands the variable immediately
+- `!=` - Shell output
+- `?=` - Conditional assignment
+- `+=` - Append it
+
+Simple Expansion:
+```
+SRCS = main.c
+OBJ := $(SRCS:.c=.o) <---- Expanded as main.c=main.o then sets it to OBJ
+
+# So instead it looks like this
+OBJ = main.c=main.o
+```
+
+<details>
+<summary>Assignment Operator Examples</summary>
+```
+SRCS = main.c
+SRCS := $(wildcard *.c)
+SRCS != find . -name "*.c"
+SRCS := $(shell find. name "*.c")
+CC_FLAGS += -Wextra
+CFLAGS ?= $(CC_FLAGS)
+FOO := $(BAR) # Comment
+```
+</details>
+
 ### Special Variables
 
 There are seven core automatic variables:
@@ -77,3 +107,67 @@ server: main.o server.o net_utility.o
 - `$@` = server (target)
 - `$^` = main.o server.o net_utility.o (all prerequistites)
 - `$<` = main.o (first prerequistite)
+
+### Argument Variables
+
+To incorporate command line variables within a make file `$(VARIABLE)` will be add inside of the recipe. The **VARIABLE** will be invoked when running the makefile 
+
+Example:
+```
+# Makefile
+CC=gcc
+CFLAGS=-Wall -Wextra
+
+BIN=script
+SRC=script.c
+OBJ=script.o
+
+run-script: $(BIN)
+	./$(BIN) $(VARIABLE)
+	
+$(SRC):$(OBJ)
+	$(CC) $(CFLAGS) -c $@ -o $^
+```
+
+```
+$ make run-script VARIABLE=command_line_argument
+$ ./script command_line_argument
+
+```
+
+A conditional value can be set to using `VARIABLE ?= conditional_variable`, so when running the script above the following output would prefill with the conditional value.
+```
+$ make run-script
+$ ./script conditional_variable
+```
+
+Notice that conditional_variable was implicitly set even though no `VARIABLE=` was invoked when running `make run-script`
+
+To run a Makefile in a different dirrectory just do `make -C  /dir` where the `/dir` is the specified directory with its own make file.
+
+```
+.
+└── dir
+    └── Makefile
+
+# Where dir has its own Makefile
+make -C /dir
+```
+
+### Built in Functions
+
+- `$(SRCS:.c=.o)`
+- `$(addprefix build/,$(OBJS))`
+- `$(if ..) $(or ..) $(and ..)`
+- `$(foreach var, list, text)`
+- `$(value (VARIABLE))`
+- `$(shell ..)`
+- `$(error ..)`
+- `$(warning ..)`
+- `$(info ..)`
+
+#### Special Commands
+
+- `-` - Ignore errors while executing
+- `@` - Don't print to standard output
+- `+` - Execute even if Make is in "do not execute" mode

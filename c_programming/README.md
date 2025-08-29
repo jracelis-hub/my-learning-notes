@@ -4,6 +4,7 @@
 * [Introduction](#introduction)
 	* [Terminology](#terminology)
     * [Build Process](#build-process)
+		* [Compiliers](#compiliers)
         * [Files Types](#files-types)
 	* [Memory Types](#memory-types)
 * [Syntax and Semantics](#syntax-and-semantics)
@@ -154,6 +155,122 @@ There are many ways to compile you text file in the format of `.c` to a executab
 
 > [!NOTE]
 >  Each compiler is depended on the system and target you're trying to compile on.
+
+#### Compiliers
+
+GCC
+
+The Preprocessor
+- Expands header files
+- Strips comments
+- Expands macros (`#define`)
+- File extension is generally .i 
+- Can look at output with the -E flags
+
+```
+gcc -E -o name_file.i name_file.c
+```
+
+The Compliation
+- Takes C and translates into assembly
+- The type is dependent on the machine
+- Desktops use either x86(32) or x86_64
+- File extension is generally .s
+- Can look at output with the -S flag
+
+```
+gcc -S -o name_file.s name_file.c
+```
+
+Assembly
+- Takes the previous human-readable assembly code and turns it into bytecode
+- Non-human readable
+- Called Object files, `.o` extension
+- Usually seen when working with `Make`
+- Use the -c flag
+
+```
+gcc -o name_file.o -c name_file.c
+```
+
+Linking
+- Final compilation step
+- Takes all the separate `.o` files and puts them together
+- File produced is an executable (often called a binaray) that can run on the system
+- No seperate flag just gcc
+
+```
+gcc file_name.o -o file_exe
+```
+
+Useful Flags
+
+Notation of flags consists of `-Type` `Option`
+
+Example is `-Wall` 
+- `-W` = warnings 
+- `all` = all
+
+Specific types:
+- Language Options
+- Warning Options
+- Optimization Options
+- Machine-Dependent Options
+- Debugging Options
+- Compliation Steps Options
+- Other Options
+
+Language Options
+- Most have either the `-f` prefiex or the `-W` prefix
+- Some have no prefix
+- Some commone Language Options:
+	- `-std=standard` -> Set the Language level, such as C90 or C99
+	- `-ansi` -> Force compatibility with ISO C90
+
+Warnings Options
+- Most have the -W prefix
+- A few have the -f prefix, or no prefix
+- Some Warnings Options:
+	- `-Wall` -> Turn on all warnings
+	- `-Werror` -> All warnings are treated as errors, fail compilation
+	- `-Wpedantic` -> Force strict compliance with ISO C
+
+Optimization Options
+- Most have -f prefix
+- Most important ones have `-O`
+- Some Optimization Options:
+	- `-O`, `-O1`, `-O2`, `-O3`, `Ofast, `-Og`, `-Os` -> Various optimization levels
+	- `fstack-protector`,`-fstack-protector-all`,`-fstack-protector-strong`: Turns on the stack protector at various level, prevents buffer overflow attacks
+
+Machine-Dependent Options
+- These are dependent on what platform you are compiling for "Cross-Compiling"
+- Some Common Options:
+	- `-mabi` -> select the application binary interface (ABI), or how the binary file is formatted
+	- `-mbig/little-endian` -> specifiy the endianness of the target processor
+	- `-march` -> specify the target architecture
+
+> [!NOTE]
+> It is implicitly set by whatever machine you are compiling on. ie. If using x86 or x86_64 it will be implicitly compiled in that machine type
+
+Other Options
+- Compliation Step Options:
+	- `-E` -> Run the preprocessor
+	- `-S` -> Run the compiler
+	- `-c` -> Run the assembler
+	- `-D` -> Define a macro
+	- `-o` -> Specify output file
+	- `-I` -> Specifies where include file is
+- Debugging Options:
+	- `-g` -> turn on debugging symbols
+- Others:
+	- `--version` -> prints the version number and exits
+	- `--help` -> prints help
+
+
+G++ for C++
+
+Other Compilers:
+* LLVM/CLANG
 
 #### Files Types
 
