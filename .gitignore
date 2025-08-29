@@ -1,0 +1,7 @@
+# C Files
+
+*.o
+*.so
+*.out
+*.exe
+*.elf

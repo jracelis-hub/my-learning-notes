@@ -171,3 +171,34 @@ make -C /dir
 - `-` - Ignore errors while executing
 - `@` - Don't print to standard output
 - `+` - Execute even if Make is in "do not execute" mode
+
+#### Multi Line Commands
+
+Each line of your command is run in a **Seperate** terminal instance
+
+```
+target: prerequisites
+	cd dir
+	ls 
+```
+
+The following example above will `cd` into a directory called _dir_ exit the terminal instance and preform `ls`
+```
+~/random_directory $ make target
+cd dir
+ls
+.
+..
+random_stuff
+```
+
+To make the commands run in the same "terminal instance" add `;\` to preform multiline command
+```
+target: prerequistites
+	cd dir;\
+	ls
+# This will go into the dir and list out whats in /dir
+```
+
+
+
