@@ -1,7 +1,17 @@
 # C Files
 
+# Object Files
 *.o
+*.obj
+
+# Libraries
+*.lib
+*.a
+*.dll
 *.so
-*.out
+
+# Executables
+*.bin
 *.exe
+*.out
 *.elf

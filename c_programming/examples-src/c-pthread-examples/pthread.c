@@ -17,7 +17,7 @@ int main() {
 	pthread_t thread1;
 	long value = 5;
 	
-    /* Notation   (pointer to thread, attributes, functions,to pass args to the function)*/
+    /* Notation   (pointer to thread, attributes, function,to pass args to the function)*/
 	pthread_create(&thread1,NULL,computation,(void *)&value);
 
 	/* Notation (thread want to join, Return value) */
@@ -27,7 +27,7 @@ int main() {
 }
 
 void *computation(void *add) {
-	long *number = (long*)(add);
-	printf("The value is %ld\n",*number);
+	long number = *(long*)(add);
+	printf("The value is %ld\n",number);
 	return NULL;
 }
