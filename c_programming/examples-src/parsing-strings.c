@@ -2,7 +2,7 @@
 
 int main() {
 
-	printf("Hello world\n");
+	char *word = "this is a word";
 
 	return 0;
 }
