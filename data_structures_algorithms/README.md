@@ -50,14 +50,14 @@ O(n)
 - O - ordor of magnitute of complexity
 - n - 
 
-<table align="center">
-	<thead>
+<table>
+	<thead align="center">
 		<tr>
 			<th>Algorithm</th>
 			<th>Time Complexity</th>
 		<tr>
 	</thead>
-	<tbody>
+	<tbody align="center">
 		<tr>
 			<td>Linear Search</th>
 			<td>O(n)</th>
