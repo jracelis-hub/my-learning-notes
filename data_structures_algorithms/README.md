@@ -46,9 +46,9 @@ Binary Search - compares value in the middle to
 
 Big O Notation - theoretical definition of the complexity of an algorithm as a function of the size
 
-O(n) 
+O(n) - represents bounds of worst case scenario
 - O - ordor of magnitute of complexity
-- n - 
+- n - a function of the size (all posibilities)
 
 <table>
 	<thead align="center">
@@ -68,5 +68,21 @@ O(n)
 		<tr>
 	</tbody>
 </table>
+
+Runtime of an algorithm
+
+Runtime per operations vs n
+
+Constant Time - O(1)
+
+Exponents vs Logs
+
+2<sup>3</sup> = 8
+
+base<sup>exponent</sup> = result
+
+log<sub>2</sub>8 = 3
+
+log<sub>base</sub>result = exponent
 
 ## Data Structures
