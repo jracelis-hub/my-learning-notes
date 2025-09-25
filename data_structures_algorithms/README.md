@@ -114,5 +114,7 @@ Exponential Time - O(x<sup>n</sup>)
 
 Factorial / Combinatoria Runtime
 
+> [!NOTE]
+> The evaluation of an algorithm should be always compared to the ***worst case scenario***
 
 ## Data Structures
