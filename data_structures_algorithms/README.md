@@ -69,20 +69,49 @@ O(n) - represents bounds of worst case scenario
 	</tbody>
 </table>
 
-Runtime of an algorithm
+### Runtime of an algorithm
 
-Runtime per operations vs n
-
-Constant Time - O(1)
-
-Exponents vs Logs
+<details>
+<summary>Exponents, Logs, Factorial</summary>
+Exponents
 
 2<sup>3</sup> = 8
 
 base<sup>exponent</sup> = result
 
+Logs
+
 log<sub>2</sub>8 = 3
 
 log<sub>base</sub>result = exponent
+
+Factorial
+
+> Until a reaches a value of 1
+
+4! = 4 x 3 x 2 x 1 = 24
+
+n! = n(n - 1)(n - 2)...(2)(1)
+
+</details>
+
+Runtime per operations vs n
+
+Constant Time - O(1)
+
+Linear Time - O(n)
+
+Logarithmic (Sublinear) Time - O(log n)
+
+Quasilinear Time - O(nlogn)
+
+Quadratic Time - O(n<sup>2</sup>)
+
+Cubic Time - O(n<sup>3</sup>)
+
+Exponential Time - O(x<sup>n</sup>)
+
+Factorial / Combinatoria Runtime
+
 
 ## Data Structures
