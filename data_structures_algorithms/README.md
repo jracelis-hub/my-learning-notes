@@ -14,10 +14,10 @@ These are main questions that should be asked when performing an algorithm:
 Requirements:
 - The steps of the algorithm need to be in a specific order
 - The steps also need to be distinct
-- The algorithm should product a results
-- The algorithm should complete in a finite of time
+- The algorithm should produce a results
+- The algorithm should complete in a finite amount of time
 
-To evaluation an algorithm the:
+To evaluation an algorithm it considers two things:
 - Correctness
 - Efficency
 ```
@@ -28,11 +28,11 @@ To evaluation an algorithm the:
 
 Correctness:
 - An algorithm is deemed correct if all possible inputs give the expected output
-- For every possible input the algorithm MUST always terminate
+- For every possible input the algorithm ***MUST*** have an output
 
 Efficency:
-- Time complexity measure of how long the algorithm runs
-- Space complexity the amount of memory that is taken up in the computer
+- Time complexity measures how long the algorithm runs
+- Space complexity measure the amount of memory that is taken up in the computer
 
 Linear search - checks each value sequentially
 - Does not need to be sorted 
@@ -43,6 +43,8 @@ Binary Search - compares value in the middle to
 - Has to be sorted 
 - Input sorted list of values
 - Output position of the list of the target value we searching for
+
+### Big O Notation
 
 Big O Notation - theoretical definition of the complexity of an algorithm as a function of the size
 
@@ -55,16 +57,19 @@ O(n) - represents bounds of worst case scenario
 		<tr>
 			<th>Algorithm</th>
 			<th>Time Complexity</th>
+			<th>Space Complexity</th>
 		<tr>
 	</thead>
 	<tbody align="center">
 		<tr>
 			<td>Linear Search</th>
 			<td>O(n)</th>
+			<td>O(1)</th>
 		<tr>
 		<tr>
 			<td>Binary Search</th>
 			<td>O(log n)</th>
+			<td>O(1)</th>
 		<tr>
 	</tbody>
 </table>
@@ -116,5 +121,31 @@ Factorial / Combinatoria Runtime
 
 > [!NOTE]
 > The evaluation of an algorithm should be always compared to the ***worst case scenario***
+
+Recursion is the method of calling itself to get the desired output
+- Recursion always as a base case that it evaluates itself to know a stopping point
+	- if not recursion will never end
+It is important to have two base cases and an ending condition for each case
+1. Base case 1: the stopping point in which the input does not exist 
+2. Base case 2: the stoppoing point in which the input does exist
+
+The number times recursion calls itself is called ***Recursive Depth***
+
+Iterative solution
+- loop structure of some kind
+
+Recursive solution 
+- a set of stopping conditions and a function that calls itself
+
+Recursion is used a lot as it does not change the original data that was given
+
+Space Complexity - a measure of working storage or extra storage grows
+
+Iterative Solution - O(1) constant time
+
+Recursive Solution - O(logn) logarithmic time
+
+> [!NOTE]
+> logarithmic time varies per programming language
 
 ## Data Structures
