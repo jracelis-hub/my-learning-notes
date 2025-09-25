@@ -93,6 +93,7 @@ Factorial
 
 n! = n(n - 1)(n - 2)...(2)(1)
 
+---
 </details>
 
 Runtime per operations vs n
