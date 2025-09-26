@@ -149,3 +149,62 @@ Recursive Solution - O(logn) logarithmic time
 > logarithmic time varies per programming language
 
 ## Data Structures
+
+Data structure - a data storage format. it is the collection of values and the format 
+they are stored in, the relationships between the values in the collection as well as 
+the operations applied on the data stored in the structure
+
+### Types of Data Structures
+
+Operations on Data Structures
+- Access and read values
+- Search for an arbitary value
+- Insert values at any point into the structure
+- Delete values in the structure
+
+Insert Operation - Linear Time (has to loop through each value)
+
+Appending Operation - Constant Time 
+
+Delete Operation - Linear Time
+
+Array - is a collection of values reference by an index or a key
+- order sequentially
+- continguous data structure (stored in blocks of memory next to each other)
+- homogeneous containers (storage the same data type) ex. `int` (java, C)
+- heterogeneous containers (storage any data type) ex. python
+
+```py
+array = [1, 3, 4, 5]
+index =  0  1  2  3
+```
+Linked List - linear data structure that is contained in a object called a node
+- holds information of the data
+- holds reference (memory/pointer) to the next data
+- first node in a linked list is the head
+- last node in a linked list is the tail
+
+```
+linked list = *head -> *node -> *node -> *tail -> NULL
+```
+
+Node is a self referential object
+
+Two Types of Linked List:
+1. Singly Linked List
+	- Only holds data of the reference next node
+```
+*head -> *node -> *node -> *node -> *tail
+```
+2. Doubly Node
+	- Holds data of the reference next node and node before
+```
+*head <-> *node <-> *node <-> *node <-> *tail
+```
+Operations Linked List:
+
+Prepend - adding to the head
+
+Append - adding to the tail
+
+Insert - adding any any point of the linked list
