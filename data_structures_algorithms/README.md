@@ -1,3 +1,51 @@
+### Interface (API) vs Data Structure
+
+Interface
+- What you want to do
+- Specification
+- What data can store
+- What operations are supported/do & what they mean
+- Problem statement
+
+Data Strucuture
+- How to do it
+- Representation 
+- How to store data
+- Algorithms to support operations
+- Solutions
+
+2 Main Interfaces:
+- Set
+- Sequence
+
+2 Main Data Structure Approaches:
+- arrays
+- pointer based (linked list)
+
+Static Sequence Interface:
+
+`static` the number of items do not change
+
+Methods:
+- build(`x`): make data structure for items in `x`
+- len(): return n
+- iterateSequence(): output x<sub>0</sub>, x<sub>1</sub> ... x<sub>n-1</sub> in sequence order
+- getIndex(i): return x<sub>i</sub>
+- setIndex(i, x): set x<sub>i</sub> to x
+
+### Computation
+
+Computation representation:
+
+Word - RAM (`Random Access Memory`)
+
+Word - how big of a chunk of memory is being represented (architecture based) 
+	- i.e 64 bits (8 byte) words
+	- i.e 32 bits (4 byte) words
+
+Key: word RAM model of computation
+- memory = array of word-bit words
+
 ## Algorithm
 
 What is an algorithm?
@@ -14,7 +62,7 @@ These are main questions that should be asked when performing an algorithm:
 Requirements:
 - The steps of the algorithm need to be in a specific order
 - The steps also need to be distinct
-- The algorithm should produce a results
+- The algorithm should produce an expected result(s)
 - The algorithm should complete in a finite amount of time
 
 To evaluation an algorithm it considers two things:
@@ -31,7 +79,7 @@ Correctness:
 - For every possible input the algorithm ***MUST*** have an output
 
 Efficency:
-- Time complexity measures how long the algorithm runs
+- Time complexity measures how long the algorithm runs (based on operations)
 - Space complexity measure the amount of memory that is taken up in the computer
 
 Linear search - checks each value sequentially
@@ -49,8 +97,8 @@ Binary Search - compares value in the middle to
 Big O Notation - theoretical definition of the complexity of an algorithm as a function of the size
 
 O(n) - represents bounds of worst case scenario
-- O - ordor of magnitute of complexity
-- n - a function of the size (all posibilities)
+- O - ordor of magnitute of complexity (upper bounds)
+- n - represents the input that is being evaluated
 
 <table>
 	<thead align="center">
@@ -104,6 +152,7 @@ n! = n(n - 1)(n - 2)...(2)(1)
 Runtime per operations vs n
 
 Constant Time - O(1)
+- No matter how the input changes the amount of running time does not get affected
 
 Linear Time - O(n)
 
@@ -116,6 +165,9 @@ Quadratic Time - O(n<sup>2</sup>)
 Cubic Time - O(n<sup>3</sup>)
 
 Exponential Time - O(x<sup>n</sup>)
+
+Polynomical Time - O(n<sup>c</sup>)
+- c is some constant
 
 Factorial / Combinatoria Runtime
 
@@ -168,8 +220,11 @@ Appending Operation - Constant Time
 
 Delete Operation - Linear Time
 
+### Linear Data Strucutres
+
 Array - is a collection of values reference by an index or a key
 - order sequentially
+- fixed number of values of a single type (`static`)
 - continguous data structure (stored in blocks of memory next to each other)
 - homogeneous containers (storage the same data type) ex. `int` (java, C)
 - heterogeneous containers (storage any data type) ex. python
@@ -178,12 +233,12 @@ Array - is a collection of values reference by an index or a key
 array = [1, 3, 4, 5]
 index =  0  1  2  3
 ```
+
 Linked List - linear data structure that is contained in a object called a node
 - holds information of the data
 - holds reference (memory/pointer) to the next data
 - first node in a linked list is the head
 - last node in a linked list is the tail
-
 ```
 linked list = *head -> *node -> *node -> *tail -> NULL
 ```
@@ -201,10 +256,26 @@ Two Types of Linked List:
 ```
 *head <-> *node <-> *node <-> *node <-> *tail
 ```
+
 Operations Linked List:
+- Prepend - adding to the head
+- Append - adding to the tail
+- Insert - adding any any point of the linked list
 
-Prepend - adding to the head
+Stacks - a follows a particular order in which the operations are performed. The order may be
+LIFO(Last In First Out) or FILO(First In Last Out)
 
-Append - adding to the tail
+Operations:
+- Push - inserting on top of the stack
+- Pop - deletes on top of the stack and returns its value
+- Peak - checks the value at the top of the stack but does not delete it
+- isEmpty - check if the stack is empty
+- isFull - check if the stack is full
 
-Insert - adding any any point of the linked list
+All operations of stack is O(1) constant time
+
+Queue - FIFO(First In First Out) 
+
+Operations:
+- onQueue - inserting element at the end of the queue
+- deQueue - delete element at the beginning of the queue 
