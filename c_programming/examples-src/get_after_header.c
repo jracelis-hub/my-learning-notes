@@ -1,48 +1,28 @@
 #include <stdio.h>
 
-char *strip_stuff(char *request)
+char *getCommand(char *input)
 {
-	char *p;
-	for (p = request; *p != '\0'; p++)
-	{
-		if (*p == ';' || *p == ' ' || *p == '/')
-		{
-			request = p;
-			request++;
+	char *p = NULL;
+	for (p = input; *p = '\0'; p++) {
+		if (*p == ';') {
+			input = p;
+			input++;
+			return input;
 		}
-		if (*p == '\n')
-		{
+		if (*p == '\n') {
 			*p = '\0';
-			return request;
+			return input;
 		}
 	}
 	return NULL;
 }
 
-char *request_stuff(char *request)
+int main() 
 {
-	char *p;
-	for (p = request; *p != '\n'; p++)
-	{
-		if (*p == '\0')
-		{
-			request = p;
-			return ++request;
-		}
-	}
+	char command_s[] = "Download; hello";
 
-	return NULL;
-}
-
-int main()
-{
-	char request[] = "Upload; file.txt\nthis is random stuff";
+	char *command = getCommand(command_s);
+	printf("%s\n", command);
 	
-	char *something = strip_stuff(request);
-	printf("%s\n",something);
-	char *random = request_stuff(request);
-	
-	printf("%s\n",random);
-
 	return 0;
 }
