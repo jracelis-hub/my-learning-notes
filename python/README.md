@@ -83,6 +83,8 @@ The order of a list matters
 
 Set - is the same as a list but all the items have to be unique
 - Represented with curly brackets `{}`
+- Unordered 
+- Set is subscriptable can not get index of a set `set[0]`
 - If the item has duplicate values it will represent the duplicate values as one value
 
 Example:
@@ -283,6 +285,74 @@ print(new_value)
 15
 ```
 
+functions can also take preset values so it does not have to be passing everytime
+```python3
+def performOperations(num1, num2, operation='sum'):
+	if operation == 'sum':
+		return num1 + num2
+	if operation == 'multiply':
+		return num1 * num2
+
+performOperations(2, 3)
+5
+
+# Notice the 3rd parameter did not have to be passed
+# it was implicitly declared but if another operation wants
+# to be performed just pass in another parameter
+performOperation(2, 3, multiply)
+6
+```
+
+There are two types of positional arguments
+- positional arguments
+- keyword arguments
+
+Positional arguments have to be in a specific order take `performOperations(2, 3)` as an example
+
+Keyword arguments can be in any order AFTER positional arguments and passed in with the key and value
+- `key='value'`
+
+To create a variety of position arguments
+```python3
+performOperations(*args)
+```
+To create a variety of keyword arguments
+```python3
+performOperations(*args, **kwargs)
+# kwargs - keywork arguments
+```
+
+## Variable Scope
+
+To find the scope of variables there are two built-in functions called:
+- `locals()`
+- `global()`
+
+Local scope is visible within the function itself
+```python3
+def localFunctions(varA, varB)
+	print(locals())
+
+localFunctions(1, 2)
+{'varA': 1, 'varB': 2}
+```
+
+But if you create a variable outside of the function it is known as a global variable
+
+```python3
+# This is global variable and can be see in all functions
+message = 'Hello World'
+
+def localFunctions(varA, varB)
+	print(message)
+	print(locals())
+
+localFunctions(1, 2)
+Hello World
+{'varA': 1, 'varB': 2}
+```
+
+
 ## Class and Objects
 
 Classes is a way to keep functions and attributes organized under a specific object
@@ -325,3 +395,193 @@ Classes:
 - instances = objects
 - functions = methods
 - parameters = attributes
+
+python has built-in classes like:
+- int
+- float
+- bool
+- string
+
+Boolean Logic
+- Any number that is non-zero is True
+- Any number that is zero is False
+- Any string is True bool(`'False'`) is True
+- Any empty tring is false bool(`''`) is False
+- The keywork `None` bool(`None`) is False
+
+Bool can work with any thing even empty lists`[]`, dicts`{}`, and tuples`()`... etc.
+
+```python3
+something = False
+
+if not something:
+	print('If something is false it will print this')
+else:
+	print('If something is true it will print this')
+
+# Output
+If something is false it will print this
+```
+
+Means if `not` false then do something else do the other
+
+When using if `not` logic the first condition is evaluated with not 
+
+### Strings
+
+String manipulation can be seen as each character in a string is an index in an array
+
+Example:
+```python3
+name = 'Jarron Racelis'
+name[0]
+# Output
+J
+```
+
+To get a range of characters in a string use:
+- `name[0:7]`
+The name will list out the list of characters from index 0 and up to index 7
+
+The colon `:` represents a range...
+- `[:7]` is the same as `[0:7]`
+- `[7:]` goes from index 7 to the end of the string
+
+Formatting Strings
+
+- 'My number is: '+str(5) <- this is typecasting the value into a string
+- f'My number is: {5}' <- this is using formatting string as getting the same output
+- 'Pi is: {}'.format(path.pi) where the `{}` location is being formatted 
+
+To use multi-line strings can be denoted with 3 `"""` followed by another 3 `"""`
+
+```python3
+multi_string_line = """
+This is multi
+string line
+with newlines in it
+"""
+
+multi_string_line
+
+"\nThis is multi\nstring line\n with newlines in it"
+```
+
+### Lists
+
+Slicing Lists is getting each individual index in a list `list[0]`
+
+This can work with lists `[]` as well
+```python3
+my_list = [1, 2, 3, 5]
+
+my_list[:3]
+
+# Output
+[1, 2, 3]
+```
+
+For slicing there can be another parameters passed in when trying to get indexes in a List
+
+`my_list[:3:2]` - this starts from 0 to 3 incrementing every 2 indexes
+
+```python3
+my_list = [1, 3, 5, 10, 33, 55]
+my_list[::2]
+
+# Output
+[1, 5, 33]
+# Notice it skips every two
+```
+
+If 3rd parameter is a negative value it will increment backwards
+```python3
+my_list = [1, 3, 5, 10, 33, 55]
+my_list[::-1]
+
+# Output
+[55, 33, 10, 5, 3, 1]
+```
+
+Sets
+
+```python
+mySet = {1, 3, 4, 5}
+```
+
+To manipulate sets using the following methods
+- `.add(value)` to add to the end of a set
+- `.pop()` to remove from the set
+- `.discard(value)` to remove a specific value from a set
+
+Tuples
+
+```python
+myTuples = (1, 3, 4, 10)
+```
+
+- Have an order
+- Can not be modified
+
+when returning multiple comma seperated items it is a tuple
+```python3
+def returnTuples:
+	return 1, 2, 3
+
+a, b, c = returnTuples()
+print(a)
+1
+print(b)
+2
+print(c)
+3
+```
+
+Dictionaries (Dict)
+
+To create a dictionary it requires a key + a value
+```python
+cars = {
+	'b': 'bmw',
+	't': 'tesla',
+}
+
+# To get the value at that specific key
+cars['b']
+bmw
+
+# To get keys in the dict cars
+cars.keys()
+dict_keys(['b', 't'])
+
+# To get values in the dict cars
+cars.values()
+dict_keys(['bmw', 'tesla'])
+```
+
+Dict can hold a list as a value for each key
+```python3
+cars = {
+	'b': ['bmw', 'boom'],
+	't': ['tesla'],
+}
+
+# To add into the list 
+cars['b'].append('bam')
+
+# Not if the key does not exist an error occur
+if 'c' not in cars:
+	cars['c'] = []
+
+cars['c'].append('cruiser')
+```
+
+Or Could use the default dict library by importing it
+```python3
+from collections import defaultdict
+
+# The argument passing in has to be a specific data structure
+cars = defaultdict(list)
+
+cars['m'].append('mercedes')
+```
