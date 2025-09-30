@@ -290,4 +290,38 @@ Classes is a way to keep functions and attributes organized under a specific obj
 To create class it requires the keyword `class` followed by the class
 ```python3
 class Dog:
+	# When creating the Dog class it requires one parameter
+	# the parameter is name
+	def __init__(self, name):
+		self.name = name
+		self.legs = 4
+	
+	# Passing the self argument into speak
+	# makes anything in the __init__ become
+	# accessible to the speak function
+	def speak(self):
+		print(self.name + 'says: Bark!')
+
+# my_dog is an instance of the class Dog
+my_dog = Dog('Jarron')
+my_dog.speak()
 ```
+
+So when it it says self the instance is implicitly getting passed in as a parameter
+
+For example:
+```python3
+my_dog = Dog('Jarron')
+# indirectly what is happening is
+# Dog(my_dog, 'Jarron')
+```
+
+Then when invoking a class methond with a `(self)` argument all the information set in `__init__` gets placed into
+the `my_dog` instance
+
+Another name of these instances are called Objects which gets into Object Oriented Programming (`OOP`)
+
+Classes:
+- instances = objects
+- functions = methods
+- parameters = attributes
