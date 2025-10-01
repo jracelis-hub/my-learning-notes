@@ -1,12 +1,24 @@
 # Python
 
+- [Data Types](#data-types)
+	- [Data Structures](#data-structures)
+- [Operations](#operations)
+- [Control Flow](#control-flow)
+- [Functions](#functions)
+	- [Packages and Modules](#packages-and-modules)
+- [Class and Objects](#class-and-objects)
+- [Strings](#strings)
+
 Python is an interpreted language that supports many fields of software engineering:
 - Data
 - Scripting
 - Machine Learning
 
 ```bash
+# old version python 2
 python --version
+
+# newest version python 3
 python3 --version
 
 Python 3.12.3
@@ -51,7 +63,7 @@ print(type(name))
 <class 'str'>
 ```
 
-Data Structures
+### Data Structures
 
 List - is a dynamic array that is able to hold any type of data type
 - Represent with brackets `[]`
@@ -204,7 +216,7 @@ my_string = 'hi jarron'
 true
 ```
 
-Control Flow
+## Control Flow
 
 Control flow statements are represented with a `:` after the statement and anything
 under that control flow statement has to be indented
@@ -322,7 +334,7 @@ performOperations(*args, **kwargs)
 # kwargs - keywork arguments
 ```
 
-## Variable Scope
+### Variable Scope
 
 To find the scope of variables there are two built-in functions called:
 - `locals()`
@@ -352,6 +364,42 @@ Hello World
 {'varA': 1, 'varB': 2}
 ```
 
+### Packages and Modules
+
+A package contains submodule(s) and a `__init__.py` file
+
+A module is just a single `.py` file
+
+To load a specific module in it uses the keyword `import`
+```python3
+import time
+
+# This imports the whole time module so it is 
+# visible to the current file being worked on
+```
+To load a specific function from a specific module do
+```python3
+from time import sleep
+# this only brings visibility to the sleep function that
+# is in the time.py file
+```
+
+To load a package
+```python3
+import OpenSSL._util
+```
+This imports the specific submodule `_util` from the folder called OpenSSL
+
+To then get a specific function from that submodule
+```python3
+from OpenSSL._util import path_bytes
+```
+
+- `OpenSSL._util` = submodule
+- `path_bytes` = function in that submodule
+
+> [!NOTE]
+> This package is found in /usr/lib/python3/dist-packages/OpenSSL
 
 ## Class and Objects
 
@@ -427,7 +475,7 @@ Means if `not` false then do something else do the other
 
 When using if `not` logic the first condition is evaluated with not 
 
-### Strings
+## Strings
 
 String manipulation can be seen as each character in a string is an index in an array
 
@@ -585,3 +633,4 @@ cars = defaultdict(list)
 
 cars['m'].append('mercedes')
 ```
+

@@ -52,6 +52,8 @@ What is an algorithm?
 
 An algorithm is a set of instructions to finish a task.
 
+Also the operations that are performed on data structures + set of instructures for executing them
+
 Algorithm has a clear problem statement.
 
 These are main questions that should be asked when performing an algorithm:
