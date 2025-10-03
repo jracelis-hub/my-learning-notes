@@ -6,6 +6,9 @@
 - [Control Flow](#control-flow)
 - [Functions](#functions)
 	- [Packages and Modules](#packages-and-modules)
+	- [Lambda Functions](#lambda-functions)
+	- [Try Except](#try-except)
+	- [Packages and Modules](#packages-and-modules)
 - [Class and Objects](#class-and-objects)
 - [Strings](#strings)
 
@@ -40,7 +43,7 @@ Numbers - numbers representation of a variable
 
 String - array of characters that represents a word(s)/sentence(s)
 - single quotes 'string'
-- doulbe quotes "string"
+- double quotes "string"
 
 Bool - binary value representation 0 (False) or 1 (True)
 ```python3
@@ -364,6 +367,36 @@ Hello World
 {'varA': 1, 'varB': 2}
 ```
 
+### Lambda Functions
+
+Convenient way to write "mini functions" as values
+
+Example:
+```python3
+(lambda x: x + 3)(5)
+# x is the defined variable argument and (5) is the parameter being
+# passed in for that argument
+
+myList = [{'num': 3}, {'num': 3}, {'num': 3}]
+sorted(myList, key=lambda x: x['num'])
+```
+
+### Try Except
+
+Try and except is used to catch specific errors that is known to happen
+```
+# note you cannot divide by 0
+# so an error will occur
+def causeError():
+	try:
+		return 1/0
+	except Exception as e:
+		return e
+
+causeError()
+ZeroDivisionError('division by zero')
+```
+
 ### Packages and Modules
 
 A package contains submodule(s) and a `__init__.py` file
@@ -405,18 +438,29 @@ from OpenSSL._util import path_bytes
 
 Classes is a way to keep functions and attributes organized under a specific object
 
+Classes:
+- instances = objects
+- functions = methods
+- parameters = attributes
+
 To create class it requires the keyword `class` followed by the class
 ```python3
 class Dog:
+	# The underscore is notation to tell the user that it is
+	# static and change at your own risk
+	_legs = 4 # this is called a class variable as it is the same through out
+	          # all objects that are created
+
 	# When creating the Dog class it requires one parameter
 	# the parameter is name
 	def __init__(self, name):
-		self.name = name
-		self.legs = 4
+		self.name = name # this is called an instance variable as it changes per
+		                 # object created
 	
-	# Passing the self argument into speak
-	# makes anything in the __init__ become
-	# accessible to the speak function
+	# self is reference to the variable assigned for the class
+	# myDog = Dog(Jarron)
+	# where myDog is the self parameter getting passed into
+	# the function
 	def speak(self):
 		print(self.name + 'says: Bark!')
 
@@ -434,15 +478,79 @@ my_dog = Dog('Jarron')
 # Dog(my_dog, 'Jarron')
 ```
 
-Then when invoking a class methond with a `(self)` argument all the information set in `__init__` gets placed into
-the `my_dog` instance
-
 Another name of these instances are called Objects which gets into Object Oriented Programming (`OOP`)
 
-Classes:
-- instances = objects
-- functions = methods
-- parameters = attributes
+To create static methods inside of a `class`
+
+```python3
+class WordSet:
+	replacePuncs = ['!', '.', ',', '\'']	
+
+	def __init__(self):
+		self.words = set()
+	
+	# Now calling the method .cleanText it utilizes the class WordSet object
+	# rather than the self, this method not works with any thing that is a WordSet
+	def addText(self, text): # this would be call an instance method, method that belongs to a specific instance of a class
+		text = self.cleanText(text) # the static decorator lets you know that self does not need to be passed into clean
+		for word in text.split():
+			self.words.add(word)
+
+	# Notice this method does not have a self argument even though it is inside the class object
+	# since there is no use for self. it is not passed in this is called a "static" method
+	@staticmethods # <--- this is called a decorator - which defines special attr or information about the function
+	def clean(text): 
+		# chaining functions
+		for punc in WordSet.replacePuncs:
+			text = text.replace(punc, '')
+		return text.lower()
+
+```
+
+Inheritance
+
+To define an inheritance use the name of the `class` as follows:
+```
+class Dog:
+	_legs = 4 
+
+	def __init__(self, name):
+		self.name = name 
+		                
+	
+	def speak(self):
+		print(self.name + 'says: Bark!')
+
+# Chihuahua is the inheritance class of the Dog class
+class Chihuahua(Dog): 
+	def speak(self):
+		print(f'{self.name} says: Yap yap yap!')
+# if any methods conflict with the parent method the 
+# child method of be used instead
+	def wagTail(self):
+		print('Vigorous wagging!')
+```
+
+Lets say you want to extend the properties of a built in class
+
+Take the class `list()` for example, you can extend the class to create specific properties
+```
+class UniqueList(list):
+	
+	# If you want to create the UniqueList to have its own constructor
+	# use __init__ as usual but its important that it over writes the constructor
+	# from list to make sure that also gets initialized use the key word super
+	def __init__(self):
+		super().__init__() # this inits the constructor of the parent class (list)
+		self.someProperty = 'Unique List!' # then it does the constructor for UniqueList
+	
+	def append(self, item):
+		if item in self:
+			return
+		super().append(item) # the super() makes sure it is using the list.append() and not 
+		                     # the append created 
+
+```
 
 python has built-in classes like:
 - int
