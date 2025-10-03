@@ -2,6 +2,17 @@
 #include <string>
 #include <vector>
 
+/* Standard Template Library (STL)
+   vector is a dynamic array that takes a
+   Type T which is any type of primitive data type
+   or object
+   To declare do the following
+   std::vector<data_type> variable_name;
+   std::vector<object>
+   std::vector<std::string> myName;
+   std::vector<int> myName;
+*/
+
 int main()
 {
 	std::vector<std::string> names = {"Hayeon", "Cliffy", "Jarron"};

@@ -1,6 +1,11 @@
 #include <iostream>
 #include <string>
 
+/* Standard Template Library (STL) 
+   String is a built in class in C++
+   it is declared by using std::string
+*/
+
 int main()
 {
 	std::string first_name = "Jarron";

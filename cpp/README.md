@@ -3,6 +3,8 @@
 ## C++ Keywords
 
 The `::` scope resolution operator tells exacly which scope a name belongs to
+- For built-in classes `std::vector`
+- For user defined classes in source code `Dog::getDog()`;
 
 ```
 std::cout
@@ -55,9 +57,9 @@ Conditional:
 Classes:
 - struct
 - class
-- public
-- priviate
-- protected
+- public - only thing can access it (no strict)
+- priviate - only the class that declares it can access it (most strict)
+- protected - only the class and any derived class can access it (medium strict)
 - virtual
 
 Iteration:
@@ -290,3 +292,400 @@ int main()
 ## Templates
 
 `<>` when using these with variables `duration<double>` the `<>` are called a template
+
+## Functions
+
+A function consists of a return type, name, parameter list, and function body
+```
+int nameFunc(int parm1, char parm2) 
+{
+	int body = 2;
+	if ( parm2 == 'B') {
+		return parm1 + body;
+	}
+
+	return parm1 + body;
+
+}
+```
+
+Function Signature
+- A function's unique identifier
+- Consits of the function's name and its parameter types
+- The return type is not part of the signature
+- The signature must be unique within its scope
+
+Function Declaration vs Definition
+- Declaration (prototpe): introduces the function to the compiler
+```c++
+double calculateDistance2D(double x, double y);
+```
+- Definition: contains the implementation
+```c++
+double calculateDistance2D(double x, double y)
+{
+	return x + y;
+}
+```
+Function Prototype
+- Prototypes are function declarations without the body
+- Prototypes are often in header files `.h` or `.hpp`
+
+3 Types of Ways to Define Parameters
+1. Pass by value
+```c++
+int passValue(int x, int y)
+{
+	return x + y;
+}
+```
+2. Pass by address
+- Needs to dereference
+```c++
+void passValue(int x, int y)
+{
+	int temp = *x;
+	*x = *y;
+	*y = temp;
+}
+```
+3. Pass by reference
+- Does not need to dereference
+```c++
+void passValue(int& x, int& y)
+{
+	int temp = x;
+	x = y;
+	y = temp;
+}
+```
+
+Returning Values from a Function
+- Return built-in types: simple and direct (`int`) (`float`)
+- Return pointers: use for dynamic memory
+- Return references: provides direct access
+- Return void: does not need to return anything
+
+Returning a pointer
+```c++
+Weapon* createWeapon(const std::string& name) 
+{
+	/* Passes the string argument name in to be used when
+	 * allocating memory and returning the address     */
+	Weapon* weapon_x = new Weapon(name);
+	return weapon_x;
+}
+```
+
+Returning Reference
+```c++
+Player& findTopScorer(std::vector<Player>& players)
+{
+	auto topScored = players.begin();
+	for (auto& player : players) {
+		if (player.score > topScorer->score) {
+			topScorer = &player;
+		}
+	}
+	return *topScorer
+}
+```
+
+### Function Overloading
+
+Function overloading is the process to have multiple variations of a function
+based on the arugments passed into the function to give a different output
+```c++
+int getSpeed(int speed, int multiplier)
+{
+	return speed * multipler;
+}
+
+double getSpeed(int speed, int multiplier)
+{
+	return static_cast<double>(speed * multipler);
+}
+```
+
+> [!NOTE]
+> This feature is only available in C++ and not in C
+
+Notice based on the parameters they return different values. This is called overloading.
+
+Function Parameters
+
+Function parameters can come with default values. It is important to note that values
+that are provided with default arugments need to have a proper format
+```c++
+/* Default value type */
+void createZombie(const std::string& name = "Zombie", int health = 100);
+
+int main()
+{
+	/* Creating a zombie with the default name of Zombie
+	 * and default health 100                         */
+	createZombie();
+	/* Passing a string value of Jarron with default value
+	 * health of 100                                   */
+	createZombie("Jarron");
+	/* It is important to note that the order of how the parameters
+	   are given will affect the feasibility of providing default values
+	   for isntance the follow can not be done                      */
+	createZombie(150);
+	/* The Zombie name will not be populated and will cause an error */
+}
+```
+
+When doing default argument parameters the first value has to be initialize and everything to the right of it
+will be "defaulted" but if the first value is not initialized and the 2nd argument is passed in it will cause an
+error.
+
+### Operator Overload
+
+In C++ not only can you overload functions but you can also do overload on operator overload
+
+Think of the `+` for the `std::string` stl
+```c++
+#include <string>
+
+std::string firstName = "Jarron";
+std::string lastName = "Racelis";
+std::string fullName = firstName + lastName;
+```
+
+Overload operators can be unary(1), binary(2), or ternary(3) opperands
+- All operators must return a value compared to function which my return `void`
+
+For instance
+```
+class Numbers {
+	/* if a function is returning a void the do the following */
+	void addNumber(int index);
+	/* the operator of what is above is the class name plus operatory */
+	Numbers& operator+=(int index);
+	/* To return a value do the following */
+	int operator+=(int index);
+};
+```
+
+## Class
+
+A class is a "blueprint" of creating objects
+
+Objects are instances of a class
+```c++
+Dog *my_dog = new Dog();
+/* my_dog is the object instance of the class Dog */
+```
+Classes have data and functions members
+- A data member holds the state of that object
+	- A data member is also known as attributes
+- A function members methods that define the objects behavior
+	- Operate on data members
+	- A function member is also known as a method
+
+Members can be `public`,`private`, or `protected`
+- public - can be access anyway in the program
+- private - can only be access within the class itself
+- protected - can only be accessed by derived classes
+	- inheritance
+	- polymorphism
+
+Encapsulation allows to group a objects state and behavior together, while controlling 
+access to that state through well define interfaces
+
+Contructors and Destructors
+- Constructors initialize objects
+- Constructors can be overloaded
+	- different sets of parameters
+- Destructors clean up resources
+	- memory (heap)
+	- file handles (fd)
+- Desctructors are called automatically when a object is destoryed
+	- either by going out of scope (stack)
+	- or being `delete` (heap)
+
+The is also a short had notation for constructors called a member initilizer list
+- After the parameter list add a `:` of initilizers seperated by `,`
+```c++
+class Zombie {
+public:
+	/* These are the same */
+	Zombie() {
+		health = 0;
+		name = "Zombie";
+	}
+
+	/* Different notation */
+	Zombie(): health(10) {
+		name = "Zombie";	
+	}
+
+private:
+	int health;
+	std::string name;
+}
+```
+
+
+Objects can be creating on the stack or on the heap
+```c++
+/* Zombie is the class 
+ * zombie is the object (instance) that is is creating */
+
+/* This is allocating space on the heap by using malloc */
+Zombie *zombie = new Zombie();
+/* It is important to delete(free) the zombie or memory leak will occur */
+delete zombie 
+
+/* Or using destructor */
+zombie->~Zombie();
+
+/* This is just on the stack */
+Zombie zombie = Zombie();
+```
+Destructors are used when you create it on the heap
+
+## Headers
+
+For headers it is similar to C but there are some underlying differences such as `class`.
+
+```c++
+#ifndef INVENTORY_H
+#define INVENTORY_H
+
+#include <string>
+#include <iostream>
+#include <vector>
+#include <alogrithm>
+
+class Inventory {
+public:
+	/* Constructor */
+	Inventory();
+
+	/* Overload Constructor */
+	Inventory(int capacity);
+	
+	~Inventory();
+
+	std::string getItem(int index);
+
+private:
+	std::vector<std::string> *items;
+	int capacity;
+};
+
+#endif /* INVENTORY_H */
+```
+
+But in the source file
+```c++
+#include "inventory.h"
+
+/* The class does not have to mentioned in this just the definitions 
+   but the Inventory:: has to be included for each time it is used inside
+   the class                                                           */
+
+   Inventory::Inventory(): capacity(10) {
+		items = new std::vector<std::string>();	
+   }
+
+   std::string Inventory::getItems(int index) {
+		/* Code goes here */
+   }
+
+   Inventory::~Inventory(){
+		delete items;
+   }
+```
+
+### Inheritance
+
+Inheritance is create of a sub class under already existing class to create modular design
+
+Often called the derived class, and inherits the attributes and behaviors (data members and function members) of another class
+called the base class
+
+It is a way of categorizing objects reflecting the real-world heiarchies as an example
+
+- A weapon is a item
+- A piece of ammo is an item
+- Some items are values
+
+For the subclass
+- a bandage a type of aid and aid is an item therefore, a bandage is an item
+- an arrow a type of ammo and ammo is an item therefore, an arrow is an item
+
+The hiearchy tiers is shown in the following
+```
+                     base class
+                   class Person
+				     protected
+				         |
+               ----------------------
+               |                    |
+               |                    |
+               |                    |
+           dervied class        dervied class
+           class Father        class Mother
+		     private              private
+			   |                    |
+			   |                    |
+          class Son           class Daughter
+```
+
+| Hierarchy |       |       |
+|:---:|:---:|:---:|
+|class | Public | Protect | Private|
+|Person| yes | yes(father, mother, son, daughter) | yes (themselves) |
+|father| no  | yes(son) and themself | yes (themselves)
+|son | no  | yes themself | yes (themselves)
+
+### Polymorphism
+
+Polmorphism allows to use a single interface to be represented different underlying data
+types in C++
+
+It uses the keyword `virtual` in the base class
+
+Then anything derived can override the function to provide specific behavior during runtime base on the
+actual object type
+
+Overriding is a function means of providing a new implementation for base class function within a 
+derived class
+
+> [!IMPORTANT]
+> Overriding is the not that same as overloading which invloves functions with the same name but different parameter lists
+
+To override a function in a derived class use the keyword `override`
+```c++
+class Aid : public Item{
+public:
+	void use() const override{
+
+		/* Code stuff */
+	}
+};
+```
+
+And in the base class `item` the `virual` keyword to know that it can be `override`
+```c++
+class Item {
+public:
+	virtual void use() const{
+
+		/* Code stuff */
+	}
+};
+```
+
+To create a "pure virtual function" do the following:
+```c++
+virtual void use() const = 0;
+```
+This is making it a pure virtual class which each class implement specific behavior
+Ensuring their own unique implementation
+
+- Inheritance for "is-a" relationship
+- Polymorphism for flexibility
