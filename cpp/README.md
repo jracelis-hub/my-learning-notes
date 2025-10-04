@@ -289,6 +289,16 @@ int main()
 }
 ```
 
+The pair class holds two data types and can be represented by any data type
+```c++
+#include <utility>
+/* The pair can be a std::string char int any type of data*/
+pair<T, T> p = {data_type T, data_type T};
+```
+To access the first or second value do.
+- `variable_name.first`
+- `variable_name.second`
+
 ## Templates
 
 `<>` when using these with variables `duration<double>` the `<>` are called a template
@@ -689,3 +699,5 @@ Ensuring their own unique implementation
 
 - Inheritance for "is-a" relationship
 - Polymorphism for flexibility
+
+
