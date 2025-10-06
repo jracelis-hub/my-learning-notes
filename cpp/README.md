@@ -253,7 +253,51 @@ int main()
 }
 ```
 
-## Standard Template Library (STL) Vectors
+## Standard Template Library (STL)
+
+Main Components in STL:
+1. Containers - array-like data structures that store collections of objects (vectors, list, deque, stack... etc.)
+2. Iterator - pointer-like objects that allow traversal of containers
+3. Algorithms - a collection of algorithm implementations for operations such as search and sort
+4. Functors - function objects that can be parametrized in their constructors (function objects)
+	- `#include <functional>`
+
+Random access - can be directly jump to any element at constat time O(1), without having to move step by step
+
+Sequence Containers (Order Data)
+- Vectors - dynamic array that provides fast random access to elements O(1)
+	- `std::vector<T type>`
+	- `#include <vector>`
+- Deques - double-ended queue that allows fast insertion and deletion at both ends
+	- `std::deque<T type>`
+	- `#include <deque>`
+- Lists - double linked list that aloows fast insertion and deletion from anywhere in the list, not random access O(n)
+	- `std::list<T type>`
+	- `#include <list>`
+
+Associative Containers (Key-Value Pairs)
+- Sets - a sorted associative container that stored unique elements. When you need to maintain a collection of distinct elements and care about order
+	- `std::sets<T type>`
+	- `#include <set>`
+- Pair - a utility class that used to store two heterogeneous (different) objects as a single unit, commonly used with `std::map`
+	- `std::pair<T type, T type>`
+	- `#include <utility>`
+- Maps - a dictionary is popular in other programming languages, to refer to a data structure that stores key-value pairs. Where each key is unique
+	- `std::map<T type, T type>`
+	- `#include <map>`
+
+Unorder Containers
+- Unordered_map - same as map but not ordered
+- Unordered_set - same as map but not ordered
+
+Container Adapters (Specialize Interaces)
+- Stacks - LIFO (Last in First Out) container adapter, useful for scenarios where data needs to be managed in a stack like structure
+	- `std::stack<T type>`
+	- `#include <stack>`
+- Queues - FIFO (First in First Out) container adpater, it is suitable for situations wher elements need to be processed in the order they were added
+	- `std::queue<T type>`
+	- `#include <queue>`
+- Priorty Queues - container adapter that maintains a sorted order of its elements
 
 Dynamic size containers
 - the memory is managed for you
@@ -299,9 +343,149 @@ To access the first or second value do.
 - `variable_name.first`
 - `variable_name.second`
 
+### Iterators 
+
+Objects that enable us to traverse containers in order, for either reading or writing
+
+Pointers are a type of iterator
+
+> Pointers hold values of memory addresses
+
+Types of Iterators
+- Input iterator
+- Output iterator
+- Forward iterator
+- Bidirectional iterator
+- Random access iterator
+
+Input iterator - read one-way, one-pass
+- Only able to read
+- Only moves forward
+- Only one pass possible
+- Least requirements
+- Suitable for input streams such as keyboard buffers
+
+Output Iterator - write one-way, one-pass
+- Only able to write
+- Only moves forward
+- Only one pass possible
+- Least requirements
+- Suitable for output streams such as screen text
+
+Forward Iterator - read/write one-awy, multi-pass
+- Able to read and write (mutable)
+- Only moves forward
+- Supports multiple passes
+- Suitable for traversing singly linked list
+
+Bidirectional Iterators - read/write one-awy, multi-pass
+- Able to read and write (mutable)
+- Only forward and backward
+- Supports multiple passes
+
+Random Access Iterator - read/write anyway
+- Able to read and write (mutable)
+- Able to access any element by index
+- Supports multiple passes
+- Suitable for vectors and arrays
+
+```
+----------------------------------------------------------
+| Iterator        |             Containers               |
+----------------------------------------------------------
+| Forward         | forward_list, unordered_[multi]set,  |
+|                 | unordered_[multi]map                 |
+----------------------------------------------------------
+| Bidirection     | list, [multi]set, [multi]map         |
+----------------------------------------------------------
+| Random Access   | vector, deque                        |
+----------------------------------------------------------
+```
+
+Four Important Iterator Functions:
+1. `begin()` - returns an iterator to the beginning of the container
+2. `end()` - returns iterator to the end of the container
+3. `rbegin()` - returns reverse iterator to the reverse beginning of the container
+4. `rend()` - returns reverse iterator to the reverse end of the container
+
+```
+  begin()             end()
+    |                   |
+   \|/                 \|/
+   -------------------
+   |  |  |  |  |  |  |
+   -------------------
+/|\                /|\
+ |                  |
+rend()            rbegin()
+```
+
+## Algorithms
+
+`std::sort` - sorts in a range in ascending order
+```
+std::vector<std::string> items = {"potion", "shield", "potion", "arrow"}; 
+/* std::sort(start iterator, end iterator) */
+std::sort(items.begin(), items.end())
+```
+
+`std::find` - find a specific value in a range
+```
+/* std::find(start iterator, end iterator, value) */
+/* Returns an iterator pointing to the location 
+ * dereference it inorder to get the value   */
+auto it = std::find(items.begin(), items.end(), "shield");
+```
+`std::count` - count a specific value in a range
+```
+/* int count = std::count(start iterator, end iterator, value) */
+/* returns a int value of how many values are in that range */
+int count = std::count(items.begin(), items.end(), potion);
+```
+
+## Function Objects (functors)
+
+Function objects that can be used as if they were functions, a functor is any object that can be called
+using the function call syntax(). This achieved by overloading the operator()
+- `#include <functional>`
+
+```
+#include <iostream>
+
+class MultiplyBy {
+public:
+	MultiplyBy(int factor) : factor_(factor) {}
+
+	int operator()(int value) const {
+		return value * factor_;
+	}
+private:
+	int factor_;
+};
+
+int main()
+{
+	MultiplyBy multiplyBy5(5); /* Create a functor with factor 5 */
+	int results = multibyBy5(10); /* Calls operator() with value 10 */
+
+}
+```
+
+Lambda functions are used for inline level functions, usually when you need one off of a function without constant needing it.
+```
+/* Rather than defining a functor of its self do the following */
+
+std::sort(enemies.begin(), enemies.end(), [](const auto& enemy1, const auto& enemy2) {
+	return enemy1.second < enemy2.second;
+});
+
+```
+
 ## Templates
 
 `<>` when using these with variables `duration<double>` the `<>` are called a template
+
+It is represented with the keyword `template` followed by `<typename T>`
 
 ## Functions
 
@@ -700,4 +884,52 @@ Ensuring their own unique implementation
 - Inheritance for "is-a" relationship
 - Polymorphism for flexibility
 
+## Working With Files
 
+`#include <fstream>` to work with files
+- `ifstream` for reading files
+- `ofstream` for writing files
+- `fstream` for both reading and writing
+- Opening, reading/writing, and closing files
+
+Common Operations in File Handling
+- Check ifa file open successfully with `is_open()`
+- Reading from a file using `getline()`
+- Writing to a file using `<<`
+- Using modes:
+	- `ios::app` - append data to a file
+	- `ios::in` - input (read)
+	- `ios::out` - output (writing)
+- Closing files with `.close()`
+
+
+## Try Except
+
+- `try` - code the that may contain a throw an exception statement 
+- `catch` - code to handle the exception
+- `throw` - the type of except signal
+
+Different types of throws:
+- `std::runtime_error`
+- `std::out_of_range`
+- create own throw statement
+
+```c++
+void loadSaveGame(const std::string& filename) {
+	std::if stream file(filename);
+	if(!file) {
+		throw std::runtime_error("Save game not found " + filename);
+	}
+}
+
+int main() {
+	/* This tries the line of code that contains the throw statement */
+	try {
+		loadSaveGame();
+	} 
+	/* If the throw statement occurs catch the statment and print error */
+	catch (const std::exception& e) {
+		std::cerr << e.what() << std::endl;
+	}
+}
+```
