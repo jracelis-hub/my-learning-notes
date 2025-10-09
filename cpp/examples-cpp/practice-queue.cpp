@@ -1,33 +1,33 @@
 #include <iostream>
 #include <queue>
 #include <string>
-#include <stack>
+
+/* FIFO FIrst In First Out
+ * Operations:
+ * .push(Type T) add an element on the end of queue
+ * .pop(Type T) remove first element in queue
+ * .front() to see first element in queue
+ * .end() to see last element in queue
+ * .empty() to see if the queue is empty
+ * .size() to get size of queue
+ * */
 
 int main()
 {
-	/* First in First Out (FIFO) */
-	std::queue<std::string> eventQueue;
-	/* Last in First Out (LIFO) */
-	std::stack<std::string> undoStack;
+	std::queue<std::string> myQueue;
 
-	/* Pushes element in to the queue */
-	eventQueue.push("Move left");
-	eventQueue.push("Move up");
+	myQueue.push("Jarron"); /* First element front() */
+	myQueue.push("Hayeon");
+	myQueue.push("Darwin"); /* Last element back() */
+	auto size = myQueue.size();
 
-	while (!eventQueue.empty()) {
-		/* Grabest the end of the value in the queue */
-		std::string currEvent = eventQueue.front();
-		std::cout << "Performing event: " << currEvent << std::endl;
-		/* Removes the front element from the queue */
-		eventQueue.pop();
-		/* Pushes event onto the stack */
-		undoStack.push(currEvent);
-	}
+	std::cout << "Queue size = " << size << std::endl;
 
-	/* .top() Removes the last event that was pushed on top of the stack */
-	while (!undoStack.empty()) {
-		std::cout << "Undo action: " << undoStack.top() << std::endl;
-		undoStack.pop();
+	int i = 0;
+	while (!myQueue.empty())
+	{
+		std::cout << "Item " << i++ << " = " << myQueue.front() << std::endl;
+		myQueue.pop();
 	}
 
 	return 0;

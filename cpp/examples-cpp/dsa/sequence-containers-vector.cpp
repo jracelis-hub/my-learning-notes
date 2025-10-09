@@ -1,6 +1,8 @@
 #include <iostream>
 #include <vector>
 
+/* a vector is a dynamically allocate array */
+
 int main()
 {
 	std::vector<int> numbers(5, 100);
@@ -54,7 +56,8 @@ int main()
 	}
 
 	/* To delete a specific index in a vector use
-	 * numbers.erase(beginning iterator , end iterator) */
+	 * numbers.erase(beginning iterator , end iterator) 
+	 * numbers.erase(single value) or numbers.erase(range 0, range 4) */
 	numbers.erase(numbers.begin(), numbers.end());
 
 	std::cout << "starting " << std::endl;

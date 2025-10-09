@@ -3,8 +3,27 @@
 #include <vector>
 #include <algorithm>
 
+/* Algorithms:
+ * std::sort(iterator, iterator) works only with random access deque, arrays, vectors
+ * std::find(iterator, iterator, value) works with 
+ * */
+
+/* next(iterator, value) returns an iterator at the iterator + the value
+ * prev(iterator, value) returns an iterator at the iterator - the value
+ * advance(iterator, value) moves the iterator at that iterator + the value
+ *
+ * */
+
 int main()
 {
+	/*
+	std::istream_iterator; Read Only
+	std::ostream_iterator; Write Only
+	std::reverse_iterator; 
+	*/
+
+	/* item.begin() = potion */
+	/* item.end() = arrow + 1*/
 	std::vector<std::string> items = {"potion", "shield", "sword", "potion", "arrow"};
 
 	/* Sort value in ascending order */
