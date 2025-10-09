@@ -3,7 +3,7 @@
 ### Issues
 
 Race conditions - A part of the code where the shared resources are being accesed
-- Occurence: When two more porcees try to acces the same resource at the same time without proper coordination
+- Occurence: When two more procees try to acces the same resource at the same time without proper coordination
 
 Mutex or Mutual Exclusion
 
