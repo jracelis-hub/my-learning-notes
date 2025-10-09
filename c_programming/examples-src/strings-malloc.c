@@ -12,7 +12,8 @@ void print_msg(char *buff) {
 int main() {
 
 	char *buffer = malloc(sizeof(char)*256);	
-	if ( buffer == NULL ) {
+	if ( buffer == NULL ) 
+	{
 		return -1;
 	}
 

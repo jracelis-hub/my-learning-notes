@@ -25,8 +25,9 @@ int main()
 {
 	/* To create a */
 	void *endDataSegment = NULL;
+	const int page = PAGE_SIZE;
 
-	endDataSegment = sbrk(PAGE_SIZE);
+	endDataSegment = sbrk(page);
 
 	/* Using brk to "free" the allocated memory */
 	if (brk(endDataSegment) != 0) {

@@ -34,8 +34,8 @@ int main()
 
 	command_get_file(file_path, file, 128);
 
-	printf("%s\n",file);
-	printf("%s",file_path);
+	printf("%s\n", file);
+	printf("%s", file_path);
 
 
 	return 0;

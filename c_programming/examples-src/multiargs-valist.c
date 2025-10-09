@@ -30,8 +30,8 @@ int sum(int count,...) {
 	va_start(args,count);
 
 	int s = 0;
-	for (int i=0; i<count; i++) {
-		int x = va_arg(args,int);
+	for (int i = 0; i < count; i++) {
+		int x = va_arg(args, int);
 		s += x;
 	}
 
@@ -44,8 +44,8 @@ int main(int argc, char* argv[]) {
 	/* The first parameter is the amount 
 	of arguments that are going to be used
 	*/
-	int total = sum(4,1,1,1,1);
+	int total = sum(4, 1, 1, 1, 1);
 
-	printf("%d\n",total);
+	printf("%d\n", total);
 	return 0;
 }

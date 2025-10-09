@@ -53,8 +53,3 @@ int get_filepath(char path[],const int buffer) {
 
 	return 0;
 }
-
-
-
-
-
