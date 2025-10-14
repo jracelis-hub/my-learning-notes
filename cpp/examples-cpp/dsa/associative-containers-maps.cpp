@@ -29,6 +29,8 @@ int main()
 	std::cout << "The key for people[\"Hayeon\"] is " << people["Hayeon"] << std::endl;
 
 	std::cout << "The key for people[\"Jarron\"] is " << people.at("Jarron") << std::endl;
+
+	std::cout << people[0].first << std::endl;
 	
 	return 0;
 }
