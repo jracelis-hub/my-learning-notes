@@ -13,12 +13,7 @@
  * .rbegin() returns reverse::iterator at last element
  * .insert(iterator, value) or .insert(iterator, count, value) or .insert(iterator, range, range)
  * .empty() returns bool value if empty or not
- * */
-
-/* 
- *
- *
- *
+ 8 .size() returns size of  
  * */
 
 int main()

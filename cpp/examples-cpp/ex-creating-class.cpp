@@ -24,17 +24,19 @@ public:
 
 	/* To create an operator a replacement for a function
 	Inventory& operator+=(const std::string& item); */
+	/*
 	void addItem(const std::string& item) 
 	{
-		if (items->size() < capacity) { /* size() builtin to get size of the vector */
-			items->push_back(item); /* push_back appends item to the end of the vector */
+		if (items->size() < capacity) { 
+			items->push_back(item); 
 		}
 		else {
 			std::cout << "Inventory is full, cannot add " << item << std::endl;
 		}
 	}
-	/* Implementations for overload operator
+	*/
 
+	/* Implementations for overload operator */
 	Inventory& Inventory::operator+=(const std::string& item) 
 	{
 		if (items->size() < capacity) { 
@@ -45,11 +47,12 @@ public:
 		}
 		return *this;
 	}
-	*/
 	
 	/* To create an operator a replacement for a function
-	Inventory& operator-=(const std::string& item); */
 	void removeItem(const std::string& item) 
+	To use the following operator do the following
+	myinventory -= "sword" */
+	Inventory& operator-=(const std::string& item);
 	{
 		auto it = std::find(items->begin(), items->end(), item); /* This create an iterator that starts at the beginning to the end looking for item */
 		if (it != items->end()) {
@@ -64,7 +67,8 @@ public:
 	 * the const key word tells the programmer that the value
 	 * should not be modified                              */
 	/* Operator for this is 
-	   std::string operator[](int index) const;*/
+	   std::string operator[](int index) const;
+	   class[]                               */
 	std::string getItem(int index) const {
 		if (index <= 0 && index < items->size()) {
 			return (*items)[index]; /* returns the string of that name */

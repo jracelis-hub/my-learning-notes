@@ -42,7 +42,7 @@ Qualifers:
 	- static functions
 - volatile - tells compiler that varaible's value may change at any time
 - mutable - allows a member of an object to be modified even if the object is declared as a `const`
-- inline - a hint t othe compiler to generate a copy of the function's code at each point where the efunction is called rather than
+- inline - a hint to the compiler to generate a copy of the function's code at each point where the function is called rather than
 generating a normal function call
 - constexpr - to indicate that the value of a variable or the result of a function can be evaluated at compile time
 

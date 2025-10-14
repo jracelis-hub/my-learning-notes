@@ -117,7 +117,7 @@ EXAMPLE:
    "age": 29,
    "height": 5.8,
    "weight": 158,
-   "schools": [ "Great Oak Highschool","California State University, Fullerton" ],
+   "schools": ["Great Oak Highschool", "California State University, Fullerton"],
    "hasBachelors": true
 }
 ```
