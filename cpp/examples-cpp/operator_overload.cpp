@@ -32,6 +32,10 @@ public:
 		std::cout << "Enemies left " << enemies_left << std::endl;
 	}
 
+	/* The virtual keyword makes it so that dervied classes
+	 * can override the implementation and have their own
+	 * way of using it 
+	 */
 	virtual void enter_noise()
 	{
 		std::cout << "Grrrrr!" << std::endl;
@@ -50,12 +54,13 @@ public:
 /* Use the following notation to create a derived class Zombie
    Zombie falls under Enemies 
    Zombie = Child (derived class)
-   Enemies = Parent (base class)
+   Enemy = Parent (base class)
  */
 class Zombie : public Enemy {
 private:
 
 public:
+	/* Polymorphism the base class Enemy and the derived class is Zombie */
 	void enter_noise() override 
 	{
 		std::cout << "Ahhhhh" << std::endl;
@@ -64,7 +69,10 @@ public:
 
 int main() 
 {
+	/* This uses default constructor */
 	Enemy zombies;
+
+	/* THis uses overloaded constructor */
 	Enemy monsters = Enemy(55);
 
 	/* Notice there is no Constructor
@@ -80,8 +88,9 @@ int main()
 	   zombie can use the same methods as Enemy */
 	zombie += "Warwick";
 
-
 	monsters.enter_noise();
+
+	/* Polymorphism has different out compared to monsters.enter_noise() */
 	zombie.enter_noise();
 
 	return 0;

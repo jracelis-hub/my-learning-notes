@@ -1,6 +1,10 @@
 #include <iostream>
 #include <string>
 
+/* >> represent getting input 
+ * << represent giving output
+ */
+
 int main() 
 {
 	std::string prompt = "Enter a number: ";
