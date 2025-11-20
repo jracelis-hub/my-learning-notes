@@ -58,7 +58,6 @@ This repository is a one stop shop to all the topics that I have learn so I can 
 * [Virtual Machine](https://github.com/jracelis-hub/my-learning-notes/tree/main/virtual_machine) :open_file_folder:
 * [Images](https://github.com/jracelis-hub/my-learning-notes/tree/main/images) 📷
 
-### Contact
+## Contact
 >  Name: _Jarron Racelis_ <br>
 >  Email: _jarron.racelis@gmail.com_
-

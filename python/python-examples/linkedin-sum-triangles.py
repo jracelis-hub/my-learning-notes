@@ -10,4 +10,3 @@ def triangle(num):
 def square(num):
 	return triangle(num) + triangle(num - 1)
 
-

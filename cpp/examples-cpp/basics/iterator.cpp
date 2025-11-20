@@ -6,13 +6,13 @@
 /* Algorithms:
  * std::sort(iterator, iterator) works only with random access deque, arrays, vectors
  * std::find(iterator, iterator, value) works with 
- * */
+ */
 
 /* next(iterator, value) returns an iterator at the iterator + the value
  * prev(iterator, value) returns an iterator at the iterator - the value
  * advance(iterator, value) moves the iterator at that iterator + the value
  *
- * */
+ */
 
 int main()
 {

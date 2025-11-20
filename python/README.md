@@ -5,6 +5,7 @@
 - [Operations](#operations)
 - [Control Flow](#control-flow)
 - [Functions](#functions)
+	- [Error handling](#error-handling)
 	- [Packages and Modules](#packages-and-modules)
 	- [Lambda Functions](#lambda-functions)
 	- [Try Except](#try-except)
@@ -163,8 +164,9 @@ Arithmetic Operators
 
 - Subtraction `-`
 - Addition `+`
-- Division `/`
-- Multiplication `*`
+- Division `/` - returns a float
+- Floor `//` - returns a rounded number
+- Multiplication `*` 
 - Exponent `**`
 - Modulo `%` - remainder after division
 
@@ -318,6 +320,15 @@ performOperation(2, 3, multiply)
 6
 ```
 
+> [!NOTE]
+> Can also have a preset value and a help function but doing `name: str = "Default"`
+
+Also can indicate a return value by doing the following:
+```python3
+# This lets you know it returns an int
+def function(value: int = 5) -> int:
+```
+
 There are two types of positional arguments
 - positional arguments
 - keyword arguments
@@ -336,6 +347,14 @@ To create a variety of keyword arguments
 performOperations(*args, **kwargs)
 # kwargs - keywork arguments
 ```
+
+### Error Handling
+
+To insert error print statements use the following:
+
+`raise ValueError` 
+
+- raise and ValueError are built into python
 
 ### Variable Scope
 

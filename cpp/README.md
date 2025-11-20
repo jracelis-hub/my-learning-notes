@@ -271,7 +271,7 @@ Sequence Containers (Order Data)
 - Deques - double-ended queue that allows fast insertion and deletion at both ends
 	- `std::deque<T type>`
 	- `#include <deque>`
-- Lists - double linked list that aloows fast insertion and deletion from anywhere in the list, not random access O(n)
+- Lists - double linked list that allows fast insertion and deletion from anywhere in the list, not random access O(n)
 	- `std::list<T type>`
 	- `#include <list>`
 
@@ -288,7 +288,7 @@ Associative Containers (Key-Value Pairs)
 
 Unorder Containers
 - Unordered_map - same as map but not ordered
-- Unordered_set - same as map but not ordered
+- Unordered_set - same as set but not ordered
 
 Container Adapters (Specialize Interaces)
 - Stacks - LIFO (Last in First Out) container adapter, useful for scenarios where data needs to be managed in a stack like structure
@@ -372,7 +372,7 @@ Output Iterator - write one-way, one-pass
 - Least requirements
 - Suitable for output streams such as screen text
 
-Forward Iterator - read/write one-awy, multi-pass
+Forward Iterator - read/write one-way, multi-pass
 - Able to read and write (mutable)
 - Only moves forward
 - Supports multiple passes

@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-def factorial(number):
+def factorial(number: int) -> int:
 	if type(number) != int:
 		return None 
 	if number < 0:
@@ -12,4 +12,3 @@ def factorial(number):
 		fact *= counter
 		counter += 1
 	return fact
-
