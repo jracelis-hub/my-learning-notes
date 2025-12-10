@@ -1,2 +1,3 @@
 # Script
-Write-Out "Hello World"
+Write-Output "Hello World"
+Write-Host "I am good"
