@@ -1,0 +1,43 @@
+# Rust
+
+## Data Types
+
+u8        i8
+u16       i16
+u32       i32
+u64       i64
+u128      i128
+
+tuples - a list of data types of any type
+let tup_ex: (u32, u8, String) = (300, 8, "Hello World");
+
+lists - list of data of the same type
+let list_ex: [u8; 5] = [4, 3, 2, 4, 1];
+
+struct - group of any data types denotes by key value pairs
+
+struct User {
+    active: bool,
+    email: String,
+    key: u8,
+    name: String
+}
+
+!NOTE - This is an instance of struct User
+
+let user_one: User = {
+        active: true,
+        username: String::from()         
+        key: String::from()         
+        name: String::from()
+    };
+
+To create a method for the given struct use keyword `impl`
+
+impl User {
+    fn get_user(self: &Self) -> String {
+        self.username
+        }
+    };
+
+user_one.get_user()
